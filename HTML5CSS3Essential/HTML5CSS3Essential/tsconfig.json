@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "module": "ES6",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ES2017",
+    "baseUrl": ".",
+    "moduleResolution": "Node"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS. Lesson 02</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 02: Классы и интерфейсы.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right" />
+                    <h1 class="padding-16-16">Lesson 02</h1>
+                    <h2 class="padding-16-16">Классы и интерфейсы.</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+            <nav class="card-lesson-nav">
+                <h3 class="h-panel">Панель навигациии</h3>
+                <form method="post" action="index05.html" id="listTasks" name="listTasks">
+                    <p>
+                        <input type="radio" id="addtask" name="tasks"
+                               value="Дополнительное задание:" />
+                        <label for="addtask">Additional task</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="task2" name="tasks"
+                               value="Задание 2:" />
+                        <label for="task2">Task 2</label>
+                    </p>
+                </form>
+            </nav>
+            <article class="card-lesson-content">
+                <div class="block-setter-98 p-t-0x5prc">
+                    <div class="tabs block-setter">
+                        <input id="tabHome" type="radio" name="tabs" checked>
+                        <label for="tabHome">Цели и задачи</label>
+                        <input id="tabResume" type="radio" name="tabs">
+                        <label for="tabResume">Теория</label>
+                        <section id="content-tabHome" class="block-setter-98">
+                            <p class="summarytask-caption" id="summarytaskcaption">
+                                Обзор, цель и назначение урока
+                            </p>
+                            <!--«»-->
+                            <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                                <p class="margin0">Классы в <span class="accent">TypeScript</span>.</p>
+                                <p class="margin0">Конструкторы.</p>
+                                <p class="margin0">Модификаторы доступа.</p>
+                                <p class="margin0"><span class="accent">Accessors</span>.</p>
+                                <p class="margin0">Наследование и использование ключевого слова <span class="accent">super</span>.</p>
+                                <p class="margin0">Абстрактные классы.</p>
+                                <p class="margin0">Использование интерфейсов.</p>
+                            </div>
+                            <p class="look-task">
+                                <!--data-iamworking="TS"-->
+                                <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                            </p>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                                Создайте интерфейс, описывающий поведение животного (свойства, методы передвижения).
+                                Примените данный интерфейс к классу
+                                <span class="accent">Cat</span>, <span class="accent">Bird</span>, <span class="accent">Fish</span>.
+                                Подумайте, какие свойства должны быть опциональными.
+                            </div>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                                Создать понятие абстрактного родительского класса <span class="accent">Car</span>.
+                                От него создать 3 производных класса (марки автомобилей) с применением метода <span class="accent">super()</span>.
+                                В классах использовать модификаторы как в родительском классе, так и в производных.
+                                Создать от производных классов минимум по 2 экземпляра (модели автомобилей).
+                                Методы в производных классах должны выводить на экран все свойства (описание автомобиля).
+                                Подумайте, какие свойства в производных классах должны быть <span class="accent">public</span>,
+                                какие – <span class="accent">private</span> и <span class="accent">protected</span>.
+                            </div>
+                        </section>
+                        <section id="content-tabResume">
+                            <ul class="margin0 padding-1-0 w-break resume">
+                                <!--<span class="accent"></span>-->
+                                <li>
+                                    <span class="accent">Класс</span> – это конструкция языка, состоящая из ключевого слова
+                                    <span class="accent">class</span>, идентификатора (имени) и тела.
+                                    Класс может содержать в своем теле: поля, методы, свойства и конструкторы.
+                                </li>
+                                <li>
+                                    <span class="accent">Поля</span> определяют состояние будущего объекта.
+                                </li>
+                                <li>
+                                    <span class="accent">Методы</span> определяют поведение будущего объекта.
+                                </li>
+                                <li>
+                                    Кроме обычных функций классы имеют специальные функции - конструкторы, которые определяются с помощью ключевого слова
+                                    <span class="accent">constructor</span>. Конструкторы выполняют начальную инициализацию объекта.
+                                </li>
+                                <li>
+                                    Кроме обычных свойств и функций класс может иметь статические.
+                                    Для использования статических функций и свойств не надо создавать объект класса.
+                                    Статические функции и свойства определяются с помощью ключевого слова <span class="accent">static</span>.
+                                </li>
+                                <li>
+                                    <span class="accent">public</span>, <span class="accent">private</span>, <span class="accent">protected</span> –
+                                    ключевые слова, модификаторы доступа. С их помощью определяется видимость членов класса.
+                                </li>
+                                <li>
+                                    <span class="accent">public</span> – видимый для всех (в классе и за пределами класса).
+                                </li>
+                                <li>
+                                    <span class="accent">private</span> – видимый только в пределах класса (за пределами класса доступ отсутствует).
+                                </li>
+                                <li>
+                                    <span class="accent">protected</span> – видимый в пределах класса и в классах-наследниках
+                                    (за пределами класса и классовнаследников доступ отсутствует).
+                                </li>
+                                <li>
+                                    Все члены классов без модификатора доступа по умолчанию используют модификатор доступа <span class="accent">public</span>.
+                                </li>
+                                <li>
+                                    Наследование - механизм создания класса посредством расширения уже существующего класса.
+                                </li>
+                                <li>
+                                    <span class="accent">extends</span> – ключевое слово, которое определяет, какой класс будет базовым (родительским) для текущего.
+                                    Класс наследник получает от родителя свойства и методы.
+                                </li>
+                                <li>
+                                    <span class="accent">Абстрактный класс</span> - это класс, который может выступать только в роли базового класса.
+                                    Создать экземпляр абстрактного класса не получится. Абстрактный метод - это метод, который не имеет реализации в
+                                    текущем классе, но обязательно должен быть реализован в производном классе. Абстрактные методы могут
+                                    создаваться только в абстрактных классах.
+                                </li>
+                                <li>
+                                    <span class="accent">Интерфейс</span> определяет свойства и методы, которые объект должен реализовать.
+                                    Интерфейс - это определение абстрактного типа данных, но без реализации.
+                                    Интерфейсы определяются с помощью ключевого слова <span class="accent">interface</span>.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../ts/indexTSLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="../../js-advanced/IamWorking.dist.js"></script>
+</body>
+</html>

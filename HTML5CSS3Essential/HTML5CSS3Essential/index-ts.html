@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <title>TS Fundamentals</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="css/general.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css-advanced/styleindex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleHeaderIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleShortDescriptionPanel.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLessonsIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLesson.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleFooterIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLogo.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css-advanced/styleClipPath.css?ver=26-10-2020 16:15" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lessons</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <p class="abzac">29.02.2020</p>
+            <p>Добавил реализацию задачи первой лекции.</p>
+            <p class="abzac">
+                Хочется заметить, что после того как немного позанимался TypeScript, появилось устойчивое ощущение,
+                что в настояще время первоначальное ознакомление с JS есть пустая трата времени. Можно сразу начинать с
+                изучения и использования TypeScript. Ну а в курсы по изучению TypeScript нужно включать необходимую информацию,
+                которая обычно рассказывается и объясняется по JS (ECMAScript 6 и более поздним версиям). При этом практические
+                задания сразу делать на TypeScript.
+            </p>
+            <p class="abzac">11.03.2020</p>
+            <p>2-я лекция:Классы и интерфейсы. Закончил 1-ю задачу.</p>
+            <p class="abzac">27.03.2020</p>
+            <p>
+                Курс TypeScript Fundamentals. 2-я лекция:Классы и интерфейсы. Закончил 2-ю задачу.
+                Стандартизировал для себя отображение и управление некоторыми видами меню.
+                Реализовал своими силами слайдер изображений без использования готовых решений.
+            </p>
+            <p class="abzac">10.05.2020</p>
+            <p>
+                Курс TypeScript Fundamentals. 3-я лекция: Generics.
+            </p>
+            <p>
+                Опубликовал решения сразу обеих домашних задач по данной лекции.
+                Здесь, конечно, формулировка домашних задач была только отправной точкой для полета фантазий.
+                Уже в течение определенного времени мне хотелось подойти к реализации UI по ведению справочника
+                (табличного представления) в каком-то приближении к тому, что мы привыкли видеть в десктопных системах.
+                Уже в первой задаче реализован простой UI по ведению простейшего справочника с минимальным функционалом.
+                Данные строк храняться в localstorage.
+            </p>
+            <p>
+                А уже во второй задаче реализовал чуть более продвинутый UI и, самое главное, создание так сказать в behind-code,
+                отдельных классов с претензией на универсальность: управление контекстным меню, определение понятия команды,
+                привязка элементов управления к командам. Широкое использование Promis-ов. Модальные окна.
+                Возможности UI:
+                <ul class="margin0">
+                    <li>Настройка параметров поиска</li>
+                    <li>Сортировка по разрешенным столбцам по клику на заголовоке столбца</li>
+                    <li>Выбор записей для групповых операций (удаление)</li>
+                    <li>Поддержка режима выбранной записи (по клику на нужной записи). Активирует команды исправить, размножить, информация.</li>
+                </ul>
+                Данные храняться в IndexedDB.
+            </p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="Index.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="AboutHTML.html"><img src="img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content">
+                <h1 class="padding-8-16 background-transparent-80">Курс: TypeScript Fundamentals</h1>
+                <article>
+                    <h3 class="h-course-description allign-left padding-8-16 background-transparent-60">Описание курса</h3>
+                    <div class="course-description background-transparent-40">
+                        <p class="margin0 padding-8-16 allign-justify fsize-1x1rem">
+                            <img src="img/TypeScript_Logo_64x64.png" alt="TS" class="block-left padding-right-8" />
+                            TypeScript – язык программирования для разработки веб приложений, который является суперсетом JavaScript и отличается
+                            более строгими правилами и типизацией. Многие современные фреймворки используют TypeScript. Если вы собираетесь изучать
+                            Angular или другой похожий инструмент, то этот курс для вас. В этом курсе Вы узнаете все, что необходимо для
+                            начала использования этого языка программирования. На протяжении данных уроков, Вы научитесь пользоваться инструментами
+                            для разработки и компиляции кода и освоите синтаксические конструкции, которые есть в TypeScript. Для успешного прохождения
+                            данного курса, Вам не нужны глубокие знания JavaScript, достаточно понимания базового синтаксиса.
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </header>
+
+
+        <section class="block-setter">
+            <nav class="section-index-nav padding-0-8 radius50prc">
+                <button id="all" class="button-with-hover-orange block-left radius50prc padding-3-8 margin8" title="">
+                    <img id="imgExpandAll" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAll" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Уроки</p>
+                    <p id="markAll" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allPurpose" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllPurpose" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllPurpose" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Цель</p>
+                    <p id="markAllPurpose" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allSummaryTask" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllSummaryTask" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllSummaryTask" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Резюме</p>
+                    <p id="markAllSummaryTask" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allHomeWork" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllHomeWork" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllHomeWork" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Задания</p>
+                    <p id="markAllHomeWork" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allEverything" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllEverything" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllEverything" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Все</p>
+                    <p id="markAllEverything" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+            </nav>
+            <!-- LESSON01 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-ts-fundamentals/lesson01/index01.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson01</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="1" data-topic="Урок 01. Введение. Переменные и функции.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Введение. Переменные и функции.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Зачем использовать TypeScript.</li>
+                                        <li>Синтаксис TypeScript.</li>
+                                        <li>Инструменты для работы.</li>
+                                        <li>Настройки Фреймворка.</li>
+                                        <li>Создание HelloWorld приложения.</li>
+                                        <li>Типы данных в TypeScript</li>
+                                        <li>Статическая и динамическая типизация</li>
+                                        <li>Ambient Declarations</li>
+                                        <li>Объекты</li>
+                                        <li>Функции, Arrow function</li>
+                                        <li>Статические типы</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="accent">TypeScript</span> – типизированное надмножество языка <span class="accent">JavaScript</span>,
+                                            компилируется в чистый <span class="accent">JavaScript</span>.<br />
+                                            Основные возможности:
+                                            <ul>
+                                                <li>Поддерживает обычный <span class="accent">JavaScript</span> код;</li>
+                                                <li>Статическая типизация;</li>
+                                                <li>Инкапсуляция;</li>
+                                                <li>Классы и интерфейсы;</li>
+                                                <li>Поддерживает возможности <span class="accent">ECMAScript 6</span>;</li>
+                                                <li><span class="accent">Intellisense</span> и проверка синтаксиса.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Компилятор - программа, преобразующая текст, написанный на алгоритмическом языке, в программу,
+                                            состоящую из машинных команд. Компилятор создает законченный вариант программы на машинном языке.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Npm install typescript –g</span> – глобальная установка компилятора <span class="accent">TypeScript</span>;
+                                        </li>
+                                        <li>
+                                            <span class="accent">Tsc –v</span> – проверка версий компилятора;
+                                        </li>
+                                        <li>
+                                            <span class="accent">Tsc app.ts</span> – компиляция файла;
+                                        </li>
+                                        <li>
+                                            <span class="accent">Tsconfig.json</span> – файл, который указывает на то, что текущая директория является
+                                            корнем <span class="accent">TypeScript</span> проекта.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Number, string, Boolean, any, enum, tuples, void</span> – добавленные типы данных.
+                                        </li>
+                                        <li>
+                                            <span class="accent">let</span> и <span class="accent">const</span> - новые типы объявления переменных в <span class="accent">TypeScript</span>.
+                                            <span class="accent">let</span> позволяет пользователям избежать некоторые из общих ошибок, с которыми сталкиваются в <span class="accent">JavaScript</span>.
+                                            <span class="accent">Const</span>- ключевое слово, которое предотвращает переопределение переменных.
+                                        </li>
+                                        <li>
+                                            При определении функции в <span class="accent">TypeScript</span> необходимо указать тип входящих аргументов, а также тип возвращаемого значения.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Используя TS, создайте следующую функцию, рассчитывающую стоимость мороженого:
+                                            <br />
+                                            Магазин предлагает 2 размера мороженого:
+                                            <ul class="margin0">
+                                                <li>Маленький стакан (10грн)</li>
+                                                <li>Большой стакан (25грн)</li>
+                                            </ul>
+                                            Мороженое дополняется одной или несколькими начинками (минимум - одной):
+                                            <ul class="margin0">
+                                                <li>шоколад (+5грн);</li>
+                                                <li>карамель (+6грн);</li>
+                                                <li>ягоды (+10грн).</li>
+                                            </ul>
+                                            Дополнительно (не обязательно) мороженое можно посыпать маршмеллоу (+5грн).
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON02 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-ts-fundamentals/lesson02/index02.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson02</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="2" data-topic="Урок 02. Классы и интерфейсы.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Классы и интерфейсы.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Классы в <span class="accent">TypeScript</span>.</li>
+                                        <li>Конструкторы.</li>
+                                        <li>Модификаторы доступа.</li>
+                                        <li><span class="accent">Accessors</span>.</li>
+                                        <li>Наследование и использование ключевого слова <span class="accent">super</span>.</li>
+                                        <li>Абстрактные классы.</li>
+                                        <li>Использование интерфейсов.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="accent">Класс</span> – это конструкция языка, состоящая из ключевого слова
+                                            <span class="accent">class</span>, идентификатора (имени) и тела.
+                                            Класс может содержать в своем теле: поля, методы, свойства и конструкторы.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Поля</span> определяют состояние будущего объекта.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Методы</span> определяют поведение будущего объекта.
+                                        </li>
+                                        <li>
+                                            Кроме обычных функций классы имеют специальные функции - конструкторы, которые определяются с помощью ключевого слова
+                                            <span class="accent">constructor</span>. Конструкторы выполняют начальную инициализацию объекта.
+                                        </li>
+                                        <li>
+                                            Кроме обычных свойств и функций класс может иметь статические.
+                                            Для использования статических функций и свойств не надо создавать объект класса.
+                                            Статические функции и свойства определяются с помощью ключевого слова <span class="accent">static</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">public</span>, <span class="accent">private</span>, <span class="accent">protected</span> –
+                                            ключевые слова, модификаторы доступа. С их помощью определяется видимость членов класса.
+                                        </li>
+                                        <li>
+                                            <span class="accent">public</span> – видимый для всех (в классе и за пределами класса).
+                                        </li>
+                                        <li>
+                                            <span class="accent">private</span> – видимый только в пределах класса (за пределами класса доступ отсутствует).
+                                        </li>
+                                        <li>
+                                            <span class="accent">protected</span> – видимый в пределах класса и в классах-наследниках
+                                            (за пределами класса и классовнаследников доступ отсутствует).
+                                        </li>
+                                        <li>
+                                            Все члены классов без модификатора доступа по умолчанию используют модификатор доступа <span class="accent">public</span>.
+                                        </li>
+                                        <li>
+                                            Наследование - механизм создания класса посредством расширения уже существующего класса.
+                                        </li>
+                                        <li>
+                                            <span class="accent">extends</span> – ключевое слово, которое определяет, какой класс будет базовым (родительским) для текущего.
+                                            Класс наследник получает от родителя свойства и методы.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Абстрактный класс</span> - это класс, который может выступать только в роли базового класса.
+                                            Создать экземпляр абстрактного класса не получится. Абстрактный метод - это метод, который не имеет реализации в
+                                            текущем классе, но обязательно должен быть реализован в производном классе. Абстрактные методы могут
+                                            создаваться только в абстрактных классах.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Интерфейс</span> определяет свойства и методы, которые объект должен реализовать.
+                                            Интерфейс - это определение абстрактного типа данных, но без реализации.
+                                            Интерфейсы определяются с помощью ключевого слова <span class="accent">interface</span>.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Создайте интерфейс, описывающий поведение животного (свойства, методы передвижения).
+                                            Примените данный интерфейс к классу
+                                            <span class="accent">Cat</span>, <span class="accent">Bird</span>, <span class="accent">Fish</span>.
+                                            Подумайте, какие свойства должны быть опциональными.
+                                        </li>
+                                        <li>
+                                            Создать понятие абстрактного родительского класса <span class="accent">Car</span>.
+                                            От него создать 3 производных класса (марки автомобилей) с применением метода <span class="accent">super()</span>.
+                                            В классах использовать модификаторы как в родительском классе, так и в производных.
+                                            Создать от производных классов минимум по 2 экземпляра (модели автомобилей).
+                                            Методы в производных классах должны выводить на экран все свойства (описание автомобиля).
+                                            Подумайте, какие свойства в производных классах должны быть <span class="accent">public</span>,
+                                            какие – <span class="accent">private</span> и <span class="accent">protected</span>.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON03 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-ts-fundamentals/lesson03/index03.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson03</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="3" data-topic="Урок 03. Generics.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Generics.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Методы <span class="accent">ECMAScript 5</span> для работы с массивами.</li>
+                                        <li>Циклы  <span class="accent">for in</span> и <span class="accent">for of</span>.</li>
+                                        <li><span class="accent">Generic</span> или обобщенные типы.</li>
+                                        <li>Использование ограничений в обобщенных типах.</li>
+                                        <li>[<span class="accent">Symbol.Iterator;</span>].</li>
+                                        <li>Генераторы.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="accent">Generic</span> (обобщенный тип или шаблон) – специальный тип данных, который
+                                            позволяет создавать компоненты, не привязываясь к конкретному типу данных, а указывая этот тип
+                                            данных во время создания компонента.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Symbol</span> — это уникальный и неизменяемый тип данных, который может быть
+                                            использован как идентификатор для свойств объектов. Кроме символов, определяемых пользователем,
+                                            существуют заранее определенные встроенные символы. Встроенные символы нужны для отражения внутреннего
+                                            поведения языка.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Symbol.iterator</span> – метод, возвращающий итератор по умолчанию для объекта.
+                                            Используется конструкцией <span class="accent">for...of</span>.
+                                        </li>
+                                        <li>
+                                            В современный <span class="accent">JavaScript</span> добавлена новая концепция «итерируемых»
+                                            (<span class="accent">iterable</span>) объектов.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Итерируемые объекты</span> – это объекты, содержимое которых можно перебрать в цикле. У
+                                            итератора должен быть метод <span class="accent">next()</span>, который при каждом вызове возвращает объект со
+                                            свойствами: <span class="accent">value</span> – очередное значение, <span class="accent">done</span> равно
+                                            <span class="accent">false</span>, если есть ещё значения, и <span class="accent">true</span> – в конце.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Генераторы</span> – новый вид функций в современном <span class="accent">JavaScript</span>.
+                                            Они отличаются от обычных тем, что могут приостанавливать своё выполнение, возвращать промежуточный результат и далее
+                                            возобновлять его позже, в произвольный момент времени. Для объявления генератора используется новая синтаксическая
+                                            конструкция: <span class="accent">function*</span>. Её называют «функция-генератор» (<span class="accent">generator function</span>).
+                                            При ее запуске код такой функции не выполняется. Вместо этого она возвращает специальный объект, который как раз и
+                                            называют «генератором». Основным методом генератора является <span class="accent">next()</span>. При вызове он
+                                            возобновляет выполнение кода до ближайшего ключевого слова <span class="accent">yield</span>. По достижении
+                                            <span class="accent">yield</span> выполнение приостанавливается, а значение возвращается во внешний код. Повторный
+                                            вызов <span class="accent">generator.next()</span> возобновит выполнение и вернёт результат следующего
+                                            <span class="accent">yield</span>.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Создайте экземпляр класса, в конструктор которого пользователь будет передавать строковые значения.
+                                            Установите в классе метод для определения функции генератора, которая на каждом значении в
+                                            свойствах класса устанавливает <span class="accent">yield</span>. При вызове данной функции из класса
+                                            проверьте все значения, введенные пользователем и остановите перебор – в случае если пользователь
+                                            ввел числовое значение. Ошибку выведите в консоль.
+                                        </li>
+                                        <li>
+                                            Создать словарь собственных определений, используя <span class="accent">Generic function</span>.
+                                            Внутри должно быть определение для 3 свойств – ключ, значение, описание (различных типов данных).
+                                            Для получения или записи использовать <span class="accent">get</span>/<span class="accent">set</span>
+                                            реализацию доступа. Также для полей нужно использовать модификаторы
+                                            доступа (на Ваш выбор). В итоге должен получится словарь терминов, принимающий на входящий
+                                            параметр различные типы данных для реализации.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON04 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-ts-fundamentals/lesson04/index04.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson04</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="4" data-topic="Урок 04. Модули и пространства имен.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Модули и пространства имен.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Применение функционала пространства имен.</li>
+                                        <li>Работа с модулями.</li>
+                                        <li>Применение в приложениях сборщика <span class="accent">Webpack</span>.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            Для организации больших программ предназначены пространства имен. Пространства имен
+                                            содержат группу классов, интерфейсов, функций, других пространств имен, которые могут
+                                            использоваться в некотором общем контексте.
+                                        </li>
+                                        <li>
+                                            Для определения пространств имен используется ключевое слово <span class="accent">namespace</span>. Чтобы типы и
+                                            объекты, определенные в пространстве имен, были видны извне, они определяются с ключевым
+                                            словом <span class="accent">export</span>. Пространства имен могут содержать и интерфейсы, и объекты, и функции.
+                                        </li>
+                                        <li>
+                                            С помощью директивы <span class="accent">/// &lt;reference path="personnel.ts" /&gt;</span> подключается файл
+                                            <span class="accent">personnel.ts</span>
+                                        </li>
+                                        <li>
+                                            <span class="accent">TypeScript</span> поддерживает работу с модулями. Модули являются концепцией,
+                                            привнесенной стандартом <span class="accent">ES2015</span>. Модули в некотором смысле похожи на
+                                            пространства имен: они могут заключать различные классы, интерфейсы, функции, объекты. Модули
+                                            выделяются в отдельные файлы, что позволяет сделать код приложения более ясным и чистым, и в то же
+                                            время позволяет использовать модули в других приложениях. При этом модули подключаются в приложение не
+                                            посредством тега <span class="accent">&lt;script&gt;</span> , а с помощью загрузчика модулей.
+                                        </li>
+                                        <li>
+                                            Все модули имеют определенный формат и относятся к определенной системе. Всего есть 5
+                                            различных систем модулей: <span class="accent">
+                                                AMD (Asynchronys Module Defenition), CommonJS,
+                                                UMD (Universal Module Defenition), System, ES 2015
+                                            </span>.
+                                        </li>
+                                        <li>
+                                            Для загрузки модулей применяются специальные загрузчики:
+                                            <ul>
+                                                <li>
+                                                    <span class="accent">RequireJS</span>: RequireJS использует синтаксис, известный как асинхронное определение модуля или
+                                                    <span class="accent">asynchronous module definition(AMD)</span>;
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Browserify</span>: использует синтаксис <span class="accent">CommonJS</span>;
+                                                </li>
+                                                <li>
+                                                    <span class="accent">SystemJS</span>: универсальный загрузчик, может применяться для модулей любого типа.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Чтобы классы, интерфейсы, функции были видны извне, они определяются ключевым словом
+                                            <span class="accent">export</span>. Чтобы задействовать модуль в приложении, его надо импортировать с помощью
+                                            оператора <span class="accent">import</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Webpack</span> представляет популярный инструмент для сборки модулей в один файл. Для настройки
+                                            используется файл <span class="accent">webpack.config.js</span>, который будет содержать конфигурацию
+                                            <span class="accent">Webpack</span> с основными параметрами:
+                                            <ul>
+                                                <li>
+                                                    <span class="accent">entry</span>: определяет входные файлы для создания сборок;
+                                                </li>
+                                                <li>
+                                                    <span class="accent">output</span>: определяет конфигурацию выходных файлов;
+                                                </li>
+                                                <li>
+                                                    <span class="accent">resolve</span>: определяет, как будут обрабатываться файлы, если они не имеют расширений;
+                                                </li>
+                                                <li>
+                                                    <span class="accent">module.rules</span>: определяет загрузчики, которые загружают модули;
+                                                </li>
+                                                <li>
+                                                    <span class="accent">plugins</span>: определяет применяемые плагины.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="block-setter-96 padding-8-0">
+                                    В этом уроке не будет заданий. Знания, которые были полученны благодаря этой лекции были применены и расширены
+                                    при выполнении заданий предыдущих лекций. В том числе весь проект был заново собран с использованием WebPack.
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <hr />
+        </section> <!-- LESSONS -->
+        
+        <section class="block-setter p-b-16">
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="http://typescript-lang.ru/docs/index.html">TypeScript.ru</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="js/device.dist.js"></script>
+    <script src="js/index.dist.js"></script>
+    <script src="js/shortDescription.dist.js"></script>
+    <script src="js-advanced/clipPath.dist.js"></script>
+    <script src="js-advanced/IamWorking.dist.js"></script>
+</body>
+</html>

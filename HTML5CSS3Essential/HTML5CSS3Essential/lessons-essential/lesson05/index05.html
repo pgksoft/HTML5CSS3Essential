@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Lesson 5</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+</head>
+<body class="body-index">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="block-setter">
+            <div class="short-description-panel-header">
+                <p class="margin0">HTML5 & CSS3 Essential: Lesson 05. Web Storage, Web Workers, Offline App.</p>
+                <div class="short-description-panel-header-close">
+                    <p class="short-description-panel-header-caption">short description</p>
+                    <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+                </div>
+            </div>
+            <div class="short-description-panel-content">
+                <p class="abzac">
+                    Всем доброго времени суток.
+                </p>
+            </div>
+        </div>
+    </div>
+    <header class="header-index allign-center">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content-lesson background-transparent-50">
+            <div class="padding-8-8">
+                <h1 class="padding-16-16">Lesson 5</h1>
+                <h2 class="padding-16-16">Web Storage, Web Workers, Offline App.</h2>
+            </div>
+        </section>
+    </header>
+    <nav class="nav-index-lesson">
+        <h3 class="h-panel">Панель навигациии</h3>
+        <form method="post" action="index05.html" id="listTasks" name="listTasks">
+            <p>
+                <input type="radio" id="addtask" name="tasks"
+                       value="Дополнительное задание:" />
+                <label for="addtask">Additional task</label>
+            </p>
+            <p>
+                <input type="radio" id="task2" name="tasks"
+                       value="Task 2" />
+                <label for="task2">Task 2</label>
+            </p>
+            <p>
+                <input type="radio" id="task3" name="tasks"
+                       value="Task 3" />
+                <label for="task3">Task 3</label>
+            </p>
+        </form>
+    </nav>
+    <main>
+        <section class="section-index-lesson">
+            <div class="block-setter-98 p-t-0x5prc">
+                <div class="tabs block-setter">
+                    <input id="tabHome" type="radio" name="tabs" checked>
+                    <label for="tabHome">Цели и задачи</label>
+                    <input id="tabResume" type="radio" name="tabs">
+                    <label for="tabResume">Теория</label>
+                    <section id="content-tabHome" class="block-setter-98">
+                        <p class="summarytask-caption" id="summarytaskcaption">
+                            Обзор, цель и назначение урока
+                        </p>
+                        <!--«»-->
+                        <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                            <p class="margin0">Использование методов querySelector и querySelectorAll</p>
+                            <div>
+                                <p class="margin0">
+                                    Рассмотреть понятие «локальное хранилище»:
+                                    <ul class="margin0">
+                                        <li>контейнеры localStorage и sessionStorage</li>
+                                        <li>различия между хранилищами</li>
+                                        <li>свойства и события</li>
+                                        <li>сериализация</li>
+                                        <li>нарушения области действия данных</li>
+                                        <li>leaking data, проблема при использовании cookie</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="margin0">
+                                    Многопоточное программирование - использование WebWorkers:
+                                    <ul class="margin0">
+                                        <li>возможности</li>
+                                        <li>ограничения</li>
+                                        <li>использование JSON</li>
+                                        <li>последовательность Фибоначи, мемоизация</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <p class="margin0">Кеш приложений и браузера.</p>
+                            <div>
+                                <p class="margin0">
+                                    Рассмотреть понятие «оффлайн-приложения»:
+                                    <ul class="margin0">
+                                        <li>принцип построения и работы</li>
+                                        <li>расширенный Api для работы с оффлайн-приложениями</li>
+                                        <li>файл манифеста</li>
+                                        <li>подключение манифеста кэша</li>
+                                        <li>преимущества просмотра страниц в автономном режиме</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="look_task">
+                            <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                        </p>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                            Создайте страницу с несколькими элементами div, p, a. span. Нескольким элементам установите стиль с помощью CSS правил.
+                            Нескольким элементам установите уникальный ID. Напишите сценарий, который с помощью document.querySelectorAll и
+                            document.querySelector будет выбирать со страницы элементы:
+                            <ul class="margin0">
+                                <li>по имени тэга и устанавливать им зеленую рамку</li>
+                                <li>по классу и устанавливать им красную рамку</li>
+                                <li>по id и устанавливать им рамку синего цвета</li>
+                            </ul>
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                            Создайте приложение, в котором будет использоваться WebWorkers. Задача приложения создать массив на 1000000
+                            элементов со случайными значениями и отсортировать массив по возрастанию.
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription03">
+                            Создайте сайт с несколькими страницами с текстом и со страницей, на которой размещен простой калькулятор
+                            реализованный с помощью JavaScript. Сделайте так, чтобы страница с калькулятором была доступна даже
+                            если нет доступа к интернет.
+                        </div>
+                    </section>
+                    <section id="content-tabResume">
+                        <ul class="margin0 padding-1-0 w-break resume">
+                            <li>
+                                document.<span class="blue">querySelector</span>(<span class="red">[селекторы]</span>) - получение первого
+                                элемента, который соответсвует селектору.
+                            </li>
+                            <li>
+                                document.<span class="blue">querySelectorAll</span>(<span class="red">[селекторы]</span>) - получение списка
+                                элементов, которые соответсвуют селектору.
+                            </li>
+                            <li>
+                                <span class="footer-accent">localStorage API</span> обеспечивает хранилище постоянных данных типа ключ-значение,
+                                которое Вы можете использовать для отслеживания пользовательских данных между посещениями Вашего приложения.
+                            </li>
+                            <li>
+                                <span class="footer-accent">localStorage</span> и <span class="footer-accent">sessionStorage</span> - контейнеры
+                                для локального хранения информации. Напоминуют <mark>cookies</mark> значения, но позволяют хранить больший объем
+                                данных и не переддаются по сети при запросах к серверу.
+                            </li>
+                            <li>
+                                Значения <span class="footer-accent">sessionStorage</span>:
+                                <ul class="margin0 padding-0-16">
+                                    <li>существуют до тех пор, пока открыта вкладка или окно, в которой они сохранены;</li>
+                                    <li>видимы в окне или вкладке, в которой они были созданы.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Значения <span class="footer-accent">localStorage</span>:
+                                <ul class="margin0 padding-0-16">
+                                    <li>существуют независимо от закрытия окна или вкладки;</li>
+                                    <li>совместно используются всеми окнами и вкладками, выполняющимися на том же источнике.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-accent">Webworker API</span> создает специальную среду для кода JavaScript, где тот выполняется в собственном потоке,
+                                отделенном от основного пользовательского интерфейса страницы.
+                            </li>
+                            <li>
+                                Возможности <span class="footer-accent">WebWorkers</span>:
+                                <ul class="margin0 padding-0-16">
+                                    <li>обращаться к объекту <span class="footer-accent">navigator</span></li>
+                                    <li>обращаться к объекту <span class="footer-accent">location</span> (только чтение)</li>
+                                    <li>использовать <span class="footer-accent">XMLHttpRequest</span></li>
+                                    <li>
+                                        <span class="footer-accent">setTimeout()</span>/<span class="footer-accent">clearTimeout()</span> и
+                                        <span class="footer-accent">setInterval()</span>/<span class="footer-accent">clearInterval()</span>
+                                    </li>
+                                    <li>использовать <span class="footer-accent">Application Cache</span></li>
+                                    <li>импортировать дополнительные сценарии используя метод <span class="footer-accent">importScripts()</span></li>
+                                    <li>порождать другие <span class="blue">WebWorkers</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Ограничения <span class="footer-accent">WebWorkers</span>:
+                                <ul class="margin0 padding-0-16">
+                                    <li>получать доступ к <span class="footer-accent">DOM</span>:</li>
+                                    <li>получать доступ к объекту <span class="footer-accent">window</span>:</li>
+                                    <li>получать доступ к объекту <span class="footer-accent">document</span>:</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-accent">Офлайн веб приложение</span> - список URL, HTML, CSS, JS, изображений или другого вида ресурсов.
+                                Главная страница такого приложения указывает на этот список, который называют файлом манифеста.
+                            </li>
+                            <li>
+                                <span class="footer-accent">Файл манифеста</span> - это JSON-файл, описывающий Ваше приложение, включая его имя,
+                                иконки и описание, удобное для чтения.
+                            </li>
+                            <li>
+                                Файл манифеста кэша может располагаться где угодно на веб-сервере, но он должен быть обязательно оснащен
+                                MIME-типом text/cache-manifest.
+                            </li>
+                            <li>
+                                Как функционирует офлайн-приложение: веб-браузер, который поддерживает HTML5 офлайн приложения, прочтет список URL с
+                                файла манифеста, загрузит перечисленные ресурсы, закэширует их на стороне клиента и автоматически будет
+                                поддерживать актуальные копии в случае изменений.
+                            </li>
+                            <li>
+                                Первая строка любого файла манифеста должна быть <span class="footer-accent">CACHE MANIFEST</span>.
+                            </li>
+                            <li>
+                                <span class="footer-accent">CACHE</span> - содержит перечень ресурсов, которые браузер должен кэшировать,
+                                используя по умолчанию.
+                            </li>
+                            <li>
+                                <span class="footer-accent">NETWORK</span> - список ресурсов, которые доступны только при подключении к сети.
+                                Программы, выполняемые на стороне сервера обычно нужно заносить в этот список.
+                            </li>
+                            <li>
+                                <span class="footer-accent">FALLBACK</span> - перечень замещающих файлов, которые будут использоваться при
+                                потере подключения к сети.
+                            </li>
+                            <li>
+                                Можно получить доступ к событиям, которые дадут сведения о текущем состоянии кэша приложения, а с помощью
+                                функций изменить это состояние. Например, вы можете использовать window.applicationCache для того, чтобы
+                                определить поддерживает ли браузер AppCache.
+                            </li>
+                            <li>
+                                Проверить текущий статус кэша приложения - используйте функцию
+                                <span class="footer-accent">window.applicationCache.ststus</span>, которая возвращает код статуса.
+                            </li>
+                            <li>
+                                Определенные события возникают в зависимости от состояния AppCache.
+                            </li>
+                            <li>
+                                Возможные ошибки:
+                                <ul class="margin0 padding-0-16">
+                                    <li>манифест кэша возвращает ошибку 404 (Страница не найдена) или 410 (Страница удалена);</li>
+                                    <li>
+                                        манифест кэша обнаружен и не изменился, но HTML-страницу, которая сослалась на манифест, оказалось,
+                                        невозможно загрузить;
+                                    </li>
+                                    <li>
+                                        манифест кэша обнаружен и изменился, но браузер не сумел загрузить один из ресурсов, перечисленных в нем.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Если хотя бы один русерс, упомянутый в файле манифеста, не будет скачан надлежащим образом,
+                                то весь процесс кэширования Вашегго офлайнового приложения закончится этой ошибкой.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/indexLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+</body>
+</html>

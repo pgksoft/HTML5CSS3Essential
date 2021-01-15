@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS-L03: Task 2</title>
+    <link href="../../css-external/w3.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="../../css/styleAddConditions.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleInputs.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleDictionary.css?ver=26-10-2020 16:15" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 03: Generics. Task 2</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <p class="abzac">
+            </p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right p-t-r-8" />
+                <h2 class="padding-4-16">Lesson 03: Generics.</h2>
+                <h3 class="padding-4-16">Task 2.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Создать словарь собственных определений, используя <span class="accent">Generic function</span>.
+                        Внутри должно быть определение для 3 свойств – ключ, значение, описание (различных типов данных).
+                        Для получения или записи использовать <span class="accent">get</span>/<span class="accent">set</span>
+                        реализацию доступа. Также для полей нужно использовать модификаторы
+                        доступа (на Ваш выбор). В итоге должен получится словарь терминов, принимающий на входящий
+                        параметр различные типы данных для реализации.
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box block-setter-98 radius7 overflow-auto">
+                    <section class="search-parms" id="show-find-parms"></section>
+                    <section class="toolbar">
+                        <button id="cmdAdd" title="добавить" data-command="add" data-enabled="true">
+                            <img src="../../img/plus.png" />
+                        </button>
+                        <button id="cmdReproduce" title="размножить" data-command="reproduce" data-enabled="false">
+                            <img src="../../img/content-reproduce.png" />
+                        </button>
+                        <button id="cmdEdit" title="исправить" data-command="edit" data-enabled="false">
+                            <img src="../../img/edit-outline.png" />
+                        </button>
+                        <button id="cmdInfo" title="детальная информация" data-command="info" data-enabled="false">
+                            <img src="../../img/information-outline-24.png" />
+                        </button>
+                        <button id="cmdDel" title="удалить" data-command="del" data-enabled="false">
+                            <img src="../../img/trash-can-outline.png" />
+                        </button>
+                        <button id="cmdFind" title="поиск" data-command="find" data-enabled="true">
+                            <img src="../../img/seek.png" />
+                        </button>
+                        <button id="cmdClearFind" title="очистить поиск" data-command="clear-find" data-enabled="false">
+                            <img src="../../img/seek-clear.png" />
+                        </button>
+                    </section>
+                    <section class="dictionary">
+                        <div class="set">
+                            <div class="for-table">
+                                <div class="table border-separate border-spacing4" id="dic-t-heder">
+                                    <div class="row" id="dic-row-header">
+                                        <div class="cell w3prc cell-vertical-center cell-horizontal-center">
+                                            <input type="checkbox" id="markAllRows" />
+                                            <label for="markAllRows">
+                                                <img src="../../img/checkbox-blank-outline-black.png" id="imgMarkAllRows" />
+                                            </label>
+                                        </div>
+                                        <div class="cell w10prc cell-vertical-center cell-horizontal-center" data-sort="1">
+                                            <img src="../../img/sort-ascending.png" id="img-ascending-1" />
+                                            <img src="../../img/sort-descending.png" id="img-descending-1" />
+                                            Ключ
+                                        </div>
+                                        <div class="cell w25prc cell-vertical-center cell-horizontal-center" data-sort="2">
+                                            <img src="../../img/sort-ascending.png" id="img-ascending-2" />
+                                            <img src="../../img/sort-descending.png" id="img-descending-2" />
+                                            Значение
+                                        </div>
+                                        <div class="cell w40prc cell-vertical-center cell-horizontal-center">
+                                            Описание
+                                        </div>
+                                        <div class="cell w10prc cell-vertical-center cell-horizontal-center" data-sort="3">
+                                            <img src="../../img/sort-ascending.png" id="img-ascending-3" />
+                                            <img src="../../img/sort-descending.png" id="img-descending-3" />
+                                            Создано
+                                        </div>
+                                        <div class="cell w10prc cell-vertical-center cell-horizontal-center" data-sort="4">
+                                            <img src="../../img/sort-ascending.png" id="img-ascending-4" />
+                                            <img src="../../img/sort-descending.png" id="img-descending-4" />
+                                            Изменено
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="for-table">
+                                <div class="table border-separate border-spacing4 cell-vertical-top" id="dic-t-body">
+                                    <!--Inner Html will be created from code-->
+                                </div>
+                            </div>
+                            <nav class="context-menu" id="dicContextMenu">
+                                <div class="block-setter">
+                                    <ul class="cm-items" data-cm-items-group="main">
+                                        <li class="cm-item" id="cm-Add" data-command="add" data-enabled="true">
+                                            <img src="../../img/plus.png" class="block-left" />
+                                            <p>Добавить</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-reproduce" data-command="reproduce" data-enabled="false">
+                                            <img src="../../img/content-reproduce.png" class="block-left" />
+                                            <p>Размножить</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-edit" data-command="edit" data-enabled="false">
+                                            <img src="../../img/edit-outline.png" class="block-left" />
+                                            <p>Исправить</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-info" data-command="info" data-enabled="false">
+                                            <img src="../../img/information-outline-24.png" class="block-left" />
+                                            <p>Детальная информация</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-del" data-command="del" data-enabled="false">
+                                            <img src="../../img/trash-can-outline.png" class="block-left" />
+                                            <p>Удалить</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-find" data-command="find" data-enabled="true">
+                                            <img src="../../img/seek.png" class="block-left" />
+                                            <p>Поиск</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-clear-find" data-command="clear-find" data-enabled="false">
+                                            <img src="../../img/seek-clear.png" class="block-left" />
+                                            <p>Очистить поиск</p>
+                                        </li>
+                                    </ul>
+                                    <!--<hr class="margin0 b-color-orange" />
+                                    <ul class="cm-items" data-cm-items-group="sort">
+                                        <li class="cm-item" id="cm-sort-ascending" data-command="sort-ascending" data-enabled="false">
+                                            <img src="../../img/sort-ascending.png" class="block-left" />
+                                            <p>Сортировать по возрастанию</p>
+                                        </li>
+                                        <li class="cm-item" id="cm-sort-descending" data-command="sort-descending" data-enabled="false">
+                                            <img src="../../img/sort-descending.png" class="block-left" />
+                                            <p>Сортировать по убыванию</p>
+                                        </li>
+                                    </ul>-->
+                                </div>
+                            </nav>
+                        </div>
+
+                        <!-- CONFIRM -->
+                        <div id="confirm-modal" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w30prc">
+                                <header class="w3-container w3-orange">
+                                    <h3 class="padding-2-8" id="confirm-modal-Header">Подтвердите удаление</h3>
+                                </header>
+                                <div class="w3-container">
+                                    <p id="confirmAbout"></p>
+                                </div>
+                                <footer class="w3-container w3-orange w3-center padding-8-0">
+                                    <button class="button-ok" id="confirmYes">Confirm</button>
+                                    <button class="button-no" id="confirmNo">Refuse</button>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <!-- FIND -->
+                        <div id="find-modal" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w50prc">
+                                <header class="w3-container w3-lime">
+                                    <h3 class="block-left">
+                                        <img src="../../img/seek.png" alt="" />
+                                    </h3>
+                                    <h3 class="padding-2-8" id="find-modal-Header">Формирование условия поиска</h3>
+                                </header>
+                                <div class="w3-container">
+                                    <div class="add-conditions padding-2-0">
+                                        <input type="radio" name="period" id="creation-date" checked />
+                                        <label for="creation-date">по дате создания</label>
+                                        <input type="radio" name="period" id="date-of-change" />
+                                        <label for="date-of-change">по дате изменения</label>
+                                        <input type="radio" name="period" id="noDate" />
+                                        <label for="noDate">не учитывать период</label>
+                                    </div>
+                                    <!-- Find Period From -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="findPeriodFrom">Период, с</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input">
+                                            <div class="edit-block-input-setter">
+                                                <input class="field fsize-1rem" type="date" required id="findPeriodFrom" placeholder=" " data-verify="true" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Find Period To -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="findPeriodTo">Период, по</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input">
+                                            <div class="edit-block-input-setter">
+                                                <input class="field fsize-1rem" type="date" required id="findPeriodTo" placeholder=" " data-verify="true" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Find Code -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="findCode">Ключ</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input">
+                                            <div class="edit-block-input-setter">
+                                                <input class="field fsize-1rem" type="text" id="findCode" placeholder=" " maxlength="10" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Find Value -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="findValue">Значение</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input">
+                                            <div class="edit-block-input-setter">
+                                                <input class="field fsize-1rem" type="text" id="findValue" placeholder=" " maxlength="60" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer class="w3-container w3-lime w3-center padding-8-0">
+                                    <button class="button-ok" id="findYes">Apply</button>
+                                    <button class="button-no" id="findNo">Refuse</button>
+                                </footer>
+                            </div>
+                        </div>
+
+                        <!-- EDIT -->
+                        <div id="edit-modal" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w50prc">
+                                <header class="w3-container w3-khaki">
+                                    <h3 class="block-left">
+                                        <img src="" id="edit-modal-imgMode" alt="" />
+                                    </h3>
+                                    <h3 class="padding-2-8" id="edit-modal-Header"></h3>
+                                </header>
+                                <div class="w3-container">
+                                    <!-- EDIT Code -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label definition-code">
+                                        <label class="label-in-edit-block" for="editCode">Ключ</label>
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <label id="counterCode">0/20</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input definition-code">
+                                            <div class="edit-block-input-setter definition-code">
+                                                <input class="field fsize-1rem" type="text" id="editCode" required placeholder=" " maxlength="20" data-verify="false" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EDIT Value -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="editValue">Значение</label>
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <label id="counterValue">0/160</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input">
+                                            <div class="edit-block-input-setter">
+                                                <input class="field fsize-1rem" type="text" id="editValue" required placeholder=" " maxlength="160" data-verify="false" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EDIT Description -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="editDescription">Описание</label>
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <label id="counterDescription">0/4000</label>
+                                    </div>
+                                    <div class="edit-block padding-2-0">
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-input">
+                                            <div class="edit-block-input-setter">
+                                                <!--<input class="field fsize-1rem h100" type="text" id="editDescription" placeholder=" " maxlength="4000" />-->
+                                                <textarea class="field" id="editDescription" placeholder=" " maxlength="4000"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Date Create -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-left">
+                                        <p class="margin0">
+                                            Дата создания: <span id="editDateCreate"></span>
+                                        </p>
+                                    </div>
+                                    <!-- Date Update -->
+                                    <div class="clear-both"></div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-left">
+                                        <p class="margin0">
+                                            Дата изменения: <span id="editDateUpdate"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <footer class="w3-container w3-khaki w3-center padding-8-0">
+                                    <button class="button-ok" id="editYes">Apply</button>
+                                    <button class="button-no" id="editNo">Refuse</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script type="module" src="ts/dictionary.dist.js"></script>
+</body>
+</html>

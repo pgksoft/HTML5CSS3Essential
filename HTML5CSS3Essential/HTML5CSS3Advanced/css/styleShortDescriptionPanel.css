@@ -1,0 +1,78 @@
+﻿@import url('styleGooglefont.css');
+
+.short-description-panel {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    background-color: rgba(255, 255, 204, 0.9);
+    border: 2px solid hsla(240,100%,65%,1);
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    padding: 3px 0;
+    left: 11%;
+    width: 78%;
+    height: 90%;
+    opacity: 0;
+    z-index: 1000;
+    transition: .5s linear;
+    font-size: 100%;
+}
+
+.short-description-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 2px 8px;
+    background-color: rgba(255, 250, 150, 0.9);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.short-description-panel-header-close {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.short-description-panel-header-caption {
+    margin: 0;
+    align-self: center;
+    font-style: italic;
+    font-size: 70%;
+    padding-right: 16px;
+}
+
+#shortDescriptionPanelClose {
+    box-sizing: border-box;
+    border-radius: 9999px;
+    border: 1px solid hsla(240,100%,75%,0.9);
+    transition: 0.1s linear;
+}
+
+    #shortDescriptionPanelClose:hover {
+        border-color: hsla(240,100%,50%,0.9);
+        background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    #shortDescriptionPanelClose:active {
+        background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+        transform: scale(1);
+    }
+
+.short-description-panel-content {
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 0.3%;
+    padding-top: 0.3%;
+    height: 90%;
+    overflow: auto;
+}
+
+    .short-description-panel-content p {
+        margin: 1px;
+        padding: 0;
+        text-align: justify;
+    }

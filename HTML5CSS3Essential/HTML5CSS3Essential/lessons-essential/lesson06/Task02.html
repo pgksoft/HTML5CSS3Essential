@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- LESSON 6 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"></script>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="css/styleColorsAnimation.css" rel="stylesheet" />
+</head>
+<body class="body-index" data-lesson="06">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="block-setter">
+            <div class="short-description-panel-header">
+                <p class="margin0">HTML5 & CSS3 Essential: Lesson 06. CSS3. Кроссбраузерные свойства. Flexbox. Task 2</p>
+                <div class="short-description-panel-header-close">
+                    <p class="short-description-panel-header-caption">short description</p>
+                    <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+                </div>
+            </div>
+            <div class="short-description-panel-content">
+                <p class="abzac">
+                    Всем доброго времени суток.
+                </p>
+            </div>
+        </div>
+    </div>
+    <header class="header-index">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-task-content  background-transparent-50">
+            <h2 class="padding-8-16">Lesson 6: CSS3. Кроссбраузерные свойства. Flexbox.</h2>
+            <h3 class="padding-8-16">Task 2</h3>
+            <div class="summary-task task-page ">
+                <p class="margin0">
+                    Сверстайте страницу на которой разместите несколько блоков. Установите блокам цвет фона используя все
+                    известные Вам способы определения цвета в CSS3.
+                </p>
+            </div>
+        </section>
+    </header>
+    <main class="main-task">
+        <section class="section-task">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box box-shadow-blue">
+                    <div class="boxColors">
+                        <div class="boxColors-area b-c-white">
+                            <div id="rgbaBox" class="boxColors-area show">
+
+                            </div>
+                        </div>
+                        <div class="boxColors-manage">
+                            <div class="boxColors-manage rs red">
+                                <div>
+                                    <input type="checkbox" id="redAnimation" data-type="0" />
+                                    <label for="redAnimation" id="lblRedAnimation">animation</label>
+                                </div>
+                                <div>
+                                    <div id="redRS" class="w80prc" data-type="0"></div>
+                                </div>
+                            </div>
+                            <div class="boxColors-manage rs green">
+                                <div>
+                                    <input type="checkbox" id="greenAnimation" data-type="1" />
+                                    <label for="greenAnimation" id="lblGreenAnimation">animation</label>
+                                </div>
+                                <div>
+                                    <div id="greenRS" class="w80prc" data-type="1"></div>
+                                </div>
+                            </div>
+                            <div class="boxColors-manage rs blue">
+                                <div>
+                                    <input type="checkbox" id="blueAnimation" data-type="2" />
+                                    <label for="blueAnimation" id="lblBlueAnimation">animation</label>
+                                </div>
+                                <div>
+                                    <div id="blueRS" class="w80prc" data-type="2"></div>
+                                </div>
+                            </div>
+                            <button id="animationRGB" class="padding-8-8 button-orange radius50prc w80prc">START</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box box-shadow-blue">
+                    <!--hue-saturation-lightnes-->
+                    <div class="boxColors">
+                        <div class="boxColors-area b-c-white">
+                            <div id="hslBox" class="boxColors-area show"></div>
+                        </div>
+                        <div class="boxColors-manage">
+                            <div class="boxColors-manage rs">
+                                <div>
+                                    <p class="margin0 padding-2-0">Hue</p>
+                                </div>
+                                <div id="colorWeel" class="colorWeel">
+                                    <div id="hueRS" class="w80prc"></div>
+                                </div>
+                            </div>
+                            <div class="boxColors-manage rs">
+                                <div>
+                                    <p class="margin0 padding-2-0">Saturation</p>
+                                </div>
+                                <div>
+                                    <div id="saturationRS" class="w80prc"></div>
+                                </div>
+                            </div>
+                            <div class="boxColors-manage rs">
+                                <div>
+                                    <p class="margin0 padding-2-0">Lightnes</p>
+                                </div>
+                                <div>
+                                    <div id="lightnesRS" class="w80prc"></div>
+                                </div>
+                            </div>
+                            <button id="animationHSL" class="padding-8-8 button-orange radius50prc w80prc">START</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="js/colorsAnimation.dist.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS-L02: Task 2</title>
+    <link href="../../css/styleGooglefont.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="../../css/styleAddConditions.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleCars.css?ver=27-03-2020 14:00" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 02: Классы и интерфейсы. Задача 2.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+        </div>
+    </div>
+
+    <div class="show-full-screen" id="show-full-screen">
+        <div class="image" id="full-screen-image">
+            <div class="full-screen-collaps">
+                <img src="../../img/arrow-collapse-white.png" id="full-screen-close" />
+            </div>
+            <div class="show-fs-left-right">
+                <div class="show-fs-left" id="images-fs-left" data-enable="true">&nbsp;</div>
+                <div class="show-fs-right" id="images-fs-right" data-enable="true">&nbsp;</div>
+            </div>
+        </div>
+        <div class="list" id="full-screen-list">
+            <!--Inner Html will be created from code-->
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right p-t-r-8" />
+                <h2 class="padding-8-16">Lesson 02: Классы и интерфейсы.</h2>
+                <h3 class="padding-8-16">Задача 2.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Создать понятие абстрактного родительского класса <span class="accent">Car</span>.
+                        От него создать 3 производных класса (марки автомобилей) с применением метода <span class="accent">super()</span>.
+                        В классах использовать модификаторы как в родительском классе, так и в производных.
+                        Создать от производных классов минимум по 2 экземпляра (модели автомобилей).
+                        Методы в производных классах должны выводить на экран все свойства (описание автомобиля).
+                        Подумайте, какие свойства в производных классах должны быть <span class="accent">public</span>,
+                        какие – <span class="accent">private</span> и <span class="accent">protected</span>.
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <!--https://auto.vercity.ru/catalog/auto/-->
+                    <!--https://auto.24tv.ua/ru/tag/brandList/-->
+                    <!--https://avto.informator.ua/2018/08/28/avtomobilnye-kontserny-komu-prinadlezhat-populyarnye-marki-mashin/-->
+                    <section class="car-container">
+                        <nav class="add-conditions">
+                            <input type="radio" name="rule-select-brand" id="ruleSelectBrandOne" checked />
+                            <label for="ruleSelectBrandOne">по одному</label>
+                            <input type="radio" name="rule-select-brand" id="ruleSelectBrandSeveral" />
+                            <label for="ruleSelectBrandSeveral">несколько</label>
+                        </nav>
+                        <nav class="nav-brands">
+                            <div class="car-brand default" id="brandAlfaRomeo">
+                                <img src="img/cars/brand-alfa-romeo.png" />
+                                <p class="name-brand">Alfa Romeo</p>
+                            </div>
+                            <div class="car-brand default" id="brandAstonMartin">
+                                <img src="img/cars/brand-aston-martin.png" />
+                                <p class="name-brand">Aston Martin</p>
+                            </div>
+                            <div class="car-brand default" id="brandChevrolet">
+                                <img src="img/cars/brand-chevrolet.png" />
+                                <p class="name-brand">Chevrolet</p>
+                            </div>
+                            <div class="car-brand default" id="brandFerrari">
+                                <img src="img/cars/brand-ferrari.png" />
+                                <p class="name-brand">Ferrari</p>
+                            </div>
+                            <div class="car-brand default" id="brandMazda">
+                                <img src="img/cars/brand-mazda.png" />
+                                <p class="name-brand">Mazda</p>
+                            </div>
+                            <div class="car-brand default" id="brandPorsche">
+                                <img src="img/cars/brand-porsche.png" />
+                                <p class="name-brand">Porsche</p>
+                            </div>
+                            <div class="car-brand default" id="brandTesla">
+                                <img src="img/cars/brand-tesla.png" />
+                                <p class="name-brand">Tesla</p>
+                            </div>
+                        </nav>
+                        <nav class="nav-models" id="nav-models">
+                            <!--Inner Html will be created from code-->
+                        </nav>
+                        <article class="description">
+                            <div class="images" id="imagesOff">
+                                <div class="show-collaps-off">
+                                    <img src="../../img/arrow-collapse-white.png" id="show-collaps-off" />
+                                </div>
+                                <div class="show-left-right">
+                                    <div class="show-left" id="images-show-left" data-enable="true">&nbsp;</div>
+                                    <div class="show-right" id="images-show-right" data-enable="true">&nbsp;</div>
+                                </div>
+                            </div>
+                            <div id="headnote"></div>
+                            <nav class="add-conditions clear-both padding-8-0" id="nav-car-configurations">
+                                <!--Inner Html will be created from code-->
+                            </nav>
+                            <div id="features" class="p-t-8"></div>
+                        </article>
+                    </section>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="socials">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p>
+                    Источник <a class="source" href="https://auto.24tv.ua/ru/tag/brandList/">Auto24</a>
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="ts/cars.dist.js"></script>
+</body>
+</html>

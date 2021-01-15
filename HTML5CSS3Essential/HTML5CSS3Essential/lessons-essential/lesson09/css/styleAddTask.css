@@ -1,0 +1,165 @@
+﻿/* LESSON 09 */
+@import url('../../../css/styleGooglefont.css');
+
+.products {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cards {
+    display: flex;
+    position: relative;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-transition: .8s;
+    transition: .8s;
+    height: 700px;
+    overflow-y: auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 4px;
+    margin: 4px;
+    border: 1px dotted gray;
+    border-radius: 5px;
+    -webkit-transition: .8s;
+    transition: .5s linear;
+}
+
+    .card:hover {
+        border: 1px solid gray;
+        box-shadow: 2px -2px 0 0 blue, -2px -2px 0 0 blue, 2px 2px 0 0 blue, -2px 2px 0 0 blue;
+    }
+
+.card-img {
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    position: relative;
+    -webkit-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.card-img-self {
+    display: block;
+    width: 98%;
+    -webkit-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.card-img-caption {
+    display: block;
+    font-family: Roboto;
+    margin: 0;
+    margin-bottom: 3px;
+    padding: 2px 8px;
+    text-align: center;
+    word-wrap: break-word;
+    background: -webkit-linear-gradient(top, rgb(240, 240, 240), hsl(270, 70%, 80%));
+}
+
+.card-img-select {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px dotted hsl(230, 100%, 50%);
+    border-radius: 5px;
+    background-color: hsla(210,100%,50%,0.30);
+    z-index: 10;
+    -webkit-transition: .8s;
+    transition: .8s;
+}
+
+.card-img-select-item {
+    box-sizing: border-box;
+    padding: 6px 10px;
+    margin: 0 4px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    -webkit-transition: .5s;
+    transition: 0.5s;
+}
+
+    .card-img-select-item:hover {
+        border-color: hsl(10, 100%, 45%);
+        /*background-color: hsla(60, 100%, 50%, 0.63);*/
+    }
+
+.card-img:hover .card-img-select {
+    z-index: 30;
+    opacity: 1;
+}
+
+.descriptions {
+    display: flex;
+    padding-left: 8px;
+    flex-basis: 50%;
+    justify-content: center;
+    align-content: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+    height: 700px;
+    overflow: auto;
+}
+
+.card-description {
+    -webkit-transition: 1.5s;
+    transition: 1.5s;
+    display: none;
+    position: absolute;
+    top: 33%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: Roboto;
+    opacity: 0;
+    flex-basis: 96%;
+}
+
+.card-description-dep {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    -webkit-transition: .8s;
+    transition: .8s;
+    flex-basis: 98%;
+}
+
+.card-description-dep-header {
+    margin-top: 8px;
+    padding: 3px 0;
+}
+
+.card-description-dep-feature {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -webkit-transition: .8s;
+    transition: .8s;
+    padding-top: 2px;
+    box-sizing: border-box;
+    border-bottom: 1px dotted rgb(150,150,150);
+}
+
+    .card-description-dep-feature span:nth-child(1) {
+        color: darkslategray;
+    }
+
+    .card-description-dep-feature span:nth-last-child(1) {
+        text-align: right;
+        color: gray;
+    }

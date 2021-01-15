@@ -1,0 +1,105 @@
+﻿.rs-range-color {
+    background-color: darkcyan;
+}
+
+.rs-path-color {
+    background-color: aliceblue;
+}
+
+.rs-handle {
+    background-color: rgb(255,255,153);
+    border: 2px solid darkgray;
+}
+
+    .rs-handle.rs-focus {
+        border-color: darkcyan;
+        background-color: yellow;
+    }
+
+    .rs-handle:after {
+        border-color: gray;
+        background-color: darkcyan;
+    }
+
+.rs-border {
+    border-color: gray;
+}
+
+#redRS .rs-range-color {
+    background-color: red;
+}
+
+#redRS .rs-tooltip-text {
+    color: darkred;
+    font-weight: bold;
+}
+
+#redRS .rs-path-color {
+    background-color: rgba(241, 169, 160, 1);
+}
+
+#redRS .rs-handle.rs-focus {
+    border-color: darkred;
+    background-color: yellow;
+}
+
+#greenRS .rs-range-color {
+    background-color: green;
+}
+
+#greenRS .rs-tooltip-text {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+#greenRS .rs-path-color {
+    background-color: rgba(123, 239, 178, 1);
+}
+
+#greenRS .rs-handle.rs-focus {
+    border-color: darkgreen;
+    background-color: yellow;
+}
+
+#blueRS .rs-range-color {
+    background-color: blue;
+}
+
+#blueRS .rs-tooltip-text {
+    color: darkblue;
+    font-weight: bold;
+}
+
+#blueRS .rs-path-color {
+    background-color: rgba(197, 239, 247, 1);
+}
+
+#blueRS .rs-handle.rs-focus {
+    border-color: darkblue;
+    background-color: yellow;
+}
+
+#hueRS .rs-tooltip-text {
+    color: white;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#hueRS .rs-range-color {
+    background-color: darkcyan;
+}
+
+#hueRS .rs-handle {
+    background-color: rgb(255,255,153);
+}
+
+    #hueRS .rs-handle.rs-focus {
+        background-color: red;
+    }
+
+#hueRS .rs-bg-color {
+    background-image: url(../img/color-wheel.jpeg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: round;
+}

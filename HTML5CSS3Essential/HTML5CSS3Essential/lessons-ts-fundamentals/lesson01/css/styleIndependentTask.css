@@ -1,0 +1,119 @@
+﻿.icecream {
+    display: flex;
+    width: 98%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.icecream-define {
+    display: flex;
+    flex-basis: 67%;
+    flex-direction: column;
+}
+
+.icecream-type {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 90%;
+    justify-content: space-around;
+    padding: 8px 0;
+    margin: 8px 0;
+}
+
+.icecream-itemcard {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: 2px solid hsl(50, 100%, 50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: flex-end;
+    align-items: center;
+    /*align-content:flex-end;*/
+    color: white;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 2px 3px blue;
+}
+
+    .icecream-itemcard p {
+        margin: 2px 0;
+    }
+
+    .icecream-itemcard:hover {
+        border-color: hsl(30, 100%, 50%);
+        box-shadow: 1px -1px 5px 0 hsl(30, 100%, 70%), -1px -1px 5px 0 hsl(30, 100%, 70%), 1px 1px 5px 0 hsl(30, 100%, 70%), -1px 1px 5px 0 hsl(30, 100%, 70%);
+    }
+
+    .icecream-itemcard[id=big] {
+        background-image: url('../img/icecream-icon-big.png');
+    }
+
+    .icecream-itemcard[id=small] {
+        background-image: url('../img/icecream-icon-small.png');
+    }
+
+    .icecream-itemcard[id=chocolate] {
+        background-image: url('../img/chocolate-hearts-icon.png');
+    }
+
+    .icecream-itemcard[id=caramel] {
+        background-image: url('../img/caramel-icon.png');
+    }
+
+    .icecream-itemcard[id=strawberry] {
+        background-image: url('../img/strawberry-icon.png');
+    }
+
+    .icecream-itemcard[id=lozenges] {
+        background-image: url('../img/lozenges.jpg');
+    }
+
+.item-card-selected {
+    border-color: hsl(120, 50%, 50%);
+    box-shadow: 3px -3px 5px 0 hsl(120, 100%, 70%), -3px -3px 5px 0 hsl(120, 100%, 70%), 3px 3px 5px 0 hsl(120, 100%, 70%), -3px 3px 5px 0 hsl(120, 100%, 70%);
+    font-size: 1.2rem;
+    color: red;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white, 2px 2px 3px yellow;
+}
+
+.icecream-calculated {
+    display: block;
+    flex-basis: 31%;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.icecream-calculated-card {
+    display: flex;
+    border-radius: 7px;
+}
+
+    .icecream-calculated-card img {
+        border-radius: 7px;
+        height: 30px;
+    }
+
+    .icecream-calculated-card .img {
+        display: block;
+        vertical-align: middle;
+    }
+
+    .icecream-calculated-card .caption {
+        display: flex;
+        flex-basis: 60%;
+        align-items: center;
+        word-break: break-word;
+        padding-left: 1%;
+    }
+
+    .icecream-calculated-card .price {
+        display: flex;
+        flex-basis: 20%;
+        align-items: center;
+        word-break: break-word;
+    }

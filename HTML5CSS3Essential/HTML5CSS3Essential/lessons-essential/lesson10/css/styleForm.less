@@ -1,0 +1,63 @@
+﻿@import url('../../../css/styleGooglefont.css');
+
+.form-input-set {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.form-input-set-label {
+    display: flex;
+    flex-basis: 30%;
+    justify-content: flex-end;
+    padding: 0 1%;
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.form-input-set-field {
+    display: flex;
+    flex-basis: 65%;
+}
+
+.edit-block-input-setter input {
+    width: 100%;
+    margin: 0 0;
+}
+
+.form-control {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+input[type=checkbox] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 9999px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid lightgray;
+    padding: 2px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px -0px 5px 0 lightblue, -0px -0px 5px 0 lightblue, 0px 0px 5px 0 lightblue, -0px 0px 5px 0 lightblue;
+    }
+
+    &:not(:checked) {
+        background-color: hsla(60,100%,50%,0.63);
+    }
+
+    &:checked {
+        background-image: url('../../../img/check.png');
+        background-color: hsl(90,100%,80%);
+    }
+}

@@ -1,0 +1,80 @@
+﻿.field {
+    transition: 0.3s linear;
+}
+
+    .field:not(:placeholder-shown):invalid {
+        background-color: hsl(60, 100%, 70%);
+    }
+
+    .field:not(:placeholder-shown):valid {
+        background-color: hsl(110, 100%, 89%);
+    }
+
+    .field[data-verify=false]:not(:placeholder-shown):valid {
+        background-color: hsl(60, 100%, 70%);
+    }
+
+    .field[data-verify=true]:not(:placeholder-shown):valid {
+        background-color: hsl(110, 100%, 89%);
+    }
+
+    .field:required:placeholder-shown {
+        border: 1px solid red;
+    }
+
+        .field:required:placeholder-shown:hover {
+            border: 1px solid rgb(255,100,100);
+            box-shadow: 1px -1px 2px 0 rgb(255,120,120), -1px -1px 2px 0 rgb(255,120,120), 1px 1px 2px 0 rgb(255,120,120), -1px 1px 2px 0 rgb(255,120,120);
+        }
+
+        .field:required:placeholder-shown:focus {
+            border: 1px solid orangered;
+            box-shadow: 1px -1px 2px 0 orangered, -1px -1px 2px 0 orangered, 1px 1px 2px 0 orangered, -1px 1px 2px 0 orangered;
+        }
+
+    .field,
+    .field[type=text],
+    .field[type=password],
+    .field[type=email],
+    .field[type=date],
+    .field:required:not(:placeholder-shown),
+    .field[type=text]:required:not(:placeholder-shown),
+    .field[type=password]:required:not(:placeholder-shown),
+    .field[type=email]:required:not(:placeholder-shown),
+    .field[type=date]:required:not(:placeholder-shown) {
+        outline: 0;
+        outline-offset: 0;
+        box-sizing: border-box;
+        border: 1px solid lightgray;
+        padding: 0.5% 1%;
+        border-radius: 3px;
+        font-size: 1.2rem;
+    }
+
+        .field:not(:required):hover,
+        .field[type=text]:not(:required):hover,
+        .field[type=password]:not(:required):hover,
+        .field[type=email]:not(:required):hover,
+        .field[type=date]:not(:required):hover,
+        .field:required:not(:placeholder-shown):hover,
+        .field[type=text]:required:not(:placeholder-shown):hover,
+        .field[type=password]:required:not(:placeholder-shown):hover,
+        .field[type=email]:required:not(:placeholder-shown):hover,
+        .field[type=date]:required:not(:placeholder-shown):hover {
+            border: 1px solid gray;
+            box-shadow: 1px -1px 2px 0 lightgray, -1px -1px 2px 0 lightgray, 1px 1px 2px 0 lightgray, -1px 1px 2px 0 lightgray;
+        }
+
+        .field:not(:required):focus,
+        .field[type=text]:not(:required):focus,
+        .field[type=password]:not(:required):focus,
+        .field[type=email]:not(:required):focus,
+        .field[type=date]:not(:required):focus,
+        .field:required:not(:placeholder-shown):focus,
+        .field[type=text]:required:not(:placeholder-shown):focus,
+        .field[type=password]:required:not(:placeholder-shown):focus,
+        .field[type=email]:required:not(:placeholder-shown):focus,
+        .field[type=date]:required:not(:placeholder-shown):focus {
+            border: 1px solid blue;
+            box-shadow: 1px -1px 1px 0 blue, -1px -1px 1px 0 blue, 1px 1px 1px 0 blue, -1px 1px 1px 0 blue;
+        }

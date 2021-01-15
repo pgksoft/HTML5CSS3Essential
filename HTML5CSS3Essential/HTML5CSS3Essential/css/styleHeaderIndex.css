@@ -1,0 +1,127 @@
+﻿@import url('styleGooglefont.css');
+
+.header-index {
+    display: block;
+    background-color: orange;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.header-general {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+    .header-general a {
+        text-decoration: none;
+    }
+
+        .header-general a:hover h4, a:hover p {
+            border-color: red;
+            box-shadow: 1px -1px 3px 0 rgba(255, 255, 255, 0.70), -1px -1px 3px 0 rgba(255, 255, 255, 0.70), 1px 1px 3px 0 rgba(255, 255, 255, 0.70), -1px 1px 3px 0 rgba(255, 255, 255, 0.70);
+        }
+
+    .header-general > table {
+        margin: auto;
+        width: 90%;
+    }
+
+        .header-general > table td img {
+            width: 100%;
+            height: auto;
+        }
+
+.h-panel {
+    color: orange;
+    text-align: center;
+    font-family: 'Noto Serif';
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px darkblue;
+    word-break: break-word;
+}
+
+.header-content {
+    color: blue;
+    font-family: Roboto;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 3px gray;
+    float: left;
+    width: 80%;
+}
+
+    .header-content a {
+        text-decoration: none;
+        border-radius: 9999px;
+        padding: 0 8px;
+    }
+
+        .header-content a:hover {
+            box-shadow: 1px -1px 1px 0 hsl(30,100%,60%), -1px -1px 1px 0 hsl(30,100%,60%), 1px 1px 1px 0 hsl(30,100%,60%), -1px 1px 1px 0 hsl(30,100%,60%);
+        }
+
+.h-course-description {
+    text-shadow: none;
+    letter-spacing: 3px;
+}
+
+.course-description {
+    text-shadow: none;
+    letter-spacing: normal;
+    color: black;
+    font-family: 'PT Serif';
+    font-style: italic;
+}
+
+.header-content-lesson {
+    color: white;
+    text-align: center;
+    font-family: 'Noto Serif';
+    letter-spacing: 5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 2px 3px blue;
+    float: left;
+    width: 80%;
+}
+
+.h-subject {
+    margin: 16px auto;
+    width: 80%;
+    word-break: break-word;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    color: orangered;
+    background-color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    letter-spacing: normal;
+    text-shadow: none;
+    padding: 1px 1px;
+    border: 1px solid blue;
+    border-radius: 7px;
+}
+
+@media screen and (max-width:960px ) {
+    .header-general {
+        display: flex;
+        width: 100%;
+        float: none;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .h-subject {
+        width: auto;
+        align-self: center;
+        padding: 0.5% 1%;
+    }
+
+    .header-general > table {
+        margin: auto;
+        width: 25%;
+    }
+
+    .header-content, .header-content-lesson {
+        width: 100%;
+        float: none;
+    }
+}

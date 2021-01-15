@@ -1,0 +1,1304 @@
+﻿body {
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+mark {
+    border-radius: 5px;
+    padding: 0 3px;
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+.block-left {
+    float: left;
+}
+
+.block-right {
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+}
+
+/* Paddings <======================================================================================================== */
+.padding-1prc {
+    padding: 1%;
+}
+
+.padding-2prc {
+    padding: 2% 2%;
+}
+
+.padding-8-8 {
+    padding: 8px 8px;
+}
+
+.padding-8-16 {
+    padding: 8px 16px;
+}
+
+.padding-16-16 {
+    padding: 16px 16px;
+}
+
+.padding-1-0 {
+    padding: 1px 0;
+}
+
+.padding-1-1 {
+    padding: 1px 1px;
+}
+
+.padding-1-2 {
+    padding: 1px 2px;
+}
+
+.padding-1-3 {
+    padding: 1px 3px;
+}
+
+.padding-2-0 {
+    padding: 2px 0;
+}
+
+.padding-2-2 {
+    padding: 2px 2px;
+}
+
+.padding-3-0 {
+    padding: 3px 0;
+}
+
+.padding-3-3 {
+    padding: 3px 3px;
+}
+
+.padding-4-0 {
+    padding: 4px 0;
+}
+
+.padding-4-4 {
+    padding: 4px 4px;
+}
+
+.padding-4-8 {
+    padding: 4px 8px;
+}
+
+.padding-4-16 {
+    padding: 4px 16px;
+}
+
+.padding-8-0 {
+    padding: 8px 0;
+}
+
+.padding-12-0 {
+    padding: 12px 0;
+}
+
+.padding-16-0 {
+    padding: 16px 0;
+}
+
+.padding-20-0 {
+    padding: 20px 0;
+}
+
+.padding-24-0 {
+    padding: 24px 0;
+}
+
+.padding-28-0 {
+    padding: 28px 0;
+}
+
+.padding-32-0 {
+    padding: 32px 0;
+}
+
+.padding-1prc-0 {
+    padding: 1% 0;
+}
+
+.padding-0-8 {
+    padding: 0 8px;
+}
+
+.padding-0-16 {
+    padding: 0 16px;
+}
+
+.padding-1-8 {
+    padding: 1px 8px;
+}
+
+.padding-2-8 {
+    padding: 2px 8px;
+}
+
+.padding-3-8 {
+    padding: 3px 8px;
+}
+
+.padding-right-8 {
+    padding-right: 8px;
+}
+
+.p-t-0x3prc {
+    padding-top: 0.3%;
+}
+
+.p-t-0x5prc {
+    padding-top: 0.5%;
+}
+
+.p-t-8 {
+    padding-top: 8px;
+}
+
+.p-t-16 {
+    padding-top: 16px;
+}
+
+.p-b-0x5prc {
+    padding-bottom: 0.5%;
+}
+
+.p-b-1prc {
+    padding-bottom: 1%;
+}
+
+.p-b-4 {
+    padding-bottom: 4px;
+}
+
+.p-b-8 {
+    padding-bottom: 8px;
+}
+
+.p-b-16 {
+    padding-bottom: 16px;
+}
+
+.p-r-8 {
+    padding-right: 8px;
+}
+
+.p-t-r-8 {
+    padding-top: 8px;
+    padding-right: 8px;
+}
+
+/* Margins <======================================================================================================== */
+.m-1prc {
+    margin: 1%;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+.margin4 {
+    margin: 4px 4px;
+}
+
+.margin8 {
+    margin: 8px;
+}
+
+.margin8auto {
+    margin: 8px auto;
+}
+
+.margin-top-4 {
+    margin-top: 4px;
+}
+
+.margin-top-8 {
+    margin-top: 8px;
+}
+
+.margin-top-16 {
+    margin-top: 16px;
+}
+
+.m-left-4 {
+    margin-left: 4px;
+}
+
+
+.margin-bottom-4 {
+    margin-bottom: 4px;
+}
+
+.margin-bottom-8 {
+    margin-bottom: 8px;
+}
+
+/* Radiuses <======================================================================================================== */
+.radius4 {
+    border-radius: 4px;
+}
+
+.radius7 {
+    border-radius: 7px;
+}
+
+.radius8 {
+    border-radius: 8px;
+}
+
+.radius9 {
+    border-radius: 9px;
+}
+
+.radius10 {
+    border-radius: 10px;
+}
+
+.radius-left4 {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.radius-right4 {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.radius50prc {
+    border-radius: 9999px;
+}
+
+
+/* Heights <======================================================================================================== */
+.h-1prc {
+    height: 1%;
+}
+
+.h-5prc {
+    height: 5%;
+}
+
+.h-6prc {
+    height: 6%;
+}
+
+.h-7prc {
+    height: 7%;
+}
+
+.h-10prc {
+    height: 10%;
+}
+
+.h-15prc {
+    height: 15%;
+}
+
+.h-20prc {
+    height: 20%;
+}
+
+.h-30prc {
+    height: 30%;
+}
+
+.h-40prc {
+    height: 40%;
+}
+
+.h-50prc {
+    height: 50%;
+}
+
+.h-60prc {
+    height: 60%;
+}
+
+.h-70prc {
+    height: 70%;
+}
+
+.h-80prc {
+    height: 80%;
+}
+
+.h-90prc {
+    height: 90%;
+}
+
+.height-100prc {
+    height: 100%;
+}
+
+.minH-90prc {
+    min-height: 90%;
+}
+
+.h8 {
+    height: 8px;
+}
+
+.h50 {
+    height: 50px;
+}
+
+.h60 {
+    height: 60px;
+}
+
+.h70 {
+    height: 70px;
+}
+
+.h80 {
+    height: 80px;
+}
+
+.h90 {
+    height: 90px;
+}
+
+.h100 {
+    height: 100px;
+}
+
+.h150 {
+    height: 150px;
+}
+
+.h200 {
+    height: 200px;
+}
+
+.h250 {
+    height: 250px;
+}
+
+.h300 {
+    height: 300px;
+}
+
+.h350 {
+    height: 350px;
+}
+
+.h400 {
+    height: 400px;
+}
+
+.h450 {
+    height: 450px;
+}
+
+.h500 {
+    height: 500px;
+}
+
+.h550 {
+    height: 550px;
+}
+
+.h600 {
+    height: 600px;
+}
+
+.h650 {
+    height: 650px;
+}
+
+.h700 {
+    height: 700px;
+}
+
+.h750 {
+    height: 750px;
+}
+
+.h800 {
+    height: 800px;
+}
+
+/* Width <======================================================================================================== */
+.w1prc {
+    width: 1%;
+}
+
+.w3prc {
+    width: 3%;
+}
+
+.w4prc {
+    width: 4%;
+}
+
+.w4x5prc {
+    width: 4.5%;
+}
+
+.w5prc {
+    width: 5%;
+}
+
+.w6prc {
+    width: 6%;
+}
+
+.w7prc {
+    width: 7%;
+}
+
+.w10prc {
+    width: 10%;
+}
+
+.w15prc {
+    width: 15%;
+}
+
+.w16x6prc {
+    width: 16.6%;
+}
+
+.w16x7prc {
+    width: 16.7%;
+}
+
+.w20prc {
+    width: 20%;
+}
+
+.w25prc {
+    width: 25%;
+}
+
+.w30prc {
+    width: 30%;
+}
+
+.w35prc {
+    width: 35%;
+}
+
+.w40prc {
+    width: 40%;
+}
+
+.w45prc {
+    width: 45%;
+}
+
+.w50prc {
+    width: 50%;
+}
+
+.w55prc {
+    width: 55%;
+}
+
+.w60prc {
+    width: 60%;
+}
+
+.w65prc {
+    width: 65%;
+}
+
+.w70prc {
+    width: 70%;
+}
+
+.w75prc {
+    width: 75%;
+}
+
+.w80prc {
+    width: 80%;
+}
+
+.w85prc {
+    width: 85%;
+}
+
+.w90prc {
+    width: 90%;
+}
+
+.w95prc {
+    width: 95%;
+}
+
+.w98prc {
+    width: 98%;
+}
+
+.w100prc {
+    width: 100%;
+}
+
+/* Box-shadows <======================================================================================================== */
+.box-shadow-orange {
+    box-shadow: 1px -1px 3px 0 orange, -1px -1px 3px 0 orange, 1px 1px 3px 0 orange, -1px 1px 3px 0 orange;
+}
+
+.box-shadow-red {
+    box-shadow: 1px -1px 0 0 red, -1px -1px 0 0 red, 1px 1px 0 0 red, -1px 1px 0 0 red;
+}
+
+.box-shadow-blue {
+    box-shadow: 1px -1px 0 0 blue, -1px -1px 0 0 blue, 1px 1px 0 0 blue, -1px 1px 0 0 blue;
+}
+
+.box-shadow-purple {
+    box-shadow: 1px -1px 0 0 purple, -1px -1px 0 0 purple, 1px 1px 0 0 purple, -1px 1px 0 0 purple;
+}
+
+.box-shadow-green {
+    box-shadow: 1px -1px 0 0 green, -1px -1px 0 0 green, 1px 1px 0 0 green, -1px 1px 0 0 green;
+}
+
+.box-shadow-gray {
+    box-shadow: 1px -1px 0 0 gray, -1px -1px 0 0 gray, 1px 1px 0 0 gray, -1px 1px 0 0 gray;
+}
+
+.box-shadow-darkgray {
+    box-shadow: 1px -1px 0 0 darkgray, -1px -1px 0 0 darkgray, 1px 1px 0 0 darkgray, -1px 1px 0 0 darkgray;
+}
+
+/* Font sizes <======================================================================================================== */
+.fsize-0x7rem {
+    font-size: 0.7rem;
+}
+
+.fsize-1rem {
+    font-size: 1rem;
+}
+
+.fsize-1x1rem {
+    font-size: 1.1rem;
+}
+
+.fsize-1x2rem {
+    font-size: 1.2rem;
+}
+
+.fsize-1x3rem {
+    font-size: 1.3rem;
+}
+
+.fsize-1x5rem {
+    font-size: 1.5rem;
+}
+
+.fsize-2rem {
+    font-size: 2rem;
+}
+
+.fsize-3rem {
+    font-size: 3rem;
+}
+
+.fstyle-italic {
+    font-style: italic;
+}
+
+.f-weight-bold {
+    font-weight: bold;
+}
+
+/* Letter spasings <======================================================================================================== */
+.letter-s1 {
+    letter-spacing: 1px;
+}
+
+.letter-s2 {
+    letter-spacing: 2px;
+}
+
+.letter-s3 {
+    letter-spacing: 3px;
+}
+
+.letter-s4 {
+    letter-spacing: 4px;
+}
+
+.space-pre {
+    white-space: pre;
+}
+
+/* Line Heights <======================================================================================================== */
+.line-height-normal {
+    line-height: normal;
+}
+
+.line-height-1x1 {
+    line-height: 1.1;
+}
+
+.line-height-1x2 {
+    line-height: 1.2;
+}
+
+.line-height-1x3 {
+    line-height: 1.3;
+}
+
+.line-height-1x4 {
+    line-height: 1.4;
+}
+
+.line-height-1x5 {
+    line-height: 1.5;
+}
+
+.line-height-2 {
+    line-height: 2;
+}
+
+.letter-s5 {
+    letter-spacing: 5px;
+}
+
+/* Alligns <======================================================================================================== */
+.allign-left {
+    text-align: left;
+}
+
+.allign-center {
+    text-align: center;
+}
+
+.allign-right {
+    text-align: right;
+}
+
+.allign-justify {
+    text-align: justify;
+}
+
+/* Background transparents <======================================================================================================== */
+.background-transparent-10 {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.background-transparent-20 {
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
+.background-transparent-30 {
+    background-color: rgba(255, 255, 255, 0.30);
+}
+
+.background-transparent-40 {
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+.background-transparent-50 {
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+.background-transparent-60 {
+    background-color: rgba(255, 255, 255, 0.60);
+}
+
+.background-transparent-70 {
+    background-color: rgba(255, 255, 255, 0.70);
+}
+
+.background-transparent-80 {
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.background-transparent-90 {
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+/* Buttons <======================================================================================================== */
+.button-with-hover-blue, .button-with-hover-orange {
+    outline: none;
+    border: none;
+    background: linear-gradient(to top, darkgray, white);
+    transition: 0.1s linear;
+    /*color: gray;*/
+}
+
+.button-orange-with-hover-gray {
+    outline: none;
+    border: none;
+    background: linear-gradient(to top, orange, white);
+    transition: 0.1s linear;
+}
+
+.button-orange-with-hover-blue {
+    outline: none;
+    border: none;
+    background: linear-gradient(to top, orange, white);
+    transition: 0.1s linear;
+}
+
+.button-orange {
+    outline: none;
+    border: none;
+    background: linear-gradient(to top, orange, white);
+    transition: 0.1s linear;
+}
+
+.button-ok, .button-no {
+    display: inline-block;
+    box-sizing: border-box;
+    background: linear-gradient(to top, darkgray, white);
+    transition: 0.2s linear;
+    outline: none;
+    padding: 8px 24px;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+}
+
+.button-ok {
+    border-color: green;
+}
+
+.button-no {
+    border-color: red;
+}
+
+.button-ok:not(:disabled):hover {
+    color: white;
+    background: linear-gradient(to top, green, #ccc);
+}
+
+.button-ok:active {
+    color: white;
+    background: linear-gradient(to bottom, green, #ccc);
+}
+
+.button-no:hover {
+    color: white;
+    background: linear-gradient(to top, hsl(0,100%,45%), hsl(30,100%,85%));
+}
+
+.button-no:active {
+    color: white;
+    background: linear-gradient(to bottom, hsl(0,100%,45%), hsl(30,100%,85%));
+}
+
+/* .button-with-hover-blue <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.button-with-hover-blue:hover {
+    background: linear-gradient(to top, rgba(0, 0, 255, 0.50), white);
+}
+
+.button-with-hover-blue:focus {
+    background: linear-gradient(to top, rgba(0, 0, 255, 0.50), white);
+    box-shadow: 2px -2px 3px 0 gray, -2px -2px 3px 0 gray, 2px 2px 3px 0 gray, -2px 2px 3px 0 gray;
+}
+
+.button-with-hover-blue:active {
+    background: linear-gradient(to bottom, rgba(0, 0, 255, 0.50), white);
+}
+
+/* .button-with-hover-orange <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.button-with-hover-orange:hover {
+    background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+}
+
+.button-with-hover-orange:focus {
+    background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+    box-shadow: 2px -2px 3px 0 gray, -2px -2px 3px 0 gray, 2px 2px 3px 0 gray, -2px 2px 3px 0 gray;
+}
+
+.button-with-hover-orange:active {
+    background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+}
+
+/* .button-orange-with-hover-gray <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.button-orange-with-hover-gray:hover {
+    background: linear-gradient(to top, rgba(128, 128, 128, 0.70), white);
+}
+
+.button-orange-with-hover-gray:focus {
+    background: linear-gradient(to top, rgba(128, 128, 128, 0.70), white);
+    box-shadow: 1px -1px 2px 0 blue, -1px -1px 2px 0 blue, 1px 1px 2px 0 blue, -1px 1px 2px 0 blue;
+}
+
+.button-orange-with-hover-gray:active {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.70), white);
+}
+
+
+/* .button-orange-with-hover-blue <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.button-orange-with-hover-blue:enabled:hover {
+    background: linear-gradient(to top, rgba(0, 0, 255, 0.50), white);
+}
+
+.button-orange-with-hover-blue:enabled:focus {
+    background: linear-gradient(to top, rgba(0, 0, 255, 0.50), white);
+    box-shadow: 2px -2px 3px 0 gray, -2px -2px 3px 0 gray, 2px 2px 3px 0 gray, -2px 2px 3px 0 gray;
+}
+
+.button-orange-with-hover-blue:enabled:active {
+    background: linear-gradient(to bottom, rgba(0, 0, 255, 0.50), white);
+}
+
+.button-orange-with-hover-blue:disabled {
+    background: linear-gradient(to top, darkgray, white);
+}
+
+/* .button-orange <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.button-orange:hover {
+    box-shadow: 1px -1px 2px 0 gray, -1px -1px 2px 0 gray, 1px 1px 2px 0 gray, -1px 1px 2px 0 gray;
+}
+
+.button-orange:focus {
+    box-shadow: 2px -2px 3px 0 gray, -2px -2px 3px 0 gray, 2px 2px 3px 0 gray, -2px 2px 3px 0 gray;
+}
+
+.button-orange:active {
+    background: linear-gradient(to bottom, orange, white);
+}
+
+.button-orange:disabled {
+    background: linear-gradient(to top, darkgray, white);
+    box-shadow: none;
+}
+
+.outline-none {
+    outline: none;
+}
+
+/* Block setters <======================================================================================================== */
+.block-setter {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.block-setter-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.block-setter-98 {
+    display: block;
+    width: 98%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.block-setter-96 {
+    display: block;
+    width: 96%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.block-setter-90 {
+    display: block;
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.block-setter-80 {
+    display: block;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.block-setter-97l {
+    display: block;
+    width: 97%;
+    position: relative;
+    margin: 0 1% 0 1.5%;
+}
+
+.block-setter-97r {
+    display: block;
+    width: 97%;
+    position: relative;
+    margin: 0 3% 0 0;
+}
+
+.block-setter-70 {
+    display: block;
+    width: 70%;
+    position: relative;
+}
+
+.block-setter-60 {
+    display: block;
+    width: 60%;
+    position: relative;
+}
+
+.block-setter-50 {
+    display: block;
+    width: 50%;
+    position: relative;
+}
+
+.block-setter-30 {
+    width: 30%;
+    position: relative;
+}
+
+.block-setter-20 {
+    width: 20%;
+    position: relative;
+}
+
+.block-setter-15 {
+    width: 15%;
+    position: relative;
+}
+
+.block-setter-10 {
+    width: 10%;
+    position: relative;
+}
+
+.block-setter-9 {
+    width: 9%;
+    position: relative;
+}
+
+.block-setter-8 {
+    width: 8%;
+    position: relative;
+}
+
+.block-setter-7 {
+    width: 7%;
+    position: relative;
+}
+
+.block-setter-6 {
+    width: 6%;
+    position: relative;
+}
+
+.block-setter-5 {
+    width: 5%;
+    position: relative;
+}
+
+.display-yes {
+    display: block;
+}
+
+.display-no {
+    display: none;
+}
+
+.visible-yes {
+    visibility: visible;
+}
+
+.visible-no {
+    visibility: hidden;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+/* Colors <======================================================================================================== */
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.darkred {
+    color: darkred;
+}
+
+.red {
+    color: red;
+}
+
+.accent {
+    color: blue;
+    font-weight: 600;
+}
+
+.important {
+    color: red;
+    font-weight: 600;
+}
+
+/* Background <======================================================================================================== */
+.b-c-white {
+    background-color: white;
+}
+
+.b-c-black {
+    background-color: black;
+}
+
+.b-color-gray {
+    background-color: gray;
+}
+
+.b-c-lightgray {
+    background-color: lightgray;
+}
+
+.b-c-whitesmoke {
+    background-color: rgb(245,245,245);
+}
+
+.b-c-mercury {
+    background-color: rgba(232, 232, 232, 1)
+}
+
+.b-color-orange {
+    background-color: orange;
+}
+
+.b-color-orange50 {
+    background-color: rgba(255, 165, 0, 0.50);
+}
+
+.b-rg-ellipse-darkcyan-purple {
+    background: radial-gradient(ellipse at top, darkcyan, transparent), radial-gradient(ellipse at bottom, purple, transparent);
+}
+
+.b-rg-ellipse-yellow-blue {
+    background: radial-gradient(ellipse at top, yellow, transparent), radial-gradient(ellipse at bottom, blue, transparent);
+}
+
+.b-rg-ellipse-blue-yellow {
+    background: radial-gradient(ellipse at top, blue, transparent), radial-gradient(ellipse at bottom, yellow, transparent);
+}
+
+/* yellow color set */
+.b-color-yellow {
+    background-color: yellow;
+}
+
+.b-color-yellow50 {
+    background-color: rgba(255, 255, 0, 0.50);
+}
+
+.b-c-gin-fizz {
+    background-color: rgba(255, 249, 222, 1)
+}
+
+.b-color-cream {
+    background-color: rgba(255, 255, 204, 1);
+}
+
+/* blue color set */
+.b-color-blue {
+    background-color: blue;
+}
+
+.b-color-blue50 {
+    background-color: rgba(0, 0, 255, 0.50);
+}
+
+.b-color-hummingbird {
+    background-color: rgba(197, 239, 247, 1);
+}
+
+/* green color set */
+.b-color-palegreen {
+    background-color: rgba(152, 251, 152, 1);
+    color: darkblue;
+}
+
+.b-c-madang {
+    background-color: rgba(200, 247, 197, 1)
+}
+
+/* red color set */
+.b-color-red {
+    background-color: red;
+}
+
+.b-color-monza {
+    background-color: rgba(207, 0, 15, 1);
+    color: white;
+}
+
+/* Varia <======================================================================================================== */
+.w-break {
+    word-break: break-word;
+}
+
+.link-hover-orange:hover {
+    background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+}
+
+.link-hover-orange:active {
+    background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+}
+
+.overflow-y-s {
+    overflow-y: scroll;
+}
+
+.overflow-y-a {
+    overflow-y: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.t-overflow-ell {
+    text-overflow: ellipsis;
+}
+
+.t-overflow-clip {
+    text-overflow: clip;
+}
+
+.w-space-nowrap {
+    white-space: nowrap
+}
+
+.max-w100prc {
+    max-width: 100%;
+}
+
+/* Tables <======================================================================================================== */
+.cell-horizontal-left {
+    text-align: left;
+    word-break: break-word;
+}
+
+.cell-horizontal-center {
+    text-align: center;
+    word-break: break-word;
+}
+
+.cell-h-right {
+    text-align: right;
+    word-break: break-word;
+}
+
+.cell-vertical-center {
+    vertical-align: middle;
+    word-break: break-word;
+}
+
+.cell-vertical-top {
+    vertical-align: top;
+    word-break: break-word;
+}
+
+.cell-vertical-bottom {
+    vertical-align: bottom;
+    word-break: break-word;
+}
+
+.border-collapse {
+    border-collapse: collapse;
+}
+
+.border-separate {
+    border-collapse: separate;
+}
+
+.border-spacing8 {
+    border-spacing: 8px;
+}
+
+.border-spacing4 {
+    border-spacing: 4px;
+}
+
+.border-spacing1x5 {
+    border-spacing: 1.5px;
+}
+
+.border-spacing-none {
+    border-spacing: 0;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.row {
+    display: table-row;
+    width: 100%;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.cell50prc {
+    display: table-cell;
+    width: 50%;
+}
+
+.border-blue {
+    border-color: blue;
+}
+
+.border-red {
+    border-color: red;
+}
+
+.border-orange {
+    border-color: orange;
+}
+
+.cell-btn {
+    display: block;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.border-thin {
+    border-width: thin;
+}
+
+.border-medium {
+    border-width: medium;
+}
+
+.border-thick {
+    border-width: thick;
+}

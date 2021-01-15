@@ -1,0 +1,43 @@
+﻿@import url('../../../css/styleGooglefont.css');
+
+.imgs-transition-timing {
+    display: flex;
+    justify-content: space-around;
+    width: 98%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+    .imgs-transition-timing img {
+        padding: 3px;
+        height: 70px;
+        border-radius: 5px;
+        z-index: 20;
+    }
+
+.holder-img {
+    position: relative;
+}
+
+.caption-img {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 33%;
+    right: 0;
+    text-align: center;
+    border-radius: 9999px;
+    background: rgba(255,255,255, 0.5);
+    font-family: Roboto;
+    letter-spacing: 2px;
+    color: yellow;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    opacity: 0;
+    transition: .5s linear;
+    z-index: 10;
+}
+
+.holder-img:hover .caption-img {
+    z-index: 30;
+    opacity: 1;
+}

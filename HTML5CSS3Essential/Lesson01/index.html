@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lesson 1</title>
+    <link href="css/styleindex.css" rel="stylesheet" />
+</head>
+<body class="body-index" onload="loadPage()">
+    <header class="header-index">
+        <section class="header-general">
+            <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            <table>
+                <tr>
+                    <td><img src="img/html-5-icon-64x64.png" /></td>
+                    <td><img src="img/css-3-icon-64x64.png" /></td>
+                    <td><img src="img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content">
+            <h1 class="header-lesson">Lesson 1</h1>
+            <h2 class="header-theme">ВВЕДЕНИЕ В HTML5</h2>
+        </section>
+    </header>
+    <nav class="nav-index">
+        <h3 class="h-panel">Панель навигациии</h3>
+        <form method="post" action="Index.html" id="listTasks" name="listTasks">
+            <p>
+                <input type="radio" id="addtask" name="tasks"
+                       value="Сделать страницу no mockupy согласно спецификации HTML5" />
+                <label for="addtask">Additional task</label>
+            </p>
+            <p>
+                <input type="radio" id="task2" name="tasks"
+                       value="Сделать страницу no mockupy согласно спецификации HTML5" />
+                <label for="task2">Task 2</label>
+            </p>
+            <p>
+                <input type="radio" id="myreseach" name="tasks"
+                       value="Рассмотрение методики выравнивания блоков по высоте при блочной процентной верстке." />
+                <label for="myreseach">My reseach <br />(display: table)</label>
+            </p>
+            <p>
+                <input type="radio" id="myreseach2" name="tasks"
+                       value="Используем таблицы вместо методики выравнивания блоков по высоте при блочной процентной верстке. " />
+                <label for="myreseach2">My reseach <br />(tabular layout)</label>
+            </p>
+        </form>
+    </nav>
+    <main>
+        <section class="section-index">
+            <p class="summarytask-caption" id="summarytaskcaption">
+                Обзор, цель и назначение урока
+            </p>
+            <p id="summaryTask" class="summary-task">
+                Рассмотреть основные тиги HTML5<br />
+                Сравнение HTML4.1 и HTML5<br />
+                Научиться пользоваться новыми тегами HTML5<br />
+                Научиться временно скрывать содержимое<br />
+                Научиться создавать редактируемые части страницы<br />
+                Рассмотреть микроформаты как расширение HTML5<br />
+                Рассмотреть структуру страницы HTML5<br />
+                Поддержка HTML5 современными браузерами<br />
+            </p>
+            <p>
+                <a href="#" id="linktaskpage">Посмотреть решение задачи</a>
+            </p>
+            <img class="task-description-img" src="img/addtask.jpg" id="taskDescriptionImgAdd" />
+            <img class="task-description-img" src="img/task02.jpg" id="taskDescriptionImg02" />
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p>
+                <a href="https://www.w3.org/">Официальный сайт W3C</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/html">Справочник по HTML</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/css">Справочник по CSS</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a>
+            </p>
+            <p>
+                <a href="https://html5test.com/">How well does your browser support HTML5?</a>
+            </p>
+            <p>
+                <a href="https://caniuse.com/">Can I use?</a>
+            </p>
+            <p>
+                <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a>
+            </p>
+            <p>
+                <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a>
+            </p>
+            <p>
+                <a href="https://html.com/">Learn HTML Code, Tags & CSS</a>
+            </p>
+            <p>
+                <a href="https://validator.w3.org/">Markup Validation Service</a>
+            </p>
+        </aside>
+    </main>
+    <footer class="footer-index">
+        <article class="digest">
+            <div>
+                <ul>
+                    <li>
+                        <span class="footer-accent">HTML5</span> - это не продолжатель языка разметки гипертекста, а новая открытая платформа,
+                        предназначенная для создания веб-приложений использующих аудио, видео, графику, анимацию и многое другое.
+                    </li>
+                    <li>
+                        Оптимизация script и link: нужно добавить элементы script и link, но не используйте атрибут type.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;article&gt;</span> задает содержание сайта вроде новости, статьи, записи блога или др.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;section&gt;</span> задает раздел документа, который может включать в себя заголовки,
+                        шапку, подвал и текст.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;header&gt;</span> задает «шапку» сайта или раздела, в которой обычно располагается заголовок.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;nav&gt;</span> задает навигацию по сайту. Если на странице несколько блоков ссылок, то в
+                        &lt;nav&gt; обычно помещают приоритетные ссылки.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;aside&gt;</span> определяет блок сбоку от контента для размещения рубрик, ссылок на архив,
+                        меток и другой информации.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;footer&gt;</span> задает «подвал» сайта или раздела, в нем может располагаться имя автора,
+                        дата документа, котнтактная и правовая иинформация.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;menu&gt;</span> предназначен для отображения списка пунктов меню. аналогично
+                        тегам тегам &lt;ol&gt; и &lt;ul&gt; внутри контейнера &lt;menu&gt; список формируется с помощью тегов &lt;li&gt;.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;figure&gt;</span>  используется для группирования любых элементов, например,
+                        изображенийи подписей к ним.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;abbr&gt;</span> указывает, что последовательность символов является абревиатурой.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;mark&gt;</span> указывает на семантическую значимость объекта.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;contenteditable&gt;</span> обеспечивает пользователя возможностью редактировать
+                        страницу непосредственно через браузер.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;details&gt;</span> используется для хранения информации, которую можно скрыть или
+                        показать по требованию пользователя.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;hgroup&gt;</span> используется для группирования заголовков веб-страницы или раздела.
+                    </li>
+                    <li>
+                        «Упорядочивание» через start работает во всех бразерах.
+                    </li>
+                    <li>
+                        Структурные элементы в HTML5 необязательны, поэтому если секционирование элементов не используется,
+                        то ранжирование заголовков по прежнему может влиять на сттруктуру документа. Это называется
+                        <span class="footer-important">неявным секционированием</span>.
+                    </li>
+                    <li>
+                        <span class="footer-important">Явное секционирование</span> - документ формируется элементами section и aside,
+                        каждый из которых задает новый раздел в струтктуре документа, в то время как заголовки определяют структуру
+                        контента.
+                    </li>
+                    <li>
+                        <span class="footer-important">&lt;Валидацией&gt;</span> будем называть проверку документа на соответствие
+                        веб-стандартам и выявление существующих ошибок. Соответственно, валидным является такой веб-документ,
+                        который прошел подобную процедуру и не имеет замечаний по коду. Код веб-страницы должен подчиняться определенным
+                        правилам, которые называются спецификацией. Ее разрабатывает W3 Консорциум при поддержке разработчиков браузеров.
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>

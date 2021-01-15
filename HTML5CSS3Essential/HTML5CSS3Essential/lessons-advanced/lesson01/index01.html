@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced: Lesson 01</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 01: Микроданные и пользовательские данные. Drag&Drop. Геолокация.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+            <p class="abzac">02.09.2020</p>
+            <p class="abzac">
+                Опубликовал решение для 2-й задачи 1-й лекции курса HTML5&CSS3 Avanced. Здесь уже использовал aspx-страницу с целью
+                хранения краткого описания отеля на сервере. Также доработал слайдер, что позволило легко размещать несколько слайдеров
+                на одной странице. Для данной задачи так же сделал краткое описательное видео и добавил его на соответствущую страницу
+                the most interesting.
+            </p>
+            <br />
+            <p class="abzac">05.08.2020</p>
+            <p class="abzac">
+                После вынужденного перерыва оформил 1-ю задачу 1-й лекции курса HTML5&CSS3 Avanced. Тематическая сложность данной задачи можно
+                сказать нулевая. Но при ее реализации решил переходить от ранее используемой схемы процентной верстки к FlexBox-ам.
+                Я уже использовал технологию flexbox при решении задач, которые отражены на данном ресурсе. Но теперь полностью хочу перейти на
+                данную технологию. Немного потратил время на перебор вариантов FlexBox свойств в CSS-классах.
+                Также решил записать небольшое учебное видео, в котором сравнил поведение контента похожей задачи из предыдущего курса где
+                использовалась процентная верстка.
+            </p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <h1 class="padding-16-16">Lesson 01</h1>
+                    <h2 class="padding-16-16">Микроданные и пользовательские данные. Drag&Drop. Геолокация.</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+            <nav class="card-lesson-nav">
+                <h3 class="h-panel">Панель навигациии</h3>
+                <form method="post" action="index01.html" id="listTasks" name="listTasks">
+                    <p>
+                        <input type="radio" id="addtask" name="tasks"
+                               value="Дополнительное задание:" />
+                        <label for="addtask">Additional task</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="task2" name="tasks"
+                               value="Задание 2:" />
+                        <label for="task2">Task 2</label>
+                    </p>
+                </form>
+            </nav>
+            <article class="card-lesson-content">
+                <div class="block-setter-98 p-t-0x5prc">
+                    <div class="tabs block-setter">
+                        <input id="tabHome" type="radio" name="tabs" checked>
+                        <label for="tabHome">Цели и задачи</label>
+                        <input id="tabResume" type="radio" name="tabs">
+                        <label for="tabResume">Теория</label>
+                        <section id="content-tabHome" class="block-setter-98">
+                            <p class="summarytask-caption" id="summarytaskcaption">
+                                Обзор, цель и назначение урока
+                            </p>
+                            <!--«»-->
+                            <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                                <p class="margin0">Роль и значение микроданных в разметке.</p>
+                                <p class="margin0">Структура микроданных – атрибуты.</p>
+                                <p class="margin0">Использование <span class="accent">JavaScript</span> для подключения к пользовательским атрибутам.</p>
+                                <p class="margin0">Разметка <span class="accent">Drag&Drop</span> на странице.</p>
+                                <p class="margin0">Проверка функционала геолокации в современных браузерах.</p>
+                                <p class="margin0">Структура <span class="accent">API</span> геолокации.</p>
+                                <p class="margin0">Функции <span class="accent">JavaScript</span> в разметке для нахождения положения.</p>
+                                <p class="margin0">Функция обратного геокодирования.</p>
+                                <div class="post-scriptum">
+                                    <header>
+                                        <p>P.S.</p>
+                                    </header>
+                                    <p>
+                                        Определенная часть данного урока повторяет 3-й урок курса HTML5&CSS3 Essential.<br />
+                                        <span class="accent">API</span> геолокаци изложено более подробно и с новыми примерами.
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="look-task">
+                                <!--data-iamworking="TS"-->
+                                <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                            </p>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                                Создайте страницу с разметкой, на которой будет отображаться контактная информация Вашего
+                                учебного заведения или Вашей рабочей организации. Используя микроданные и словарь терминов
+                                <a href="http://schema.org/Person" class="button-with-hover-orange radius50prc padding-0-8">Person</a> добавьте их в разметку. <br />
+                                Проверьте разметку на правильность оформления:
+                                <a href="http://www.google.com/webmasters/tools/richsnippets" class="button-with-hover-orange radius50prc padding-0-8">инструмент проверки структуры данных</a>
+                            </div>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                                Создайте страницу ТурФирмы. Основные элементы – <span class="accent">header</span>, <span class="accent">footer</span>,
+                                <span class="accent">section</span>, <span class="accent">nav</span>. В элементе
+                                <span class="accent">section</span> – минимум 4 блока с ТОПовыми отелями. В блоке есть фото и
+                                информация про отель. Снизу под описанием – кнопка – «Посмотреть на карте». При нажатии на кнопку –
+                                появляется карта с расположением данного отеля.
+                            </div>
+                        </section>
+                        <section id="content-tabResume">
+                            <ul class="margin0 padding-1-0 w-break resume">
+                                <!--<span class="accent"></span>-->
+                                <li>
+                                    <span class="accent">Микроданные</span> – это спецификация <span class="accent">HTML5</span> которая позволяет хранить внутри разметки
+                                    дополнительные данные со смысловой нагрузкой, позволяющие предоставить более богатую
+                                    информацию о странице для поисковых машин и краулеров. Они обогащают <span class="accent">DOM</span> парами
+                                    «имя – значение».
+                                </li>
+                                <li>
+                                    С помощью микроданных у пользователя есть возможность присвоить данным, которые
+                                    присутствуют на странице и в пользовательском словаре, дополнительную семантику.
+                                </li>
+                                <li>
+                                    <span class="accent">itemtype</span> – атрибут, который обозначает, какой именно словарь микроданных используется.
+                                </li>
+                                <li>
+                                    <span class="accent">itemscope</span> – атрибут, который обозначает область видимости словаря.
+                                </li>
+                                <li>
+                                    <span class="accent">іtemprop</span> – атрибут, который устанавливает значение свойства «слова» словаря микроданных.
+                                </li>
+                                <li>
+                                    <span class="accent">Google</span> поддерживает микроданные в рамках программы <span class="accent">Rich Snippets</span>.
+                                    Когда программа-краулер <span class="accent">Google</span> разбирает страницу и находит при этом свойства микроданных,
+                                    имена которых удовлетворяют словарю, значения таких свойств извлекаются и сохраняются.
+                                </li>
+                                <li>
+                                    В <span class="accent">HTML5</span> спецификации была добавлена возможность перетаскивания элементов разметки -
+                                    <span class="accent">Drag&Drop</span>. Достаточно добавить атрибут <span class="accent">draggable=true</span>.
+                                </li>
+                                <li>
+                                    Дополнительные события в разметке:<br />
+                                    <span class="accent">dragstart</span> – вызывается в самом начале переноса «перетаскиваемого» элемента,<br />
+                                    <span class="accent">dragend</span> – вызывается в конце события перетаскивания – как успешного, так и отмененного,<br />
+                                    <span class="accent">dragenter</span> – вызывается на зоне приема, когда перетаскиваемый объект впервые оказывается
+                                    над ней,<br />
+                                    <span class="accent">dragleave</span> – вызывается, когда перетаскиваемый объект покидает зону приема,<br />
+                                    <span class="accent">dragover</span> – непрерывно вызывается, когда перетаскиваемый объект находится над зоной
+                                    приема,<br />
+                                    <span class="accent">drop</span> – вызывается, когда событие перетаскивания завершается отпусканием элемента над
+                                    зоной приема.
+                                </li>
+                                <li>
+                                    В <span class="accent">HTML5</span> спецификацию также была добавлена новая возможность – нахождение местоположения пользователя.
+                                </li>
+                                <li>
+                                    Для использования геолокации – необходимо на глобальном объекте – <span class="accent">navigator</span> использовать
+                                    свойство <span class="accent">geolocation</span>.
+                                    Основные функции для получения текущего положения - <span class="accent">getCurrentPosition()</span> и
+                                    <span class="accent">watchPosition()</span> – которая будет вызываться каждый раз, когда изменится местонахождение пользователя.
+                                </li>
+                                <li>
+                                    <span class="important">getCurrentPosition()</span> принимает 3 аргумента:<br />
+                                    <span class="accent">updateLocation</span> - метод, который запуститься после получения данных о местоположении,<br />
+                                    <span class="accent">handleError</span> - метод запуститься в случае сбоя при получении местоположения,<br />
+                                    <span class="accent">options</span> (необязательный) – объект с параметрами.<br />
+                                    Свойства объекта <span class="accent">options</span>:<br />
+                                    <span class="accent">EnableHighAccuracy</span> – браузер попытается получить наиболее точные данные,<br />
+                                    <span class="accent">Timeout</span>- время в миллисекундах, за которое должны быть получены данные,<br />
+                                    <span class="accent">maximumAge</span> – время, которое указывает как часто должны быть получены данные (через какой интервал).
+                                </li>
+                                <li>
+                                    <span class="important">handleError</span> – метод обработки ошибок – принимает параметр <span class="accent">error</span>,
+                                    через который можно узнать код ошибки:<br />
+                                    <span class="accent">0 (UNKNOWN_ERROR)</span> – другая ошибка,<br />
+                                    <span class="accent">1 (PERMISSION_DENIED)</span>- если пользователь нажмет кнопку Don't Share (Не сообщать) на
+                                    панели геолокации или иным способом запретит доступ к данным о своем местонахождении,<br />
+                                    <span class="accent">2 (POSITION_UNAVAILABLE)</span> - если не работает сеть или невозможно связаться со спутником
+                                    позиционирования,<br />
+                                    <span class="accent">3 (TIMEOUT)</span> - когда сеть работает, но на расчет координат уходит слишком много времени.
+                                </li>
+                                <li>
+                                    <span class="accent">Geocoder()</span> – объект для получения обратного кодирования данных. Настраивается функцией –
+                                    <span class="accent">geocode</span> (принимая параметры адреса или координат)
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../ts/indexAdvancedLesson.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="../../js-advanced/IamWorking.dist.js"></script>
+</body>
+</html>

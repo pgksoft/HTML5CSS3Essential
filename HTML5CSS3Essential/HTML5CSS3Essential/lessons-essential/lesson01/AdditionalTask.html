@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional task</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="css/styleAdditionalTask.css" rel="stylesheet" />
+</head>
+<body class="body-index" data-lesson="01">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5 & CSS3 Essential: Lesson 1. Введение в HTML5. Additional task</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">
+                Всем доброго времени суток.
+            </p>
+            <p class="abzac">
+                Одной из особенностей является наследование стилей для вложенной таблицы. Весь контент определен в блоке
+                <span class="red">display: </span><span class="blue">table</span> у которого установлен
+                <span class="red">border-collapse: </span><span class="blue">separate</span>. Основной контент section+aside (желтая и синяя области)
+                это уже блок у которого <span class="red">border-collapse: </span><span class="blue">collapse</span>. Это сделано для упрощения разметки.
+                Если не переопределить <span class="red">border-collapse</span> тогда внутреняя таблица будет иметь двойной размер <span class="red">border-spacing</span>.
+                Видно, что в этом случае области section и aside не имеют горизантального разделителя.
+            </p>
+            <p class="abzac">
+                Во втором примере используется более сложная разметка, которая устраняет вышеуказанный недостаток.
+            </p>
+        </div>
+    </div>
+    <header class="header-index">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-task-content  background-transparent-50">
+            <h2 class="padding-8-16">Lesson 1: ВВЕДЕНИЕ В HTML5</h2>
+            <h3 class="padding-8-16">Additional task</h3>
+            <div class="summary-task task-page">
+                <p class="margin0">Сделать страницу no mockupy согласно спецификации HTML5.</p>
+            </div>
+        </section>
+    </header>
+    <main class="main-task">
+        <section class="section-task fsize-2rem">
+            <section class="section-additional-task radius7">
+                <header class="addtask-header">
+                    <div class="cell radius7">
+                        <div>header</div>
+                    </div>
+                </header>
+                <nav class="addtask-nav">
+                    <div class="cell radius7">
+                        <div>nav</div>
+                    </div>
+                </nav>
+                <main class="addtask-main">
+                    <!--<div class="cell">-->
+                    <div class="table">
+                        <section class="addtask-main-section radius7">
+                            <div class="addtask-main-section-table">
+                                <div class="addtask-main-section-contentrow">
+                                    <div class="cell radius7">
+                                        <p class="margin0 padding-8-16">section</p>
+                                    </div>
+                                </div>
+                                <div class="addtask-main-section-articlesrow">
+                                    <div class="cell radius7">
+                                        <article class="addtask-article radius7">
+                                            <p class="margin0 padding-8-16">Первая статья: часть 1</p>
+                                            <p class="margin0 padding-8-16">Первая статья: часть 2</p>
+                                        </article>
+                                        <article class="addtask-article radius7">
+                                            Вторая статья
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <aside class="addtask-main-aside radius7">
+                            <div>aside</div>
+                            <p class="margin0 padding-8-16">href 1</p>
+                            <p class="margin0 padding-8-16">href 2</p>
+                            <p class="margin0 padding-8-16">href 3</p>
+                            <p class="margin0 padding-8-16">href 4</p>
+                            <p class="margin0 padding-8-16">href 5</p>
+                        </aside>
+                    </div>
+                    <!--</div>-->
+                </main>
+                <footer class="addtask-footer">
+                    <div class="cell radius7">
+                        <div>footer</div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+        <aside class="aside-index h500 overflow-auto background-transparent-30">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <img src="img/addtask.jpg" class="footer-task-img" alt="" />
+        </div>
+    </footer>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+</body>
+</html>

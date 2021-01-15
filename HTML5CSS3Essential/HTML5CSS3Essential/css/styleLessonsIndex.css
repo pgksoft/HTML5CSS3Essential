@@ -1,0 +1,126 @@
+﻿@import url('styleGooglefont.css');
+
+.section-lessons-advanced {
+    display: block;
+    width: 100%;
+}
+
+.section-index-nav {
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: rgba(119,136,153,0.70);
+    top: 0;
+    z-index: 900;
+    overflow: auto;
+}
+
+.section-details-lesson {
+    display: block;
+    width: 96%;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+    .section-details-lesson a {
+        text-decoration: none;
+    }
+
+        .section-details-lesson a:hover {
+            background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+        }
+
+        .section-details-lesson a:active {
+            background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+        }
+
+.details-lesson {
+    width: 100%;
+}
+
+.details-lesson-summary {
+    outline: none;
+    display: block;
+    border-bottom-color: transparent;
+}
+
+    .details-lesson-summary:hover {
+        background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+    }
+
+.details-lesson-article {
+    width: 100%;
+    position: relative;
+    word-break: break-word;
+}
+
+.details-lesson-article-details {
+    outline: none;
+    border: none;
+}
+
+.details-lesson-article-caption {
+    margin: 0 auto;
+    background-color: darkseagreen;
+    font-weight: 700;
+    outline: none;
+}
+
+    .details-lesson-article-caption:hover {
+        color: white;
+    }
+
+.details-lesson-article-summary-task {
+    font-family: 'PT Serif';
+    font-style: italic;
+}
+
+    .details-lesson-article-summary-task .post-scriptum {
+        font-style: normal;
+        font-family: Roboto;
+        width: 98%;
+        margin: 0 auto;
+    }
+
+        .details-lesson-article-summary-task .post-scriptum header > p {
+            margin-top: 1%;
+            padding: 3px 0;
+            padding-left: 1%;
+            background-color: hsl(90,50%,70%);
+            font-weight: bold;
+            word-break: break-word;
+        }
+
+@media screen and (max-width:960px ) {
+    .section-index-nav {
+        border-radius: 10px;
+        padding: 0 3px;
+    }
+
+        .section-index-nav button {
+            margin: 3px;
+            padding: 1px 3px;
+        }
+
+        .section-index-nav p {
+            font-size: 0.7rem;
+        }
+
+        .section-index-nav img {
+            width: 16px;
+        }
+
+    .section-details-lesson {
+        padding: 3px;
+    }
+
+        .section-details-lesson > div {
+            margin: 3px;
+            padding: 1px 3px;
+        }
+
+        .section-details-lesson a {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+        }
+}

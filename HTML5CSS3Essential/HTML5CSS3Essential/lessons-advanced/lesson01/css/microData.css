@@ -1,0 +1,111 @@
+﻿.md-container {
+    display: flex;
+    width: 99%;
+    margin: 0 auto;
+    padding: 0.5%;
+    flex-wrap: wrap;
+    --border-radius: 5px;
+    --text-color: darkblue;
+    --text-font: Roboto;
+}
+
+.md-block {
+    display: flex;
+    width: 99%;
+    margin: 0 auto;
+    padding: 0.5%;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+    .md-block[data-fullname=true] {
+        display: flex;
+        width: auto;
+        margin: 0;
+        padding: 0.5%;
+        flex-grow: 25;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+.md-my-photo {
+    display: block;
+    flex-grow: 1;
+}
+
+    .md-my-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: auto;
+        box-sizing: border-box;
+        border: 2px solid white;
+        border-radius: var(--border-radius)
+    }
+
+.md-caption {
+    display: flex;
+    flex-basis: 14%;
+    /*flex-grow: 1;*/
+    justify-content: flex-end;
+    text-align: right;
+    padding: 0.5%;
+    min-width: 0;
+    font-family: Cuprum;
+}
+
+.md-text {
+    display: flex;
+    /*flex-basis: 79%;*/
+    flex-grow: 6;
+    padding: 0.5%;
+    box-sizing: border-box;
+    border: 1px solid darkgray;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-family: var(--text-font);
+}
+
+    .md-text input {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: var(--text-color);
+        font-family: var(--text-font);
+    }
+
+@media screen and (max-width: 960px) {
+    .md-block[data-fullname=true] .md-block {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+        .md-block[data-fullname=true] .md-block .md-caption {
+            justify-content: flex-start;
+        }
+
+    .md-my-photo {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .md-block[data-description=true] .md-block {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+        .md-block[data-description=true] .md-block .md-caption {
+            justify-content: flex-start;
+        }
+}
+
+@media screen and (max-width: 600px) {
+    .md-block {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}

@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Lesson 4 -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Task</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="css/styleAddTask.css" rel="stylesheet" />
+</head>
+<body class="body-index" data-lesson="04">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5 & CSS3 Essential: Lesson 4. Canvas. Additional task</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">
+                Всем доброго времени суток.
+            </p>
+            <p class="abzac">
+                Задача в целом достаточно простая. Поэтому, как видно из примечаний, мне захотелось сделать более эффектные и сложные решения.
+                Заливку градиентом сделал вероятностной. Так гораздо интереснее и эффектнее. Хотя в задании говорится о радиальном
+                градиенте, но, честно говоря, сначала планировал сделать случайный выбор для линейной и радиальной заливки, и их сочетание.
+                Начал с линейной заливки. А до радиальной не дошел. В принципе и так понятно как и что делать. Для экономии времени на линейной
+                заливке решил остановиться. Также добавил обработку на события мыши <span class="darkred">mouseenter</span> и
+                <span class="darkred">mouseleave</span>. Т.е. при входе маркера мыши на область заливки градиентом или выходе выполняется
+                перерисовка градиента. В общем случае случайным образом выбирается количество линий (областей) градиента (от 3 до 10), цвет области и
+                направление заливки: сверху-вниз, слева-направо, под углом от сверху слева до снизу справа и под углом сверху справа и снизу слева.
+                Также реализовал возможность интервальной анимации градиентной заливки с возможностью управления интервалом анимации.
+            </p>
+            <p class="abzac">
+                Теперь о заливке изображением. Здесь произошла забавная история. При ознакомлении с функционалом о canvas и его заливки изображением,
+                для меня стал вопрос: "А как вписать изображение произвольного размера в canvas." В лекции не было акцентировано внимание на том, что
+                ширина и высота canvas и его реальные физические (экранные или размеры блока в который вписан canvas) это разные вещи.
+                Т.е. в начале я не знал, что достаточно просто установить ширину и высоту canvas в соотсветствии с шириной и высотой изображения, а
+                браузер, так сказать, сам все сделает. Поэтому, я стал искать решение, как преобразовать (масштабировать) изображение. В итоге у меня
+                получилось это сделать. Как следствие мною было замечено, что в таком случае, изображение немного теряет четкость. Поэтому,
+                для возможности сравнения, я сделал два блока для визуализации избражений. Первый через классический <span class="darkred">img</span>,
+                ну и второй это блок с <span class="darkred">canvas</span>. Разместил 300 с немногим изображений и сделал случайный выбор картинки на
+                события мыши <span class="darkred">mouseenter</span> и <span class="darkred">mouseleave</span>. Если поиграться и выбрать одинаковые
+                картинки слева и справа, то будет заметно, что правая картинка чуть-чуть хуже качества чем левая.
+                Так же было интересно обнаружить, что после загрузки решения на Azure, смена изображений стала медленнее (немного тормозить). Более
+                заметно это бросается в глаза в мобильном браузере.
+            </p>
+            <p class="abzac">
+                Теперь о второй части задания. Вместо простой анимации простой фигуры захотелось сделать что-то поинтереснее. Пришла идея
+                сделать что-то типа модели броуновского движения. В итоге не прогодал. Т.к. это дало возможность расширить знания по управлению
+                canvas и анимацией в браузере.
+            </p>
+        </div>
+    </div>
+
+    <header class="header-index">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-task-content  background-transparent-50">
+            <h2 class="padding-8-16">Lesson 4: Canvas.</h2>
+            <h3 class="padding-8-16">Additional task</h3>
+            <div class="summary-task task-page ">
+                <ul>
+                    <li>
+                        Создайте страницу, создайте холст размером (400х250). Разместите его вверху по центру страницы.
+                        Сделайте заливку радиальным градиентом. Дублируйте данный холст, сделайте заливку изображением.<br />
+                        <mark class="footer-accent">Примечание: В итоге сделал вероятностную заливку с интервальной анимацией.</mark>
+                    </li>
+                    <li>
+                        Создайте простую фигуру. Разместите ее в верхнем левом углу. Анимируйте изображение и
+                        остановите в левом нижнем угле.<br />
+                        <mark class="footer-accent">Примечание: В итоге создал некие основы игровой модели.</mark>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
+    <main class="main-task">
+        <section class="section-task">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box box-shadow-blue">
+                    <div class="block-setter padding-8-0 margin-bottom-8">
+                        <div class="table">
+                            <div class="row">
+                                <div class="cell w30prc cell-horizontal-center cell-vertical-center">
+                                    <label for="typeFill" class="inline w-break">Тип заливки</label>
+                                    <select id="typeFill" class="button-orange-with-hover-blue inline block-setter-50 fsize-1x2rem radius50prc outline-none">
+                                        <option value="0">Все</option>
+                                        <option value="1">Горизонтально</option>
+                                        <option value="2">Вертикально</option>
+                                        <option value="3">Слева-направо сверху-вниз</option>
+                                        <option value="4">Справа-налево серху-вниз</option>
+                                    </select>
+                                </div>
+                                <div class="cell w30prc cell-horizontal-center cell-vertical-center">
+                                    <label for="intervalAutoFill" class="inline w-break">Интервал(ms)</label>
+                                    <select id="intervalAutoFill" class="button-orange-with-hover-blue inline fsize-1x2rem radius50prc outline-none">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="20">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                        <option value="60">60</option>
+                                        <option value="70">70</option>
+                                        <option value="80">80</option>
+                                        <option value="90">90</option>
+                                        <option value="100">100</option>
+                                        <option value="150">150</option>
+                                        <option value="200">200</option>
+                                        <option value="250">250</option>
+                                        <option value="300" selected>300</option>
+                                        <option value="350">350</option>
+                                        <option value="400">400</option>
+                                        <option value="450">450</option>
+                                        <option value="500">500</option>
+                                        <option value="600">600</option>
+                                        <option value="700">700</option>
+                                        <option value="800">800</option>
+                                        <option value="900">900</option>
+                                        <option value="1000">1000</option>
+                                        <option value="2000">2000</option>
+                                        <option value="3000">3000</option>
+                                    </select>
+                                </div>
+                                <div class="cell w30prc cell-horizontal-center cell-vertical-center">
+                                    <button id="autoFill" class="button-orange-with-hover-blue block-setter-80 fsize-1x2rem padding-1-8 radius50prc">
+                                        Старт
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-canvas" id="boxCanvas">
+                        <canvas id="canvas" class="canvas box-shadow-gray"></canvas>
+                    </div>
+                    <div class="block-setter">
+                        <div class="table border-separate border-spacing8 radius4">
+                            <div class="row">
+                                <div class="cell50prc radius4 cell-vertical-center">
+                                    <p class="margin0 padding-0-8">Image</p>
+                                </div>
+                                <div class="cell50prc radius4 cell-vertical-center">
+                                    <p class="margin0 padding-0-8">Canvas</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell50prc radius4 box-shadow-gray cell-vertical-center">
+                                    <img id="imgCell" class="img-cell radius4" src="" alt="" />
+                                </div>
+                                <div class="cell50prc radius4 box-shadow-gray  cell-vertical-center">
+                                    <div class="cell-canvas radius4" id="cellCanvas">
+                                        <canvas id="canvasCell" class="canvas radius4"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box box-shadow-blue overflow-auto">
+                    <div class="block-setter fsize-1x1rem">
+                        <div class="table border-separate border-spacing4">
+                            <div class="cell w85prc">
+                                <div class="table border-separate border-spacing4">
+                                    <div class="row">
+                                        <div class="cell w25prc cell-horizontal-center cell-vertical-center">
+                                            <label for="speedAnimate" class="inline w-break">Скорость</label>
+                                            <select id="speedAnimate" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem"></select>
+                                        </div>
+                                        <div class="cell w30prc cell-horizontal-center cell-vertical-center">
+                                            <label for="countFigure" class="inline w-break">Количество</label>
+                                            <select id="countFigure" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem"></select>
+                                        </div>
+                                        <div class="cell w25prc cell-horizontal-center cell-vertical-center">
+                                            <label for="typeFigure" class="inline w-break">Фигура</label>
+                                            <select id="typeFigure" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem w-break">
+                                                <option value="0">Все</option>
+                                                <option value="1">Квадрат</option>
+                                                <option value="2">Круг</option>
+                                            </select>
+                                        </div>
+                                        <div class="cell w20prc cell-horizontal-center cell-vertical-center">
+                                            <label for="sizeFigure" class="inline w-break">Размер</label>
+                                            <select id="sizeFigure" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table border-separate border-spacing4 margin-bottom-4">
+                                    <div class="row">
+                                        <div class="cell w25prc cell-h-right cell-vertical-center">
+                                            <label>Длина пути:</label>
+                                        </div>
+                                        <div class="cell w20prc cell-horizontal-center cell-vertical-center">
+                                            <label for="minStep" class="inline">min</label>
+                                            <select id="minStep" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem"></select>
+                                        </div>
+                                        <div class="cell w20prc cell-horizontal-center cell-vertical-center">
+                                            <label for="maxStep" class="inline">max</label>
+                                            <select id="maxStep" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem"></select>
+                                        </div>
+                                        <div class="cell cell-horizontal-center cell-vertical-center">
+                                            <label for="typeFillAnimate" class="inline">Фон</label>
+                                            <select id="typeFillAnimate" class="button-orange-with-hover-blue radius50prc inline fsize-1x1rem w-break">
+                                                <option value="0">Все</option>
+                                                <option value="1">Цвет</option>
+                                                <option value="2" title="без контроля перемещения">Градиент 1</option>
+                                                <option value="3" title="контроль перемещения">Градиент 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cell cell-vertical-center">
+                                <button id="btnAnimate" class="button-orange-with-hover-blue cell-btn padding-16-0 w-break radius50prc fsize-1x1rem">
+                                    Старт
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-setter-90 h450 box-shadow-gray">
+                        <canvas id="canvasAnimate" class="canvas"></canvas>
+                    </div>
+                    <!-- STATISTICS -->
+                    <div class="block-setter h-30prc box-shadow-red fsize-1rem padding-2-0 overflow-auto margin-top-16">
+                        <div class="block-setter-96 height-100prc">
+                            <div class="block-setter-50 block-left">
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-right.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter  box-shadow-gray padding-2-0">
+                                            <p id="countHLeftRight" class="margin0">&nbsp;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-left.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter  box-shadow-gray padding-2-0">
+                                            <p id="countHRightLeft" class="margin0">&nbsp;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-down.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter">
+                                            <div class="edit-block-input-setter box-shadow-gray padding-2-0">
+                                                <p id="countVTopDown" class="margin0">&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-up.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter">
+                                            <div class="edit-block-input-setter box-shadow-gray padding-2-0">
+                                                <p id="countVDownTop" class="margin0">&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-setter-50 block-left">
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-bottom-right.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter">
+                                            <div class="edit-block-input-setter box-shadow-gray padding-2-0">
+                                                <p id="countBiasLeftTop" class="margin0">&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-bottom-left-24.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter">
+                                            <div class="edit-block-input-setter box-shadow-gray padding-2-0">
+                                                <p id="countBiasRightTop" class="margin0">&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-top-right.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter">
+                                            <div class="edit-block-input-setter box-shadow-gray padding-2-0">
+                                                <p id="countBiasLeftBottom" class="margin0">&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block padding-1-0">
+                                    <div class="w10prc block-left allign-right">
+                                        <div class="block-setter">
+                                            <img src="../../img/arrow-top-left.png" alt="" class="img-cell-label" />
+                                        </div>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="block-setter-70 block-left">
+                                        <div class="edit-block-input-setter">
+                                            <div class="edit-block-input-setter box-shadow-gray padding-2-0">
+                                                <p id="countBiasRightBottom" class="margin0">&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="js/AddTask.dist.js"></script>
+</body>
+</html>

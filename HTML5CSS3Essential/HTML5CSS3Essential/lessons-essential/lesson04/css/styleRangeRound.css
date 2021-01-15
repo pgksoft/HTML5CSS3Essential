@@ -1,0 +1,34 @@
+﻿/*Lesson 4*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css');
+
+body {
+}
+
+.rs-range-color {
+    background-color: darkcyan;
+    /*#33B5E5*/
+}
+
+.rs-path-color {
+    background-color: aliceblue;
+}
+
+.rs-handle {
+    background-color: rgb(255,255,153);
+    /*padding: 5px;*/
+    border: 2px solid darkcyan;
+}
+
+    .rs-handle.rs-focus {
+        border-color: red;
+        background-color: yellow;
+    }
+
+    .rs-handle:after {
+        border-color: gray;
+        background-color: darkcyan;
+    }
+
+.rs-border {
+    border-color: gray;
+}

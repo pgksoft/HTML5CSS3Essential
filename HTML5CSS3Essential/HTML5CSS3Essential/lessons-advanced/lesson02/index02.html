@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced: Lesson 02</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 02: Canvas.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+            <p class="abzac">26.10.2020</p>
+            <p class="abzac">
+                Опубликовал решение для 1-й задачи 2-й лекции курса HTML5&CSS3 Avanced - имитация броуновского движения.
+                Получилось воплотить в код все, что изначально задумывалось:
+                <ul>
+                    <li>использование <i>TypeScript</i>;</li>
+                    <li>усовершенствованная (продвинутая) настройка параметров управления;</li>
+                    <li>соответственно расширена функциональность;</li>
+                    <li>использование <i>OffscreenCanvas;</i></li>
+                    <li>
+                        реализована возможность переключения режимов имитации: или в основном потоке, или
+                        с использованием <i>OffscreenCanvas;</i>
+                    </li>
+                </ul>
+                Для данной задачи так же сделал краткое описательное видео и добавил его на соответствущую страницу
+                the most interesting.
+            </p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS5 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <h1 class="padding-16-16">Lesson 02</h1>
+                    <h2 class="padding-16-16">Canvas.</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+
+            <nav class="card-lesson-nav">
+                <h3 class="h-panel">Панель навигациии</h3>
+                <form method="post" action="index02.html" id="listTasks" name="listTasks">
+                    <p>
+                        <input type="radio" id="task1" name="tasks"
+                               value="Задание 1:" />
+                        <label for="task1">Task 1</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="task2" name="tasks"
+                               value="Задание 2:" />
+                        <label for="task2">Task 2</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="task3" name="tasks"
+                               value="Задание 3:" />
+                        <label for="task3">Task 3</label>
+                    </p>
+                </form>
+            </nav>
+
+            <article class="card-lesson-content">
+                <div class="block-setter-98 p-t-0x5prc">
+                    <div class="tabs block-setter">
+                        <input id="tabHome" type="radio" name="tabs" checked>
+                        <label for="tabHome">Цели и задачи</label>
+                        <input id="tabResume" type="radio" name="tabs">
+                        <label for="tabResume">Теория</label>
+                        <section id="content-tabHome" class="block-setter-98">
+                            <p class="summarytask-caption" id="summarytaskcaption">
+                                Обзор, цель и назначение урока
+                            </p>
+                            <!--«»-->
+                            <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                                <p class="margin0">Ознакомление с тегом canvas.</p>
+                                <p class="margin0">Прорисовка линий.</p>
+                                <p class="margin0">Рисование прямоугольной области.</p>
+                                <p class="margin0">Заливка рамок и градиента.</p>
+                                <p class="margin0">Очистка прямоугольной областих.</p>
+                                <p class="margin0">Рисование кривых и дуг.</p>
+                                <p class="margin0">Добавление img.</p>
+                                <p class="margin0">Градиентная заливка.</p>
+                                <p class="margin0">Добавление текста и тени к элементам.</p>
+                                <p class="margin0">Установка прозрачности.</p>
+                                <p class="margin0">Трансформация элементов холста.</p>
+                                <p class="margin0">Рассмотрение примеров.</p>
+                                <div class="post-scriptum">
+                                    <header>
+                                        <p>P.S.</p>
+                                    </header>
+                                    <ol class="padding-0-16">
+                                        <li>
+                                            Данный урок во многом повторяет 4-й урок курса HTML5&CSS3 Essential.
+                                            <br />
+                                            Основное отличие: в материалах урока больше полезных готовых примеров.
+                                        </li>
+                                        <li>
+                                            Задачи, которые рекомендуются для самостоятельного решения, не очень интересные.<br />
+                                            Поэтому решил сделать upgrade придуманных мною задач из 4-го урока курса HTML5&CSS3 Essential:
+                                            <ul>
+                                                <li>имитация броуновского движения</li>
+                                                <li>моделирование многооконной системы</li>
+                                            </ul>
+                                            Основные моменты апгрейда:
+                                            <ul>
+                                                <li>использовать typescript</li>
+                                                <li>задействовать web-worker</li>
+                                                <li>усовершенствовать настройку параметров (использовать технику модальных окон)</li>
+                                                <li>расширить функциональность</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <p class="look-task">
+                                <!--data-iamworking="TS"-->
+                                <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                            </p>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription01">
+                                Имитация броуновского движения.
+                            </div>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                                Моделирование многооконной системы.
+                            </div>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription03">
+                                Создание радиального градиента.
+                            </div>
+                        </section>
+                        <section id="content-tabResume">
+                            <ul class="margin0 padding-1-0 w-break resume">
+                                <!--<span class="accent"></span>-->
+                                <li>
+                                    <span class="accent">canvas</span> – это область (холст), с помощью которой могут на лету прорисовываться диаграммы,
+                                    графика игр и прочие изображения. На странице холст имеет вид прямоугольника, внутри
+                                    которого можно рисовать с помощью <span class="accent">JavaScript</span>.
+                                </li>
+                                <li><span class="accent">beginPath()</span> – начало определения сегмента пути.</li>
+                                <li><span class="accent">moveTo(x, у)</span> – перенос регистрационной точки в точку с координатами.</li>
+                                <li><span class="accent">lineTo(x, у)</span> – создание прямого пути между предыдущей точкой и точкой (х, у).</li>
+                                <li><span class="accent">closePath()</span> – закрытие любого пути: конец и начало пути соединяются прямым.</li>
+                                <li>
+                                    <span class="accent">fillRect(x, у, width, height)</span> – создание прямоугольной области, определенной ширины и высоты,
+                                    один угол которой находится в точке <span class="accent">(х, у)</span>, а противоположный (по диагонали).
+                                </li>
+                                <li><span class="accent">stroke()</span> – обводка (то есть превращение в видимый объект или прорисовка) сегмента пути.</li>
+                                <li><span class="accent">save()</span> – сохранение копии текущего состояния контекста на холсте.</li>
+                                <li><span class="accent">translate(х,у)</span> – перенос контекста по осям.</li>
+                                <li><span class="accent">restore()</span> – восстанавливаем предыдущее состояние контекста (до метода <span class="accent">save()</span></li>
+                                <li><span class="accent">strokeStyle</span> – цвет линии.</li>
+                                <li><span class="accent">lineJoin</span> – определение формы, где сходятся вершины.</li>
+                                <li><span class="accent">fillStyle</span> – цвет заливки.</li>
+                                <li><span class="accent">strokeStyle</span> – цвет обводки.</li>
+                                <li><span class="accent">strokeRect(x, у, width, height)</span> – добавление прямоугольной области с выбранной обводкой.</li>
+                                <li><span class="accent">clearRect(x, у, width, height)</span> – очистка прямоугольной области элемента canvas.</li>
+                                <li>
+                                    <span class="accent">quadraticCurveTo(deltaX, deltaY, x2,y2)</span> – прорисовка кривой линии от предыдущей точки к
+                                    следующей с управляющей точкой искривления.
+                                </li>
+                                <li>
+                                    <span class="accent">bezierCurveTo(deltaX, deltaY, deltaX2, deltaY2, x2,y2)</span> - прорисовка кривой линии от предыдущей
+                                    точки к следующей с двумя управляющими точками искривления.
+                                </li>
+                                <li>
+                                    <span class="accent">агс(х, у, радиус, начальный угол в радианах, конечный угол в радианах, направление рисования(по часовой стрелке и против))</span>
+                                    – создание пути в форме дуги (вплоть до полной окружности),
+                                    где <span class="accent"></span>(х, у) – координаты центра дуги, которая начинается и заканчивается в точках,
+                                    соответствующих указанным углам.
+                                </li>
+                                <li>
+                                    <span class="accent">drawImage(image, x, y, width, height)</span> – рисует картинку, масштабирует ее по горизонтали и
+                                    вертикали, чтобы она соответствовала заданным ширине и высоте, после чего рисует ее в точке
+                                    с координатами - <span class="accent">(х, у)</span>.
+                                </li>
+                                <li>
+                                    <span class="accent">createLinearGradient(x0, y0, x1, y1)</span> – направляет заливку вдоль отрезка из точки
+                                    <span class="accent">(x0, y0)</span> в точку <span class="accent">(x1, y1)</span>.
+                                </li>
+                                <li>
+                                    <span class="accent">createRadialGradient(x0, y0, r0, x1, y1, r1)</span> – направляет заливку вдоль конуса, образуемого
+                                    двумя окружностями. Начальные три параметра описывают первую окружность с центром <span class="accent">(x0,y0)</span> и
+                                    радиусом <span class="accent">r0</span>. Конечные три параметра описывают вторую окружность: центр
+                                    <span class="accent">(x1, y1)</span> и радиус <span class="accent">r1</span>.
+                                </li>
+                                <li>
+                                    На холсте есть возможность написания текста:<br />
+                                    <span class="accent">font</span> – все, что позволяет определить одноименное CSS-правило: стиль, вариант, начертание,
+                                    размер и семейство шрифтов.
+                                </li>
+                                <li>
+                                    <span class="accent">textAlign</span> – задает выравнивание текста, возможные значения этого свойства: 
+                                    <span class="accent">start, end, left, right, center</span>.
+                                </li>
+                                <li>
+                                    <span class="accent">textBaseline</span> – определяет положение текста относительно начальной точки; возможные
+                                    значения этого свойства: <span class="accent">top, hanging, middle, alphabetic, ideographic, bottom</span>.
+                                </li>
+                                <li><span class="accent">fillText(text, x, y)</span> – позволяет произвести написание текста в указанной точке.</li>
+                                <li><span class="accent">createPattern()</span> - повторяет указанный элемент по указанному направлению.</li>
+                                <li><span class="accent">shadowOffsetX, shadowOffsetY</span> – расположение тени, относительно элемента.</li>
+                                <li><span class="accent">shadowBlur</span> – степень размытия.</li>
+                                <li><span class="accent">globalAlpha</span> – задаем альфа-канал для элемента (от 0 до 1).</li>
+                                <li><span class="accent">rotate(angle)</span> – вращение элемента.</li>
+                                <li><span class="accent">translate(x, y)</span> – контекст трансформации перемещения элемента</li>
+                                <li><span class="accent">scale(x, y)</span> – контекст трансформации масштабирования.</li>
+                                <li>
+                                    <span class="accent">translate(x, у)</span> – перемещение (транслирование) точки отсчета системы координат из 
+                                    <span class="accent">(0, 0)</span> в <span class="accent">(х, у)</span>.
+                                </li>
+                                <li>
+                                    <span class="accent">transform(scaleX, skewX, skewY, scaleY, transformX, transformY)</span> – объект трансформации:<br /> 
+                                    <span class="accent">scaleX, scaleY</span> – масштаб;<br /> 
+                                    <span class="accent">skewX, skewY</span> – растяжение (искривление);<br /> 
+                                    <span class="accent">transformX, transformY</span> – перемещение.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+        </section> <!--card-lesson-->
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../ts/indexAdvancedLesson.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="../../js-advanced/IamWorking.dist.js"></script>
+
+</body>
+</html>

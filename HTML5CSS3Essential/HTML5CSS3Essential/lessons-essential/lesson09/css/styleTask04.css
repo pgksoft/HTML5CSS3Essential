@@ -1,0 +1,48 @@
+﻿/* LESSON 09 */
+
+.ref {
+    display: block;
+    padding: 8px 0;
+    box-sizing: border-box;
+    padding-right: 16px;
+    padding-left: 46px;
+    border: 2px solid hsl(0, 0%, 70%);
+    background-repeat: no-repeat;
+    background-position: 16px 50%;
+    text-decoration: none;
+    background-color: hsl(60,80%,80%);
+    border-radius: 9999px;
+    transition: 1s;
+}
+
+    .ref[href*='pdf'] {
+        background-image: url('../img/pdf-icon.png');
+    }
+
+    .ref[href*='txt'] {
+        background-image: url('../img/txt-icon.png');
+    }
+
+    .ref[href*='doc'], a[href*='docx'], a[href*='docm'] {
+        background-image: url('../img/word-icon.png');
+    }
+
+    .ref:hover {
+        -webkit-animation: ref 0.25s linear;
+        animation: ref 0.25s linear;
+        -webkit-animation-iteration-count: 3;
+        animation-iteration-count: 3;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+@keyframes ref {
+    to {
+        background-color: hsl(100,70%,70%);
+        transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        border-color: orange;
+    }
+}

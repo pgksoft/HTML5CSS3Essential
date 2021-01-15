@@ -1,0 +1,310 @@
+﻿.general-info-container {
+    display: flex;
+    width: 99%;
+    margin: 0 auto;
+    padding: 0.5% 0.5% 0 0.5%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.general-info-card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 48%;
+    padding: 0.5%;
+    margin-bottom: 2%;
+    border-radius: 3px;
+    box-shadow: 1px -1px 3px 0 hsl(0,0%,73%), -1px -1px 3px 0 hsl(0,0%,73%), 1px 1px 3px 0 hsl(0,0%,73%), -1px 1px 3px 0 hsl(0,0%,73%);
+    text-align: justify;
+    font-family: 'Bitter';
+}
+
+    .general-info-card:hover {
+        box-shadow: 1px -1px 2px 0 orange, -1px -1px 2px 0 orange, 1px 1px 2px 0 orange, -1px 1px 2px 0 orange;
+    }
+
+    .general-info-card .short-descrption {
+        line-height: 0.83rem;
+        font-size: 0.77rem;
+    }
+
+    .general-info-card .images {
+        position: relative;
+        display: flex;
+        margin-bottom: 8px;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 300px;
+        border-radius: 7px;
+        transition: 0.5s;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-origin: content-box;
+    }
+
+        .general-info-card .images .show-collaps-off {
+            display: flex;
+            padding: 1% 1% 0 0;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .general-info-card .images:hover .show-collaps-off {
+            opacity: 1;
+        }
+
+        .general-info-card .images .show-collaps-off img {
+            opacity: 0;
+            width: 0;
+            transition: 0.5s;
+        }
+
+        .general-info-card .images:hover .show-collaps-off img {
+            opacity: 1;
+            width: 5%;
+            cursor: pointer;
+            margin-left: 95%;
+        }
+
+        .general-info-card .images .show-left-right {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            padding-bottom: 15%;
+        }
+
+            .general-info-card .images .show-left-right .show-left, .show-right {
+                display: flex;
+                opacity: 0;
+                width: 0;
+                transition: 0.5s;
+                background-repeat: no-repeat;
+                padding-bottom: 20%;
+            }
+
+            .general-info-card .images .show-left-right .show-left {
+                background-position: right;
+                background-image: url('../../../img/menu-left-white.png');
+            }
+
+            .general-info-card .images .show-left-right .show-right {
+                background-position: left;
+                background-image: url('../../../img/menu-right-white.png');
+            }
+
+        .general-info-card .images:hover .show-left-right .show-left[data-enable=true] {
+            cursor: pointer;
+            width: 45%;
+            opacity: 1;
+            background-position: left;
+        }
+
+        .general-info-card .images:hover .show-left-right .show-right[data-enable=true] {
+            cursor: pointer;
+            width: 45%;
+            opacity: 1;
+            background-position: right;
+        }
+
+    .general-info-card .header-hotel {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1% 0;
+        margin: 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .general-info-card .header-hotel .stars-hotel {
+            color: gold;
+            font-size: 1.5rem;
+            margin-top: -0.5%;
+            text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+        }
+
+        .general-info-card .header-hotel .name-hotel {
+            color: darkred;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+    .general-info-card .on-the-map {
+        color: blue;
+        padding-bottom: 1%;
+        cursor: pointer;
+    }
+
+        .general-info-card .on-the-map[data-name-hotel="Maxx Royal Kemer Resort"]::after {
+            content: "Турция, Кемер";
+            position: absolute;
+        }
+
+        .general-info-card .on-the-map[data-name-hotel="Maxx Royal Belek Golf Resort"]::after {
+            content: "Турция, Белек";
+            position: absolute;
+        }
+
+        .general-info-card .on-the-map[data-name-hotel="Gloria Serenity Resort"]::after {
+            content: "Турция, Белек";
+            position: absolute;
+        }
+
+        .general-info-card .on-the-map[data-name-hotel="Hilton Dalaman Sarigerme Resort & Spa"]::after {
+            content: "Турция, Сарыгерме";
+            position: absolute;
+        }
+
+        .general-info-card .on-the-map:hover::after {
+            content: "Показать на карте";
+            position: absolute;
+        }
+
+.map-hotel {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 100;
+    flex-direction: column;
+    background-color: hsl(0,0%,87%);
+}
+
+    .map-hotel .header-map {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 0 0.5%;
+        height: 7%;
+    }
+
+        .map-hotel .header-map .header-map-about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+            .map-hotel .header-map .header-map-about .stars-hotel {
+                color: gold;
+                font-size: 1.5rem;
+                margin-top: -0.5%;
+                text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+            }
+
+            .map-hotel .header-map .header-map-about .name-hotel {
+                color: darkred;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+        .map-hotel .header-map .header-map-close {
+            display: flex;
+            padding-top: 0.1%;
+        }
+
+            .map-hotel .header-map .header-map-close img {
+                box-sizing: border-box;
+                border-radius: 9999px;
+                border: 1px solid hsla(240,100%,75%,0.9);
+                transition: 0.1s linear;
+                width: 24px;
+                height: 24px;
+            }
+
+                .map-hotel .header-map .header-map-close img:hover {
+                    border-color: hsla(240,100%,50%,0.9);
+                    background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+
+                .map-hotel .header-map .header-map-close img:active {
+                    background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+                    transform: scale(1);
+                }
+
+    .map-hotel .set-map {
+        display: flex;
+        width: 100%;
+        height: 92%;
+        justify-content: center;
+    }
+
+        .map-hotel .set-map .map {
+            display: block;
+            width: 99%;
+            border: 0;
+        }
+
+@media screen and (max-width: 960px) {
+    .general-info-card {
+        flex-basis: 100%;
+    }
+
+        .general-info-card .short-descrption {
+            line-height: 0.73rem;
+        }
+}
+
+@media screen and (max-width: 960px) and (min-width: 800px) {
+    .map-hotel .header-map .header-map-close img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .map-hotel .header-map .header-map-about .stars-hotel {
+        font-size: 1.3rem;
+    }
+
+    .map-hotel .header-map .header-map-about .name-hotel {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 640px) {
+    .map-hotel .header-map .header-map-close img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .map-hotel .header-map .header-map-about .stars-hotel {
+        font-size: 1rem;
+    }
+
+    .map-hotel .header-map .header-map-about .name-hotel {
+        font-size: 0.73rem;
+    }
+}
+
+@media screen and (max-width: 640px) and (min-width: 480px) {
+    .map-hotel .header-map .header-map-close img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .map-hotel .header-map .header-map-about .stars-hotel {
+        font-size: 0.8rem;
+    }
+
+    .map-hotel .header-map .header-map-about .name-hotel {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 480px) and (min-width: 0px) {
+    .map-hotel .header-map .header-map-close img {
+        width: 10px;
+        height: 10px;
+    }
+
+    .map-hotel .header-map .header-map-about .stars-hotel {
+        font-size: 0.7rem;
+    }
+
+    .map-hotel .header-map .header-map-about .name-hotel {
+        font-size: 0.5rem;
+    }
+}

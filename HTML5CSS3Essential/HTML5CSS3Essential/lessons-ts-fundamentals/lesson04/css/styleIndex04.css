@@ -1,0 +1,24 @@
+﻿.card-lesson-content {
+    flex-basis: 96%;
+}
+
+.summarytask-caption {
+    display: block;
+    padding-left: 1%;
+}
+
+.summary-task {
+    visibility: visible;
+}
+
+ul li ul {
+    list-style: none;
+}
+
+    ul li ul li:before {
+        color: darkcyan;
+        content: "►";
+        font-size: 0.7rem;
+        /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+        padding-right: 0,5%;
+    }

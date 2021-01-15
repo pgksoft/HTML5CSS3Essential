@@ -1,0 +1,31 @@
+﻿.ui-slider.ui-slider-horizontal {
+    background: darkgray;
+    --slider-height: 3px;
+    height: var(--slider-height);
+    border: none;
+}
+
+.ui-slider .ui-slider-handle {
+    visibility: hidden;
+    outline: none;
+    position: absolute;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid hsl(30,100%,50%);
+    top: -6px;
+    background: white;
+    z-index: 2;
+    transition: transform 0.2s, border 0.4s;
+}
+
+.ui-slider:hover .ui-slider-handle {
+    visibility: visible;
+}
+
+.ui-slider .ui-slider-range {
+    background: white;
+    height: var(--slider-height);
+}

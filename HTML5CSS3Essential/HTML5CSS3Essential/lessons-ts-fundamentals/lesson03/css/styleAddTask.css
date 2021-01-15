@@ -1,0 +1,95 @@
+﻿/* TS-L03 */
+.edit-block-label {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    text-align: left;
+}
+
+.edit-block-input {
+    width: 96%;
+}
+
+.edit-block-input-setter input {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#formAddTask {
+    width: 100%;
+    margin: 0 auto;
+    padding: 8px 0;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    border-radius: 7px;
+    --color-border: lightgreen;
+    border: 1px solid var(--color-border);
+}
+
+    #formAddTask:focus-within, #formAddTask:hover {
+        border-color: hsl(90,100%,30%);
+        box-shadow: 1px -1px 3px 0 var(--color-border), -1px -1px 3px 0 var(--color-border), 1px 1px 3px 0 var(--color-border), -1px 1px 3px 0 var(--color-border);
+    }
+
+.log {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 8px 0;
+    border: 1px solid hsl(30,100%,50%);
+}
+
+    .log .set {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        height: 250px;
+        overflow-y: scroll;
+        margin-bottom: 8px;
+    }
+
+        .log .set .table {
+            width: 98%;
+            margin: 0 auto;
+        }
+
+            .log .set .table .row:hover {
+                cursor: pointer;
+                transition: 0.2s linear;
+            }
+
+            .log .set .table:first-child {
+                box-shadow: 0px 1px 0 0 blue;
+            }
+
+            .log .set .table .row:hover .cell {
+                background-color: hsl(200,100%,80%);
+                transition: 0.2s linear;
+            }
+
+            .log .set .table .row .cell {
+                background-color: white;
+                padding: 2px 8px;
+                border-radius: 7px;
+            }
+
+            .log .set .table:first-child .cell {
+                background-color: hsl(60,100%,90%);
+            }
+
+            .log .set .table .row .cell:first-child input[type=checkbox] {
+                display: none;
+            }
+
+                .log .set .table .row .cell:first-child input[type=checkbox] + label {
+                    cursor: pointer;
+                    margin: 0 auto;
+                    transition: 0.3s;
+                }
+
+                .log .set .table .row .cell:first-child input[type=checkbox]:disabled + label {
+                    opacity: 0.2;
+                    cursor: default;
+                }

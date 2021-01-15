@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS-L01: Independent Task</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="css/styleIndependentTask.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 01: Введение. Переменные и функции. Задание для самостоятельной работы.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right p-t-r-8" />
+                <h2 class="padding-8-16">Lesson 01: Введение. Переменные и функции.</h2>
+                <h3 class="padding-8-16">Задание для самостоятельной работы.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Используя TS, создайте следующую функцию, рассчитывающую стоимость мороженого:
+                        <br />
+                        Магазин предлагает 2 размера мороженого:
+                        <ul class="margin0">
+                            <li>Маленький стакан (10грн)</li>
+                            <li>Большой стакан (25грн)</li>
+                        </ul>
+                        Мороженое дополняется одной или несколькими начинками (минимум - одной):
+                        <ul class="margin0">
+                            <li>шоколад (+5грн);</li>
+                            <li>карамель (+6грн);</li>
+                            <li>ягоды (+10грн).</li>
+                        </ul>
+                        Дополнительно (не обязательно) мороженое можно посыпать маршмеллоу (+5грн).
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <div class="icecream">
+
+                        <section class="icecream-define radius7 box-shadow-purple b-rg-ellipse-darkcyan-purple">
+                            <div class="icecream-type">
+                                <div class="icecream-itemcard b-img-big" id="big">
+                                    <p>big</p>
+                                    <p>25&#8372;</p>
+                                </div>
+                                <div class="icecream-itemcard" id="small">
+                                    <p>small</p>
+                                    <p>10&#8372;</p>
+                                </div>
+                            </div>
+                            <div class="icecream-type">
+                                <div class="icecream-itemcard" id="chocolate">
+                                    <p>chocolate</p>
+                                    <p>+5&#8372;</p>
+                                </div>
+                                <div class="icecream-itemcard" id="caramel">
+                                    <p>caramel</p>
+                                    <p>+6&#8372;</p>
+                                </div>
+                                <div class="icecream-itemcard" id="strawberry">
+                                    <p>strawberry</p>
+                                    <p>+10&#8372;</p>
+                                </div>
+                            </div>
+                            <div class="icecream-type">
+                                <div class="icecream-itemcard" id="lozenges">
+                                    <p>lozenges</p>
+                                    <p>+5&#8372;</p>
+                                </div>
+                            </div>
+                            <div class="icecream-type"></div>
+                        </section>
+
+                        <section class="icecream-calculated b-c-gin-fizz radius7 box-shadow-green">
+                            <div class="block-setter-96">
+                                <div class="icecream-calculated-card" id="cardBig">
+                                    <div class="img">
+                                        <img src="img/icecream-icon-big.png" />
+                                    </div>
+                                    <div class="caption">
+                                        Big icecream
+                                    </div>
+                                    <div class="price">
+                                        25 &#8372;
+                                    </div>
+                                </div>
+                                <div class="icecream-calculated-card" id="cardSmall">
+                                    <div class="img">
+                                        <img src="img/icecream-icon-small.png" />
+                                    </div>
+                                    <div class="caption">
+                                        Small icecream
+                                    </div>
+                                    <div class="price">
+                                        10 &#8372;
+                                    </div>
+                                </div>
+                                <div class="icecream-calculated-card" id="cardChocolate">
+                                    <div class="img">
+                                        <img src="img/chocolate-hearts-icon.png" />
+                                    </div>
+                                    <div class="caption">
+                                        Chocolate
+                                    </div>
+                                    <div class="price">
+                                        5 &#8372;
+                                    </div>
+                                </div>
+                                <div class="icecream-calculated-card" id="cardCaramel">
+                                    <div class="img">
+                                        <img src="img/caramel-icon.png" />
+                                    </div>
+                                    <div class="caption">
+                                        Caramel
+                                    </div>
+                                    <div class="price">
+                                        6 &#8372;
+                                    </div>
+                                </div>
+                                <div class="icecream-calculated-card" id="cardStrawberry">
+                                    <div class="img">
+                                        <img src="img/strawberry-icon.png" />
+                                    </div>
+                                    <div class="caption">
+                                        Strawberry
+                                    </div>
+                                    <div class="price">
+                                        10 &#8372;
+                                    </div>
+                                </div>
+                                <div class="icecream-calculated-card" id="cardLozenges">
+                                    <div class="img">
+                                        <img src="img/lozenges.jpg" />
+                                    </div>
+                                    <div class="caption">
+                                        Lozenges
+                                    </div>
+                                    <div class="price">
+                                        5 &#8372;
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="icecream-calculated-card" id="cardCost">
+                                    <div class="img">
+                                        <img src="img/Cash-icon.png" />
+                                    </div>
+                                    <div class="caption">
+                                        Cost
+                                    </div>
+                                    <div class="price">
+                                        <span id="cost">&emsp;</span> &#8372;
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="ts/independentTask.dist.js"></script>
+</body>
+</html>

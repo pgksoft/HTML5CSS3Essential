@@ -1,0 +1,57 @@
+﻿@import url('../../../css/styleGooglefont.css');
+
+body {
+}
+
+.tablay-content {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 5px;
+    font-family: Roboto;
+    font-size: 3rem;
+    height: 100%;
+    width: 80%;
+    margin: 3% auto;
+    color: white;
+    background-color: white;
+    box-shadow: 2px -2px 5px 0 rgba(0, 0, 255, 0.20), -2px -2px 5px 0 rgba(0, 0, 255, 0.20), 2px 2px 5px 0 rgba(0, 0, 255, 0.20), -2px 2px 5px 0 rgba(0, 0, 255, 0.20);
+}
+
+    .tablay-content:hover {
+        box-shadow: 2px -2px 5px 0 rgba(255, 106, 0, 0.30), -2px -2px 5px 0 rgba(255, 106, 0, 0.30), 2px 2px 5px 0 rgba(255, 106, 0, 0.30), -2px 2px 5px 0 rgba(255, 106, 0, 0.30);
+    }
+
+.tablay-content-left-content {
+    height: 100%;
+    width: 70%;
+    background-color: purple;
+    text-align: center;
+    vertical-align: top;
+    word-break: break-word;
+}
+
+.tablay-content-left-articles {
+    height: 100%;
+    width: 70%;
+    background-color: purple;
+    text-align: center;
+    word-break: break-word;
+    vertical-align: bottom;
+}
+
+
+.tablay-content-right {
+    height: 100%;
+    width: 30%;
+    background-color: cornflowerblue;
+    text-align: center;
+    word-break: break-word;
+    vertical-align: top;
+}
+
+.tablay-content-article {
+    background-color: forestgreen;
+    width: 90%;
+    /*height: 40%;*/
+    margin: 1% auto;
+}

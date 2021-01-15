@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced-L02: Task 3</title>
+    <link href="../../css-external/w3.css" rel="stylesheet" />
+    <link href="../../css/styleGooglefont.css" rel="stylesheet" />
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="../../css/styleAddConditions.css" rel="stylesheet" />
+    <link href="../../css/styleColorScheme.css" rel="stylesheet" />
+    <link href="../../css/styleInputs.css" rel="stylesheet" />
+    <link href="css/radialGradient.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 03: Canvas. Задание 3. Создание радиального градиента</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <h2 class="padding-8-16">Lesson 02:  Canvas.</h2>
+                <h3 class="padding-8-16">Задание 3.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Создание радиального градиента
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <nav class="parms">
+                        <div class="set">
+                            <div class="settings" id="settings">
+                                <span>Параметры</span>
+                            </div>
+                            <div class="settings" id="overfill" data-visible="true">
+                                <span>Перезалить</span>
+                            </div>
+                        </div>
+                        <div class="show" id="parms-show"></div>
+                    </nav>
+
+                    <section class="rg-container" id="rg-container">
+                        <canvas id="rg-area"></canvas>
+                    </section>
+
+                    <!-- PARAMS -->
+                    <div id="parms-modal" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w75prc overflow-auto">
+                            <header class="w3-container w3-lime padding-4-16">
+                                <h3 class="block-left">
+                                    <img src="../../img/cog-outline.png" alt="" />
+                                </h3>
+                                <h3 class="padding-2-8">Параметры изучения радиального градиента.</h3>
+                                <span class="w3-button w3-display-topright" id="parmsOK">&times;</span>
+                            </header>
+                            <div class="w3-container padding-4-8">
+                                <div class="block-setter">
+                                    <!-- SCALE-AREA -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <p class="margin0">Масштабность:</p>
+                                    <div class="add-conditions" id="parms-scale-area-panel"> </div>
+                                </div>
+                                <div class="block-setter">
+                                    <!-- FILLING-DIRECTION -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <p class="margin0">Направление заливки:</p>
+                                    <div class="add-conditions" id="parms-direction-area-panel"> </div>
+                                </div>
+                                <div class="block-setter">
+                                    <!-- GRADIENT-SCHEME-AREA -->
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="color-scheme" id="parms-color-scheme-area-panel">
+                                        <p class="margin0">Цветовая схема:&nbsp;</p>
+                                    </div>
+                                    <div class="color-scheme" id="parms-all-colors-area-panel"> </div>
+                                </div>
+                                <div class="parameters">
+                                    <div class="set">
+                                        <!-- RECTANGLE SIZE -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0 margin-top-4">Прямоугольник:</p>
+                                        <div class="subset">
+                                            <div class="sub-one">
+                                                <!-- X-TOP Rectagle -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-x-top">
+                                                        X&nbsp;(<span id="show-x-top-range"></span>):
+                                                        <span id="show-x-top-value" contenteditable="true" data-name="X" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-x-top" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Y-TOP Rectagle -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-y-top">
+                                                        Y&nbsp;(<span id="show-y-top-range"></span>):
+                                                        <span id="show-y-top-value" contenteditable="true" data-name="Y" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-y-top" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-two">
+                                                <!-- WIDTH Rectagle -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-width">
+                                                        Width&nbsp;(<span id="show-width-range"></span>):
+                                                        <span id="show-width-value" contenteditable="true" data-name="width" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-width" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- HEIGHT Rectagle -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-height">
+                                                        Height&nbsp;(<span id="show-height-range"></span>):
+                                                        <span id="show-height-value" contenteditable="true" data-name="height" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-height" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="set">
+                                        <div class="subset">
+                                            <div class="sub-one">
+                                                <!-- FIRST CIRCLE -->
+                                                <!-- ONE-X -->
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <p class="margin0 margin-top-4">First circle:</p>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-one-x">
+                                                        X1&nbsp;(<span id="show-one-x-range"></span>):
+                                                        <span id="show-one-x-value" contenteditable="true" data-name="one-X" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-one-x" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ONE-Y -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-one-y">
+                                                        Y1&nbsp;(<span id="show-one-y-range"></span>):
+                                                        <span id="show-one-y-value" contenteditable="true" data-name="one-Y" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-one-y" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- ONE-R -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-one-r">
+                                                        R1&nbsp;(<span id="show-one-r-range"></span>):
+                                                        <span id="show-one-r-value" contenteditable="true" data-name="one-R" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-one-r" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-two">
+                                                <!-- SECOND CIRCLE -->
+                                                <!-- TWO-X -->
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <p class="margin0 margin-top-4">Second circle:</p>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-two-x">
+                                                        X2&nbsp;(<span id="show-two-x-range"></span>):
+                                                        <span id="show-two-x-value" contenteditable="true" data-name="two-X" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-two-x" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- TWO-Y -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-two-y">
+                                                        Y2&nbsp;(<span id="show-two-y-range"></span>):
+                                                        <span id="show-two-y-value" contenteditable="true" data-name="two-Y" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-two-y" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- TWO-R -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-two-r">
+                                                        R2&nbsp;(<span id="show-two-r-range"></span>):
+                                                        <span id="show-two-r-value" contenteditable="true" data-name="two-R" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-two-r" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="add-conditions">
+                                    <input type="checkbox" id="is-auto-color-scheme" />
+                                    <label for="is-auto-color-scheme">random color scheme</label>
+                                    <input type="checkbox" id="is-track-proportions-area-rg" />
+                                    <label for="is-track-proportions-area-motion">отслеживать пропорции области</label>
+                                    <input type="checkbox" id="is-translucent-modal" />
+                                    <label for="is-translucent-modal">полупрозрачная форма</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu-select" data-display="false" data-type="empty"></div>
+
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script type="module" src="ts/rgControl.js"></script>
+
+</body>
+</html>

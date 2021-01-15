@@ -1,0 +1,787 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <title>HTML5 & CSS3 Advanced</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="css/general.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css-advanced/styleindex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleHeaderIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleShortDescriptionPanel.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLessonsIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLesson.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleFooterIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLogo.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css-advanced/styleClipPath.css?ver=26-10-2020 16:15" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5 & CSS3 Advanced: Lessons</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+            <p class="abzac">26.10.2020</p>
+            <p class="abzac">
+                Опубликовал решение для 1-й задачи 2-й лекции курса HTML5&CSS3 Avanced - имитация броуновского движения.
+                Получилось воплотить в код все, что изначально задумывалось:
+                <ul>
+                    <li>использование <i>TypeScript</i>;</li>
+                    <li>усовершенствованная (продвинутая) настройка параметров управления;</li>
+                    <li>соответственно расширена функциональность;</li>
+                    <li>использование <i>OffscreenCanvas;</i></li>
+                    <li>
+                        реализована возможность переключения режимов имитации: или в основном потоке, или
+                        с использованием <i>OffscreenCanvas;</i>
+                    </li>
+                </ul>
+                Для данной задачи так же сделал краткое описательное видео и добавил его на соответствущую страницу
+                the most interesting.
+            </p>
+            <br />
+            <p class="abzac">02.09.2020</p>
+            <p class="abzac">
+                Опубликовал решение для 2-й задачи 1-й лекции курса HTML5&CSS3 Avanced. Здесь уже использовал aspx-страницу с целью
+                хранения краткого описания отеля на сервере. Также доработал слайдер, что позволило легко размещать несколько слайдеров
+                на одной странице. Для данной задачи так же сделал краткое описательное видео и добавил его на соответствущую страницу
+                the most interesting.
+            </p>
+            <br />
+            <p class="abzac">05.08.2020</p>
+            <p class="abzac">
+                После вынужденного перерыва оформил 1-ю задачу 1-й лекции курса HTML5&CSS3 Avanced. Тематическая сложность данной задачи можно
+                сказать нулевая. Но при ее реализации решил переходить от ранее используемой схемы процентной верстки к FlexBox-ам.
+                Я уже использовал технологию flexbox при решении задач, которые отражены на данном ресурсе. Но теперь полностью хочу перейти на
+                данную технологию. Немного потратил время на перебор вариантов FlexBox свойств в CSS-классах.
+                Также решил записать небольшое учебное видео, в котором сравнил поведение контента похожей задачи из предыдущего курса где
+                использовалась процентная верстка.
+            </p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="Index.html">
+                    <h4 class="h-subject">HTML5 И CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="AboutHTML.html"><img src="img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content">
+                <h1 class="padding-8-16 background-transparent-80">Курс: HTML5 & CSS3 Advanced</h1>
+                <article>
+                    <h3 class="h-course-description allign-left padding-8-16 background-transparent-60">Описание курса</h3>
+                    <div class="course-description background-transparent-40">
+                        <p class="margin0 padding-8-16 allign-justify fsize-1x1rem">
+                            В курсе рассматриваются новые функции HTML5 & CSS3. Использование гибкой верстки, реализация анимации,
+                            использование хранилищ браузера и многопоточности. Подключения препроцессора и сборщика для отображения
+                            кроссбраузерности веб-страницы на различных устройствах.
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </header>
+
+
+        <section class="block-setter">
+            <nav class="section-index-nav padding-0-8 radius50prc">
+                <button id="all" class="button-with-hover-orange block-left radius50prc padding-3-8 margin8" title="">
+                    <img id="imgExpandAll" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAll" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Уроки</p>
+                    <p id="markAll" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allPurpose" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllPurpose" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllPurpose" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Цель</p>
+                    <p id="markAllPurpose" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allSummaryTask" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllSummaryTask" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllSummaryTask" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Резюме</p>
+                    <p id="markAllSummaryTask" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allHomeWork" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllHomeWork" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllHomeWork" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Задания</p>
+                    <p id="markAllHomeWork" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allEverything" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllEverything" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllEverything" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Все</p>
+                    <p id="markAllEverything" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+            </nav>
+            <!-- LESSON01 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-advanced/lesson01/index01.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson01</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="1" data-topic="Урок 01. Микроданные и пользовательские данные. Drag&Drop. Геолокация.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Микроданные и пользовательские данные. Drag&Drop. Геолокация.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Роль и значение микроданных в разметке.</li>
+                                        <li>Структура микроданных – атрибуты.</li>
+                                        <li>Использование <span class="accent">JavaScript</span> для подключения к пользовательским атрибутам.</li>
+                                        <li>Разметка <span class="accent">Drag&Drop</span> на странице.</li>
+                                        <li>Проверка функционала геолокации в современных браузерах.</li>
+                                        <li>Структура <span class="accent">API</span> геолокации.</li>
+                                        <li>Функции <span class="accent">JavaScript</span> в разметке для нахождения положения.</li>
+                                        <li>Функция обратного геокодирования.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="accent">Микроданные</span> – это спецификация <span class="accent">HTML5</span> которая позволяет хранить внутри разметки
+                                            дополнительные данные со смысловой нагрузкой, позволяющие предоставить более богатую
+                                            информацию о странице для поисковых машин и краулеров. Они обогащают <span class="accent">DOM</span> парами
+                                            «имя – значение».
+                                        </li>
+                                        <li>
+                                            С помощью микроданных у пользователя есть возможность присвоить данным, которые
+                                            присутствуют на странице и в пользовательском словаре, дополнительную семантику.
+                                        </li>
+                                        <li>
+                                            <span class="accent">itemtype</span> – атрибут, который обозначает, какой именно словарь микроданных используется.
+                                        </li>
+                                        <li>
+                                            <span class="accent">itemscope</span> – атрибут, который обозначает область видимости словаря.
+                                        </li>
+                                        <li>
+                                            <span class="accent">іtemprop</span> – атрибут, который устанавливает значение свойства «слова» словаря микроданных.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Google</span> поддерживает микроданные в рамках программы <span class="accent">Rich Snippets</span>.
+                                            Когда программа-краулер <span class="accent">Google</span> разбирает страницу и находит при этом свойства микроданных,
+                                            имена которых удовлетворяют словарю, значения таких свойств извлекаются и сохраняются.
+                                        </li>
+                                        <li>
+                                            В <span class="accent">HTML5</span> спецификации была добавлена возможность перетаскивания элементов разметки -
+                                            <span class="accent">Drag&Drop</span>. Достаточно добавить атрибут <span class="accent">draggable=true</span>.
+                                        </li>
+                                        <li>
+                                            Дополнительные события в разметке:<br />
+                                            <span class="accent">dragstart</span> – вызывается в самом начале переноса «перетаскиваемого» элемента,<br />
+                                            <span class="accent">dragend</span> – вызывается в конце события перетаскивания – как успешного, так и отмененного,<br />
+                                            <span class="accent">dragenter</span> – вызывается на зоне приема, когда перетаскиваемый объект впервые оказывается
+                                            над ней,<br />
+                                            <span class="accent">dragleave</span> – вызывается, когда перетаскиваемый объект покидает зону приема,<br />
+                                            <span class="accent">dragover</span> – непрерывно вызывается, когда перетаскиваемый объект находится над зоной
+                                            приема,<br />
+                                            <span class="accent">drop</span> – вызывается, когда событие перетаскивания завершается отпусканием элемента над
+                                            зоной приема.
+                                        </li>
+                                        <li>
+                                            В <span class="accent">HTML5</span> спецификацию также была добавлена новая возможность – нахождение местоположения пользователя.
+                                        </li>
+                                        <li>
+                                            Для использования геолокации – необходимо на глобальном объекте – <span class="accent">navigator</span> использовать
+                                            свойство <span class="accent">geolocation</span>.
+                                            Основные функции для получения текущего положения - <span class="accent">getCurrentPosition()</span> и
+                                            <span class="accent">watchPosition()</span> – которая будет вызываться каждый раз, когда изменится местонахождение пользователя.
+                                        </li>
+                                        <li>
+                                            <span class="important">getCurrentPosition()</span> принимает 3 аргумента:<br />
+                                            <span class="accent">updateLocation</span> - метод, который запуститься после получения данных о местоположении,<br />
+                                            <span class="accent">handleError</span> - метод запуститься в случае сбоя при получении местоположения,<br />
+                                            <span class="accent">options</span> (необязательный) – объект с параметрами.<br />
+                                            Свойства объекта <span class="accent">options</span>:<br />
+                                            <span class="accent">EnableHighAccuracy</span> – браузер попытается получить наиболее точные данные,<br />
+                                            <span class="accent">Timeout</span>- время в миллисекундах, за которое должны быть получены данные,<br />
+                                            <span class="accent">maximumAge</span> – время, которое указывает как часто должны быть получены данные (через какой интервал).
+                                        </li>
+                                        <li>
+                                            <span class="important">handleError</span> – метод обработки ошибок – принимает параметр <span class="accent">error</span>,
+                                            через который можно узнать код ошибки:<br />
+                                            <span class="accent">0 (UNKNOWN_ERROR)</span> – другая ошибка,<br />
+                                            <span class="accent">1 (PERMISSION_DENIED)</span>- если пользователь нажмет кнопку Don't Share (Не сообщать) на
+                                            панели геолокации или иным способом запретит доступ к данным о своем местонахождении,<br />
+                                            <span class="accent">2 (POSITION_UNAVAILABLE)</span> - если не работает сеть или невозможно связаться со спутником
+                                            позиционирования,<br />
+                                            <span class="accent">3 (TIMEOUT)</span> - когда сеть работает, но на расчет координат уходит слишком много времени.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Geocoder()</span> – объект для получения обратного кодирования данных. Настраивается функцией –
+                                            <span class="accent">geocode</span> (принимая параметры адреса или координат)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Создайте страницу с разметкой, на которой будет отображаться контактная информация Вашего
+                                            учебного заведения или Вашей рабочей организации. Используя микроданные и словарь терминов
+                                            <a href="http://schema.org/Person" class="button-with-hover-orange radius50prc padding-0-8">Person</a> добавьте их в разметку.<br />
+                                            Проверьте разметку на правильность оформления:
+                                            <a href="http://www.google.com/webmasters/tools/richsnippets" class="button-with-hover-orange radius50prc padding-0-8">инструмент проверки структуры данных</a>
+                                        </li>
+                                        <li>
+                                            Создайте страницу ТурФирмы. Основные элементы – <span class="accent">header</span>, <span class="accent">footer</span>,
+                                            <span class="accent">section</span>, <span class="accent">nav</span>. В элементе
+                                            <span class="accent">section</span> – минимум 4 блока с ТОПовыми отелями. В блоке есть фото и
+                                            информация про отель. Снизу под описанием – кнопка – «Посмотреть на карте». При нажатии на кнопку –
+                                            появляется карта с расположением данного отеля.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON02 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-advanced/lesson02/index02.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson02</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="2" data-topic="Урок 02. Саnvas.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Саnvas.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Ознакомление с тегом canvas.</li>
+                                        <li>Прорисовка линий.</li>
+                                        <li>Рисование прямоугольной области.</li>
+                                        <li>Заливка рамок и градиента.</li>
+                                        <li>Очистка прямоугольной областих.</li>
+                                        <li>Рисование кривых и дуг.</li>
+                                        <li>Добавление img.</li>
+                                        <li>Градиентная заливка.</li>
+                                        <li>Добавление текста и тени к элементам.</li>
+                                        <li>Установка прозрачности.</li>
+                                        <li>Трансформация элементов холста.</li>
+                                        <li>Рассмотрение примеров.</li>
+                                    </ul>
+                                    <div class="post-scriptum">
+                                        <header>
+                                            <p>P.S.</p>
+                                        </header>
+                                        <ol class="padding-0-16">
+                                            <li>
+                                                Данный урок во многом повторяет 4-й урок курса HTML5&CSS3 Essential.
+                                                <br />
+                                                Основное отличие: в материалах урока больше полезных готовых примеров.
+                                            </li>
+                                            <li>
+                                                Задачи, которые рекомендуются для самостоятельного решения, не очень интересные.<br />
+                                                Поэтому решил сделать upgrade придуманных мною задач из 4-го урока курса HTML5&CSS3 Essential:
+                                                <ul>
+                                                    <li>имитация броуновского движения</li>
+                                                    <li>моделирование многооконной системы</li>
+                                                </ul>
+                                                Основные моменты апгрейда:
+                                                <ul>
+                                                    <li>использовать typescript</li>
+                                                    <li>задействовать web-worker</li>
+                                                    <li>усовершенствовать настройку параметров (использовать технику модальных окон)</li>
+                                                    <li>расширить функциональность</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="accent">canvas</span> – это область (холст), с помощью которой могут на лету прорисовываться диаграммы,
+                                            графика игр и прочие изображения. На странице холст имеет вид прямоугольника, внутри
+                                            которого можно рисовать с помощью <span class="accent">JavaScript</span>.
+                                        </li>
+                                        <li><span class="accent">beginPath()</span> – начало определения сегмента пути.</li>
+                                        <li><span class="accent">moveTo(x, у)</span> – перенос регистрационной точки в точку с координатами.</li>
+                                        <li><span class="accent">lineTo(x, у)</span> – создание прямого пути между предыдущей точкой и точкой (х, у).</li>
+                                        <li><span class="accent">closePath()</span> – закрытие любого пути: конец и начало пути соединяются прямым.</li>
+                                        <li>
+                                            <span class="accent">fillRect(x, у, width, height)</span> – создание прямоугольной области, определенной ширины и высоты,
+                                            один угол которой находится в точке <span class="accent">(х, у)</span>, а противоположный (по диагонали).
+                                        </li>
+                                        <li><span class="accent">stroke()</span> – обводка (то есть превращение в видимый объект или прорисовка) сегмента пути.</li>
+                                        <li><span class="accent">save()</span> – сохранение копии текущего состояния контекста на холсте.</li>
+                                        <li><span class="accent">translate(х,у)</span> – перенос контекста по осям.</li>
+                                        <li><span class="accent">restore()</span> – восстанавливаем предыдущее состояние контекста (до метода <span class="accent">save()</span></li>
+                                        <li><span class="accent">strokeStyle</span> – цвет линии.</li>
+                                        <li><span class="accent">lineJoin</span> – определение формы, где сходятся вершины.</li>
+                                        <li><span class="accent">fillStyle</span> – цвет заливки.</li>
+                                        <li><span class="accent">strokeStyle</span> – цвет обводки.</li>
+                                        <li><span class="accent">strokeRect(x, у, width, height)</span> – добавление прямоугольной области с выбранной обводкой.</li>
+                                        <li><span class="accent">clearRect(x, у, width, height)</span> – очистка прямоугольной области элемента canvas.</li>
+                                        <li>
+                                            <span class="accent">quadraticCurveTo(deltaX, deltaY, x2,y2)</span> – прорисовка кривой линии от предыдущей точки к
+                                            следующей с управляющей точкой искривления.
+                                        </li>
+                                        <li>
+                                            <span class="accent">bezierCurveTo(deltaX, deltaY, deltaX2, deltaY2, x2,y2)</span> - прорисовка кривой линии от предыдущей
+                                            точки к следующей с двумя управляющими точками искривления.
+                                        </li>
+                                        <li>
+                                            <span class="accent">агс(х, у, радиус, начальный угол в радианах, конечный угол в радианах, направление рисования(по часовой стрелке и против))</span>
+                                            – создание пути в форме дуги (вплоть до полной окружности),
+                                            где <span class="accent"></span>(х, у) – координаты центра дуги, которая начинается и заканчивается в точках,
+                                            соответствующих указанным углам.
+                                        </li>
+                                        <li>
+                                            <span class="accent">drawImage(image, x, y, width, height)</span> – рисует картинку, масштабирует ее по горизонтали и
+                                            вертикали, чтобы она соответствовала заданным ширине и высоте, после чего рисует ее в точке
+                                            с координатами - <span class="accent">(х, у)</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">createLinearGradient(x0, y0, x1, y1)</span> – направляет заливку вдоль отрезка из точки
+                                            <span class="accent">(x0, y0)</span> в точку <span class="accent">(x1, y1)</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">createRadialGradient(x0, y0, r0, x1, y1, r1)</span> – направляет заливку вдоль конуса, образуемого
+                                            двумя окружностями. Начальные три параметра описывают первую окружность с центром <span class="accent">(x0,y0)</span> и
+                                            радиусом <span class="accent">r0</span>. Конечные три параметра описывают вторую окружность: центр
+                                            <span class="accent">(x1, y1)</span> и радиус <span class="accent">r1</span>.
+                                        </li>
+                                        <li>
+                                            На холсте есть возможность написания текста:<br />
+                                            <span class="accent">font</span> – все, что позволяет определить одноименное CSS-правило: стиль, вариант, начертание,
+                                            размер и семейство шрифтов.
+                                        </li>
+                                        <li>
+                                            <span class="accent">textAlign</span> – задает выравнивание текста, возможные значения этого свойства:
+                                            <span class="accent">start, end, left, right, center</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">textBaseline</span> – определяет положение текста относительно начальной точки; возможные
+                                            значения этого свойства: <span class="accent">top, hanging, middle, alphabetic, ideographic, bottom</span>.
+                                        </li>
+                                        <li><span class="accent">fillText(text, x, y)</span> – позволяет произвести написание текста в указанной точке.</li>
+                                        <li><span class="accent">createPattern()</span> - повторяет указанный элемент по указанному направлению.</li>
+                                        <li><span class="accent">shadowOffsetX, shadowOffsetY</span> – расположение тени, относительно элемента.</li>
+                                        <li><span class="accent">shadowBlur</span> – степень размытия.</li>
+                                        <li><span class="accent">globalAlpha</span> – задаем альфа-канал для элемента (от 0 до 1).</li>
+                                        <li><span class="accent">rotate(angle)</span> – вращение элемента.</li>
+                                        <li><span class="accent">translate(x, y)</span> – контекст трансформации перемещения элемента</li>
+                                        <li><span class="accent">scale(x, y)</span> – контекст трансформации масштабирования.</li>
+                                        <li>
+                                            <span class="accent">translate(x, у)</span> – перемещение (транслирование) точки отсчета системы координат из
+                                            <span class="accent">(0, 0)</span> в <span class="accent">(х, у)</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">transform(scaleX, skewX, skewY, scaleY, transformX, transformY)</span> – объект трансформации:<br />
+                                            <span class="accent">scaleX, scaleY</span> – масштаб;<br />
+                                            <span class="accent">skewX, skewY</span> – растяжение (искривление);<br />
+                                            <span class="accent">transformX, transformY</span> – перемещение.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Имитация броуновского движения.
+                                        </li>
+                                        <li>
+                                            Моделирование многооконной системы.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON03 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="" data-iamworking="advanced" class="button-with-hover-orange radius50prc padding-8-16">Lesson03</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="3" data-topic="Урок 03. Хранение данных на стороне клиента. Audio, Video.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Хранение данных на стороне клиента. Audio, Video.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON04 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="" data-iamworking="advanced" class="button-with-hover-orange radius50prc padding-8-16">Lesson04</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="4" data-topic="Урок 04. Принципы построения разметки Flex, Grid. Шаблоны сайтов.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Принципы построения разметки Flex, Grid. Шаблоны сайтов.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON05 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="" data-iamworking="advanced" class="button-with-hover-orange radius50prc padding-8-16">Lesson05</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="5" data-topic="Урок 05. Трансформация и анимация, Градиенты.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Трансформация и анимация, Градиенты.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="5">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="5">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="5">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON06 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="" data-iamworking="advanced" class="button-with-hover-orange radius50prc padding-8-16">Lesson06</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="6" data-topic="Урок 06. Основы SASS.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Основы SASS.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="6">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="6">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="6">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+
+            <!-- LESSON07 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="" data-iamworking="advanced" class="button-with-hover-orange radius50prc padding-8-16">Lesson07</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="7" data-topic="Урок 07.  Практика. Макет сайта.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Практика. Макет сайта.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="7">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="7">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="7">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                        </li>
+                                        <li>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <hr />
+        </section> <!-- LESSONS -->
+
+        <section class="block-setter p-b-16">
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="js/device.dist.js"></script>
+    <script src="js/index.dist.js"></script>
+    <script src="js/shortDescription.dist.js"></script>
+    <script src="js-advanced/clipPath.dist.js"></script>
+    <script src="js-advanced/IamWorking.dist.js"></script>
+</body>
+</html>

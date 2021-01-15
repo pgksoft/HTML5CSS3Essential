@@ -1,0 +1,28 @@
+﻿.test-container {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    height: 50px;
+    background: linear-gradient(to top, hsla(0, 0%, 0%, 1), hsla(190, 100%, 100%, 1));
+    border-radius: 999px;
+}
+
+    .test-container:hover .ui-slider-handle {
+        visibility: visible;
+    }
+
+    .test-container:hover .ui-slider.ui-slider-horizontal {
+        --shadow-color: hsl(170,100%,70% );
+        --shadow-blur: 0;
+        box-shadow: 1px -1px var(--shadow-blur) 0 var(--shadow-color), -1px -1px var(--shadow-blur) 0 var(--shadow-color), 1px 1px var(--shadow-blur) 0 var(--shadow-color), -1px 1px var(--shadow-blur) 0 var(--shadow-color);
+    }
+
+    .test-container .ui-slider.ui-slider-horizontal:hover {
+        --shadow-blur: 3px;
+    }
+
+    .test-container .test-slider {
+        width: 90%;
+        margin: 0 auto;
+    }

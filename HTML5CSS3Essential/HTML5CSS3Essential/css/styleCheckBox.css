@@ -1,0 +1,10 @@
+﻿input[type=checkbox] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('../img/alpha-c-circle-outline.png');
+}
+
+    input[type=checkbox]:checked {
+        background-image: url('../img/check-circle-outline.png');
+    }

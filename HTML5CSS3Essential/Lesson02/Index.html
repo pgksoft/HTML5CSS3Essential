@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lesson 2</title>
+    <link href="css/styleindex.css" rel="stylesheet" />
+</head>
+<body class="body-index" onload="loadPage()">
+    <header class="header-index">
+        <section class="header-general">
+            <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            <table>
+                <tr>
+                    <td><img src="img/html-5-icon-64x64.png" /></td>
+                    <td><img src="img/css-3-icon-64x64.png" /></td>
+                    <td><img src="img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content">
+            <h1 class="header-lesson">Lesson 2</h1>
+            <h2 class="header-theme">HTML5 ФОРМЫ. ТЕГИ VIDEO И AUDIO.</h2>
+        </section>
+    </header>
+    <nav class="nav-index">
+        <h3 class="h-panel">Панель навигациии</h3>
+        <form method="post" action="Index.html" id="listTasks" name="listTasks">
+            <p>
+                <input type="radio" id="addtask" name="tasks"
+                       value="Дополнительное задание:" />
+                <label for="addtask">Additional task</label>
+            </p>
+            <p>
+                <input type="radio" id="task2" name="tasks"
+                       value="Создайте форму по шаблону, представленную на изображении." />
+                <label for="task2">Task 2</label>
+            </p>
+        </form>
+    </nav>
+    <main>
+        <section class="section-index">
+            <p class="summarytask-caption" id="summarytaskcaption">
+                Обзор, цель и назначение урока
+            </p>
+            <div id="summaryTask" class="summary-task">
+                <p class="margin0">
+                    Применение новых типов полей ввода - email, range, datetime, color, search;
+                    атрибутов - placeholder, autofocus.
+                </p>
+                <p class="margin0">
+                    Установить различия между кодеками и видеоконтейнерами.
+                </p>
+                <p class="margin0">
+                    Определить поддержку новых тегов различными версиями современных браузеров.
+                </p>
+                <p class="margin0">
+                    Научиться встраивать аудио и видео на страницы согласно новой спецификации.
+                </p>
+                <p class="margin0">
+                    Способы построения интефейса встроенного видеофайла.
+                </p>
+            </div>
+            <p>
+                <a href="#" id="linktaskpage">Посмотреть решение задачи</a>
+            </p>
+            <div class="task-description" id="taskDescriptionAdd">
+                <ol>
+                    <li>
+                        <p class="margin0">
+                            Создайте страницу, разместите на ней видеоплеер (640х640), сделайте разметку согласно семантике HTML5,
+                            укажите несколько источников в source. Видео должно проигрываться в IE.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="margin0">
+                            Сделайте форму по типу документа «001 Simple Form.html» согласно спецификации HTML5:
+                            <img class="task-description-img" src="img/AddTask2.png" id="taskDescriptionImgAdd2" alt="" />
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <img class="task-description-img" src="img/Task2.png" id="taskDescriptionImg02" alt="" />
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p>
+                <a href="https://www.w3.org/">Официальный сайт W3C</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/html">Справочник по HTML</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/css">Справочник по CSS</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a>
+            </p>
+            <p>
+                <a href="https://html5test.com/">How well does your browser support HTML5?</a>
+            </p>
+            <p>
+                <a href="https://caniuse.com/">Can I use?</a>
+            </p>
+            <p>
+                <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a>
+            </p>
+            <p>
+                <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a>
+            </p>
+            <p>
+                <a href="https://html.com/">Learn HTML Code, Tags & CSS</a>
+            </p>
+            <p>
+                <a href="https://validator.w3.org/">Markup Validation Service</a>
+            </p>
+            <p>
+                <a href="https://html5book.ru/">HTML5 BOOK</a>
+            </p>
+        </aside>
+    </main>
+    <footer class="footer-index">
+        <article class="digest"> <!--«»-->
+            <div>
+                <ul>
+                    <li>
+                        <span class="footer-accent">type="button"</span> - кнопка, основное событие onclick.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="checkbox"</span> - флажок, основное событие onclick.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="file"</span> - поле для ввода файла загружаемого на сервер, основное событие onchange.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="hidden"</span> - данные сохраняемые вместе с формой, но не видимые пользователю.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="password"</span> - поле для ввода пароля.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="radio"</span> - переключатель.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="reset"</span> - кнопка очищаюющая значения формы.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="submit"</span> - кнопка для передачи данных формы.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="range"</span> - компонент типа «ползунок».
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="date"</span> - компонент типа «дата».
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="color"</span> - позволяет выбрать цвет и возвращает его шестнадцатеричный код.
+                    </li>
+                    <li>
+                        <span class="footer-accent">textarea</span> - многострочное поле ввода.
+                    </li>
+                    <li>
+                        <span class="footer-accent">select</span> - список, в котором может быть выбран один элемент.
+                    </li>
+                    <li>
+                        <span class="footer-accent">select multiple</span> - список со множественным выбором.
+                    </li>
+                    <li>
+                        <span class="footer-accent">placeholder</span> - атрибут ввода контактных данных.
+                    </li>
+                    <li>
+                        <span class="footer-accent">autofocus</span> - атрибут автофокусировки.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="email"</span> - поле ввода email.
+                    </li>
+                    <li>
+                        <span class="footer-accent">type="url"</span> - поле ввода веб-адреса.
+                    </li>
+                    <li>
+                        Браузеры без поддержки <mark>HTML5</mark> будут обрабатывать <mark>type="url"</mark> и <mark>type="email"</mark> в точности так же, как <mark>type="text"</mark>.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;video&gt;</span> - встраивание видео на веб-страницы.
+                    </li>
+                    <li>
+                        <span class="footer-accent">&lt;audio&gt;</span> - встраивание аудио на веб-страницы.
+                    </li>
+                    <li>
+                        В мультимедийном контейнере определен только способ хранения содержимого, а не тип этого содержимого.
+                    </li>
+                    <li>
+                        Популярные форматы видеоконтейнеров: <mark>MPEG-4</mark>, <mark>Flash Video</mark>, <mark>WebM</mark>, <mark>Ogg</mark>.
+                    </li>
+                    <li>
+                        <span class="footer-important">Видеокодек</span> - это алгоритм кодировки видеопотока. Популярные форматы: <mark>H.264</mark>, <mark>Theora</mark> и <mark>VP8</mark>.
+                    </li>
+                    <li>
+                        Один тег <span class="footer-accent">&lt;video&gt;</span> может ссылаться на несколько видеофайлов; изних браузер
+                        выберет самый первый, который сумеет воспроизвести.
+                    </li>
+                    <li>
+                        Такого сочетания медиоконтейнеров и кодеков, которое бы работало <span class="footer-important">во всех браузерах</span>
+                        с поддержкой <mark>HTML5</mark>, не существует.
+                    </li>
+                    <li>
+                        Видеофайлы должны быть связаны с соответствующими <mark>MIME-типами</mark>.
+                    </li>
+                    <li>
+                        Сочетание <mark>HTML5</mark> и <mark>Flash</mark> позволяет просматривать видео практически в любом браузере на любом устройстве.
+                    </li>
+                    <li>
+                        <span class="footer-accent">Controls</span> - способ отображения интерфейса проигрывателя.
+                    </li>
+                    <li>
+                        Атрибут <span class="footer-accent">autoplay</span> гооворит браузеру, что надо не только начать скачивание видео сразу
+                        по окончании загрузки страницы, но и начать его воспроизводить как можно раньше.
+                    </li>
+                    <li>
+                        Атрибут <span class="footer-accent">preload</span> гооворит браузеру, что скачивание видео надо начать сразу
+                        по окончании загрузки страницы.
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

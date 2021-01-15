@@ -1,0 +1,188 @@
+<HTML>
+<HEAD>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>Список всех цветов</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+<!--
+
+        function Make() {
+            document.cForm.result.value = '';
+            for (i = 0; i < document.cForm.nColors.options.length; i++) {
+                c = document.cForm.nColors.options[i].value;
+                document.bgColor = c;
+                document.cForm.result.value += (document.cForm.nColors.options[i].text + '=' + document.bgColor + '\r\n');
+            }
+        }
+
+        // -->
+    </SCRIPT>
+</HEAD>
+
+<body text="#000000" link="#009900" alink="#006600" vlink="#003300" bgcolor="#FFFFFF">
+
+    <div align="center">
+
+        <form NAME="cForm" align="center">
+            <select name="nColors" size="1">
+                <option value="#f0f8ff">Aliceblue</option>
+                <option value="#FAEBD7">Antiquewhite</option>
+                <option value="#00FFFF">Aqua</option>
+                <option value="#7FFFD4">Aquamarine</option>
+                <option value="#F0FFFF">Azure</option>
+                <option value="#F5F5DC">Beige</option>
+                <option value="#FFE4C4">Bisque</option>
+                <option value="#000000">Black</option>
+                <option value="#FFEBCD">Blanchedalmond</option>
+                <option value="#0000ff">Blue</option>
+                <option value="#8A2BE2">Blueviolet</option>
+                <option value="#A52A2A">Brown</option>
+                <option value="#DEB887">Burlywood</option>
+                <option value="#5F9EA0">Cadetblue</option>
+                <option value="#7FFF00">Chartreuse</option>
+                <option value="#D2691E">Chocolate</option>
+                <option value="#FF7F50">Coral</option>
+                <option value="#6495ED">Cornflowerblue</option>
+                <option value="#FFF8DC">Cornsilk</option>
+                <option value="#DC143C">Crimson</option>
+                <option value="#00FFFF">Cyan</option>
+                <option value="#00008B">Darkblue</option>
+                <option value="#008B8B">Darkcyan</option>
+                <option value="#B8860B">Darkgoldenrod</option>
+                <option value="#A9A9A9">Darkgray</option>
+                <option value="#006400">Darkgreen</option>
+                <option value="#BDB76B">Darkkhaki</option>
+                <option value="#8B008B">Darkmagenta</option>
+                <option value="#556B2F">Darkolivegreen</option>
+                <option value="#FF8C00">Darkorange</option>
+                <option value="#9932CC">Darkorchid</option>
+                <option value="#8B0000">Darkred</option>
+                <option value="#E9967A">Darksalmon</option>
+                <option value="#8FBC8B">Darkseagreen</option>
+                <option value="#483D8B">Darkslateblue</option>
+                <option value="#2F4F4F">Darkslategray</option>
+                <option value="#00CED1">Darkturquoise</option>
+                <option value="#9400D3">Darkviolet</option>
+                <option value="#FF1493">Deeppink</option>
+                <option value="#00BFFF">Deepskyblue</option>
+                <option value="#696969">Dimgray</option>
+                <option value="#1E90FF">Dodgerblue</option>
+                <option value="#B22222">Firebrick</option>
+                <option value="#FFFAF0">Floralwhite</option>
+                <option value="#228B22">Forestgreen</option>
+                <option value="#FF00FF">Fuchsia</option>
+                <option value="#DCDCDC">Gainsboro</option>
+                <option value="#F8F8FF">Ghostwhite</option>
+                <option value="#FFD700">Gold</option>
+                <option value="#DAA520">Goldenrod</option>
+                <option value="#808080">Gray</option>
+                <option value="#008000">Green</option>
+                <option value="#ADFF2F">Greenyellow</option>
+                <option value="#F0FFF0">Honeydew</option>
+                <option value="#FF69B4">Hotpink</option>
+                <option value="#CD5C5C">Indianred</option>
+                <option value="#4B0082">Indigo</option>
+                <option value="#FFFFF0">Ivory</option>
+                <option value="#F0E68C">Khaki</option>
+                <option value="#E6E6FA">Lavender</option>
+                <option value="#FFF0F5">Lavenderblush</option>
+                <option value="#7CFC00">Lawngreen</option>
+                <option value="#FFFACD">Lemonchiffon</option>
+                <option value="#ADD8E6">Lightblue</option>
+                <option value="#F08080">Lightcoral</option>
+                <option value="#E0FFFF">Lightcyan</option>
+                <option value="#EEDD82">Lightgoldenrod</option>
+                <option value="#FAFAD2">Lightgoldenrodyellow</option>
+                <option value="#D3D3D3">Lightgray</option>
+                <option value="#90EE90">Lightgreen</option>
+                <option value="#FFB6C1">Lightpink</option>
+                <option value="#FFA07A">Lightsalmon</option>
+                <option value="#20B2AA">Lightseagreen</option>
+                <option value="#87CEFA">Lightskyblue</option>
+                <option value="#8470FF">Lightslateblue</option>
+                <option value="#778899">Lightslategray</option>
+                <option value="#B0C4DE">Lightsteelblue</option>
+                <option value="#FFFFE0">Lightyellow</option>
+                <option value="#00FF00">Lime</option>
+                <option value="#32CD32">Limegreen</option>
+                <option value="#FAF0E6">Linen</option>
+                <option value="#FF00FF">Magenta</option>
+                <option value="#800000">Maroon</option>
+                <option value="#66CDAA">Mediumaquamarine</option>
+                <option value="#0000CD">Mediumblue</option>
+                <option value="#BA55D3">Mediumorchid</option>
+                <option value="#9370DB">Mediumpurple</option>
+                <option value="#3CB371">Mediumseagreen</option>
+                <option value="#7B68EE">Mediumslateblue</option>
+                <option value="#00FA9A">Mediumspringgreen</option>
+                <option value="#48D1CC">Mediumturquoise</option>
+                <option value="#C71585">Mediumvioletred</option>
+                <option value="#191970">Midnightblue</option>
+                <option value="#F5FFFA">Mintcream</option>
+                <option value="#FFE4E1">Mistyrose</option>
+                <option value="#FFE4B5">Moccasin</option>
+                <option value="#FFDEAD">Navajowhite</option>
+                <option value="#000080">Navy</option>
+                <option value="#A0B0E0">Navyblue</option>
+                <option value="#FDF5E6">Oldlace</option>
+                <option value="#808000">Olive</option>
+                <option value="#6B8E23">Olivedrab</option>
+                <option value="#FFA500">Orange</option>
+                <option value="#FF4500">Orangered</option>
+                <option value="#DA70D6">Orchid</option>
+                <option value="#EEE8AA">Palegoldenrod</option>
+                <option value="#98FB98">Palegreen</option>
+                <option value="#AFEEEE">Paleturquoise</option>
+                <option value="#DB7093">Palevioletred</option>
+                <option value="#FFEFD5">Papayawhip</option>
+                <option value="#FFDAB9">Peachpuff</option>
+                <option value="#CD853F">Peru</option>
+                <option value="#FFC0CB">Pink</option>
+                <option value="#DDA0DD">Plum</option>
+                <option value="#B0E0E6">Powderblue</option>
+                <option value="#800080">Purple</option>
+                <option value="#FF0000">Red</option>
+                <option value="#BC8F8F">Rosybrown</option>
+                <option value="#4169E1">Royalblue</option>
+                <option value="#8B4513">Saddlebrown</option>
+                <option value="#FA8072">Salmon</option>
+                <option value="#F4A460">Sandybrown</option>
+                <option value="#2E8B57">Seagreen</option>
+                <option value="#FFF5EE">Seashell</option>
+                <option value="#A0522D">Sienna</option>
+                <option value="#C0C0C0">Silver</option>
+                <option value="#87CEEB">Skyblue</option>
+                <option value="#6A5ACD">Slateblue</option>
+                <option value="#708090">Slategray</option>
+                <option value="#FFFAFA">Snow</option>
+                <option value="#00FF7F">Springgreen</option>
+                <option value="#4682B4">Steelblue</option>
+                <option value="#D2B48C">Tan</option>
+                <option value="#008080">Teal</option>
+                <option value="#D8BFD8">Thistle</option>
+                <option value="#FF6347">Tomato</option>
+                <option value="#40E0D0">Turquoise</option>
+                <option value="#EE82EE">Violet</option>
+                <option value="#D02090">Violetred</option>
+                <option value="#F5DEB3">Wheat</option>
+                <option value="#FFFFFF">White</option>
+                <option value="#F5F5F5">Whitesmoke</option>
+                <option value="#FFFF00">Yellow</option>
+                <option value="#9ACD32">Yellowgreen</option>
+            </select>
+            <br>
+<textarea name="result" rows="5" cols="60" wrap="off">
+</textarea>
+            <br>
+            <input type="button" value="   Нажми меня!   " onClick="Make()">
+        </form>
+    </div>
+
+    <small>
+        <p align="justify">
+            Выдает все цвета в виде "Название=код", где код - значение цвета в виде #RRGGBB
+        </p>
+    </small>
+
+    <P ALIGN="RIGHT"><A HREF="mailto:pers@mail.ru">pers@mail.ru</A>
+</body>
+</HTML>

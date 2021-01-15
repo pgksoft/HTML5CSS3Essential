@@ -1,0 +1,167 @@
+﻿/* LESSON 09 */
+
+.linetools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 98%;
+    margin: 0 auto;
+    padding: 8px 0;
+}
+
+.cardtable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 98%;
+    margin: 0 auto;
+    padding: 16px 0;
+    border-radius: 7px;
+    background-color: hsl(100,70%,40%);
+}
+
+.card-place {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 45px;
+}
+
+.card {
+    width: 130px;
+    transition: 1s;
+    transform: rotate(0deg);
+}
+
+@keyframes swing-rotate {
+    10% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+
+    20% {
+        -webkit-transform: rotate(-9deg);
+        transform: rotate(-9deg);
+    }
+
+    30% {
+        -webkit-transform: rotate(7deg);
+        transform: rotate(7deg);
+    }
+
+    40% {
+        -webkit-transform: rotate(-6deg);
+        transform: rotate(-6deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+
+    60% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+
+    70% {
+        -webkit-transform: rotate(3deg);
+        transform: rotate(3deg);
+    }
+
+    80% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+
+    90% {
+        -webkit-transform: rotate(1deg);
+        transform: rotate(1deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(deg);
+    }
+}
+
+.swing-rotate:hover {
+    -webkit-animation: swing-rotate 0.73s ease;
+    animation: swing-rotate 0.73s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.shake-at-the-end-of-random-rotate {
+    --ten-percent: 0deg;
+    --twenty-percent: 0deg;
+    --thirty-percent: 0deg;
+    --forty-percent: 0deg;
+    --fifty-percent: 0deg;
+    --sixty-percent: 0deg;
+    --seventy-percent: 0deg;
+    --eighty-percent: 0deg;
+    --ninety-percent: 0deg;
+    --hundred-percent: 0deg;
+}
+
+.shake {
+    -webkit-animation: shake 0.73s ease;
+    animation: shake 0.73s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake{
+    10% {
+        -webkit-transform: rotate(var(--ten-percent));
+        transform: rotate(var(--ten-percent));
+    }
+
+    20% {
+        -webkit-transform: rotate(var(--twenty-percent));
+        transform: rotate(var(--twenty-percent));
+    }
+
+    30% {
+        -webkit-transform: rotate(var(--thirty-percent));
+        transform: rotate(var(--thirty-percent));
+    }
+
+    40% {
+        -webkit-transform: rotate(var(--forty-percent));
+        transform: rotate(var(--forty-percent));
+    }
+
+    50% {
+        -webkit-transform: rotate(var(--fifty-percent));
+        transform: rotate(var(--fifty-percent));
+    }
+
+    60% {
+        -webkit-transform: rotate(var(--sixty-percent));
+        transform: rotate(var(--sixty-percent));
+    }
+
+    70% {
+        -webkit-transform: rotate(var(--seventy-percent));
+        transform: rotate(var(--seventy-percent));
+    }
+
+    80% {
+        -webkit-transform: rotate(var(--eighty-percent));
+        transform: rotate(var(--eighty-percent));
+    }
+
+    90% {
+        -webkit-transform: rotate(var(--ninety-percent));
+        transform: rotate(var(--ninety-percent));
+    }
+
+    100% {
+        -webkit-transform: rotate(var(--hundred-percent));
+        transform: rotate(var(--hundred-percent));
+    }
+}
+
+

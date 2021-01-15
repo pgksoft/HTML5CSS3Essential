@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+</head>
+<body class="body-index">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5 & CSS3 Essential: Lesson 04. Canvas.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">
+                Всем доброго времени суток.
+            </p>
+            <p class="abzac">
+                К моменту отработки заданий по данному уроку я уже успел пройти такие курсы, как JavaScript Essential,
+                JavaScript Advanced и ECMAScript 6.
+                Поэтому на этом уроке, если так можно сказать, по полной программе «наигрался» JavaScript.
+                Более детально смотрите в описании к решениям задач.
+            </p>
+        </div>
+    </div>
+    <header class="header-index allign-center">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content-lesson background-transparent-50">
+            <div class="padding-8-8">
+                <h1 class="padding-16-16">Lesson 4</h1>
+                <h2 class="padding-16-16">Canvas.</h2>
+            </div>
+        </section>
+    </header>
+    <nav class="nav-index-lesson">
+        <h3 class="h-panel">Панель навигациии</h3>
+        <form method="post" action="index04.html" id="listTasks" name="listTasks">
+            <p>
+                <input type="radio" id="addtask" name="tasks"
+                       value="Дополнительное задание:" />
+                <label for="addtask">Additional task</label>
+            </p>
+            <p>
+                <input type="radio" id="task2" name="tasks"
+                       value="Task 2" />
+                <label for="task2">Task 2</label>
+            </p>
+            <p>
+                <input type="radio" id="taskMy3" name="tasks"
+                       value="MyTask 3" />
+                <label for="taskMy3">Round slider</label>
+            </p>
+        </form>
+    </nav>
+    <main>
+        <section class="section-index-lesson">
+            <div class="block-setter-98 p-t-0x5prc">
+                <div class="tabs block-setter">
+                    <input id="tabHome" type="radio" name="tabs" checked>
+                    <label for="tabHome">Цели и задачи</label>
+                    <input id="tabResume" type="radio" name="tabs">
+                    <label for="tabResume">Теория</label>
+                    <section id="content-tabHome" class="block-setter-98">
+                        <p class="summarytask-caption" id="summarytaskcaption">
+                            Обзор, цель и назначение урока
+                        </p>
+                        <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                            <p class="margin0"> Свойства холста: координатная сетка и контур</p>
+                            <p class="margin0"> Атрибуты и правила разметки фигур</p>
+                            <p class="margin0"> Рисование простых фигур</p>
+                            <p class="margin0"> Рисование на «холсте»</p>
+                            <p class="margin0"> Заливка паттерном</p>
+                            <p class="margin0"> Использование эффекта прозрачности</p>
+                            <p class="margin0"> Рисование стрелок</p>
+                            <p class="margin0"> Рисование кривых Безье</p>
+                            <p class="margin0"> Применение градиентов, узоров и стилей линий</p>
+                            <p class="margin0"> Рисование текста</p>
+                            <p class="margin0"> Применение текстового эффекта «тень»</p>
+                            <p class="margin0"> Анимация</p>
+                            <p class="margin0"> Добавление на «холст» внешних изображений</p>
+                            <p class="margin0"> Использование геометричеких преобразований</p>
+                            <p class="margin0"> Обрезка рисунков на «холсте»</p>
+                            <p class="margin0"> Рисование графиков на «холсте»</p>
+                            <p class="margin0"> Сохрание рисунка с «холста» в текстовый файл</p>
+                            <p class="margin0">
+                                Для поиска нужного инструментария по работе с canvas
+                                используйте поисковые запросы:
+                                <mark class="footer-accent">canvas demos</mark> и
+                                <mark class="footer-accent">javascript canvas frameworks</mark>
+                            </p>
+                        </div>
+                        <p class="look_task">
+                            <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                        </p>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                            <ul class="padding-8-8">
+                                <li>
+                                    Создайте страницу, создайте холст размером (400х250). Разместите его вверху по центру страницы.
+                                    Сделайте заливку радиальным градиентом. Дублируйте данный холст, сделайте заливку изображением.<br />
+                                    <mark class="footer-accent">Примечание: В итоге сделал вероятностную заливку с интервальной анимацией.</mark>
+                                </li>
+                                <li>
+                                    Создайте простую фигуру. Разместите ее в верхнем левом углу. Анимируйте изображение и
+                                    остановите в левом нижнем угле. <br />
+                                    <mark class="footer-accent">Примечание: В итоге создал некие основы игровой модели.</mark>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                            Создайте изображение флага любой страны. Анимируйте изображение любым способом. <br />
+                            <mark class="footer-accent">Примечание: В итоге создал моделирование многооконной системы.</mark>
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionMy03">
+                            Все выше и выше и выше! <br />
+                            <mark class="footer-accent">Продублировал пример с круговыми range из JQuery.</mark>
+                        </div>
+                    </section>
+                    <section id="content-tabResume">
+                        <ul class="margin0 padding-1-0 w-break resume">
+                            <li>
+                                <span class="footer-accent">&lt;canvas&gt;</span> - это холст для зависимостей от разрешения растровой графики,
+                                с помощью которого на лету прорисовываются диаграммы, графики, игры и прочие изображения. На странице
+                                холст имеет вид прямоугольника, в границах которого можно рисовать с помощью
+                                <span class="footer-important">JavaScript</span>.
+                            </li>
+                            <li>
+                                <span class="footer-accent">beginPath()</span> - начало определения сегмента пути, который будет применяться
+                                в таких операциях визуализации, как <span class="footer-accent">stroke()</span> и
+                                <span class="footer-accent">fill()</span>.
+                            </li>
+                            <li>
+                                <span class="footer-accent">closePath()</span> - закрытие любого пути: конец и ачало пути соединяются
+                                прямым сегментом.
+                            </li>
+                            <li>
+                                <span class="footer-accent">moveTo(x,y)</span> - перенос регистрационной точки для следующей относительной
+                                операции рисования.
+                            </li>
+                            <li>
+                                <span class="footer-accent">lineTo(x,y)</span> - создание прямого пути между текущей регистрационной точкой и
+                                точкой (х,y).
+                            </li>
+                            <li>
+                                <span class="footer-accent">rect(x,y,ширина,высота)</span> - создание прямоугольного пути, один угол которого
+                                находится в точке (х,у), а противоположный (по диагонали) - в точке (х+ширина, у+высота).
+                            </li>
+                            <li>
+                                <span class="footer-accent">
+                                    arc(x,y,радиус,начальный угол в радианах, конечный угол в радианах,направление рисования
+                                    (по часовой стрелке и против))
+                                </span> - создание пути в форме дуги (вплоть до полной окружности), где (х,у) - координаты центра дуги, которая
+                                начинается и заканчивается в точках, соответствующих указанным углам (в радианах). Начальная и конечная
+                                точка соединяются либо по часовой стрелке, либо против часовой стрелки.
+                            </li>
+                            <li>
+                                <span class="footer-accent">fill()</span> - заполнение сегмента пути, определенного последним по времени.
+                            </li>
+                            <li>
+                                <span class="footer-accent">stroke()</span> - обводка (т.е. превращение в видимый объект) сегмента пути,
+                                определенного последним по времени.
+                            </li>
+                            <li>
+                                <span class="footer-accent">drawImage(изображение,...)</span> - рисование изображения в области, определяемой
+                                элементом canvas.
+                            </li>
+                            <li>
+                                <span class="footer-accent">strokeText(текст,...)</span> и <span class="footer-accent">fillText(текст,...)</span> -
+                                добавление на элемент canvas текста.
+                            </li>
+                            <li>
+                                <span class="footer-accent">clearRect(x,y,ширина, высота)</span> - очистка прямойгольной области элемента canvas,
+                                определяемой углами (x,y) и (х+ширина, у+высота).
+                            </li>
+                            <li>
+                                <span class="footer-accent">strokeStyle=[строка|объект]</span> и <span class="footer-accent">fillStyle[строка|объект]</span> -
+                                установка атрибутов цвета и стиля для обводок и заливок соответственно.
+                            </li>
+                            <li>
+                                <span class="footer-important">Холст</span> - это двумерная сетка, на которой координата (0,0) присвоена левому верхнему углу.
+                                Значения абсцисс (х) растут слева направо, значения ординат (у) - сверху вниз.
+                            </li>
+                            <li>
+                                Ширина линий (обводок) устанавливается в свойстве <span class="footer-accent">lineWidth</span>.
+                                Свойство <span class="footer-accent">lineCap</span> управляет визуализацией концов линий (срезанный,
+                                скругленный и т.д.), а свойство <span class="footer-accent">lineJoin</span> - формой соединения двух
+                                сегментов линии.
+                            </li>
+                            <li>
+                                <span class="footer-important">Атрибуты шрифта</span>:
+                                <ul class="padding-8-16">
+                                    <li>
+                                        <span class="footer-accent">font</span> - все, что позволяет определить одноименное CSS-правило:
+                                        стиль, вариант, начертание, размер, интерлиньяж и семейство шрифтов;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">textAlign</span> - задает выравнивание текста, относительно начальной точки;
+                                        возможные значения этого свойства:
+                                        <span class="footer-accent">start, end, left, right, central</span>;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">textBaseline</span> - определяет положение текста относительно начальной точки;
+                                        возможные значения этого свойства:
+                                        <span class="footer-accent">top, hanging, middle, alphabetic, ideographic, bottom</span>.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Для добавления градиента на веб-страницу нужно создать сам объект градиента, определить для него одну или
+                                несколько цветовых остановок, а после этого применить объект в качестве
+                                <span class="footer-accent">strokeStyle</span> или <span class="footer-accent">fillStyle</span>.
+                            </li>
+                            <li>
+                                Команда API «холста» <span class="footer-accent">createPattern(...)</span> принимает второй, строковый параметр,
+                                который и управляет повторением изображения. Если повторять изображение не требуется, используйте значение no-repeat.
+                            </li>
+                            <li>
+                                Контекст рисования HTML5-холста поддерживает два типа градиентов:
+                                <ul class="padding-8-16">
+                                    <li>
+                                        <span class="footer-accent">createLinearGradient(x0,y0,x1,y1)</span> - направляет заливку вдоль
+                                        отрезка из точки (x0,y0) в точку (x1,у1);
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">createRadialGradient(x0,y0,r0,x1,y1,r1)</span> - направляет заливку вдоль
+                                        конуса, образуемого двумя окружностями. Начальные три параметра описывают окружность с центром (x0,y0) и
+                                        радиусом r0. Конечные три параметра описывают вторую окружность с центром (x1,y1) и радиусом r1.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-important">В контексте рисования</span> определено несколько методов прорисовки графических
+                                файлов на холсте:
+                                <ul class="padding-8-16">
+                                    <li>
+                                        <span class="footer-accent">drawImage(image,dx,dy)</span> - просто берет картинку и рисует ее;
+                                        координаты (dx,dy) указывают на верхний левый угол изображения, т.е. если присвоить им значение
+                                        (0,0), то картинка будет помещена в верхний левый угол холста;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">drawImage(image,dx,dy,dw,dh)</span> - берет картинку, масштабирует ее по горизонтали и
+                                        вертикали, чтобы она соответсвовала заданным ширине dw и высоте dh, после чего рисует ее от точки (dx,dy);
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)</span> - берет картинку, выделяет
+                                        на ней прямоугольник (sx,sy,sw,sh), масштабирует его до размеров (dw,dh) и рисует от точки (dx,dy).
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class=" footer-important">Индикаторы загрузок</span> встраиваются в страницу с помощью соответсвующих
+                                скриптов.
+                                <ul class="padding-8-16 line-height-1x3">
+                                    <li class="margin-bottom-8">
+                                        <a href="https://j11y.io/p/Sonic/repo/demo/demo.html" class="radius50prc padding-1-8">Примеры индикаторов загрузок</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/padolsey/sonic.js" class="radius50prc padding-1-8">Документация</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-accent">context.shadowColor</span> - устанавливает эффект тени для объекта.
+                            </li>
+                            <li>
+                                <span class="footer-accent">context.rotate(angle,x,y)</span> - контекст сохранения состояния полотна и начала
+                                системы координат.
+                            </li>
+                            <li>
+                                <span class="footer-accent">context.translate(x,y)</span> - контекст трансформации вращения полотна.
+                            </li>
+                            <li>
+                                <span class="footer-accent">context.scale(x,y)</span> - контекст трансформации масштабирования.
+                            </li>
+                            <li>
+                                <span class="footer-accent">translate(x,y)</span> - перемещение (транслирование) точки отсчета системы
+                                координат из (0,0) в (x,y).
+                            </li>
+                            <li>
+                                <span class="footer-accent">scale(x,y)</span> - масштабирование единиц измерения системы координат по осям
+                                х и у независимо друг от друга.
+                            </li>
+                            <li>
+                                <span class="footer-accent">rotate(угол)</span> - поворот системы координат вокруг точки отсчета (0,0) на угол,
+                                заданный в радианах (по часовой стрелке).
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/indexLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+</body>
+</html>

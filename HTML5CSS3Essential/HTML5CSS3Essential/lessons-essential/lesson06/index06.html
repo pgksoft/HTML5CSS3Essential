@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+</head>
+<body class="body-index">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="block-setter">
+            <div class="short-description-panel-header">
+                <p class="margin0">HTML5 & CSS3 Essential: Lesson 06. CSS3. Кроссбраузерные свойства. Flexbox.</p>
+                <div class="short-description-panel-header-close">
+                    <p class="short-description-panel-header-caption">short description</p>
+                    <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+                </div>
+            </div>
+            <div class="short-description-panel-content">
+                <p class="abzac">
+                    Всем доброго времени суток.
+                </p>
+            </div>
+        </div>
+    </div>
+    <header class="header-index allign-center">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content-lesson background-transparent-50">
+            <div class="padding-8-8">
+                <h1 class="padding-16-16">Lesson 6</h1>
+                <h2 class="padding-16-16">CSS3. Кроссбраузерные свойства. Flexbox.</h2>
+            </div>
+        </section>
+    </header>
+    <nav class="nav-index-lesson">
+        <h3 class="h-panel">Панель навигациии</h3>
+        <form method="post" action="index05.html" id="listTasks" name="listTasks">
+            <p>
+                <input type="radio" id="addtask" name="tasks"
+                       value="Дополнительное задание:" />
+                <label for="addtask">Additional task</label>
+            </p>
+            <p>
+                <input type="radio" id="task2" name="tasks"
+                       value="Task 2" />
+                <label for="task2">Task 2</label>
+            </p>
+            <p>
+                <input type="radio" id="task3" name="tasks"
+                       value="Task 3" />
+                <label for="task3">Task 3</label>
+            </p>
+        </form>
+    </nav>
+    <main>
+        <section class="section-index-lesson">
+            <div class="block-setter-98 p-t-0x5prc">
+                <div class="tabs block-setter">
+                    <input id="tabHome" type="radio" name="tabs" checked>
+                    <label for="tabHome">Цели и задачи</label>
+                    <input id="tabResume" type="radio" name="tabs">
+                    <label for="tabResume">Теория</label>
+                    <section id="content-tabHome" class="block-setter-98">
+                        <p class="summarytask-caption" id="summarytaskcaption">
+                            Обзор, цель и назначение урока
+                        </p>
+                        <!--«»-->
+                        <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                            <p class="margin0">Новые возможности CSS3.</p>
+                            <p class="margin0">Научится работать с фоновыми изображениями в CSS3.</p>
+                            <p class="margin0">Настройки прозрачности изображений.</p>
+                            <p class="margin0">Форматирование блоков в CSS3. Настройка обтекания и контуров блока.</p>
+                            <p class="margin0">Научиться настраивать отображение контента относительно границ родительского элемента.</p>
+                            <p class="margin0">Добавление тени с помощью box-shadow.</p>
+                            <p class="margin0">Форматрование границ элемента.</p>
+                            <p class="margin0">Позиционирование контента элемента.</p>
+                            <hr />
+                            <h4>Селекторы</h4>
+                            <a href="https://www.w3.org/TR/selectors/" class="radius50prc padding-2-8">https://www.w3.org/TR/selectors/</a>
+                            <h4>Фоновые изображения</h4>
+                            <a href="https://www.w3schools.com/css/css_background.asp" class="radius50prc padding-2-8">https://www.w3schools.com/css/css_background.asp</a>
+                            <h4>Цветовые модели</h4>
+                            <a href="https://www.w3.org/TR/css-color-3/" class="radius50prc padding-2-8">https://www.w3.org/TR/css-color-3/</a>
+                            <h4>Границы</h4>
+                            <a href="https://www.w3schools.com/css/css3_border_images.asp" class="radius50prc padding-2-8">https://www.w3schools.com/css/css3_border_images.asp</a>
+                            <br />
+                            <a href="https://htmlbook.ru/css/border-radius" class="radius50prc padding-2-8">https://htmlbook.ru/css/border-radius</a>
+                            <br />
+                            <a href="https://www.w3.org/TR/2002/WD-css3-border-20021107/" class="radius50prc padding-2-8">https://www.w3.org/TR/2002/WD-css3-border-20021107/</a>
+                            <h4>Flexbox</h4>
+                            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" class="radius50prc padding-2-8">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+                        </div>
+                        <p class="look_task">
+                            <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                        </p>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                            <ol>
+                                <li>
+                                    Добавте на сраницу изображение и настройте для него прозрачность 80%.
+                                </li>
+                                <li>
+                                    Создайте страницу и разместите на странице три горизонтальных блока одинаковой ширины.
+                                    В каждый блок установите избражение в верхнюю часть блока и текст в нижнюю.
+                                    Сверстайте страницу используя flexbox.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                            Сверстайте страницу на которой разместите несколько блоков. Установите блокам цвет фона используя все
+                            известные Вам способы определения цвета в CSS3.
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription03">
+                            Создайте страницу с ссылками на .pdf, .txt, .doc файлы. Сделайте, чтобы перед каждой ссылкой отображалась
+                            иконка в соответствии с форматом файла.
+                        </div>
+                    </section>
+                    <section id="content-tabResume">
+                        <ul class="margin0 padding-1-0 w-break resume">
+                            <li>
+                                <span class="footer-important">CSS3</span> - это новый стандарт оформления HTML документов, значительно расширяющий
+                                возможности предыдущего стандарта CSS2.1.
+                            </li>
+                            <li>
+                                Многие возможности, которые были труднодоступны в CSS2.1, то есть требовали использования дополнительных внешних
+                                программ (таких, как Above Photoshop), скриптов (таких, как JavaScript) или специальных "хитростей", могут легко
+                                достигаться в CSS3 за счет использования новых свойств.
+                            </li>
+                            <li>
+                                В CSS3 Вы можете устанавливать размер фоновых изображений с помощью свойства <span class="footer-accent">background-size</span>.
+                                Размер фоновых изображжений может быть указан в пикселях или в процентах.
+                            </li>
+                            <li>
+                                Свойство <span class="footer-accent">border-image</span> - сокращенный способ задать свойства границы
+                                <span class="footer-accent">border-image-source, border-image-size, border-image-width, border-image-outset, border-image-repeat</span>,
+                                позволяет одновременно задать фоновое изображение границы элемента, разбить его на фрагменты, указать размер контура и его
+                                способность выходить за пределы границы элемента, а также указать способ отображения боковых фрагментов и центра
+                                фонового изображения.
+                            </li>
+                            <li>
+                                <span class="footer-accent">stretch</span> - растягивает рисунок границы до размеров эоемента. Это значение
+                                используется по умолчанию.
+                            </li>
+                            <li>
+                                <span class="footer-accent">repeat</span> - повторяет рисунок границы.
+                            </li>
+                            <li>
+                                <span class="footer-accent">round</span> - повторяет рисунок и масштабирует его так, чтобы на стороне элемента
+                                оказалось целое число изображений.
+                            </li>
+                            <li>
+                                В свойтсвах <span class="footer-accent">box-shadow</span> можно задать толщину, цвет, разброс тени и ориентацию
+                                (внешняя или внутренняя тень).
+                            </li>
+                            <li>
+                                В CSS3 цвет может задаваться с помощью <span class="footer-important">HSL(Hue, Saturation, Lightness)</span>:
+                                оттенка, насыщенности и яркости.
+                            </li>
+                            <li>
+                                С помощью нового CSS свойства <span class="footer-accent">background-origin</span> Вы пожете установить как должно
+                                вычисляться положение элемента относительно границ его родительского элемента:
+                                <ul class="padding-0-16">
+                                    <li>
+                                        <span class="footer-accent">border-box</span> - положение элемента вычисляется относительно верхнего левого угла границы элемента;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">padding-box</span> - положение элемента вычисляется относительно верхнего левого угла блока padding;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">content-box</span> - положение элемента вычисляется относительно верхнего левого угла содержимого;
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Прозрачность можно задать двумя способами: применяя <span class="footer-important">opacity</span> или
+                                <span class="footer-important">rgba</span>. Для последнего первые три числа - RGB-код цвета. Последнее - уровень прозрачности.
+                            </li>
+                            <li>
+                                <span class="footer-accent">border-radius</span> - задает округленный фон.
+                            </li>
+                            <li>
+                                При применении свойств позиционирования элементы могут накладываться друг на друга. Свойство
+                                <span class="footer-accent">z-index</span> позволяет установить какой элемент в случае наложения будет сверху, а какой снизу.
+                            </li>
+                            <li>
+                                <span class="footer-accent">box-align</span> - определяет как выравнивается контент в блоке перпендикулярно ориентации блока.
+                                <ul class="padding-0-16">
+                                    <li>
+                                        <span class="footer-accent">start</span> - контент выравнивается по начальной линии и оставляет дополнительное
+                                        пространство в конце (т.е. горизонтальный контент выравнивается по верху, а вертикальный - по левому краю.)
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">end</span> - контент выравнивается по конечной линии и оставляет дополнительное
+                                        пространство в начале (т.е. горизонтальный контент выравнивается по низу, а вертикальный - по правому краю.)
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">center</span> - контент выравнивается по центру;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">baseline</span> - контент выравнивается по базовой линии текста
+                                        (применяется только к горизонтальному контенту)
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">strech</span> - контент равномерно растягивается так, чтобы не было пустого пространства в блоке.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-accent">box-pack</span> - определяет выравнивание дочерних элементов в блоке.
+                                <ul class="padding-0-16">
+                                    <li>
+                                        <span class="footer-accent">start</span> - контент выравнивается по начальной стороне (если блок
+                                        горизонтальный, то по левому краю, если вертикальный, то по верхнему краю);
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">end</span> - контент выравнивается по начальной стороне (если блок
+                                        горизонтальный, то по правому краю, если вертикальный, то по нижнему краю);
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">center</span> - контент выравнивается по центру;
+                                    </li>
+                                    <li>
+                                        <span class="footer-accent">justify</span> - контент распределяется равномерно по всему блоку.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-accent">box-sizing</span> - позволяет свойствам <span class="footer-accent">width</span> и
+                                <span class="footer-accent">height</span> задавать размера не контента, а размеры блока.
+                            </li>
+                            <li>
+                                <span class="footer-accent">inline-box</span> - контент строчно бокса выводится по-горизонтали или по вертикали
+                                (в зависимости от значения родительского свойства -moz-box-orient).
+                            </li>
+                            <li>
+                                <span class="footer-accent">box-orient</span> - определяет, будет ли элемент выводить свой контент горизонтально или
+                                вертикально.
+                            </li>
+                            <li>
+                                <span class="footer-accent">box-ordinal-group</span> - определяет порядковый номер элемента в группе.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/indexLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+</body>
+</html>

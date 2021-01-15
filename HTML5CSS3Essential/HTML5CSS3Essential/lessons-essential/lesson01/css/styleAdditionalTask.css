@@ -1,0 +1,135 @@
+﻿@import url('../../../css/styleGooglefont.css');
+/* Lesson 01. Введение в HTML5. Основы синтаксиса и семантики, передовые методы разметки. */
+body {
+}
+
+.cell {
+    display: table-cell;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+.section-additional-task {
+    display: table;
+    width: 96%;
+    height: 100%;
+    margin: 1% auto;
+    color: white;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 5px;
+    box-shadow: 2px -2px 5px 0 rgba(0, 0, 255, 0.20), -2px -2px 5px 0 rgba(0, 0, 255, 0.20), 2px 2px 5px 0 rgba(0, 0, 255, 0.20), -2px 2px 5px 0 rgba(0, 0, 255, 0.20);
+}
+
+    .section-additional-task:hover {
+        box-shadow: 2px -2px 5px 0 rgba(255, 106, 0, 0.30), -2px -2px 5px 0 rgba(255, 106, 0, 0.30), 2px 2px 5px 0 rgba(255, 106, 0, 0.30), -2px 2px 5px 0 rgba(255, 106, 0, 0.30);
+    }
+
+.addtask-header {
+    display: table-row;
+    height: 100%;
+    background-color: red;
+}
+
+    .addtask-header .cell {
+        display: table-cell;
+        text-align: center;
+        word-break: break-word;
+        padding: 8px;
+    }
+
+.addtask-nav {
+    display: table-row;
+    height: 100%;
+    background-color: darkorange;
+}
+
+    .addtask-nav .cell {
+        display: table-cell;
+        text-align: center;
+        word-break: break-word;
+        padding: 8px;
+        column-span: 2;
+    }
+
+.addtask-main {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+.addtask-main-section {
+    display: table-cell;
+    width: 70%;
+    height: 100%;
+    background-color: gold;
+}
+
+.addtask-main-section-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.addtask-main-section-contentrow {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+    .addtask-main-section-contentrow .cell {
+        text-align: center;
+        word-break: break-word;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        vertical-align: top;
+    }
+
+.addtask-main-section-articlesrow {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+    .addtask-main-section-articlesrow .cell {
+        word-break: break-word;
+        text-align: center;
+        vertical-align: bottom;
+    }
+
+.addtask-article {
+    display: block;
+    background-color: forestgreen;
+    width: 96%;
+    margin: 1% auto;
+}
+
+.addtask-main-aside {
+    display: table-cell;
+    width: 30%;
+    height: 100%;
+    background-color: royalblue;
+    text-align: center;
+    word-break: break-word;
+    vertical-align: top;
+}
+
+.addtask-footer {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+
+    .addtask-footer .cell {
+        display: table-cell;
+        background-color: purple;
+        text-align: center;
+        word-break: break-word;
+        padding: 8px;
+        vertical-align: top;
+    }

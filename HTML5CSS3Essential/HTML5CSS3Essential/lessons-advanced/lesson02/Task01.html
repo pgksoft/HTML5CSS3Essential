@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced-L02: Task 1</title>
+    <link href="../../css-external/w3.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleGooglefont.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/general.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleLesson.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleLogo.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/styleAddConditions.css"?ver=26-10-2020 16:15 rel="stylesheet" />
+    <link href="../../css/styleInputs.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/brownianMotionSimulation.css?ver=26-10-2020 16:15" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 02: Canvas. Задание 1.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+            <p class="abzac">26.10.2020</p>
+            <p class="abzac">
+                Опубликовал решение для 1-й задачи 2-й лекции курса HTML5&CSS3 Avanced - имитация броуновского движения.
+                Получилось воплотить в код все, что изначально задумывалось:
+                <ul>
+                    <li>использование <i>TypeScript</i>;</li>
+                    <li>усовершенствованная (продвинутая) настройка параметров управления;</li>
+                    <li>соответственно расширена функциональность;</li>
+                    <li>использование <i>OffscreenCanvas;</i></li>
+                    <li>
+                        реализована возможность переключения режимов имитации: или в основном потоке, или
+                        с использованием <i>OffscreenCanvas;</i>
+                    </li>
+                </ul>
+                Для данной задачи так же сделал краткое описательное видео и добавил его на соответствущую страницу
+                the most interesting.
+            </p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <h2 class="padding-8-16">Lesson 02:  Canvas.</h2>
+                <h3 class="padding-8-16">Задание 1.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Имитация броуновского движения
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <nav class="parms">
+                        <div class="set">
+                            <div id="is-use-off-screen-canvas" data-use="no" title=""></div>
+                            <div class="settings" id="settings">
+                                <span>Параметры</span>
+                            </div>
+                            <div class="settings" id="redraw">
+                                <span>Перерисовать</span>
+                            </div>
+                            <div class="settings" id="step-by-step" name="log-flex">
+                                <span>Пошаговая анимация</span>
+                            </div>
+                            <div class="settings" id="launch" data-simulation="isStop">
+                                <span>Старт</span>
+                            </div>
+                        </div>
+                        <div class="show" id="parms-show">
+                        </div>
+                    </nav>
+                    <section class="brownian-motion-container" id="box-for-area-of-motion">
+                        <canvas id="brownian-motion-area" ></canvas>
+                    </section>
+
+                    <!-- CONFIRM -->
+                    <div id="confirm-modal" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w30prc">
+                            <header class="w3-container w3-orange">
+                                <h3 class="padding-2-8" id="confirm-modal-Header">Подтвердите удаление</h3>
+                            </header>
+                            <div class="w3-container">
+                                <p id="confirmAbout"></p>
+                            </div>
+                            <footer class="w3-container w3-orange w3-center padding-8-0">
+                                <button class="button-ok" id="confirmYes">Confirm</button>
+                                <button class="button-no" id="confirmNo">Refuse</button>
+                            </footer>
+                        </div>
+                    </div>
+
+                    <!-- PARAMS -->
+                    <div id="parms-modal" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w75prc overflow-auto">
+                            <header class="w3-container w3-lime padding-4-16">
+                                <h3 class="block-left">
+                                    <img src="../../img/cog-outline.png" alt="" />
+                                </h3>
+                                <h3 class="padding-2-8" id="find-modal-Header">Параметры имитации броуновского движения.</h3>
+                                <span class="w3-button w3-display-topright" id="parmsOK">&times;</span>
+                            </header>
+                            <div class="w3-container padding-4-8">
+                                <div class="parameters">
+                                    <div class="set">
+                                        <!-- SPEED -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0">Скорость (размер шага в пикселях):</p>
+                                        <div class="add-conditions" id="parms-speed-panel"> </div>
+                                        <!-- ELEMENT KIND -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0">Вид элемента (фигуры):</p>
+                                        <div class="add-conditions" id="parms-element-kind-panel"> </div>
+                                        <!-- SIZE -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-label range">
+                                            <label class="label-in-edit-block margin-top-4" for="parms-size">
+                                                Размер элемента (фигуры) в пикселях:
+                                                <span id="show-size-value" contenteditable="true" data-name="size" data-validate="true">0</span>
+                                            </label>
+                                            <div class="edit-block-separator">&nbsp;</div>
+                                        </div>
+                                        <div class="edit-block padding-2-0">
+                                            <div class="edit-block-input">
+                                                <div class="edit-block-input-setter">
+                                                    <input type="range" id="parms-size" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- SCALE-AREA -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0">Масштабность:</p>
+                                        <div class="add-conditions" id="parms-scale-area-panel"> </div>
+                                    </div>
+                                    <div class="set">
+                                        <!-- FILL TYPE -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0">Тип заливки элемента (фигуры):</p>
+                                        <div class="add-conditions" id="parms-fill-type-panel">
+                                        </div>
+                                        <!-- AMOUNT -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <div class="edit-block-label range">
+                                            <label class="label-in-edit-block margin-top-4" for="parms-amount">
+                                                Количество элементов (фигур):
+                                                <span id="show-amount-value" contenteditable="true" data-name="amount" data-validate="true">0</span>
+                                            </label>
+                                            <div class="edit-block-separator">&nbsp;</div>
+                                        </div>
+                                        <div class="edit-block padding-2-0">
+                                            <div class="edit-block-input">
+                                                <div class="edit-block-input-setter">
+                                                    <input type="range" id="parms-amount" />
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- PATH -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <label>Длина пути</label>
+                                        <div class="path">
+                                            <div class="from">
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-path-from">
+                                                        от:
+                                                        <span id="show-path-from-value" contenteditable="true" data-name="path-from" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-path-from" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="to">
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-path-to">
+                                                        до:
+                                                        <span id="show-path-to-value" contenteditable="true" data-name="path-to" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-path-to" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="add-conditions">
+                                    <input type="checkbox" id="is-off-screen-canvas"/>
+                                    <label for="is-off-screen-canvas" title=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> прорисовка в асинхронном потоке</label>
+                                    <input type="checkbox" id="is-track-proportions-area-motion" checked />
+                                    <label for="is-track-proportions-area-motion">отслеживать пропорции области</label>
+                                    <input type="checkbox" id="is-translucent-modal" />
+                                    <label for="is-translucent-modal">полупрозрачная форма</label>
+                                    <input type="button" id="set-default-parms" />
+                                    <label for="set-default-parms">параметры по умолчанию</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu-select" data-display="false" data-type="empty"></div>
+
+                    <div class="log" name="log" data-display="false">
+                        <p id="log"></p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="ts/bmSimulation.dist.js"></script>
+
+</body>
+</html>

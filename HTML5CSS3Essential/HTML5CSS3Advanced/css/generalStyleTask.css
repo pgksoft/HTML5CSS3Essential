@@ -1,0 +1,129 @@
+﻿@import url('styleGooglefont.css');
+
+body {
+}
+
+.f-family-Noto-Serif {
+    font-family: 'Noto Serif'
+}
+
+.f-family-PT-Serif {
+    font-family: 'PT Serif'
+}
+
+.f-family-Roboto {
+    font-family: Roboto;
+}
+
+.f-family-Roboto-Condensed {
+    font-family: 'Roboto Condensed'
+}
+
+.header-task-content {
+    color: white;
+    text-align: left;
+    font-family: 'Noto Serif';
+    letter-spacing: 5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 2px 3px blue;
+    width: 80%;
+    float: left;
+}
+
+.main-task {
+    width: 100%;
+    height: 100%;
+}
+
+.section-task {
+    display: block;
+    width: 75%;
+    float: left;
+    font-family: Roboto;
+}
+
+.section-subtask {
+    display: block;
+    width: 96%;
+    margin: 2% auto;
+    padding: 2% 0;
+}
+
+.subtask-box {
+    display: block;
+    width: 96%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.70);
+    padding: 1%;
+}
+
+.footer-task-img {
+    display: block;
+    width: 150px;
+    margin: 16px auto;
+    border: 3px solid darkgray;
+    transition: .5s linear;
+}
+
+    .footer-task-img:hover {
+        width: 450px;
+    }
+
+.edit-block {
+    width: 100%;
+    overflow: auto;
+    margin: 8px auto;
+}
+
+.edit-block-label {
+    width: 37%;
+    float: left;
+    text-align: right;
+}
+
+.edit-block-separator {
+    width: 1%;
+    float: left;
+}
+
+.edit-block-input {
+    width: 60%;
+    float: left;
+}
+
+.edit-block-input-setter {
+    width: 100%;
+    position: relative;
+}
+
+    .edit-block-input-setter input, .edit-block-input-setter select, .edit-block-input-setter p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+.label-in-edit-block {
+    margin: 0;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.form-main {
+    width: 100%;
+}
+
+.form-fotter {
+    width: 96%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:960px ) {
+    .header-task-content {
+        width: 100%;
+        float: none;
+        padding-bottom: 8px;
+    }
+
+    .section-task {
+        width: 100%;
+        float: none;
+    }
+}

@@ -1,0 +1,48 @@
+﻿/* Lesson 10 */
+@color-base: hsl(90,100%,30%);
+@color-border: lightgreen;
+
+.subtask-box {
+    background-color: @color-base;
+}
+
+#main {
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.main-header {
+    color: @color-base;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main-nav {
+    text-align: center;
+    margin: 40px 0px 0px 0px;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+#login-form {
+    width: 80%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid @color-border;
+
+    &:focus-within, &:hover {
+        border-color: @color-base;
+        box-shadow: 1px -1px 3px 0 @color-border, -1px -1px 3px 0 @color-border, 1px 1px 3px 0 @color-border, -1px 1px 3px 0 @color-border;
+    }
+}

@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS. Lesson 04</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="css/styleIndex04.css" rel="stylesheet" />
+</head>
+<body>
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right" />
+                    <h1 class="padding-16-16">Lesson 04</h1>
+                    <h2 class="padding-16-16">Модули и пространства имен</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+            <article class="card-lesson-content">
+                <p class="abzac">
+                    В этом уроке не будет заданий. Знания, которые были полученны благодаря этой лекции были применены и расширены
+                    при выполнении заданий предыдущих лекций. В том числе весь проект был заново собран с использованием WebPack.
+                    Поэтому привожу здесь только основную информацию. 
+                </p>
+                <p class="summarytask-caption">
+                    Обзор, цель и назначение урока
+                </p>
+                <!--«»-->
+                <div class="summary-task margin-top-8 margin-bottom-8">
+                    <p class="margin0">Применение функционала пространства имен.</p>
+                    <p class="margin0">Работа с модулями.</p>
+                    <p class="margin0">Применение в приложениях сборщика <span class="accent">Webpack</span>.</p>
+                </div>
+                <p class="summarytask-caption">
+                    Немного теории
+                </p>
+                <div class="block-setter-96">
+                    <ul class="margin0 padding-1-0 w-break resume">
+                        <!--<span class="accent"></span>-->
+                        <li>
+                            Для организации больших программ предназначены пространства имен. Пространства имен
+                            содержат группу классов, интерфейсов, функций, других пространств имен, которые могут
+                            использоваться в некотором общем контексте.
+                        </li>
+                        <li>
+                            Для определения пространств имен используется ключевое слово <span class="accent">namespace</span>. Чтобы типы и
+                            объекты, определенные в пространстве имен, были видны извне, они определяются с ключевым
+                            словом <span class="accent">export</span>. Пространства имен могут содержать и интерфейсы, и объекты, и функции.
+                        </li>
+                        <li>
+                            С помощью директивы <span class="accent">/// &lt;reference path="personnel.ts" /&gt;</span> подключается файл
+                            <span class="accent">personnel.ts</span>
+                        </li>
+                        <li>
+                            <span class="accent">TypeScript</span> поддерживает работу с модулями. Модули являются концепцией,
+                            привнесенной стандартом <span class="accent">ES2015</span>. Модули в некотором смысле похожи на
+                            пространства имен: они могут заключать различные классы, интерфейсы, функции, объекты. Модули
+                            выделяются в отдельные файлы, что позволяет сделать код приложения более ясным и чистым, и в то же
+                            время позволяет использовать модули в других приложениях. При этом модули подключаются в приложение не
+                            посредством тега <span class="accent">&lt;script&gt;</span> , а с помощью загрузчика модулей.
+                        </li>
+                        <li>
+                            Все модули имеют определенный формат и относятся к определенной системе. Всего есть 5
+                            различных систем модулей: <span class="accent">
+                                AMD (Asynchronys Module Defenition), CommonJS,
+                                UMD (Universal Module Defenition), System, ES 2015
+                            </span>.
+                        </li>
+                        <li>
+                            Для загрузки модулей применяются специальные загрузчики:
+                            <ul class="padding-3-8">
+                                <li>
+                                    <span class="accent">RequireJS</span>: RequireJS использует синтаксис, известный как асинхронное определение модуля или
+                                    <span class="accent">asynchronous module definition(AMD)</span>;
+                                </li>
+                                <li>
+                                    <span class="accent">Browserify</span>: использует синтаксис <span class="accent">CommonJS</span>;
+                                </li>
+                                <li>
+                                    <span class="accent">SystemJS</span>: универсальный загрузчик, может применяться для модулей любого типа.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Чтобы классы, интерфейсы, функции были видны извне, они определяются ключевым словом
+                            <span class="accent">export</span>. Чтобы задействовать модуль в приложении, его надо импортировать с помощью
+                            оператора <span class="accent">import</span>.
+                        </li>
+                        <li>
+                            <span class="accent">Webpack</span> представляет популярный инструмент для сборки модулей в один файл. Для настройки
+                            используется файл <span class="accent">webpack.config.js</span>, который будет содержать конфигурацию
+                            <span class="accent">Webpack</span> с основными параметрами:
+                            <ul class="padding-3-8">
+                                <li>
+                                    <span class="accent">entry</span>: определяет входные файлы для создания сборок;
+                                </li>
+                                <li>
+                                    <span class="accent">output</span>: определяет конфигурацию выходных файлов;
+                                </li>
+                                <li>
+                                    <span class="accent">resolve</span>: определяет, как будут обрабатываться файлы, если они не имеют расширений;
+                                </li>
+                                <li>
+                                    <span class="accent">module.rules</span>: определяет загрузчики, которые загружают модули;
+                                </li>
+                                <li>
+                                    <span class="accent">plugins</span>: определяет применяемые плагины.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+                <p> <a href="https://webpack.js.org/">WebPack</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+</body>
+</html>

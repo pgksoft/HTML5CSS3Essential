@@ -1,0 +1,17 @@
+﻿@import url('styleGooglefont.css');
+
+.abzac a {
+    text-decoration: none;
+    /*box-sizing: border-box;*/
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    padding: 0 0.3%;
+}
+
+    .abzac a:hover {
+        border-color: orange;
+    }
+
+.abzac:first-letter {
+    margin-left: 20px;
+}

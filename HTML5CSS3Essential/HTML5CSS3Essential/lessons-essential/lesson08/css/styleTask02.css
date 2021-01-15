@@ -1,0 +1,14 @@
+﻿/*  LESSON 8  */
+
+.radial {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10% 0;
+    height: 20%;
+    box-sizing: border-box;
+    border: 3px solid gray;
+    background: repeating-linear-gradient(135deg, white, white 10px, lightgray 10px, lightgray 20px);
+}
+

@@ -1,0 +1,23 @@
+﻿/* LESSON 6 */
+body {
+}
+
+.ref {
+    padding: 8px 0;
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: left 50%;
+    text-decoration: none;
+}
+
+    .ref[href*='pdf'] {
+        background-image: url('../img/pdf-icon.png');
+    }
+
+    .ref[href*='txt'] {
+        background-image: url('../img/txt-icon.png');
+    }
+
+    .ref[href*='doc'], a[href*='docx'], a[href*='docm'] {
+        background-image: url('../img/word-icon.png');
+    }

@@ -1,0 +1,24 @@
+﻿@import url('../../../css/styleGooglefont.css');
+
+body {
+    counter-reset: section 0;
+}
+
+.section {
+    counter-reset: paragraph;
+}
+
+    .section::before {
+        counter-increment: section;
+        content: counter(section) '. '
+    }
+
+.paragraph {
+    margin: 0;
+    padding-left: 16px;
+}
+
+    .paragraph::before {
+        counter-increment: paragraph;
+        content: counter(paragraph) '. ';
+    }

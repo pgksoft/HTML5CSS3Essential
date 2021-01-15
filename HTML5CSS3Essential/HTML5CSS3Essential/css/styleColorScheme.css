@@ -1,0 +1,33 @@
+﻿.color-scheme {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 0.5%;
+    background-color: hsl(120,100%,100%);
+    border-radius: 7px;
+}
+
+    .color-scheme[data-is-color-scheme] {
+        margin-bottom: 1%;
+    }
+
+    .color-scheme .color-input {
+        display: flex;
+        box-sizing: border-box;
+        border-radius: 3px;
+        width: 1rem;
+        height: 1rem;
+        padding: 0.1rem;
+        margin-top: 0.5%;
+        margin-left: 0.5%;
+        border: 1px outset hsl(0,0%,80%);
+        transition: .3s;
+    }
+
+        .color-scheme .color-input[data-color] {
+            cursor: pointer;
+        }
+
+            .color-scheme .color-input[data-color]:active {
+                border-style: inset;
+            }

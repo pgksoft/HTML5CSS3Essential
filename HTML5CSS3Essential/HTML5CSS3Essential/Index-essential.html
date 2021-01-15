@@ -1,0 +1,2178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <title>HTML5CSS3Essential</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="css/general.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleindex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleHeaderIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleShortDescriptionPanel.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLessonsIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLesson.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleFooterIndex.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleLogo.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="lessons-essential/lesson09/css/styleIndex09.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <title>HTML5 & CSS3 Essential</title>
+    <!-- zen coding: ul.menu>li{item $}*10 -->
+</head>
+<body class="body-index">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5 & CSS3 Essential: Lessons</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">
+                Всем доброго времени суток. Данный учебный проект был создан при изучении материала online-курсов
+                <a class="link-hover-orange" href="https://itvdn.com/">ITVDN</a>. Идея по созданию данного проекта пришла не сразу.
+                При прохождении соответствующего учебного материала начали накапливаться решения учебных задач. При работе над очередной
+                задачей все чаще возникала необходимость обращений к решениям предыдущих задач, использования их стилей и разметки.
+                И через какое-то время появилась идея объединения задач в единый проект, с которым в дальнейшем будет удобно работать и использовать
+                как справочный материал и(или) выполнять доработки с целью опробировать что-то новое.
+            </p>
+            <p class="abzac">
+                Следут обратить внимание, что решения части задач стали выходить за рамки курса HTML5 CSS3 essential. Это связано с тем, что глобально,
+                ставится цель пройти все курсы по специальности Frontend Developer. Уже были пройдены основные курсы по JavaScript. Поэтому стало
+                интересно использовать полученные знания в данном учебном проекте. Собственно что я и сделал.
+            </p>
+            <p class="abzac">
+                Данное решение представляет собой ASP.NET Empty проект. Среда разработки Visual Studio 2017. После некоторой «прокрастинации» нашел вариант
+                бесплатного ресурса Azure, где можно опубликовать данное решение. При этом сразу были выявлены недостатки такого бесплатного варианта публикации
+                сайта. Это невозможность бесплатного использования SSL. В результате не поддерживается offline-режим. В консоли выдает сообщение, что нужно
+                https-подключение. Также не разрешает геолокацию, опять же говорит, что нужно использовать https-соединение. Еще почему-то не видит видео-файл, и не
+                находит less-файлы. Но у меня локально на IIS-сервере все работает.
+            </p>
+            <p class="abzac">
+                Для каждого урока и задачи будут свои небольшие описания. Было интересно посмотреть как все выглядит в мобильном браузере. В результате, для
+                более удобной виуализации, дописал стили и немного в js.
+            </p>
+            <p class="abzac">
+                Изучение и какая-никакая проверка работы учебных задач выполнялась на основе десктопных браузеров Chrome и FireFox.
+                Для мобильных версий я поднастроил в основном только форматирование контекста для более удобного восприятия пользователем.
+                Одной из явных особенностей UI-интерфейса есть обработка событий мыши. В мобильном браузере это выглядит немного иначе.
+            </p>
+            <p class="abzac">
+                Данное всплывающее окно short description будет появляться только при первом входе на страницу. Так же его можно активировать при нажатии
+                на анимированную кнопку логотипа <span class="orange">&copy; PgkSoft</span> внизу страницы.
+            </p>
+            <p class="abzac">
+                Всем спасибо.
+            </p>
+            <p class="abzac">
+                31.12.2019
+                В середине декабря оформил подписку на хостинг. Создал домен с SSL.
+                Так что теперь вроде все работает.
+                Описание откорректирую попозже.
+            </p>
+        </div>
+    </div>
+    <header class="header-index">
+        <section class="header-general">
+            <a href="Index.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="AboutHTML.html"><img src="img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                    <td><img src="img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                    <td><img src="img/javascript-icon-64x64.png" alt="JS" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content">
+            <h1 class="padding-8-16 background-transparent-80">Курс: HTML5 & CSS3 Essential</h1>
+            <article>
+                <h3 class="h-course-description allign-left padding-8-16 background-transparent-60">Описание курса</h3>
+                <div class="course-description background-transparent-40">
+                    <p class="margin0 padding-8-16 allign-justify fsize-1x1rem">
+                        В курсе описаны технологии веб-разработки по стандартам нового поколения на реальных и простых примерах.
+                        Детально рассматриваются основы синтаксиса и семантики, использование новых возможностей форм,
+                        встроенное видио и аудио, геолокация, элемент Canvas, а также многие другие нововведения.
+                    </p>
+                </div>
+            </article>
+        </section>
+    </header>
+    <main>
+        <section class="section-index">
+            <nav class="section-index-nav padding-0-8 radius50prc">
+                <button id="all" class="button-with-hover-orange block-left radius50prc padding-3-8 margin8" title="">
+                    <img id="imgExpandAll" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAll" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Уроки</p>
+                    <p id="markAll" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allPurpose" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllPurpose" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllPurpose" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Цель</p>
+                    <p id="markAllPurpose" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allSummaryTask" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllSummaryTask" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllSummaryTask" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Резюме</p>
+                    <p id="markAllSummaryTask" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allHomeWork" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllHomeWork" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllHomeWork" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Задания</p>
+                    <p id="markAllHomeWork" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+                <button id="allEverything" class="button-with-hover-orange block-left radius50prc padding-3-8  margin8" title="">
+                    <img id="imgExpandAllEverything" class="block-left padding-right-8 display-yes" src="img/expand-all.png" alt="" />
+                    <img id="imgCollapseAllEverything" class="block-left padding-right-8 display-no" src="img/collapse-all.png" alt="" />
+                    <p class="margin0 block-left fsize-1x1rem">Все</p>
+                    <p id="markAllEverything" class="block-left margin0"><sup title=""></sup></p>
+                </button>
+            </nav>
+            <!-- LESSON01 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson01/index01.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson01</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="1" data-topic="Урок 01. Введение в HTML5. Основы синтаксиса и семантики, передовые методы разметки.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Введение в HTML5. Основы синтаксиса и семантики, передовые методы разметки.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Рассмотреть основные тиги HTML5</li>
+                                        <li>Сравнение HTML4.1 и HTML</li>
+                                        <li>Научиться пользоваться новыми тегами HTML5</li>
+                                        <li>Научиться временно скрывать содержимое</li>
+                                        <li>Научиться создавать редактируемые части страницы</li>
+                                        <li>Рассмотреть микроформаты как расширение HTML5</li>
+                                        <li>Рассмотреть структуру страницы HTML5</li>
+                                        <li>Поддержка HTML5 современными браузерами</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="margin8auto" name="summaryTask" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="footer-accent">HTML5</span> - это не продолжатель языка разметки гипертекста, а новая открытая платформа,
+                                            предназначенная для создания веб-приложений использующих аудио, видео, графику, анимацию и многое другое.
+                                        </li>
+                                        <li>
+                                            Оптимизация script и link: нужно добавить элементы script и link, но не используйте атрибут type.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;article&gt;</span> задает содержание сайта вроде новости, статьи, записи блога или др.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;section&gt;</span> задает раздел документа, который может включать в себя заголовки,
+                                            шапку, подвал и текст.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;header&gt;</span> задает «шапку» сайта или раздела, в которой обычно располагается заголовок.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;nav&gt;</span> задает навигацию по сайту. Если на странице несколько блоков ссылок, то в
+                                            &lt;nav&gt; обычно помещают приоритетные ссылки.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;aside&gt;</span> определяет блок сбоку от контента для размещения рубрик, ссылок на архив,
+                                            меток и другой информации.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;footer&gt;</span> задает «подвал» сайта или раздела, в нем может располагаться имя автора,
+                                            дата документа, котнтактная и правовая иинформация.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;menu&gt;</span> предназначен для отображения списка пунктов меню. аналогично
+                                            тегам тегам &lt;ol&gt; и &lt;ul&gt; внутри контейнера &lt;menu&gt; список формируется с помощью тегов &lt;li&gt;.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;figure&gt;</span>  используется для группирования любых элементов, например,
+                                            изображенийи подписей к ним.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;abbr&gt;</span> указывает, что последовательность символов является абревиатурой.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;mark&gt;</span> указывает на семантическую значимость объекта.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;contenteditable&gt;</span> обеспечивает пользователя возможностью редактировать
+                                            страницу непосредственно через браузер.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;details&gt;</span> используется для хранения информации, которую можно скрыть или
+                                            показать по требованию пользователя.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;hgroup&gt;</span> используется для группирования заголовков веб-страницы или раздела.
+                                        </li>
+                                        <li>
+                                            «Упорядочивание» через start работает во всех бразерах.
+                                        </li>
+                                        <li>
+                                            Структурные элементы в HTML5 необязательны, поэтому если секционирование элементов не используется,
+                                            то ранжирование заголовков по прежнему может влиять на сттруктуру документа. Это называется
+                                            <span class="footer-important">неявным секционированием</span>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">Явное секционирование</span> - документ формируется элементами section и aside,
+                                            каждый из которых задает новый раздел в струтктуре документа, в то время как заголовки определяют структуру
+                                            контента.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">&lt;Валидацией&gt;</span> будем называть проверку документа на соответствие
+                                            веб-стандартам и выявление существующих ошибок. Соответственно, валидным является такой веб-документ,
+                                            который прошел подобную процедуру и не имеет замечаний по коду. Код веб-страницы должен подчиняться определенным
+                                            правилам, которые называются спецификацией. Ее разрабатывает W3 Консорциум при поддержке разработчиков браузеров.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="1">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Сделать страницу no mockupy согласно спецификации HTML5
+                                            <p class="margin0 padding-3-8">
+                                                <img class="task-description-img visible" src="lessons-essential/lesson01/img/addtask.jpg" />
+                                            </p>
+                                        </li>
+                                        <li>
+                                            Сделать страницу no mockupy согласно спецификации HTML5
+                                            <p class="margin0 padding-3-8">
+                                                <img class="task-description-img visible" src="lessons-essential/lesson01/img/task02.jpg" />
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON02 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson02/index02.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson02</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="2" data-topic="Урок 02. HTML5 формы. Теги VIDEO И AUDIO.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        HTML5 формы. Теги VIDEO И AUDIO.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>
+                                            Применение новых типов полей ввода - email, range, datetime, color, search;
+                                            атрибутов - placeholder, autofocus.
+                                        </li>
+                                        <li>Установить различия между кодеками и видеоконтейнерами.</li>
+                                        <li>Определить поддержку новых тегов различными версиями современных браузеров.</li>
+                                        <li>Научиться встраивать аудио и видео на страницы согласно новой спецификации.</li>
+                                        <li>Способы построения интефейса встроенного видеофайла.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="2" ">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="footer-accent">type="button"</span> - кнопка, основное событие onclick.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="checkbox"</span> - флажок, основное событие onclick.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="file"</span> - поле для ввода файла загружаемого на сервер, основное событие onchange.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="hidden"</span> - данные сохраняемые вместе с формой, но не видимые пользователю.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="password"</span> - поле для ввода пароля.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="radio"</span> - переключатель.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="reset"</span> - кнопка очищаюющая значения формы.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="submit"</span> - кнопка для передачи данных формы.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="range"</span> - компонент типа «ползунок».
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="date"</span> - компонент типа «дата».
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="color"</span> - позволяет выбрать цвет и возвращает его шестнадцатеричный код.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">textarea</span> - многострочное поле ввода.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">select</span> - список, в котором может быть выбран один элемент.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">select multiple</span> - список со множественным выбором.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">placeholder</span> - атрибут ввода контактных данных.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">autofocus</span> - атрибут автофокусировки.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="email"</span> - поле ввода email.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">type="url"</span> - поле ввода веб-адреса.
+                                        </li>
+                                        <li>
+                                            Браузеры без поддержки <mark>HTML5</mark> будут обрабатывать <mark>type="url"</mark> и <mark>type="email"</mark> в точности так же, как <mark>type="text"</mark>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;video&gt;</span> - встраивание видео на веб-страницы.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">&lt;audio&gt;</span> - встраивание аудио на веб-страницы.
+                                        </li>
+                                        <li>
+                                            В мультимедийном контейнере определен только способ хранения содержимого, а не тип этого содержимого.
+                                        </li>
+                                        <li>
+                                            Популярные форматы видеоконтейнеров: <mark>MPEG-4</mark>, <mark>Flash Video</mark>, <mark>WebM</mark>, <mark>Ogg</mark>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">Видеокодек</span> - это алгоритм кодировки видеопотока. Популярные форматы: <mark>H.264</mark>, <mark>Theora</mark> и <mark>VP8</mark>.
+                                        </li>
+                                        <li>
+                                            Один тег <span class="footer-accent">&lt;video&gt;</span> может ссылаться на несколько видеофайлов; изних браузер
+                                            выберет самый первый, который сумеет воспроизвести.
+                                        </li>
+                                        <li>
+                                            Такого сочетания медиоконтейнеров и кодеков, которое бы работало <span class="footer-important">во всех браузерах</span>
+                                            с поддержкой <mark>HTML5</mark>, не существует.
+                                        </li>
+                                        <li>
+                                            Видеофайлы должны быть связаны с соответствующими <mark>MIME-типами</mark>.
+                                        </li>
+                                        <li>
+                                            Сочетание <mark>HTML5</mark> и <mark>Flash</mark> позволяет просматривать видео практически в любом браузере на любом устройстве.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">Controls</span> - способ отображения интерфейса проигрывателя.
+                                        </li>
+                                        <li>
+                                            Атрибут <span class="footer-accent">autoplay</span> гооворит браузеру, что надо не только начать скачивание видео сразу
+                                            по окончании загрузки страницы, но и начать его воспроизводить как можно раньше.
+                                        </li>
+                                        <li>
+                                            Атрибут <span class="footer-accent">preload</span> гооворит браузеру, что скачивание видео надо начать сразу
+                                            по окончании загрузки страницы.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="2">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Дополнительное задание
+                                            <ul class="padding-8-8">
+                                                <li>
+                                                    Создайте страницу, разместите на ней видеоплеер (640х640), сделайте разметку согласно семантике HTML5,
+                                                    укажите несколько источников в source. Видео должно проигрываться в IE.
+                                                </li>
+                                                <li>
+                                                    Сделайте форму по типу документа «001 Simple Form.html» согласно спецификации HTML5.
+                                                    <p class="margin0 padding-3-8">
+                                                        <img class="task-description-img visible" src="lessons-essential/lesson02/img/AddTask2.png" />
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Создайте форму по шаблону, представленную на изображении.
+                                            <p class="margin0 padding-3-8">
+                                                <img class="task-description-img visible" src="lessons-essential/lesson02/img/Task2.png" />
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON03 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson03/index03.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson03</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="3" data-topic="Урок 03. Микроданные и пользовательские данные. Геолокация. Drag and Drop.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Микроданные и пользовательские данные. Геолокация. Drag and Drop.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0">
+                                        <!--«»-->
+                                        <li>Добавление в разметку микроданных</li>
+                                        <li>Использование микроданных</li>
+                                        <li>Добавление в разметку пользовательских данных</li>
+                                        <li>Доступ к пользовательским данным с помощью JavaScript</li>
+                                        <li>Управление пользовательскими данными</li>
+                                        <li>
+                                            Ознаковмление с Google Rich и DOM inspector. Также смотрите<br />
+                                            <a href="https://developers.google.com/search/docs/guides/intro-structured-data" class="radius50prc padding-0-8">
+                                                принципы работы структурированных данных
+                                            </a>
+                                        </li>
+                                        <li>Ознакомление Drag-n-Drop в HTML5</li>
+                                        <li>Progress bar</li>
+                                        <li>Обработка ошибок</li>
+                                        <li>Определить понятие «API геолокации»</li>
+                                        <li>Свойства и глобальные объекты в геолокации</li>
+                                        <li>Применение JS в геолокации</li>
+                                        <li>Тестирование браузера на поддержку геолокации</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="footer-important">Микроданные</span> обогащают DOM парами «имя - значение»,
+                                            взятыми из пользовательских словарей и имеющими определенную область видимости.
+                                        </li>
+                                        <li>
+                                            Центральное понятие в системе микроданных - <span class="footer-important">пользовательский словарь</span>.
+                                        </li>
+                                        <li>
+                                            Микроданные - это способ присвоить данным, которые присутствуют на странице и в пользовательском словаре,
+                                            дополнительную семантику.
+                                        </li>
+                                        <li>
+                                            Создание пользовательского словаря: достаточно выбрать URL на котролируемом Вами домене, чтобы создать
+                                            вполне уникальный идентификатор.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">itemtype</span> - атрибут, который обозначает, какой именно словарь микроданных
+                                            исползуется.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">itemscope</span> - атрибут, который обозначает область видимоости словаря.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">itemprop</span> - который устанавливает значение свойств «слова»
+                                            словаря микроданных.
+                                        </li>
+                                        <li>
+                                            Для браузеров в спецификации HTML5 определен набор функций DOM API, которые позволяют извлекать из
+                                            web-страниц целостные ообъекты микроданных, свойства и значения свойств.
+                                        </li>
+                                        <li>
+                                            Google поддерживает микроданные в рамках программы <span class="footer-important">Rich Snippets</span>.
+                                            Когда программа-краулер Google разбирает страницу и находит при этом свойства микроданных, имена которых
+                                            удовлетворяют словарю, значения таких свойств извлекаются и соххраняются.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">DOM Inspector</span> - анализатор web-страниц, который выдает много информации о
+                                            каждом элементе в HTML-странице и о связи каждого элемента с другими. Плюс, к этому, выбрав, например, любой
+                                            div, можно увидеть его рамку на самой странице. Это очень удобно при сложной структуре HTML-элементов, в которых
+                                            нужно разобраться.
+                                        </li>
+                                        <li>
+                                            Сделать элемент перетаскиваемым очень просто. Достаточно обавить атрибут <span class="footer-accent">draggable=true</span>.
+                                            Перетаскивать можно что угодно (любые узлы DOM): рисунки, ссылки и т.п.
+                                        </li>
+                                        <li>
+                                            События в разметке <span class="footer-important">Drag-Drop</span>
+                                            <ul class="padding-3-8">
+                                                <li>
+                                                    <span class="footer-accent">dragstart</span> - вызывается в самом начале переноса
+                                                    «перетаскиваемого» элемента.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">dragenв</span> - вызывается в конце события перетаскиваня -
+                                                    как успешного, так и отмененного.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">dragenter</span> - вызывается на зоне приема, когда перетаскиваемый
+                                                    объект впервые оказывается над ней.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">dragleave</span> - вызывается, когда перетаскиваемый
+                                                    объект покидает зону приема.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">dragover</span> - непрерывно вызывается, когда перетаскиваемый
+                                                    объект находится над зоной приема.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">drop</span> - вызывается, когда событие перетаскивания завершается
+                                                    отпусканием элемента над зоной приема.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Основополагающим для API геолокации считается новое свойство navigator.geolocation глобального
+                                            объекта <span class="footer-important">navigatir</span>.
+                                        </li>
+                                        <li>
+                                            Свойство объекта <span class="footer-important">position</span>: coords.longitude, coords.accuracy,
+                                            coords.altitude, coords.heading, coords.speed, timestamp.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">handle_error</span> - обработка ошибок. Это аргумент функции
+                                            <span class="footer-important">getCurrentPosition()</span>. Возможные значения:
+                                            <ul class="padding-8-16">
+                                                <li>
+                                                    <mark>PERMISSION_DENIED (1)</mark> - если пользователь нажмет кнопку Don.t Share (Не сообщать)
+                                                    на панели геолокации или иным способом запретит доступ к данным о своем местонахождении.
+                                                </li>
+                                                <li>
+                                                    <mark>POSITION_UNAVAILABLE (2)</mark> - если не работает сеть и невозможно связаться со спутником позиционирования.
+                                                </li>
+                                                <li>
+                                                    <mark>TIMEOUT (3)</mark> - когда сеть работает, но на расчет координат уходит слишком много времени.
+                                                </li>
+                                                <li>
+                                                    <mark>UNKNOWN_ERROR (0)</mark> - ели прооблема в чем-то другом.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">watchPosition</span> - функция обратного вызова, будет выполняться
+                                            каждый раз, когда местонахождение пользователя измениться.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">updateLocation</span> - метод функции getCurrentPosition(), который
+                                            запуститься после получения данных о местонахождении.
+                                        </li>
+                                        <li>
+                                            У функции getCurrentPosition() есть необязательный третий аргумент - объект
+                                            <span class="footer-accent">PositionOptions</span>. В нем можно устанавливать значения трех свойств:
+                                            <span class="footer-accent">enableHighAccuracy, timeout long, maximumAge.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="3">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Создайте страницу с разметкой, в которой будет отображаться Ваша контактная информация. Используя
+                                            микроданные и словарь
+                                            <a href="https://schema.org/Person" class="radius50prc padding-0-8">https://schema.org/Person</a>
+                                            добавьте дополнительные данные в HTML разметку. Проверьте правильность оформления документа с
+                                            помощью инструмента проверки структурированных данных<br />
+                                            <a href="https://search.google.com/structured-data/testing-tool" class="radius50prc padding-0-8">https://search.google.com/structured-data/testing-tool</a>
+                                            <br />или<br />
+                                            <a href="http://www.google.com/webmasters/tools/richsnippets" class="radius50prc padding-0-8">http://www.google.com/webmasters/tools/richsnippets</a>
+                                        </li>
+                                        <li>
+                                            Создать страницу с геолокацией (разовое получение геолокационнах данных) на созданной странице.
+                                        </li>
+                                        <li>
+                                            Создайте страницу «интернет магазина», которая будет разбита на две части: левая часть - список товаров,
+                                            правая часть - корзина. Реализуйте добавление товаров в корзину с помощью drag & drop.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON04 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson04/index04.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson04</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="4" data-topic="Урок 04. Canvas.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Canvas.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0">
+                                        <!--«»-->
+                                        <li>Свойства холста: координатная сетка и контур</li>
+                                        <li>Атрибуты и правила разметки фигур</li>
+                                        <li>Рисование простых фигур</li>
+                                        <li>Рисование на «холсте»</li>
+                                        <li>Заливка паттерном</li>
+                                        <li>Использование эффекта прозрачности</li>
+                                        <li>Рисование стрелок</li>
+                                        <li>Рисование кривых Безье</li>
+                                        <li>Применение градиентов, узоров и стилей линий</li>
+                                        <li>Рисование текста</li>
+                                        <li>Применение текстового эффекта «тень»</li>
+                                        <li>Анимация</li>
+                                        <li>Добавление на «холст» внешних изображений</li>
+                                        <li>Использование геометричеких преобразований</li>
+                                        <li>Обрезка рисунков на «холсте»</li>
+                                        <li>Рисование графиков на «холсте»</li>
+                                        <li>Сохрание рисунка с «холста» в текстовый файл</li>
+                                        <li>
+                                            Для поиска нужного инструментария по работе с canvas
+                                            используйте поисковые запросы:
+                                            <mark class="footer-accent">canvas demos</mark> и
+                                            <mark class="footer-accent">javascript canvas frameworks</mark>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="footer-accent">&lt;canvas&gt;</span> - это холст для зависимостей от разрешения растровой графики,
+                                            с помощью которого на лету прорисовываются диаграммы, графики, игры и прочие изображения. На странице
+                                            холст имеет вид прямоугольника, в границах которого можно рисовать с помощью
+                                            <span class="footer-important">JavaScript</span>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">beginPath()</span> - начало определения сегмента пути, который будет применяться
+                                            в таких операциях визуализации, как <span class="footer-accent">stroke()</span> и
+                                            <span class="footer-accent">fill()</span>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">closePath()</span> - закрытие любого пути: конец и ачало пути соединяются
+                                            прямым сегментом.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">moveTo(x,y)</span> - перенос регистрационной точки для следующей относительной
+                                            операции рисования.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">lineTo(x,y)</span> - создание прямого пути между текущей регистрационной точкой и
+                                            точкой (х,y).
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">rect(x,y,ширина,высота)</span> - создание прямоугольного пути, один угол которого
+                                            находится в точке (х,у), а противоположный (по диагонали) - в точке (х+ширина, у+высота).
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">
+                                                arc(x,y,радиус,начальный угол в радианах, конечный угол в радианах,направление рисования
+                                                (по часовой стрелке и против))
+                                            </span> - создание пути в форме дуги (вплоть до полной окружности), где (х,у) - координаты центра дуги, которая
+                                            начинается и заканчивается в точках, соответствующих указанным углам (в радианах). Начальная и конечная
+                                            точка соединяются либо по часовой стрелке, либо против часовой стрелки.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">fill()</span> - заполнение сегмента пути, определенного последним по времени.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">stroke()</span> - обводка (т.е. превращение в видимый объект) сегмента пути,
+                                            определенного последним по времени.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">drawImage(изображение,...)</span> - рисование изображения в области, определяемой
+                                            элементом canvas.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">strokeText(текст,...)</span> и <span class="footer-accent">fillText(текст,...)</span> -
+                                            добавление на элемент canvas текста.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">clearRect(x,y,ширина, высота)</span> - очистка прямойгольной области элемента canvas,
+                                            определяемой углами (x,y) и (х+ширина, у+высота).
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">strokeStyle=[строка|объект]</span> и <span class="footer-accent">fillStyle[строка|объект]</span> -
+                                            установка атрибутов цвета и стиля для обводок и заливок соответственно.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">Холст</span> - это двумерная сетка, на которой координата (0,0) присвоена левому верхнему углу.
+                                            Значения абсцисс (х) растут слева направо, значения ординат (у) - сверху вниз.
+                                        </li>
+                                        <li>
+                                            Ширина линий (обводок) устанавливается в свойстве <span class="footer-accent">lineWidth</span>.
+                                            Свойство <span class="footer-accent">lineCap</span> управляет визуализацией концов линий (срезанный,
+                                            скругленный и т.д.), а свойство <span class="footer-accent">lineJoin</span> - формой соединения двух
+                                            сегментов линии.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">Атрибуты шрифта</span>:
+                                            <ul class="padding-8-16">
+                                                <li>
+                                                    <span class="footer-accent">font</span> - все, что позволяет определить одноименное CSS-правило:
+                                                    стиль, вариант, начертание, размер, интерлиньяж и семейство шрифтов;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">textAlign</span> - задает выравнивание текста, относительно начальной точки;
+                                                    возможные значения этого свойства:
+                                                    <span class="footer-accent">start, end, left, right, central</span>;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">textBaseline</span> - определяет положение текста относительно начальной точки;
+                                                    возможные значения этого свойства:
+                                                    <span class="footer-accent">top, hanging, middle, alphabetic, ideographic, bottom</span>.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Для добавления градиента на веб-страницу нужно создать сам объект градиента, определить для него одну или
+                                            несколько цветовых остановок, а после этого применить объект в качестве
+                                            <span class="footer-accent">strokeStyle</span> или <span class="footer-accent">fillStyle</span>.
+                                        </li>
+                                        <li>
+                                            Команда API «холста» <span class="footer-accent">createPattern(...)</span> принимает второй, строковый параметр,
+                                            который и управляет повторением изображения. Если повторять изображение не требуется, используйте значение no-repeat.
+                                        </li>
+                                        <li>
+                                            Контекст рисования HTML5-холста поддерживает два типа градиентов:
+                                            <ul class="padding-8-16">
+                                                <li>
+                                                    <span class="footer-accent">createLinearGradient(x0,y0,x1,y1)</span> - направляет заливку вдоль
+                                                    отрезка из точки (x0,y0) в точку (x1,у1);
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">createRadialGradient(x0,y0,r0,x1,y1,r1)</span> - направляет заливку вдоль
+                                                    конуса, образуемого двумя окружностями. Начальные три параметра описывают окружность с центром (x0,y0) и
+                                                    радиусом r0. Конечные три параметра описывают вторую окружность с центром (x1,y1) и радиусом r1.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">В контексте рисования</span> определено несколько методов прорисовки графических
+                                            файлов на холсте:
+                                            <ul class="padding-8-16">
+                                                <li>
+                                                    <span class="footer-accent">drawImage(image,dx,dy)</span> - просто берет картинку и рисует ее;
+                                                    координаты (dx,dy) указывают на верхний левый угол изображения, т.е. если присвоить им значение
+                                                    (0,0), то картинка будет помещена в верхний левый угол холста;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">drawImage(image,dx,dy,dw,dh)</span> - берет картинку, масштабирует ее по горизонтали и
+                                                    вертикали, чтобы она соответсвовала заданным ширине dw и высоте dh, после чего рисует ее от точки (dx,dy);
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)</span> - берет картинку, выделяет
+                                                    на ней прямоугольник (sx,sy,sw,sh), масштабирует его до размеров (dw,dh) и рисует от точки (dx,dy).
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class=" footer-important">Индикаторы загрузок</span> встраиваются в страницу с помощью соответсвующих
+                                            скриптов.
+                                            <ul class="padding-8-16 line-height-1x3">
+                                                <li class="margin-bottom-8">
+                                                    <a href="https://j11y.io/p/Sonic/repo/demo/demo.html" class="button-with-hover-orange radius4 padding-1-8">Примеры индикаторов загрузок</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://github.com/padolsey/sonic.js" class="button-with-hover-orange radius4 padding-1-8">Документация</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">context.shadowColor</span> - устанавливает эффект тени для объекта.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">context.rotate(angle,x,y)</span> - контекст сохранения состояния полотна и начала
+                                            системы координат.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">context.translate(x,y)</span> - контекст трансформации вращения полотна.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">context.scale(x,y)</span> - контекст трансформации масштабирования.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">translate(x,y)</span> - перемещение (транслирование) точки отсчета системы
+                                            координат из (0,0) в (x,y).
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">scale(x,y)</span> - масштабирование единиц измерения системы координат по осям
+                                            х и у независимо друг от друга.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">rotate(угол)</span> - поворот системы координат вокруг точки отсчета (0,0) на угол,
+                                            заданный в радианах (по часовой стрелке).
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="4">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol class="allign-justify">
+                                        <li>
+                                            Дополнительное задание
+                                            <ul class="padding-8-8">
+                                                <li>
+                                                    Создайте страницу, создайте холст размером (400х250). Разместите его вверху по центру страницы.
+                                                    Сделайте заливку радиальным градиентом. Дублируйте данный холст, сделайте заливку изображением.<br />
+                                                    <mark class="footer-accent">Примечание: В итоге сделал вероятностную заливку с интервальной анимацией.</mark>
+                                                </li>
+                                                <li>
+                                                    Создайте простую фигуру. Разместите ее в верхнем левом углу. Анимируйте изображение и
+                                                    остановите в левом нижнем угле.<br />
+                                                    <mark class="footer-accent">Примечание: В итоге создал некие основы игровой модели.</mark>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Создайте изображение флага любой страны. Анимируйте изображение любым способом.<br />
+                                            <mark class="footer-accent">Примечание: В итоге создал моделирование многооконной системы.</mark>
+                                        </li>
+                                        <li>
+                                            Все выше и выше и выше! <br />
+                                            <mark class="footer-accent">Продублировал пример с круговыми range из JQuery.</mark>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON05 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson05/index05.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson05</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="5" data-topic="Урок 05. Web Storage, Web Workers, Offline App.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Web Storage, Web Workers, Offline App.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="5">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <p class="margin0 p-b-4">Использование методов querySelector и querySelectorAll</p>
+                                    <div>
+                                        <p class="margin0">
+                                            Рассмотреть понятие «локальное хранилище»:
+                                            <ul class="margin0">
+                                                <li>контейнеры localStorage и sessionStorage</li>
+                                                <li>различия между хранилищами</li>
+                                                <li>свойства и события</li>
+                                                <li>сериализация</li>
+                                                <li>нарушения области действия данных</li>
+                                                <li>leaking data, проблема при использовании cookie</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p class="margin0">
+                                            Многопоточное программирование - использование WebWorkers:
+                                            <ul class="margin0">
+                                                <li>возможности</li>
+                                                <li>ограничения</li>
+                                                <li>использование JSON</li>
+                                                <li>последовательность Фибоначи, мемоизация</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                    <p class="margin0 p-b-4">Кеш приложений и браузера.</p>
+                                    <div>
+                                        <p class="margin0">
+                                            Рассмотреть понятие «оффлайн-приложения»:
+                                            <ul class="margin0">
+                                                <li>принцип построения и работы</li>
+                                                <li>расширенный Api для работы с оффлайн-приложениями</li>
+                                                <li>файл манифеста</li>
+                                                <li>подключение манифеста кэша</li>
+                                                <li>преимущества просмотра страниц в автономном режиме</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="5">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            document.<span class="blue">querySelector</span>(<span class="red">[селекторы]</span>) - получение первого
+                                            элемента, который соответсвует селектору.
+                                        </li>
+                                        <li>
+                                            document.<span class="blue">querySelectorAll</span>(<span class="red">[селекторы]</span>) - получение списка
+                                            элементов, которые соответсвуют селектору.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">localStorage API</span> обеспечивает хранилище постоянных данных типа ключ-значение,
+                                            которое Вы можете использовать для отслеживания пользовательских данных между посещениями Вашего приложения.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">localStorage</span> и <span class="footer-accent">sessionStorage</span> - контейнеры
+                                            для локального хранения информации. Напоминуют <mark>cookies</mark> значения, но позволяют хранить больший объем
+                                            данных и не переддаются по сети при запросах к серверу.
+                                        </li>
+                                        <li>
+                                            Значения <span class="footer-accent">sessionStorage</span>:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>существуют до тех пор, пока открыта вкладка или окно, в которой они сохранены;</li>
+                                                <li>видимы в окне или вкладке, в которой они были созданы.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Значения <span class="footer-accent">localStorage</span>:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>существуют независимо от закрытия окна или вкладки;</li>
+                                                <li>совместно используются всеми окнами и вкладками, выполняющимися на том же источнике.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">Webworker API</span> создает специальную среду для кода JavaScript, где тот выполняется в собственном потоке,
+                                            отделенном от основного пользовательского интерфейса страницы.
+                                        </li>
+                                        <li>
+                                            Возможности <span class="footer-accent">WebWorkers</span>:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>обращаться к объекту <span class="footer-accent">navigator</span></li>
+                                                <li>обращаться к объекту <span class="footer-accent">location</span> (только чтение)</li>
+                                                <li>использовать <span class="footer-accent">XMLHttpRequest</span></li>
+                                                <li>
+                                                    <span class="footer-accent">setTimeout()</span>/<span class="footer-accent">clearTimeout()</span> и
+                                                    <span class="footer-accent">setInterval()</span>/<span class="footer-accent">clearInterval()</span>
+                                                </li>
+                                                <li>использовать <span class="footer-accent">Application Cache</span></li>
+                                                <li>импортировать дополнительные сценарии используя метод <span class="footer-accent">importScripts()</span></li>
+                                                <li>порождать другие <span class="blue">WebWorkers</span></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Ограничения <span class="footer-accent">WebWorkers</span>:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>получать доступ к <span class="footer-accent">DOM</span>:</li>
+                                                <li>получать доступ к объекту <span class="footer-accent">window</span>:</li>
+                                                <li>получать доступ к объекту <span class="footer-accent">document</span>:</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">Офлайн веб приложение</span> - список URL, HTML, CSS, JS, изображений или другого вида ресурсов.
+                                            Главная страница такого приложения указывает на этот список, который называют файлом манифеста.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">Файл манифеста</span> - это JSON-файл, описывающий Ваше приложение, включая его имя,
+                                            иконки и описание, удобное для чтения.
+                                        </li>
+                                        <li>
+                                            Файл манифеста кэша может располагаться где угодно на веб-сервере, но он должен быть обязательно оснащен
+                                            MIME-типом text/cache-manifest.
+                                        </li>
+                                        <li>
+                                            Как функционирует офлайн-приложение: веб-браузер, который поддерживает HTML5 офлайн приложения, прочтет список URL с
+                                            файла манифеста, загрузит перечисленные ресурсы, закэширует их на стороне клиента и автоматически будет
+                                            поддерживать актуальные копии в случае изменений.
+                                        </li>
+                                        <li>
+                                            Первая строка любого файла манифеста должна быть <span class="footer-accent">CACHE MANIFEST</span>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">CACHE</span> - содержит перечень ресурсов, которые браузер должен кэшировать,
+                                            используя по умолчанию.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">NETWORK</span> - список ресурсов, которые доступны только при подключении к сети.
+                                            Программы, выполняемые на стороне сервера обычно нужно заносить в этот список.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">FALLBACK</span> - перечень замещающих файлов, которые будут использоваться при
+                                            потере подключения к сети.
+                                        </li>
+                                        <li>
+                                            Можно получить доступ к событиям, которые дадут сведения о текущем состоянии кэша приложения, а с помощью
+                                            функций изменить это состояние. Например, вы можете использовать window.applicationCache для того, чтобы
+                                            определить поддерживает ли браузер AppCache.
+                                        </li>
+                                        <li>
+                                            Проверить текущий статус кэша приложения - используйте функцию
+                                            <span class="footer-accent">window.applicationCache.ststus</span>, которая возвращает код статуса.
+                                        </li>
+                                        <li>
+                                            Определенные события возникают в зависимости от состояния AppCache.
+                                        </li>
+                                        <li>
+                                            Возможные ошибки:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>манифест кэша возвращает ошибку 404 (Страница не найдена) или 410 (Страница удалена);</li>
+                                                <li>
+                                                    манифест кэша обнаружен и не изменился, но HTML-страницу, которая сослалась на манифест, оказалось,
+                                                    невозможно загрузить;
+                                                </li>
+                                                <li>
+                                                    манифест кэша обнаружен и изменился, но браузер не сумел загрузить один из ресурсов, перечисленных в нем.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Если хотя бы один русерс, упомянутый в файле манифеста, не будет скачан надлежащим образом,
+                                            то весь процесс кэширования Вашегго офлайнового приложения закончится этой ошибкой.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="5">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol>
+                                        <li>
+                                            Создайте страницу с несколькими элементами div, p, a. span. Нескольким элементам кстановите стиль с помощью CSS правил.
+                                            Нескольким элементам установите уникальный ID. Напишите сценарий, который с помощью document.querySelectorAll и
+                                            document.querySelector будет выбирать со страницы элементы:
+                                            <ul class="margin0">
+                                                <li>по имени тэга и устанавливать им зеленую рамку</li>
+                                                <li>по классу и устанавливать им красную рамку</li>
+                                                <li>по id и устанавливать им рамку синего цвета</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Создайте приложение, в котором будет использоваться WebWorkers. Задача приложения создать массив на 1000000
+                                            элементов со случайными значениями и отсортировать массив по возрастанию.
+                                        </li>
+                                        <li>
+                                            Создайте сайт с несколькими страницами с текстом и со страницей, на которой размещен простой калькулятор
+                                            реализованный с помощью JavaScript. Сделайте так, чтобы страница с калькулятором была доступна даже
+                                            если нет доступа к интернет.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON06 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson06/index06.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson06</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="6" data-topic="Урок 06. CSS3. Кроссбраузерные свойства. Flexbox.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        CSS3. Кроссбраузерные свойства. Flexbox.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="6">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>Новые возможности CSS3.</li>
+                                        <li>Научится работать с фоновыми изображениями в CSS3.</li>
+                                        <li>Настройки прозрачности изображений.</li>
+                                        <li>Форматирование блоков в CSS3. Настройка обтекания и контуров блока.</li>
+                                        <li>Научиться настраивать отображение контента относительно границ родительского элемента.</li>
+                                        <li>Добавление тени с помощью box-shadow.</li>
+                                        <li>Форматрование границ элемента.</li>
+                                        <li>Позиционирование контента элемента.</li>
+                                    </ul>
+                                    <hr />
+                                    <div class="block-setter-96">
+                                        <h4>Селекторы</h4>
+                                        <a href="https://www.w3.org/TR/selectors/" class="radius50prc padding-2-8">https://www.w3.org/TR/selectors/</a>
+                                        <h4>Фоновые изображения</h4>
+                                        <a href="https://www.w3schools.com/css/css_background.asp" class="radius50prc padding-2-8">https://www.w3schools.com/css/css_background.asp</a>
+                                        <h4>Цветовые модели</h4>
+                                        <a href="https://www.w3.org/TR/css-color-3/" class="radius50prc padding-2-8">https://www.w3.org/TR/css-color-3/</a>
+                                        <h4>Границы</h4>
+                                        <a href="https://www.w3schools.com/css/css3_border_images.asp" class="radius50prc padding-2-8">https://www.w3schools.com/css/css3_border_images.asp</a>
+                                        <br />
+                                        <a href="https://htmlbook.ru/css/border-radius" class="radius50prc padding-2-8">https://htmlbook.ru/css/border-radius</a>
+                                        <br />
+                                        <a href="https://www.w3.org/TR/2002/WD-css3-border-20021107/" class="radius50prc padding-2-8">https://www.w3.org/TR/2002/WD-css3-border-20021107/</a>
+                                        <h4>Flexbox</h4>
+                                        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" class="radius50prc padding-2-8">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="6">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="footer-important">CSS3</span> - это новый стандарт оформления HTML документов, значительно расширяющий
+                                            возможности предыдущего стандарта CSS2.1.
+                                        </li>
+                                        <li>
+                                            Многие возможности, которые были труднодоступны в CSS2.1, то есть требовали использования дополнительных внешних
+                                            программ (таких, как Above Photoshop), скриптов (таких, как JavaScript) или специальных "хитростей", могут легко
+                                            достигаться в CSS3 за счет использования новых свойств.
+                                        </li>
+                                        <li>
+                                            В CSS3 Вы можете устанавливать размер фоновых изображений с помощью свойства <span class="footer-accent">background-size</span>.
+                                            Размер фоновых изображжений может быть указан в пикселях или в процентах.
+                                        </li>
+                                        <li>
+                                            Свойство <span class="footer-accent">border-image</span> - сокращенный способ задать свойства границы
+                                            <span class="footer-accent">border-image-source, border-image-size, border-image-width, border-image-outset, border-image-repeat</span>,
+                                            позволяет одновременно задать фоновое изображение границы элемента, разбить его на фрагменты, указать размер контура и его
+                                            способность выходить за пределы границы элемента, а также указать способ отображения боковых фрагментов и центра
+                                            фонового изображения.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">stretch</span> - растягивает рисунок границы до размеров эоемента. Это значение
+                                            используется по умолчанию.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">repeat</span> - повторяет рисунок границы.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">round</span> - повторяет рисунок и масштабирует его так, чтобы на стороне элемента
+                                            оказалось целое число изображений.
+                                        </li>
+                                        <li>
+                                            В свойтсвах <span class="footer-accent">box-shadow</span> можно задать толщину, цвет, разброс тени и ориентацию
+                                            (внешняя или внутренняя тень).
+                                        </li>
+                                        <li>
+                                            В CSS3 цвет может задаваться с помощью <span class="footer-important">HSL(Hue, Saturation, Lightness)</span>:
+                                            оттенка, насыщенности и яркости.
+                                        </li>
+                                        <li>
+                                            С помощью нового CSS свойства <span class="footer-accent">background-origin</span> Вы пожете установить как должно
+                                            вычисляться положение элемента относительно границ его родительского элемента:
+                                            <ul class="padding-0-16">
+                                                <li>
+                                                    <span class="footer-accent">border-box</span> - положение элемента вычисляется относительно верхнего левого угла границы элемента;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">padding-box</span> - положение элемента вычисляется относительно верхнего левого угла блока padding;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">content-box</span> - положение элемента вычисляется относительно верхнего левого угла содержимого;
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Прозрачность можно задать двумя способами: применяя <span class="footer-important">opacity</span> или
+                                            <span class="footer-important">rgba</span>. Для последнего первые три числа - RGB-код цвета. Последнее - уровень прозрачности.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">border-radius</span> - задает округленный фон.
+                                        </li>
+                                        <li>
+                                            При применении свойств позиционирования элементы могут накладываться друг на друга. Свойство
+                                            <span class="footer-accent">z-index</span> позволяет установить какой элемент в случае наложения будет сверху, а какой снизу.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">box-align</span> - определяет как выравнивается контент в блоке перпендикулярно ориентации блока.
+                                            <ul class="padding-0-16">
+                                                <li>
+                                                    <span class="footer-accent">start</span> - контент выравнивается по начальной линии и оставляет дополнительное
+                                                    пространство в конце (т.е. горизонтальный контент выравнивается по верху, а вертикальный - по левому краю.)
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">end</span> - контент выравнивается по конечной линии и оставляет дополнительное
+                                                    пространство в начале (т.е. горизонтальный контент выравнивается по низу, а вертикальный - по правому краю.)
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">center</span> - контент выравнивается по центру;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">baseline</span> - контент выравнивается по базовой линии текста
+                                                    (применяется только к горизонтальному контенту)
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">strech</span> - контент равномерно растягивается так, чтобы не было пустого пространства в блоке.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">box-pack</span> - определяет выравнивание дочерних элементов в блоке.
+                                            <ul class="padding-0-16">
+                                                <li>
+                                                    <span class="footer-accent">start</span> - контент выравнивается по начальной стороне (если блок
+                                                    горизонтальный, то по левому краю, если вертикальный, то по верхнему краю);
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">end</span> - контент выравнивается по начальной стороне (если блок
+                                                    горизонтальный, то по правому краю, если вертикальный, то по нижнему краю);
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">center</span> - контент выравнивается по центру;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-accent">justify</span> - контент распределяется равномерно по всему блоку.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">box-sizing</span> - позволяет свойствам <span class="footer-accent">width</span> и
+                                            <span class="footer-accent">height</span> задавать размера не контента, а размеры блока.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">inline-box</span> - контент строчно бокса выводится по-горизонтали или по вертикали
+                                            (в зависимости от значения родительского свойства -moz-box-orient).
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">box-orient</span> - определяет, будет ли элемент выводить свой контент горизонтально или
+                                            вертикально.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">box-ordinal-group</span> - определяет порядковый номер элемента в группе.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="6">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8 allign-justify">
+                                    <ol>
+                                        <li>
+                                            Дополнительное задание:
+                                            <ul class="padding-0-8">
+                                                <li>
+                                                    Добавте на сраницу изображение и настройте для него прозрачность 80%.
+                                                </li>
+                                                <li>
+                                                    Создайте страницу и разместите на странице три горизонтальных блока одинаковой ширины.
+                                                    В каждый блок установите избражение в верхнюю часть блока и текст в нижнюю.
+                                                    Сверстайте страницу используя flexbox.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Сверстайте страницу на которой разместите несколько блоков. Установите блокам цвет фона используя все
+                                            известные Вам способы определения цвета в CSS3.
+                                        </li>
+                                        <li>
+                                            Создайте страницу с ссылками на .pdf, .txt, .doc файлы. Сделайте, чтобы перед каждой ссылкой отображалась
+                                            иконка в соответствии с форматом файла.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON07 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson07/index07.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson07</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="7" data-topic="Урок 07. Web Fonts, стили для текста, колонки, счетчики, генерируемое содержимое.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Web Fonts, стили для текста, колонки, счетчики, генерируемое содержимое.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="7">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0 allign-justify">
+                                        <li>@font-face.</li>
+                                        <li>Поддержка шрифтов.</li>
+                                        <li>Google Web Fonts.</li>
+                                        <li>Эффект тени к тексту.</li>
+                                        <li>Размещения текста в блоке.</li>
+                                        <li>Разбиение текста на колонки.</li>
+                                        <li>Форматрование колонок.</li>
+                                        <li>Выделение текста.</li>
+                                        <li>Прменение счетчика в оформлении.</li>
+                                        <li>Вставка генерируемого содержимого в текст страницы.</li>
+                                    </ul>
+                                    <hr />
+                                    <div class="block-setter-96">
+                                        <h4>WebFonts</h4>
+                                        <a href="http://www.css3files.com/font-face/" class="radius50prc padding-2-8">http://www.css3files.com/font-face/</a>
+                                        <h4>Column Layout</h4>
+                                        <a href="https://webdesign.tutsplus.com/articles/an-introduction-to-the-css3-multiple-column-layout-module--webdesign-4934" class="radius50prc padding-2-8">An Introduction To The CSS3 Multiple Column Layout Module</a>
+                                        <h4>Generated Content</h4>
+                                        <a href="https://dev.opera.com/articles/css-generated-content-techniques/" class="radius50prc padding-2-8">CSS Generated Content Techniques</a>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="7">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            Атрибут для подключения шрифта:
+                                            <p class="margin0 footer-accent">@font-face {</p>
+                                            <p class="margin0 space-pre"><span class="footer-accent">    font-family: </span> наименование шрифта</p>
+                                            <p class="margin0 space-pre"><span class="footer-accent">    src: </span> url('источник шрифта')</p>
+                                            <p class="margin0"><span class="footer-accent">}</span></p>
+                                        </li>
+                                        <li>
+                                            С помощью CSS3 свойства <span class="footer-accent">text-shadow</span> Вы можете добавлять к тесту
+                                            элементов тени (к тексту одного элементы м.б. добавлено одновременно несколько теней).
+                                        </li>
+                                        <li>
+                                            При задании тени для текста необходимо указать величину смещения тени от текста по горизонтали и вертикали
+                                            (может быть отрицательной), а также радиус размытия и цвет тени.
+                                        </li>
+                                        <li>
+                                            Свойство <span class="footer-accent">white-space</span> устанавливает то, как отображать пробелы между словами.
+                                            В обычных условиях любое количество пробелов в коде HTML показывается на странице как один. Таким образом,
+                                            <mark>white-space</mark> имитирует работу тега <span class="footer-accent">&lt;pre&gt;</span>, но в
+                                            отличие от него не меняет шрифт на моноширный.
+                                        </li>
+                                        <li>
+                                            В CSS3 было добавлено новое свойство <span class="footer-accent">text-overflow</span>, которое позволяет
+                                            указать, что должно случиться с текстом вышедшем за пределы границ элемента. Значения
+                                            <span class="footer-accent">clip, ellipsis</span>.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">columns</span> - позволяет в одном свойстве задать несколько значений -
+                                            ширину и количество столбцов. Атриубты для других браузеров:
+                                            <span class="footer-accent">-webkit-coloumns, -moz-columns</span>.
+                                        </li>
+                                        <li>
+                                            Свойство <span class="footer-accent">content</span> позволяет вставлять генерируемое содержание в текст
+                                            веб-страницы, которое первоначально в тексте отсутствует. Применяется совместно с псевдо-элементами
+                                            <span class="footer-accent">::after</span> и <span class="footer-accent">::before</span>, они, соответственно,
+                                            указывают отображать новое содержимое после или до элемента, к которому добавляются.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">counter-reset</span> - устанавливает идентификатор, в котором будет храниться
+                                            счетчик отображений определенного элемента, а также начальное значение счетчика.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">counter</span> - выводит значение счетчика, заданного свойством
+                                            <span class="footer-accent">counter-reset</span>. Такой счетчик может выводится при использовании
+                                            всевдо-элементов <span class="footer-accent">::after</span> и
+                                            <span class="footer-accent">::before</span>.
+                                        </li>
+                                        <li>
+                                            Стилевое свойство <span class="footer-accent">counter-increment</span> предназначено для увеличения
+                                            значения счетчика приращений, который задается свойством <span class="footer-accent">counter-reset</span>.
+                                        </li>
+                                        <li>
+                                            Счетчики помогают создавать списки (в том числе многоуровневые), в которых нумерация и вид задаются
+                                            через стили.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">content: attr</span> - возвращает строку, которая является значением параметра
+                                            тега указанного в скобках.
+                                        </li>
+                                        <li>
+                                            Псевдоэемент <span class="footer-accent">::selection</span> применяет стиль к выделенномк пользователем
+                                            тексту. Допускается использовать свойства:
+                                            <span class="footer-accent">color, background, background-color</span>.
+                                        </li>
+                                        <li>
+                                            Псевдоэлемент <span class="footer-accent">::first-letter</span> определяет стиль первого символа в
+                                            тексте элемента, к которому добавляется. Допускается применять стилевые свойства, связанные со
+                                            свойствами шрифта, полями, отступами, границами, цветом и фоном.
+                                        </li>
+                                        <li>
+                                            Тег <span class="footer-important">&lt;blockquote&gt;</span> предназначен для выделения длинных цитат
+                                            внутри документа. Текст, обозначенный этим тегом, традиционно отображается как
+                                            выровненный блок с отступами слева и справа.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="7">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol>
+                                        <li>
+                                            Сверстайте страницу с новостями используя следующую структуру:
+                                            <p class="margin0 padding-3-8">
+                                                <img class="task-description-img visible" src="lessons-essential/lesson07/img/addTask.jpg" />
+                                            </p>
+                                        </li>
+                                        <li>
+                                            С помощью CSS3 создайте следующий эффект:
+                                            <p class="margin0 padding-3-8">
+                                                <img class="task-description-img visible" src="lessons-essential/lesson07/img/neon.jpg" />
+                                            </p>
+                                        </li>
+                                        <li>
+                                            С помощью псевдо-элементов свойства content и счетчиков создайте пронумерованный список с вложенным списком.
+                                            В списке отобразите основную структуру этого урока.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON08 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson08/index08.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson08</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="8" data-topic="Урок 08. Псевдо-классы и градиенты.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Псевдо-классы и градиенты.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="8">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0">
+                                        <li>Псевдоклассы CSS.</li>
+                                        <li>Селекторы CSS3.</li>
+                                        <li>Градиенты.</li>
+                                        <li>Использование CSS3 PIE.</li>
+                                    </ul>
+                                    <hr />
+                                    <div class="block-setter-96">
+                                        <h4>Псевдоклассы</h4>
+                                        <a href="http://htmlbook.ru/css/cat/pseudoclass" class="radius50prc padding-2-8">HtmlBook Ru</a>
+                                        <br />
+                                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B" class="radius50prc padding-2-8">Mozilla developer</a>
+                                        <h4>Линейные градиенты</h4>
+                                        <a href="http://www.css3files.com/linear-gradient/" class="radius50prc padding-2-8">CSS3 files: linear gradient</a>
+                                        <br />
+                                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient" class="radius50prc padding-2-8">Mozilla developer: linear gradient</a>
+                                        <h4>Создание CSS градиентов</h4>
+                                        <a href="https://www.colorzilla.com/gradient-editor/" class="radius50prc padding-2-8">Ultimate CSS Gradient Generator</a>
+                                        <br />
+                                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/gradient" class="radius50prc padding-2-8">MDN Web docs &lt;gradient&gt;</a>
+                                        <br />
+                                        <a href="https://html5book.ru/css3-gradient/" class="radius50prc padding-2-8">HTML5 book: CSS-градиент</a>
+                                        <h4>Поддержка градиентов в IE</h4>
+                                        <a href="http://css3pie.com/" class="radius50prc padding-2-8">CSS3 PIE</a>
+                                        <h4>Генератор кнопок</h4>
+                                        <a href="http://css3button.net/" class="radius50prc padding-2-8">CSS3 Button Generator</a>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="8">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:checked</span> применяется к элементам интерфейса, таким как
+                                            checkbox и radio, когда они находятся в положении «включено».
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:default</span> применяет стиль к элементам форм, которые установлены
+                                            по умолчанию в группе похожих элементов.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:disabled</span> используется для применения стиля к заблокированным
+                                            элементам форм. Такие элементы не могут получить фокус, быть нажатыми или активированны, в текстовых полях
+                                            нельзя набирать текст.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:empty</span> представляет пустые элементы, иными словами такие,
+                                            которые не содержат дочерних элементов, текста или пробелов.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:enabled</span> используется для применения стиля к доступным
+                                            (не заблокированным) элементам форм. По умолчанию, все элементы форм являются доступными, если в коде
+                                            HTML к ним не добавляется атрибут <span class="footer-accent">disabled</span>.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:first-of-type</span> задает правила стилей для первого элемента
+                                            в списке дочерних элементов своего родителя.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:indeterminate</span> задает стиль для элементов форм, таким как
+                                            флажки и переключатели, когда они находятся в неопределенном состоянии. например, если из группы флажков ни
+                                            один не помечен, то флажки находятся в указанном состоянии. В реальности, стиль применяется только к элементам,
+                                            у которых DOM-атрибут <mark>:indeterminate</mark> через JavaScript установлен в значение true.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:required</span> применяет стилевые правила к тегу
+                                            <mark>&lt;input&gt;</mark>, у которого установлен атрибут <span class="footer-accent">required</span>. Он
+                                            позволяет выделять поля бязательные к заполнению перед отправкой формы.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:optional</span> применяет стилевые правила к тегу
+                                            <mark>&lt;input&gt;</mark>, у которого не задан атрибут <span class="footer-accent">required</span>.
+                                            Таким образом, <mark>:optional</mark> применяется к необязательным полям формы.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:read-write</span> применяется к полям формы, доступных для изменения.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:read-only</span> применяется к полям формы, у которых задан атрибут
+                                            <span class="footer-accent">readonly</span>. Такое поле не может быть модифицировано и получить фокус.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:root</span> определяет корневой элемент документа. В HTML этот
+                                            селектор всегда соответствует тегу <mark>&lt;html&gt;</mark>
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:invalid</span> применяется к полям формы, содержимое которых не
+                                            соответствует указанному типу. Например, для <span class="footer-accent">type="number"</span> должно вводится
+                                            число, а не буквы. Для <span class="footer-accent">type="email"</span> - конкретный адрес электронной почты.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:valid</span> применяется к полям формы, содержимое которых
+                                            проходит проверку в браузере на соответствие указанноиу типу.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:last-child</span> задает стилевое оформление последнего элемента
+                                            своего родителя.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:not</span> задает правила стилей для элементов, которые не содержат
+                                            указанный селектор.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:nth-child</span> используется для добавления стиля к элементам на
+                                            основе нумерации в дереве элементов.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:nth-last-child</span> используется для добавления стиля к элементам на
+                                            основе нумерации в дереве элементов. В отличие от псевдокласса <span class="footer-accent">:nth-child</span>
+                                            отсчет ведется не от первого элемента, а от последнего.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:only-child</span> применяется к дочернему элементу, только если
+                                            он единственный у своего родителя.
+                                        </li>
+                                        <li>
+                                            Псевдокласс <span class="footer-important">:only-of-type</span> применяется к дочернему элементу указанного
+                                            типа, только если он единственный у своего родителя. Аналогичен использованию
+                                            <span class="footer-accent">:first-of-type:last-of-type</span> или
+                                            <span class="footer-accent">:nth-of-type(1):nth-last-of-type(1)</span>
+                                        </li>
+                                        <li>
+                                            Свойство <span class="footer-accent">appearance</span> изменяет внешний вид элемента интерфейса, при сохранении
+                                            его функции.<br />
+                                            <a href="http://htmlbook.ru/blog/stilnye-chekboksy-ne-dlya-vsekh" class="radius50prc padding-2-8">Пример</a>
+                                        </li>
+                                        <li>
+                                            Селектор <span class="footer-accent">элемент1 ~ элемент2</span> выберет все вхождения элемента2, которые,
+                                            находятся в разметке после элемента1.
+                                        </li>
+                                        <li>
+                                            Селектор <span class="footer-accent">[атрибут$=значение]</span> будет обращаться к каждому элементу, значение
+                                            атрибута которого заканчивается указанным значением.
+                                        </li>
+                                        <li>
+                                            Селектор <span class="footer-accent">[атрибут^=значение]</span> будет обращаться к каждому элементу, значение
+                                            атрибута которого начинается с указанного значения.
+                                        </li>
+                                        <li>
+                                            CSS-градиент представляет собой переходы от одного цвета к другому.
+                                            Градиентный фон можно устанавливать в свойствах <span class="footer-accent">background</span>,
+                                            <span class="footer-accent">background-image</span>, <span class="footer-accent">border-image</span> и
+                                            <span class="footer-accent">list-style-image</span>.
+                                        </li>
+                                        <li>
+                                            Линейный градиент:<br />
+                                            <span class="footer-important">linear-gradient</span>(угол / сторона или угол наклона с помощью ключевого слова (пары ключевых слов), первый цвет, второй цвет и т.д.);
+                                            <br />Линейный градиент создается с помощью двух и более цветов, для которых задано направление, или линия градиента.
+                                            Если направление не указано, используется значение по умолчанию — сверху-вниз.
+                                            Цвета градиента по умолчанию распределяются равномерно в направлении, перпендикулярном линии градиента.
+                                        </li>
+                                        <li>
+                                            Направление линейного градиента может быть задано двумя способами:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>
+                                                    с помощью угла наклона в градусах deg, значение которого определяет угол наклона линии внутри элемента;
+                                                </li>
+                                                <li>
+                                                    с помощью ключевых слов to top, to right, to bottom, to left, которые соответствуют углу градиента, равному
+                                                    0deg, 90deg, 180deg и 270deg соответственно.
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                        <li>
+                                            Радиальный градиент:<br />
+                                            <span class="footer-important">radial-gradient</span>(форма градиента / размер / позиция центра, первый цвет, второй цвет и т.д.);
+                                            <br />У радиального градиент цвета выходят из одной точки (центра градиента) и равномерно распределяются наружу,
+                                            рисуя форму круга или эллипса.
+                                        </li>
+                                        <li>
+                                            Форма градиента определяется ключевыми словами circle или ellipse. Если форма не задана, по умолчанию радиальный градиент
+                                            принимает форму эллипса.
+                                        </li>
+                                        <li>
+                                            Повторяющиеся градиенты, задается с помощью CSS3-функций:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>
+                                                    <span class="footer-important">repeating-linear-gradient</span> - создает повторяющийся линейный градиент;
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">repeating-radial-gradient</span> - создает повторяющийся сферический градиент.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            За счёт комбинации градиента и изображения можно создавать интересные эффекты. Для градиента нужно использовать
+                                            полупрозрачные цвета, чтобы картинка оставалась видимой.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="8">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8">
+                                    <ol>
+                                        <li>
+                                            Создайте страницу регистрации пользователя. От пользователя необходимо принять следующие параметры - логин,
+                                            пароль, подтверждение пароля, email, дату рождения. Разработайте набор стилевых правил которые будут:
+                                            <ol type="A">
+                                                <li>
+                                                    отображать возле обязательных полей звездочки;
+                                                    <br />
+                                                    <span class="footer-accent">
+                                                        Примечание: гораздо интереснее сделать через настройку стиля border и :hover & :focus.
+                                                        Что, собственно, и было сделано.
+                                                    </span>
+                                                </li>
+                                                <li>заливать красным цветом те поля вводов, где значения введены не правильно;</li>
+                                                <li>заливать зеленым цветом те поля, которые заполнены правильно.</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Используя градиенты и псевдоклассы создайте кнопку со следующим оформлением:
+                                            <img class="task-description-img visible" src="lessons-essential/lesson08/img/botton-generate.jpg" alt="" />
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON09 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson09/index09.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson09</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="9" data-topic="Урок 09. Трансформация и переходы.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        Трансформация и переходы.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="9">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0">
+                                        <li>Свойство Transition. Создание переходов.</li>
+                                        <li>Трансформации - translate, rotate, scale, skew.</li>
+                                        <li>3D трансформации.</li>
+                                        <li>Анимация.</li>
+                                        <li>Фильтры.</li>
+                                    </ul>
+                                    <hr />
+                                    <div class="block-setter-96">
+                                        <h4>Анимация</h4>
+                                        <a href="http://www.css3files.com/" class="radius50prc padding-2-8">CSS3 FILES: animation</a>
+                                        <h4>Переходы</h4>
+                                        <a href="http://www.css3files.com/transition/" class="radius50prc padding-2-8">CSS3 FILES: transition</a>
+                                        <br />
+                                        <a href="https://www.w3.org/TR/css-transitions-1/" class="radius50prc padding-2-8">CSS Transitions</a>
+                                        <h4>Трансформации</h4>
+                                        <a href="http://www.css3files.com/transform-rotate/" class="radius50prc padding-2-8">CSS3 FILES: transform</a>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="9">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            С помощью CSS3 свойства <span class="footer-important">transition</span> Вы можете создавать эффект перехода из
+                                            одного состояния в другое. Для создания переходов необходимо указать для какого CSS свойства будет
+                                            применяться эффект перехода и скорость измнения этих переходов в секундах. Для того, чтобы добавить эффект
+                                            перехода к нескольким свойствам просто перечислите их названия через запятую.
+                                        </li>
+                                        <li>
+                                            Плавность выполнения переходов контролируется с помощью функций смягчения. В CSS3 существуют несколько видов
+                                            таких функций:
+                                            <br />
+                                            (см.: <a href="https://www.w3.org/TR/css-transitions-1/#transition-timing-function_tag" class="padding-0-8 radius50prc">W3C transition-time-function</a>)
+                                            <div class="imgs-transition-timing">
+                                                <div class="holder-img">
+                                                    <img src="lessons-essential/lesson09/img/transition-timing-line.jpg" alt="" />
+                                                    <div class="caption-img">
+                                                        linear
+                                                    </div>
+                                                </div>
+                                                <div class="holder-img">
+                                                    <img src="lessons-essential/lesson09/img/transition-timing-ease.jpg" alt="" />
+                                                    <div class="caption-img">
+                                                        ease
+                                                    </div>
+                                                </div>
+                                                <div class="holder-img">
+                                                    <img src="lessons-essential/lesson09/img/transition-timing-ease-in-out.jpg" alt="" />
+                                                    <div class="caption-img">
+                                                        ease-in-out
+                                                    </div>
+                                                </div>
+                                                <div class="holder-img">
+                                                    <img src="lessons-essential/lesson09/img/transition-timing-ease-in.jpg" alt="" />
+                                                    <div class="caption-img">
+                                                        ease-in
+                                                    </div>
+                                                </div>
+                                                <div class="holder-img">
+                                                    <img src="lessons-essential/lesson09/img/transition-timing-ease-out.jpg" alt="" />
+                                                    <div class="caption-img">
+                                                        ease-out
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="margin0 padding-0-16">
+                                                <li>
+                                                    <span class="footer-important">linear</span> - линейные изменения без ускорения и замедления
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">ease</span> - быстрое начало и замедление в конце
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">ease-in-out</span> - ускорение в начале и замедление в конце
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">ease-in</span> - ускорение в начале но без замедления в конце
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">ease-out</span> - тоже самое что и ease но с более медленной анимацией в начале
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">cubic-bezier</span> - ручное определение значения переходов.
+                                                    <br />
+                                                    См.: <a href="https://cubic-bezier.com/#.17,.67,.83,.67" class="padding-0-8 radius50prc">cubic-bezier generator</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Для создания анимации в CSS3 используется свойство <span class="footer-accent">@keyframes</span>
+                                        </li>
+                                        <li>
+                                            Для задания анимации элемента используется CSS3 свойство <span class="footer-accent">animation</span>.
+                                            Это свойство - сокращенная запись различных свойств анимации:
+                                            <ul class="margin0 padding-0-16">
+                                                <li><span class="footer-important">animation-name</span> - задает имя анимации</li>
+                                                <li><span class="footer-important">animation-duration</span> - задает время проигрывания анимации</li>
+                                                <li><span class="footer-important">animation-timing-function</span> - описывает метод расчета промежуточных значений свойств для анимации</li>
+                                                <li><span class="footer-important">animation-delay</span> - задает задержку анимации</li>
+                                                <li><span class="footer-important">animation-iteration-count</span> - задает количество циклов анимации</li>
+                                                <li><span class="footer-important">animation-direction</span> - задает направление анимации</li>
+                                                <li><span class="footer-important">animation-play-state</span> - определяет, проигрывается ли анимация или стоит на паузе.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Выбрать наиболее подходящий вариант кривой для интерполяции можно с помощью свойства
+                                            <span class="footer-accent">animation-timing-function</span>.
+                                        </li>
+                                        <li>
+                                            Мы можем использовать четыре свойства перехода:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>
+                                                    <span class="footer-important">transition-property</span> - определяет имя (имена) свойств CSS, к
+                                                    которым должны быть применены переходы.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">transition-duration</span> - определяет время, за которое должен произоти переход.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">transition-timing-function</span> - определяет, как вычислены примежуточные значения
+                                                    перехода.
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">transition-delay</span> - определяет, когда переход запускается.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Каждый ключевой кадр описывает, как анимированный элемент должен вести себя в данной временной точке анимации.
+                                            Ключевые кадры принимают процентные значения, чтобы определить время: 0% - запуск анимации, в то время как 100% -
+                                            окончание. Вы можете дополнительно добавить промежуточные кадры для анимации.
+                                        </li>
+                                        <li>
+                                            Чтобы переместить объект, можно использовать <span class="footer-accent">transform: translate(x,y)</span>.
+                                            Параметр transform всего лишь переместит объект из одной точки в другую, но не создаст анимацию данного
+                                            перемещения. Чтобы исправить это, нужно добавить параметр перемещения в классе.
+                                        </li>
+                                        <li>
+                                            Чтобы переместить объект по диагонали, мы совместим параметры <b>x</b> и <b>y</b>. В зависимости от направления,
+                                            значение <b>x</b> и <b>y</b> может быть как положительным, так и отрицательным.
+                                        </li>
+                                        <li>
+                                            Вращение в CSS3 регулируется градусными координатами (от 0° до 360°). Чтобы повернуть объект, примените следующие
+                                            параметры: <span class="footer-accent">transform: rotate(ndeg)</span>; где <b>ndeg</b> - градусы.
+                                        </li>
+                                        <li>
+                                            Для того чтобы повернуть объект по часовой стрелке, применим положительное значение для
+                                            <span class="footer-accent">rotate(ndeg)</span>.
+                                        </li>
+                                        <li>
+                                            Используя параметр <span class="footer-accent">scale(n)</span> или параметр <span class="footer-accent">scale(x,y)</span>,
+                                            мы можем либо увеличивать, либо уменьшать объект непосредственно в рамках HTML. Объект будет менять размер в зависимости
+                                            от значения n/x,y, где ось Х - ширина, а Y - а высота.
+                                        </li>
+                                        <li>
+                                            Для применения нескольких команд необходимо перечислить их через пробел.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: blur(add, direction, strength)</span> - смазывает изображение:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>
+                                                    <span class="footer-important">add</span> - объект (0 - результат работы фильтра, 1 - фильтр будет
+                                                    наложен на исходный образец);
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">direction</span> - направление смазывания объекта в градусах
+                                                    (0 - вверх и далее по часовой стрелке с шагом 45 градусов);
+                                                </li>
+                                                <li>
+                                                    <span class="footer-important">strength</span> - степень размытия.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: chroma(color)</span> - делает заданный цвет прозрачным.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: glow(strength, color)</span> - добавляет свечение вдоль внешних границ
+                                            объекта, создавая эффект "возгорания" границ объекта.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: gray()</span> - удаляет цветовую гамму объекта и отображает его в серых тонах.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: invert()</span> - меняет оттенок, насыщение и яркость объекта на противоположные.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: wave(add, freg, ligthStrength, phase, strength)</span> - производит "синусоидальное"
+                                            искажение объекта вдоль вертикальной оси.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">filter: xray()</span> - отображает объект в черно-белом варианте, как на рентгеновском снимке.
+                                        </li>
+                                        <li>
+                                            Спецификация Filter Effection 1.0:
+                                            <ul class="margin0 padding-0-16">
+                                                <li>Оттенок: hue-rotate;</li>
+                                                <li>Сепия: sepia;</li>
+                                                <li>Яркость: brightness;</li>
+                                                <li>Фильтры можно комбинировать: -webkit-filter: brightness(60%) sepia(100%);</li>
+                                                <li>Контраст: contrast;</li>
+                                                <li>Насыщенность: saturate.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="9">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8 allign-justify">
+                                    <ol>
+                                        <li>
+                                            Добавьте несколько изображений на страницу. разместите рядом с каждым изображением спрятанный блок с
+                                            текстом описывающим изображение. Создайте стиль, который запустит анимацию и плавно отобразит описание при
+                                            наведении курсора на изображение.
+                                        </li>
+                                        <li>
+                                            Создайте страницу, на которой разместите несколько изображений повернутых под разным углом.
+                                            Разработате анимацию, которая будет поворачивать изображение по часовой или против часовой
+                                            стрелки при наведении курсора, так, чтобы для пользователя изображение становилось вертикально.
+                                        </li>
+                                        <li>
+                                            Создайте горизонтальное меню и разработайте анимированные выпадающие подменю.
+                                        </li>
+                                        <li>
+                                            Создайте на странице несколько ссылок. Разработайте анимацию, которая будет запускаться при наведении на
+                                            ссылку. Анимация должна плавно менять фон ссылки и немного увеличивать размер.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+            <!-- LESSON10 <====================================================================================================== -->
+            <section class="section-details-lesson">
+                <div class="block-setter padding-3-8 margin8">
+                    <a href="lessons-essential/lesson10/index10.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson10</a>
+                </div>
+                <details class="details-lesson" name="lesson" data-lesson="10" data-topic="Урок 10. LESS и адаптивный дизайн.">
+                    <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
+                        LESS и адаптивный дизайн.
+                    </summary>
+                    <article class="details-lesson-article background-transparent-50 margin8auto">
+                        <div class="padding-8-8">
+                            <details name="descriptionPurpose" data-lesson="10">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Обзор, цель и назначение урока
+                                </summary>
+                                <div class="details-lesson-article-summary-task margin8auto">
+                                    <ul class="margin0">
+                                        <li>LESS - dynamic stilesheet language.</li>
+                                        <li>Понятие «отзывчивого» веб-дизайна.</li>
+                                        <li>Техники Responsive Web-design.</li>
+                                        <li>Media Queries.</li>
+                                        <li>CSS фреймворк Skeleton.</li>
+                                    </ul>
+                                    <hr />
+                                    <div class="block-setter-96">
+                                        <h4>Адаптивный дизайн</h4>
+                                        <a href="https://habr.com/ru/post/125247/" class="radius50prc padding-2-8">Как сделать один сайт для всех устройств (Responsive Web Design)</a>
+                                        <h4>Основы применения адаптивного дизайна</h4>
+                                        <a href="https://ruseller.com/lessons.php?rub=28&id=1784" class="radius50prc padding-2-8">Почему мы не создаем отдельный мобильный сайт</a>
+                                        <h4>LESS</h4>
+                                        <a href="http://lesscss.org/" class="radius50prc padding-2-8">Less CSS</a>
+                                        <h4>Skeleton</h4>
+                                        <a href="http://getskeleton.com/" class="radius50prc padding-2-8">A dead simple, responsive boilerplate.</a>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="margin8auto" name="summaryTask" data-lesson="10">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Резюме
+                                </summary>
+                                <div class="details-lesson-article-summary-task allign-justify margin8auto">
+                                    <ul class="margin0 padding-right-8">
+                                        <li>
+                                            <span class="footer-accent">Адаптивный дизайн (responsive web-design)</span> - адаптация шаблона с различными
+                                            размерами экранов, начиная от широкоформатных настольных компьтеров до крошечных телефонов
+                                            <ul class="padding-0-16">
+                                                <li>Изменение разрешения изображения в соответствии с разрешением экрана</li>
+                                                <li>Обслужвание низкоскоростных изображений на мобильных устройствах</li>
+                                                <li>Упрощение элементов страницы для использования на мобильных устройствах</li>
+                                                <li>Скрытие несущественных элементов на небольших экранах</li>
+                                                <li>Предоставление больших по размеру и удобных для нажатия пальцами ссылок и кнопок для мобильных пользователей</li>
+                                                <li>Выявление и реагирование на мобильные функции, такие как геолокация и ориентация устройства</li>
+                                                <li>
+                                                    Ключом к созданию адаптивных шаблонов является стандарт CSS media queries. С помощью media queries
+                                                    Вы можете создать множество наборов правил CSS, которые применяются только тогда, когда видимая область
+                                                    браузера находится в рамках определенной ширины или высоты, или в пределах диапазона заданной ширины / высоты.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">min-width: width</span> - применяется, если ширина окна больше или равна ширине шаблона.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">max-width: width</span> - применяется, если ширина окна меньше или равна ширине шаблона.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">min-device-width: width</span> - применяется, при ширине экрана устройства большей или
+                                            равной ширине шаблона.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">max-device-width: width</span> - применяется, при ширине экрана устройства меньше или
+                                            равной ширине шаблона.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">width</span> - это ширина окна браузера. На браузерах обычных компьтеров width, как правило,
+                                            меньше ширины экрана. Тем не менеее, на мобильных браузерах width обычно больше ширины экрана, так как большинство мобильных
+                                            браузеров используют «виртуальное окно», которое больше размеров экрана, что позволяет пользователю увеличивать и уменьшать
+                                            масштаб изображения, а также перемещаться по области окна, перетаскивая изображения. Например, Mobile Safari использует
+                                            виртуальное окно, ширина которого составляет 980рх, хотя ширинаэкрана устройства IOS, как правило, составляет от 320 до
+                                            768рх (в вертикальном режиме).
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">device-width</span> - ширина экрана устройства.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">Мета-тег viewport</span>. Добавив этот тег для области head, можно управлять
+                                            размером окна мобильного браузера.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">initial-scale = 1</span> - этот показатель гарантрует, что страница, при самом первом ее
+                                            просмотре польностью увеличена так, чтобы ширина окна совпадала с шириной экрана устройства при вертикальном режиме -
+                                            например, 320 пикселей на Iphone и 768 пикселей на iPad.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">maximum-scale = 1</span> - этот показатель предотвращает увеличение масштаба страницы
+                                            больше, чем при соотношении 1:1 в дальнейшем, даже при повороте в горизонтальный режим. Другими словами, этот
+                                            показатель заставляет iPhone увеличивать шириу окна до 480рх в горизонтальном режиме. Если мы не включим
+                                            максимальную величину масштаба, то ширина окна будет 320рх, как в верткальном режиме, так и в горизонтальном режиме.
+                                            Иногда это может быть именно то, что вы хотите получить, но в случае нашего адаптивного шаблона такой вариант
+                                            может стать причиной слишком сильного растягивания содержания в горизонтальном режиме.
+                                        </li>
+                                        <li>
+                                            <span class="footer-accent">Три части адаптивного дизайна</span>
+                                            <ul class="padding-0-16">
+                                                <li>резиновая модульная сетка</li>
+                                                <li>резиновые изображения</li>
+                                                <li>использование media queries</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Резиновая модульная сетка. По существу, это означает, что сетка, которая традиционно измеряется в пикселях,
+                                            должна рассматриваться с точки зрения процентов от общей ширины страницы. Реальная расчетная ширина каждого
+                                            столбца адаптированного веб-сайта изменяется каждый раз, когда окно браузера изменяют в размере, и не
+                                            может быть такой же на различных устройствах.
+                                        </li>
+                                        <li>
+                                            <span class="footer-important">Fluid Images</span> - подстраивают свои размеры под блок родителя. Основная
+                                            идея в неочевидном применении { max-width: 100% }. Изображение с img { max-width: 100% } никогда не вылезет
+                                            из своего блока родителя
+                                        </li>
+                                        <li>
+                                            Если блок-родитель меньше, чем размеры img, то изображение пропорционально уменьшиться. Этот принцип применим
+                                            как для img, так и для embed, object, video.
+                                        </li>
+                                        <li>
+                                            <span>Mobile first</span> - это техника, при которой сайт верстается сначала для устройств с меньшими
+                                            возможностями, а затем с помощью media queries добавляются другие возможности.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details name="homeWork" data-lesson="10">
+                                <summary class="details-lesson-article-caption padding-3-8">
+                                    Домашнее задание
+                                </summary>
+                                <div class="margin8auto padding-right-8 allign-justify">
+                                    <ol>
+                                        <li>
+                                            С помощью библиотеки LESS перепишите файл main.css в примере 001_CSS_Problem.
+                                        </li>
+                                        <li>
+                                            Используя Skeleton сверстайте страницу по указанному макету. При открытии страницы в мобильном браузере
+                                            все блоки должны выстроится вертикально.
+                                        </li>
+                                        <li>
+                                            Cверстайте страницу по указанному макету. При открытии страницы в мобильном браузере
+                                            все блоки должны выстроится вертикально. Стили должны использовать LESS.
+                                        </li>
+                                    </ol>
+                                    <img class="task-description-img visible" src="lessons-essential/lesson10/img/layout.jpg" />
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </details>
+            </section>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="img/telegram-32.png" alt="" />
+                </a>
+                <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="img/web-viber-icon.png" alt="" />
+                </a>
+                <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="img/email-icon.png" alt="" />
+                </a>
+                <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="js/device.dist.js"></script>
+    <script src="js/index.dist.js"></script>
+    <script src="js/shortDescription.dist.js"></script>
+    <!--<script src="//cdn.jsdelivr.net/npm/details-polyfill@1/index.min.js" async></script>-->
+    <!--<script src="js/detailsForEdge.js"></script>-->
+</body>
+</html>

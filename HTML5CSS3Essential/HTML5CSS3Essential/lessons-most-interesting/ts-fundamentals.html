@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Interesting from Typescript fundamentals</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="css/the-most-interesting.css?ver=02-09-2020 20:00" rel="stylesheet" />
+</head>
+<body>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right" />
+                    <h1 class="padding-16-16">Typescript fundamentals</h1>
+                    <h2 class="padding-16-16">The most interesting</h2>
+                </div>
+            </section>
+        </header>
+
+        <div class="introduction">
+            <p class="abzac">
+                Задачи для самостоятельной работы послужили только отправной точкой для выработки решения, что бы мне на самом
+                деле хотелось реализовать, чтобы прокачать свои навыки.
+            </p>
+        </div>
+        <section class="card">
+            <div class="header">
+                <div>
+                    <p class="margin0">2-я лекция: Классы и интерфейсы.</p>
+                    <p class="margin0">Дополнительное задание.</p>
+                </div>
+                <a href="../lessons-ts-fundamentals/lesson02/AdditionalTask.html">Посмотреть решение задачи</a>
+            </div>
+            <div class="set-video">
+                <video id="ts-lesson2-addTask" class="video" controls src="video/ts-fundamentals/ts-lesson2-addTask.mp4" preload="metadata" poster="video/ts-fundamentals/ts-lesson2-addTask.png"></video>
+            </div>
+            <div>
+                <p class="abzac">
+                    При предварительном анализе и сборе материала предметной области обратил внимание на несовсем удобную навигацию по
+                    соответствующим информационным ресурсам. Это неудобство связано с переходом между достаточно большой вложенностью страниц
+                    (больше трех) что бы добраться до искомого блока информации. Т.е сначала, например, мы выбираем вид. Затем на следующей странице
+                    подвид. Затем на следующей странице группу (класс, подкаласс) и вот наконец дошли до выбора списка наименований и снова переходим
+                    на страницу с полным описанием. Т.е., если нам нужно выбрать другой вид, то нужно вернуться на 4 или 5 шангов назад и снова проделать
+                    последовательный переход по страницам, чтобы добраться до информации конкретного животного.
+                </p>
+                <p class="abzac">
+                    В идеальном случае хотелось бы иметь максиму 2-х уровневые дерево переходов. Т.е. нужно продумать и реализовать удобный, емкий и
+                    настраиваемый UI по выбору конретного животного и, например, отдельная страница о выбранном животном и его детальное описание.
+                    Это позволит быстро переключаться между искомой информацией, даже если она может относится к разному виду животного.
+                    В этом задании, с определенным приближением, был реализован такой подход.
+                </p>
+                <p class="abzac">
+                    Здесь также можно добавить, что по сути, любую конечную информацию можно определить (хранить) в виде множества табличных
+                    представлений. А то что мы наблюдаем на такого рода информационных ресурсах (множественные переходы между страницами), не что
+                    иное как не совсем удачная реализация условий отбора для выбора данных из такого множества табличных представлений.
+                    На самом деле можно сделать удобную (структурированную) страницу (а еще лучше модальное окно) где будут собраны все критериии для
+                    формирования условия отбора (поиска).
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="header">
+                <div>
+                    <p class="margin0">2-я лекция: Классы и интерфейсы.</p>
+                    <p class="margin0">Task02.</p>
+                </div>
+                <a href="../lessons-ts-fundamentals/lesson02/Task2.html">Посмотреть решение задачи</a>
+            </div>
+            <div class="set-video">
+                <video id="ts-lesson2-Task2" class="video" controls src="video/ts-fundamentals/ts-lesson2-Task2.mp4" preload="metadata" poster="video/ts-fundamentals/ts-lesson2-Task2.png"></video>
+            </div>
+            <div>
+                <p class="abzac">
+                    Решение данной задачи основывается на предыдущей задаче, с усовершенствованиями в коде и стилях.
+                    Основной идеей (желанием) здесь было сделать слайдер изображений и желательно не брать готовый слайдер, а
+                    попытаться сделать самому. В этом как раз и заключается один из смыслов при самостоятельном обучении.
+                    Конечно, сначала был выполнен поиск доступных готовых решений для сладеров изображений. Эти готовые решения дали
+                    дополнительную информацию как можно реализовать слайдер изображений.
+                </p>
+                <p class="abzac">
+                    В конечном итоге, в целях обучения, было принято решение о самостоятельной реализации слайдера.
+                    Оказалась занятная и интересная задачка. Самостотельная реализация такого пользователького интерфейса
+                    расширила знания и умения по написанию стилей и typescript кода.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="header">
+                <div>
+                    <p class="margin0">3-я лекция: Generics.</p>
+                    <p class="margin0">Дополнительное задание.</p>
+                </div>
+                <a href="../lessons-ts-fundamentals/lesson03/AdditionalTask.html">Посмотреть решение задачи</a>
+            </div>
+            <div class="set-video">
+                <video id="ts-lesson3-addTask" class="video" controls src="video/ts-fundamentals/ts-lesson3-addTask.mp4" preload="metadata" poster="video/ts-fundamentals/ts-lesson3-addTask.jpg"></video>
+            </div>
+            <div>
+                <p class="abzac">
+                    Самое главное что мне захотелось реализовать в данном примере - это простейшее формирование справочника текстовых значений.
+                    В этом примере хранение осуществляется в local storage.
+                    Т.е. надо было организовать ведение простого табличного представления и двух операций: добавления и удаления. Причем операция
+                    удаления должна быть групповой. Другими словами должна быть возможность управлять порядком выбора записей на удаление.
+                    Так же здесь было интересно разобраться и создать универсальный набор стилей, который бы отвечал за отображение валидации
+                    input-полей.
+                </p>
+                <p class="abzac">
+                    В этой задаче возникла необходимость разобраться как реализовать модальные окна. Был разработан модуль, который позволяет управлять
+                    несколькими видами простых модальных окон, таких как: подтверждения операции, информационного оповещения, сообщения об ошибке.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="header">
+                <div>
+                    <p class="margin0">3-я лекция: Generics.</p>
+                    <p class="margin0">Task02.</p>
+                </div>
+                <a href="../lessons-ts-fundamentals/lesson03/Task2.html">Посмотреть решение задачи</a>
+            </div>
+            <div class="set-video">
+                <video id="ts-lesson3-Task2" class="video" controls src="video/ts-fundamentals/ts-lesson3-Task2.mp4" preload="metadata" poster="video/ts-fundamentals/ts-lesson3-Task2.jpg"></video>
+            </div>
+            <div>
+                <p class="abzac">
+                    Когда подошло время делать эту задачу, то стало ясно, что я уже готов самостоятельно реализовать достаточно сложный диалог по
+                    ведению табличного представления. Хранение данных выполняется в IndexedDB. Причем решил не использовал известную promise-обертку для
+                    операций с IndexedDB. В этом случае хотя и потратил немного больше времени, но зато более глубоко проникся promise-ами.
+                </p>
+                <p class="abzac">
+                    Здесь уже реализован полный набор операция для ведедения справочника: добавить, размножить, исправить, удалить, сортировка и поиск.
+                    Также используется понятие команды. Т.е. когда мы имеем возможность выполнять одно действие разными способами. Например через панель
+                    инструментов или через контекстное меню. То в этом случае мы создаем команду и к ней привязываем соответствующие элементы управления.
+                    В этом случае мы можем управлять состоянием комады (например доступна команда для выполнения в данный момент или нет). А она уже
+                    умеет управлять подключенными к ней визуальными элементами управления.
+                    В этом видео коротко, но достаточно подробно, описан реализованный функционал.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="header">
+                <p class="margin0">P.S.</p>
+            </div>
+            <div class="set-video">
+                <video id="ts-ps" class="video" controls src="video/ts-fundamentals/ts-ps-compressed.mp4" preload="metadata" poster="video/ts-fundamentals/ts-ps.jpg"></video>
+            </div>
+            <div>
+                <p class="abzac">
+                    Видео «post criptum» посвящено примерам из моего подхода к обучению. Как при обучении обязательно нужно выходить
+                    за рамки изучаемого, усложнять предлагаемые задачи, которые рекомендуют при обучении и к чему это приводит.
+                </p>
+            </div>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="http://typescript-lang.ru/docs/index.html">TypeScript.ru</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+</body>
+</html>

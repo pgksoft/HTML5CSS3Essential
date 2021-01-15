@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS. Lesson 03</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+</head>
+<body >
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 03: Generics.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right" />
+                    <h1 class="padding-16-16">Lesson 03</h1>
+                    <h2 class="padding-16-16">Generics.</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+            <nav class="card-lesson-nav">
+                <h3 class="h-panel">Панель навигациии</h3>
+                <form method="post" action="index05.html" id="listTasks" name="listTasks">
+                    <p>
+                        <input type="radio" id="addtask" name="tasks"
+                               value="Дополнительное задание:" />
+                        <label for="addtask">Additional task</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="task2" name="tasks"
+                               value="Задание 2:" />
+                        <label for="task2">Task 2</label>
+                    </p>
+                </form>
+            </nav>
+            <article class="card-lesson-content">
+                <div class="block-setter-98 p-t-0x5prc">
+                    <div class="tabs block-setter">
+                        <input id="tabHome" type="radio" name="tabs" checked>
+                        <label for="tabHome">Цели и задачи</label>
+                        <input id="tabResume" type="radio" name="tabs">
+                        <label for="tabResume">Теория</label>
+                        <section id="content-tabHome" class="block-setter-98">
+                            <p class="summarytask-caption" id="summarytaskcaption">
+                                Обзор, цель и назначение урока
+                            </p>
+                            <!--«»-->
+                            <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                                <p class="margin0">Методы <span class="accent">ECMAScript 5</span> для работы с массивами.</p>
+                                <p class="margin0">Циклы  <span class="accent">for in</span> и <span class="accent">for of</span>.</p>
+                                <p class="margin0"><span class="accent">Generic</span> или обобщенные типы.</p>
+                                <p class="margin0">Использование ограничений в обобщенных типах.</p>
+                                <p class="margin0">[<span class="accent">Symbol.Iterator;</span>].</p>
+                                <p class="margin0">Генераторы.</p>
+                            </div>
+                            <p class="look-task">
+                                <!--data-iamworking="TS"-->
+                                <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                            </p>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                                Создайте экземпляр класса, в конструктор которого пользователь будет передавать строковые значения.
+                                Установите в классе метод для определения функции генератора, которая на каждом значении в
+                                свойствах класса устанавливает <span class="accent">yield</span>. При вызове данной функции из класса
+                                проверьте все значения, введенные пользователем и остановите перебор – в случае если пользователь
+                                ввел числовое значение. Ошибку выведите в консоль.
+                            </div>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                                Создать словарь собственных определений, используя <span class="accent">Generic function</span>.
+                                Внутри должно быть определение для 3 свойств – ключ, значение, описание (различных типов данных).
+                                Для получения или записи использовать <span class="accent">get</span>/<span class="accent">set</span>
+                                реализацию доступа. Также для полей нужно использовать модификаторы
+                                доступа (на Ваш выбор). В итоге должен получится словарь терминов, принимающий на входящий
+                                параметр различные типы данных для реализации.
+                            </div>
+                        </section>
+                        <section id="content-tabResume">
+                            <ul class="margin0 padding-1-0 w-break resume">
+                                <!--<span class="accent"></span>-->
+                                <li>
+                                    <span class="accent">Generic</span> (обобщенный тип или шаблон) – специальный тип данных, который
+                                    позволяет создавать компоненты, не привязываясь к конкретному типу данных, а указывая этот тип
+                                    данных во время создания компонента.
+                                </li>
+                                <li>
+                                    <span class="accent">Symbol</span> — это уникальный и неизменяемый тип данных, который может быть
+                                    использован как идентификатор для свойств объектов. Кроме символов, определяемых пользователем,
+                                    существуют заранее определенные встроенные символы. Встроенные символы нужны для отражения внутреннего
+                                    поведения языка.
+                                </li>
+                                <li>
+                                    <span class="accent">Symbol.iterator</span> – метод, возвращающий итератор по умолчанию для объекта.
+                                    Используется конструкцией <span class="accent">for...of</span>.
+                                </li>
+                                <li>
+                                    В современный <span class="accent">JavaScript</span> добавлена новая концепция «итерируемых»
+                                    (<span class="accent">iterable</span>) объектов.
+                                </li>
+                                <li>
+                                    <span class="accent">Итерируемые объекты</span> – это объекты, содержимое которых можно перебрать в цикле. У
+                                    итератора должен быть метод <span class="accent">next()</span>, который при каждом вызове возвращает объект со
+                                    свойствами: <span class="accent">value</span> – очередное значение, <span class="accent">done</span> равно
+                                    <span class="accent">false</span>, если есть ещё значения, и <span class="accent">true</span> – в конце.
+                                </li>
+                                <li>
+                                    <span class="accent">Генераторы</span> – новый вид функций в современном <span class="accent">JavaScript</span>.
+                                    Они отличаются от обычных тем, что могут приостанавливать своё выполнение, возвращать промежуточный результат и далее
+                                    возобновлять его позже, в произвольный момент времени. Для объявления генератора используется новая синтаксическая
+                                    конструкция: <span class="accent">function*</span>. Её называют «функция-генератор» (<span class="accent">generator function</span>).
+                                    При ее запуске код такой функции не выполняется. Вместо этого она возвращает специальный объект, который как раз и
+                                    называют «генератором». Основным методом генератора является <span class="accent">next()</span>. При вызове он
+                                    возобновляет выполнение кода до ближайшего ключевого слова <span class="accent">yield</span>. По достижении
+                                    <span class="accent">yield</span> выполнение приостанавливается, а значение возвращается во внешний код. Повторный
+                                    вызов <span class="accent">generator.next()</span> возобновит выполнение и вернёт результат следующего
+                                    <span class="accent">yield</span>.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../ts/indexTSLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="../../js-advanced/IamWorking.dist.js"></script>
+</body>
+</html>

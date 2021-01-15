@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"></script>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="css/styleTask02.css" rel="stylesheet" />
+</head>
+<body class="body-index" data-lesson="04">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="block-setter">
+            <div class="short-description-panel-header">
+                <p class="margin0">HTML5 & CSS3 Essential: Lesson 4. Canvas. Task 2</p>
+                <div class="short-description-panel-header-close">
+                    <p class="short-description-panel-header-caption">short description</p>
+                    <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+                </div>
+            </div>
+            <div class="short-description-panel-content">
+                <p class="abzac">
+                    Всем доброго времени суток.
+                </p>
+            </div>
+        </div>
+    </div>
+    <header class="header-index">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-task-content  background-transparent-50">
+            <h2 class="padding-8-16">Lesson 4: Canvas.</h2>
+            <h3 class="padding-8-16">Task 2</h3>
+            <div class="summary-task task-page ">
+                <p class="margin0">
+                    Создайте изображение флага любой страны. Анимируйте изображение любым способом.<br />
+                    <mark class="footer-accent">Примечание: В итоге создал моделирование многооконной системы.</mark>
+                </p>
+            </div>
+        </section>
+    </header>
+    <main class="main-task">
+        <section class="section-task">
+            <section class="section-subtask">
+                <div class="subtask-box box-shadow-blue">
+                    <div class="block-setter">
+                        <section class="table border-separate border-spacing-none">
+                            <header class="row">
+                                <div class="w98prc m-auto margin-bottom-4">
+                                    <div class="table fsize-1rem border-separate radius50prc padding-4-0 b-color-orange50">
+                                        <!--Restore-->
+                                        <div class="cell cell-horizontal-center cell-vertical-center w4prc">
+                                            <img src="../../img/restore-24.png" id="restore" class="button-with-hover-blue m-auto radius50prc w80prc padding-1-1" alt="" title="restore figure" />
+                                        </div>
+                                        <!--Remove-->
+                                        <div class="cell cell-horizontal-center cell-vertical-center w4prc">
+                                            <img src="../../img/playlist-remove-24.png" id="removeFigure" class="button-with-hover-blue m-auto radius50prc w80prc padding-1-1" alt="" title="remove figure" />
+                                            <div id="confirmDel" class="confirm-del overflow-auto">
+                                                <div class="confirm-del-inner">
+                                                    <div class="padding-8-0">
+                                                        <p class="margin0">Подтвердите удаление:</p>
+                                                        <p id="confirmAbout" class="margin0 padding-8-0">&nbsp;</p>
+                                                        <div class="block-setter">
+                                                            <div class="block-setter-50 block-left p-b-8">
+                                                                <button id="confirmDelCancel" class="button-orange-with-hover-blue inline padding-8-0 w80prc m-auto radius50prc">Cancel</button>
+                                                            </div>
+                                                            <div class="block-setter-50 block-left p-b-8">
+                                                                <button id="confirmDelOk" class="button-orange-with-hover-blue inline padding-8-0 w80prc m-auto radius50prc">Confirm</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Add-->
+                                        <div class="cell cell-horizontal-center cell-vertical-center w4prc">
+                                            <img src="../../img/playlist-plus-24.png" id="addFifure" class="button-with-hover-blue m-auto radius50prc w80prc padding-1-1" alt="" title="add figure" />
+                                            <div class="add-panel overflow-auto" id="addPanel">
+                                                <div class="add-panel-figures">
+                                                    <div class="padding-8-0">
+                                                        <img name="flag" data-country="1" src="img-figures/belarus.png" alt="Belarus" title="Belarus" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="2" src="img-figures/germany.png" alt="Germany" title="Germany" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="3" src="img-figures/hungary.png" alt="Hungary" title="Hungary" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="4" src="img-figures/kazakhstan.png" alt="Kazakhstan" title="Kazakhstan" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="5" src="img-figures/poland.png" alt="Poland" title="Poland" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="6" src="img-figures/russia.png" alt="Russia" title="Russia" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="7" src="img-figures/ukraine.png" alt="Ukraine" title="Ukraine" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="8" src="img-figures/united-kingdom.png" alt="United Kingdom" title="United Kingdom" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                        <img name="flag" data-country="9" src="img-figures/usa.png" alt="USA" title="USA" class="block-left button-orange-with-hover-blue radius4 padding-8-8 box-shadow-gray" />
+                                                    </div>
+                                                    <div class="clear-both">
+                                                        <img name="figure" data-figure="2" src="img-figures/box-24.png" alt="box" title="rectangle" class="button-orange-with-hover-blue radius50prc block-left padding-8-8" />
+                                                        <img name="figure" data-figure="3" src="img-figures/circle-24.png" alt="circle" title="circle" class="button-orange-with-hover-blue radius50prc block-left padding-8-8" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell cell-horizontal-center cell-vertical-center w4prc">
+                                            <img src="img-figures/format-color-fill.png" id="changeColorFill" class="button-with-hover-blue m-auto radius50prc w80prc padding-1-1" alt="" title="change color fill" />
+                                        </div>
+                                        <!--Список фигур-->
+                                        <div class="cell cell-horizontal-center cell-vertical-center blue w65prc">
+                                            <select id="listFigures" class="button-orange-with-hover-blue radius50prc w-break w98prc m-auto fsize-1x1rem padding-2-8">
+                                                <option value="0" selected disabled>select figure... </option>
+                                            </select>
+                                        </div>
+                                        <div class="cell cell-vertical-center">
+                                            <button id="deselectFigure" class="display-no button-orange-with-hover-blue w90prc m-auto w-break radius50prc padding-4-0">
+                                                Deselect figure
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            <section class="row">
+                                <div class="table">
+                                    <div class="cell w80prc">
+                                        <div class="table">
+                                            <!--Наименования RS элементов управления-->
+                                            <div class="cell">
+                                                <div class="table w100prc fsize-0x7rem">
+                                                    <div class="row">
+                                                        <div class="cell cell-horizontal-center cell-vertical-center w16x7prc b-c-lightgray">
+                                                            <p class="margin0 padding-2-0">Длинна волны</p>
+                                                        </div>
+                                                        <div class="cell cell-horizontal-center cell-vertical-center w16x6prc b-color-yellow50">
+                                                            <p class="margin0 padding-2-0">Амплитуда</p>
+                                                        </div>
+                                                        <div class="cell cell-horizontal-center cell-vertical-center w16x6prc b-c-lightgray">
+                                                            <p class="margin0 padding-2-0">Период</p>
+                                                        </div>
+                                                        <div class="cell cell-horizontal-center cell-vertical-center w16x6prc b-color-yellow50">
+                                                            <p class="margin0 padding-2-0">Затенение</p>
+                                                        </div>
+                                                        <div class="cell cell-horizontal-center cell-vertical-center w16x6prc b-c-lightgray">
+                                                            <p class="margin0 padding-2-0" id="lblFigureWidth">Ширина</p>
+                                                        </div>
+                                                        <div class="cell cell-horizontal-center cell-vertical-center b-color-yellow50">
+                                                            <p class="margin0" id="lblFigureHeight">Высота</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell cell-horizontal-center w-break cell-vertical-center">
+                                        <p id="lblSizeCanvas" class="margin0 fsize-0x7rem">&nbsp;</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+
+                        <div class="block-setter radius7 overflow-auto p-t-0x3prc p-b-0x5prc">
+                            <div id="cellWaveLength" class="rs-cell">
+                                <input type="range" min="5" max="100" value="20" id="waveLength" />
+                            </div>
+                            <div id="cellWaveAmplitude" class="rs-cell">
+                                <input type="range" min="1" max="100" value="30" id="waveAmplitude" />
+                            </div>
+                            <div id="cellWavePeriod" class="rs-cell">
+                                <input type="range" min="1" max="1000" value="100" id="wavePeriod" />
+                            </div>
+                            <div id="cellWaveShading" class="rs-cell">
+                                <input type="range" min="1" max="200" value="50" id="waveShading" />
+                            </div>
+                            <div id="cellFigureWidth" class="rs-cell">
+                                <input type="range" min="20" max="700" value="400" id="figureWidth" />
+                            </div>
+                            <div id="cellFigureHeight" class="rs-cell">
+                                <input type="range" min="20" max="400" value="50" id="figureHeight" />
+                            </div>
+                            <div id="cellBtnAnimate" class="w16x6prc radius7 m-1prc block-left">
+                                <button id="btnAnimate" class="button-orange-with-hover-blue cell-btn padding-16-0 w-break radius50prc  fsize-1x1rem">
+                                    Start wave
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="boxCanvas" class="box-canvas box-shadow-gray">
+                        <canvas id="canvas" class="canvas"></canvas>
+                    </div>
+
+                </div> <!--subtask-box-->
+            </section>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="js/Task02.dist.js"></script>
+</body>
+</html>

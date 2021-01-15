@@ -1,0 +1,105 @@
+﻿@import url('../../../css/styleGooglefont.css');
+/* Lesson 3: Микроданные и пользовательские данные. Геолокация. */
+body {
+}
+
+.orderDesk {
+    display: block;
+    width: 100%;
+}
+
+.orderDesk-goods {
+    display: table-cell;
+    width: 70%;
+    overflow: hidden;
+}
+
+.orderDesk-goods-list {
+    display: table;
+    width: 100%;
+}
+
+.product {
+    display: table-row;
+}
+
+.product-img {
+    display: table-cell;
+    width: 20%;
+    padding: 1%;
+}
+
+    .product-img img {
+        width: 100%;
+        height: auto;
+    }
+
+.product-info {
+    display: table-cell;
+    width: 78%;
+    padding: 1%;
+    word-wrap: break-word;
+    vertical-align: top;
+}
+
+.basket {
+    background-image: url(../img/buy-basket-48px.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.basket-count-item {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: white;
+    font-weight: 700;
+}
+
+.basket-list {
+    width: 100%;
+    overflow-y: auto;
+    height: 376px;
+}
+
+.basket-list-row {
+    display: table-row;
+    border-radius: 4px;
+}
+
+.basket-list-product {
+    display: table-cell;
+    width: 30%;
+    vertical-align: bottom;
+    border-radius: 4px;
+    padding: 2%;
+}
+
+    .basket-list-product img {
+        width: 100%;
+        height: auto;
+    }
+
+.basket-list-product-counter {
+    position: relative;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.7);
+    margin: 0;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.basket-list-separ-cell {
+    display: table-cell;
+    width: 2%;
+}
+
+.basket-list-separ-row {
+    display: table-row;
+    height: 6px;
+}
+
+@media screen and (max-width:960px ) {
+    .orderDesk div {
+        font-size: 0.7rem;
+    }
+}

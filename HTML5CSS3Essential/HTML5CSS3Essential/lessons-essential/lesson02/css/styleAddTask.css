@@ -1,0 +1,27 @@
+﻿@import url('../../../css/styleGooglefont.css');
+
+body {
+}
+
+.video {
+    display: block;
+    width: 100%;
+}
+
+.adt-form-header {
+    width: 100%;
+    font-family: 'PT Serif';
+    font-weight: 700;
+    background-color: rgba(0, 255, 0, 0.30);
+    word-break: break-word;
+}
+
+
+.adt-form-section-header {
+    width: 100%;
+    background-color: rgba(173, 255, 47, 0.40);
+    word-break: break-word;
+}
+
+
+

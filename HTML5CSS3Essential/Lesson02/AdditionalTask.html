@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Additional task</title>
+    <link href="css/styleindex.css" rel="stylesheet" />
+    <link href="css/generalStyleTask.css" rel="stylesheet" />
+    <link href="css/styleAddTask.css" rel="stylesheet" />
+</head>
+<body class="body-index">
+    <header class="header-index">
+        <section class="header-general">
+            <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            <table>
+                <tr>
+                    <td><img src="img/html-5-icon-64x64.png" /></td>
+                    <td><img src="img/css-3-icon-64x64.png" /></td>
+                    <td><img src="img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-task-content">
+            <h2 class="padding-8-16">Lesson 2: HTML5 ФОРМЫ. ТЕГИ VIDEO И AUDIO.</h2>
+            <h3 class="padding-8-16">Additional task</h3>
+            <div class="summary-task task-page">
+                <ol>
+                    <li>
+                        <p class="margin0">
+                            Создайте страницу, разместите на ней видеоплеер (640х640), сделайте разметку согласно семантике HTML5,
+                            укажите несколько источников в source. Видео должно проигрываться в IE.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="margin0">
+                            Сделайте форму по типу документа «001 Simple Form.html» согласно спецификации HTML5.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </header>
+    <main class="main-task">
+        <section class="section-task">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box">
+                    <video class="video box-shadow-blue" controls preload="metadata">
+                        <source src="video/20180303_114920.mp4" />
+                    </video>
+                </div>
+            </section>
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box fsize-1x5rem box-shadow-blue">
+                    <form action="" id="appointmentDoctor" method="get">
+                        <header class="adt-form-header fsize-2rem">
+                            <p class="margin0 padding-8-16">Запись на прием</p>
+                        </header>
+                        <main class="form-main">
+                            <!-- Private info <================================================================ -->
+                            <section class="margin0 padding-8-16">
+                                <header class="adt-form-section-header">
+                                    <p class="margin0 padding-8-16">Личная информация</p>
+                                </header>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="first_name">Имя</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="text" name="first_name" id="first_name" class="fsize-1x5rem"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="tel">Телефон</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="tel" name="tel" id="tel" class="fsize-1x5rem"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="email">Адресс электронной почты</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="email" name="email" id="email" class="fsize-1x5rem"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="birthday">Дата рождения</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="date" name="birthday" id="birthday" class="fsize-1x5rem"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Appointment <====================================================================================== -->
+                            <section class="margin0 padding-8-16">
+                                <header class="adt-form-section-header">
+                                    <p class="margin0 padding-8-16">Назначить прием</p>
+                                </header>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="reason_visit">Прична визита к врачу</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <select type="text" name="reason_visit" id="reason_visit" class="fsize-1x5rem">
+                                                <option selected disabled>Укажите причину визита к врачу... </option>
+                                                <option>Плановый осмотр</option>
+                                                <option>Острая боль</option>
+                                                <option>Другая причина</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="degree_pain">Степень болевых ощущений</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="text" name="degree_pain" id="degree_pain" maxlength="400" class="fsize-1x5rem" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="plan_date">Предпочтительная дата</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="date" name="plan_date" id="plan_date" class="fsize-1x5rem" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-block">
+                                    <div class="edit-block-label">
+                                        <label class="label-in-edit-block" for="plan_time">Предпочтительное время</label>
+                                    </div>
+                                    <div class="edit-block-separator">&nbsp;</div>
+                                    <div class="edit-block-input">
+                                        <div class="edit-block-input-setter">
+                                            <input type="time" name="plan_time" id="plan_time" class="fsize-1x5rem" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <footer class="form-fotter allign-right">
+                                <p class="margin0 padding-8-16">
+                                    <input type="submit" value="Отправить" class="button fsize-1x5rem radius4 box-shadow-gray" />
+                                </p>
+                            </footer>
+                        </main>
+                    </form>
+                </div>
+            </section>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p>
+                <a href="https://www.w3.org/">Официальный сайт W3C</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/html">Справочник по HTML</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/css">Справочник по CSS</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a>
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a>
+            </p>
+            <p>
+                <a href="https://html5test.com/">How well does your browser support HTML5?</a>
+            </p>
+            <p>
+                <a href="https://caniuse.com/">Can I use?</a>
+            </p>
+            <p>
+                <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a>
+            </p>
+            <p>
+                <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a>
+            </p>
+            <p>
+                <a href="https://html.com/">Learn HTML Code, Tags & CSS</a>
+            </p>
+            <p>
+                <a href="https://validator.w3.org/">Markup Validation Service</a>
+            </p>
+            <p>
+                <a href="https://html5book.ru/">HTML5 BOOK</a>
+            </p>
+        </aside>
+    </main>
+    <footer class="footer-index">
+        <img class="footer-task-img radius7" src="img/AddTask2.png" alt="" />
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿.add-conditions {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding-bottom: 0.5%;
+    font-family: Cuprum;
+    background-color: hsl(120,100%,100%);
+    border-radius: 7px;
+}
+
+    .add-conditions input[type=checkbox], input[type=radio], input[type=button] {
+        display: none;
+        outline: none;
+    }
+
+        .add-conditions input[type=checkbox] + label, input[type=radio] + label, input[type=button] + label {
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 9999px;
+            padding: 8px 16px;
+            background: linear-gradient(to top, hsl(30,100%,80%), white);
+            margin-top: 0.5%;
+            margin-left: 0.5%;
+            box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            transition: .3s;
+        }
+
+        .add-conditions input[type=checkbox][disabled] + label, input[type=radio][disabled] + label, input[type=button][disabled] + label {
+            cursor: default;
+            background: linear-gradient(to top, hsl(30,100%,90%), white);
+            color: hsl(0,0%,63%);
+        }
+
+        .add-conditions input[type=checkbox]:not([disabled]) + label:hover, input[type=radio]:not([disabled]) + label:hover, input[type=button]:not([disabled]) + label:hover {
+            background: linear-gradient(to top, hsl(30,100%,60%), white);
+        }
+
+        .add-conditions input[type=checkbox]:checked + label, input[type=radio]:checked + label, input[type=button]:active + label {
+            background: linear-gradient(to top, hsl(30,100%,80%), white);
+            color: blue;
+            font-weight: bold;
+            box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+        }
+
+            .add-conditions input[type=checkbox]:checked + label:hover, input[type=radio]:checked + label:hover, input[type=button]:active + label:hover {
+                background: linear-gradient(to top, hsl(30,100%,60%), white);
+            }

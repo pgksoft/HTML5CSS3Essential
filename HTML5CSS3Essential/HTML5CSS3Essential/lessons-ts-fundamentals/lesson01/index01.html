@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS. Lesson 01</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 01: Введение. Переменные и функции.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right" />
+                    <h1 class="padding-16-16">Lesson 01</h1>
+                    <h2 class="padding-16-16">Введение. Переменные и функции.</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+            <nav class="card-lesson-nav">
+                <h3 class="h-panel">Панель навигациии</h3>
+                <form method="post" action="index05.html" id="listTasks" name="listTasks">
+                    <p>
+                        <input type="radio" id="indtask" name="tasks"
+                               value="Самостоятельное задание:" />
+                        <label for="indtask">Independent task</label>
+                    </p>
+                </form>
+            </nav>
+            <article class="card-lesson-content">
+                <div class="block-setter-98 p-t-0x5prc">
+                    <div class="tabs block-setter">
+                        <input id="tabHome" type="radio" name="tabs" checked>
+                        <label for="tabHome">Цели и задачи</label>
+                        <input id="tabResume" type="radio" name="tabs">
+                        <label for="tabResume">Теория</label>
+                        <section id="content-tabHome" class="block-setter-98">
+                            <p class="summarytask-caption" id="summarytaskcaption">
+                                Обзор, цель и назначение урока
+                            </p>
+                            <!--«»-->
+                            <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                                <p class="margin0">Зачем использовать TypeScript.</p>
+                                <p class="margin0">Синтаксис TypeScript.</p>
+                                <p class="margin0">Инструменты для работы.</p>
+                                <p class="margin0">Настройки Фреймворка.</p>
+                                <p class="margin0">Создание HelloWorld приложения.</p>
+                                <p class="margin0">Типы данных в TypeScript</p>
+                                <p class="margin0">Статическая и динамическая типизация</p>
+                                <p class="margin0">Ambient Declarations</p>
+                                <p class="margin0">Объекты</p>
+                                <p class="margin0">Функции, Arrow function</p>
+                                <p class="margin0">Статические типы</p>
+                            </div>
+                            <p class="look-task">
+                                <!--data-iamworking="TS"-->
+                                <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                            </p>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionInd">
+                                Используя TS, создайте следующую функцию, рассчитывающую стоимость мороженого:
+                                <br />
+                                Магазин предлагает 2 размера мороженого:
+                                <ul class="margin0">
+                                    <li>Маленький стакан (10грн)</li>
+                                    <li>Большой стакан (25грн)</li>
+                                </ul>
+                                Мороженое дополняется одной или несколькими начинками (минимум - одной):
+                                <ul class="margin0">
+                                    <li>шоколад (+5грн);</li>
+                                    <li>карамель (+6грн);</li>
+                                    <li>ягоды (+10грн).</li>
+                                </ul>
+                                Дополнительно (не обязательно) мороженое можно посыпать маршмеллоу (+5грн).
+                            </div>
+                        </section>
+                        <section id="content-tabResume">
+                            <ul class="margin0 padding-1-0 w-break resume">
+                                <!--<span class="accent"></span>-->
+                                <li>
+                                    <span class="accent">TypeScript</span> – типизированное надмножество языка <span class="accent">JavaScript</span>,
+                                    компилируется в чистый <span class="accent">JavaScript</span>.<br />
+                                    Основные возможности:
+                                    <ul>
+                                        <li>Поддерживает обычный <span class="accent">JavaScript</span> код;</li>
+                                        <li>Статическая типизация;</li>
+                                        <li>Инкапсуляция;</li>
+                                        <li>Классы и интерфейсы;</li>
+                                        <li>Поддерживает возможности <span class="accent">ECMAScript 6</span>;</li>
+                                        <li><span class="accent">Intellisense</span> и проверка синтаксиса.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Компилятор - программа, преобразующая текст, написанный на алгоритмическом языке, в программу,
+                                    состоящую из машинных команд. Компилятор создает законченный вариант программы на машинном языке.
+                                </li>
+                                <li>
+                                    <span class="accent">Npm install typescript –g</span> – глобальная установка компилятора <span class="accent">TypeScript</span>;
+                                </li>
+                                <li>
+                                    <span class="accent">Tsc –v</span> – проверка версий компилятора;
+                                </li>
+                                <li>
+                                    <span class="accent">Tsc app.ts</span> – компиляция файла;
+                                </li>
+                                <li>
+                                    <span class="accent">Tsconfig.json</span> – файл, который указывает на то, что текущая директория является
+                                    корнем <span class="accent">TypeScript</span> проекта.
+                                </li>
+                                <li>
+                                    <span class="accent">Number, string, Boolean, any, enum, tuples, void</span> – добавленные типы данных.
+                                </li>
+                                <li>
+                                    <span class="accent">let</span> и <span class="accent">const</span> - новые типы объявления переменных в <span class="accent">TypeScript</span>.
+                                    <span class="accent">let</span> позволяет пользователям избежать некоторые из общих ошибок, с которыми сталкиваются в <span class="accent">JavaScript</span>.
+                                    <span class="accent">Const</span>- ключевое слово, которое предотвращает переопределение переменных.
+                                </li>
+                                <li>
+                                    При определении функции в <span class="accent">TypeScript</span> необходимо указать тип входящих аргументов, а также тип возвращаемого значения.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../ts/indexTSLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script src="../../js-advanced/IamWorking.dist.js"></script>
+
+</body>
+</html>

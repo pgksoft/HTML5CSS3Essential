@@ -1,0 +1,35 @@
+﻿@import url('../../../css/styleGooglefont.css');
+
+ /* Lesson 3: Микроданные и пользовательские данные. Геолокация. */
+
+body {
+}
+
+.personal {
+    display: table;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.personal-col {
+    display: table-cell;
+    height: 100%;
+}
+
+.personal-col-left {
+    width: 30%;
+}
+
+.personal-col-right {
+    width: 70%;
+}
+
+.personal-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+

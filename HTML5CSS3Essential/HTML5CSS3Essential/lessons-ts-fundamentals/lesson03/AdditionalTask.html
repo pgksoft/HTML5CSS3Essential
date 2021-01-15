@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>TS-L03: Additional Task</title>
+    <link href="../../css-external/w3.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="../../css/styleInputs.css?ver=26-10-2020 16:15" rel="stylesheet" />
+    <link href="css/styleAddTask.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">TypeScript Fundamentals: Lesson 03: Generics. Дополнительное задание.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <p class="abzac">
+            </p>
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../index-ts.html">
+                    <h4 class="h-subject">TYPESCRIPT FUNDAMENTALS</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <img src="../../img/TypeScript_Logo_64x64.png" alt="TS" class="block-right p-t-r-8" />
+                <h2 class="padding-4-16">Lesson 03: Generics.</h2>
+                <h3 class="padding-4-16">Дополнительное задание.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Создайте экземпляр класса, в конструктор которого пользователь будет передавать строковые значения.
+                        Установите в классе метод для определения функции генератора, которая на каждом значении в
+                        свойствах класса устанавливает <span class="accent">yield</span>. При вызове данной функции из класса
+                        проверьте все значения, введенные пользователем и остановите перебор – в случае если пользователь
+                        ввел числовое значение. Ошибку выведите в консоль.
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box block-setter-98 radius7 overflow-auto">
+                    <form method="get" id="formAddTask" action="#">
+                        <main class="form-main">
+                            <div class="edit-block-separator">&nbsp;</div>
+                            <div class="edit-block-label">
+                                <label class="label-in-edit-block" for="stringVal">Введите строковое значение</label>
+                                <div class="edit-block-separator">&nbsp;</div>
+                                <label id="counter"></label>
+                            </div>
+                            <div class="edit-block padding-2-0">
+                                <div class="edit-block-separator">&nbsp;</div>
+                                <div class="edit-block-input">
+                                    <div class="edit-block-input-setter">
+                                        <input class="field" type="text" required id="stringVal" placeholder=" " data-verify="false" />
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <footer class="form-fotter allign-center">
+                            <p class="margin0 padding-8-16">
+                                <input type="submit" value="Enter" id="enter" class="button-orange padding-8-16 radius50prc fsize-1x1rem" />
+                            </p>
+                        </footer>
+                    </form>
+                    <section class="log">
+                        <div class="set">
+                            <div class="table border-separate border-spacing4">
+                                <div class="row" id="log-row-header">
+                                    <div class="cell w1prc cell-vertical-center cell-horizontal-center">
+                                        <input type="checkbox" id="markAllRows" />
+                                        <label for="markAllRows">
+                                            <img src="../../img/checkbox-blank-outline-black.png" id="imgMarkAllRows" />
+                                        </label>
+                                    </div>
+                                    <div class="cell w5prc cell-vertical-center cell-horizontal-center">№</div>
+                                    <div class="cell w70prc cell-vertical-center cell-horizontal-center">Значение</div>
+                                    <div class="cell cell-vertical-center cell-horizontal-center">Создано</div>
+                                </div>
+                            </div>
+                            <div class="table border-separate border-spacing4 cell-vertical-top" id="tableOfLog">
+                                <!--Inner Html will be created from code-->
+                            </div>
+                        </div>
+                        <button class="button-orange block-setter-98 radius50prc fsize-1x1rem padding-4-8" id="remove">
+                            Удалить
+                        </button>
+                        <div id="confirm-modal" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w30prc">
+                                <header class="w3-container w3-orange">
+                                    <h3 class="padding-2-8" id="confirm-modal-Header">Подтвердите удаление</h3>
+                                </header>
+                                <div class="w3-container">
+                                    <p id="confirmAbout"></p>
+                                </div>
+                                <footer class="w3-container w3-orange w3-center padding-8-0">
+                                    <button class="button-ok" id="confirmYes">Confirm</button>
+                                    <button class="button-no" id="confirmNo">Refuse</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="https://www.typescriptlang.org/">TypeScript</a> </p>
+                <p> <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig.json</a> </p>
+                <p> <a href="https://github.com/Microsoft/TypeScript">TypeScript at GitHub</a> </p>
+                <p> <a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">ООП</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script type="module" src="ts/addTask.dist.js"></script>
+</body>
+</html>

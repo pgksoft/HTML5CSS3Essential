@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced-L01: Additional Task</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="css/microData.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 01: Микроданные и пользовательские данные. Drag&Drop. Геолокация. Дополнительное задание.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+            <p class="abzac">05.08.2020</p>
+            <p class="abzac">
+                После вынужденного перерыва оформил 1-ю задачу 1-й лекции курса HTML5&CSS3 Avanced. Тематическая сложность данной задачи можно
+                сказать нулевая. Но при ее реализации решил переходить от ранее используемой схемы процентной верстки к FlexBox-ам.
+                Я уже использовал технологию flexbox при решении задач, которые отражены на данном ресурсе. Но теперь полностью хочу перейти на
+                данную технологию. Немного потратил время на перебор вариантов FlexBox свойств в CSS-классах.
+                Также решил записать небольшое учебное видео, в котором сравнил поведение контента похожей задачи из предыдущего курса где
+                использовалась процентная верстка.
+            </p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <h2 class="padding-8-16">Lesson 01:  Микроданные и пользовательские данные. Drag&Drop. Геолокация.</h2>
+                <h3 class="padding-8-16">Дополнительное задание.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Создайте страницу с разметкой, на которой будет отображаться контактная информация Вашего
+                        учебного заведения или Вашей рабочей организации. Используя микроданные и словарь терминов
+                        <a href="http://schema.org/Person" class="button-orange-with-hover-gray radius50prc padding-0-8">Person</a>
+                        добавьте их в разметку.<br />
+                        Проверьте разметку на правильность оформления:
+                        <a href="http://www.google.com/webmasters/tools/richsnippets" class="button-orange-with-hover-gray radius50prc padding-0-8">инструмент проверки структуры данных</a>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <div class="md-container" itemscope itemtype="http://schema.org/Person">
+                        <section class="md-block">
+                            <div class="md-my-photo" >
+                                <img src="img/MyPhoto.png" itemprop="image"/>
+                            </div>
+                            <div class="md-block" data-fullname="true">
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Фамилия
+                                    </label>
+                                    <div class="md-text">
+                                        <p class="margin0" itemprop="familyName">Пыжик</p>
+                                    </div>
+                                </div>
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Имя
+                                    </label>
+                                    <div class="md-text">
+                                        <p class="margin0" itemprop="name">Юрий</p>
+                                    </div>
+                                </div>
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Отчество
+                                    </label>
+                                    <div class="md-text">
+                                        <p class="margin0" itemprop="additionalName">Николаевич</p>
+                                    </div>
+                                </div>
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Дата рождения
+                                    </label>
+                                    <div class="md-text">
+                                        <input type="date" readonly value="1964-11-19" itemprop="birthDate" />
+                                    </div>
+                                </div>                                
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Email
+                                    </label>
+                                    <div class="md-text">
+                                        <input type="email" readonly value="pgksoft@gmail.com" itemprop="email" />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="md-block" data-description="true">
+                            <div class="md-block" itemprop="affiliation" itemscope itemtype="http://schema.org/Organization">
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Организация
+                                    </label>
+                                    <div class="md-text">
+                                        <p class="margin0" itemprop="name">LocalHost</p>
+                                    </div>
+                                </div>
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Адрес
+                                    </label>
+                                    <div class="md-text">
+                                        <p class="margin0" itemprop="address">Home</p>
+                                    </div>
+                                </div>
+                                <div class="md-block">
+                                    <label class="md-caption">
+                                        Фабричная марка
+                                    </label>
+                                    <div class="md-text" itemprop="brand" itemscope itemtype="https://schema.org/Brand">
+                                        <p class="margin0" itemprop="name">PgkSoft</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+</body>
+</html>

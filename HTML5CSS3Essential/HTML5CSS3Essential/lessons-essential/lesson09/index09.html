@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="css/styleIndex09.css" rel="stylesheet" />
+</head>
+<body class="body-index">
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="block-setter">
+            <div class="short-description-panel-header">
+                <p class="margin0">HTML5 & CSS3 Essential: Lesson 09. Трансформация и переходы.</p>
+                <div class="short-description-panel-header-close">
+                    <p class="short-description-panel-header-caption">short description</p>
+                    <img id="shortDescriptionPanelClose" src="../../img/window-close.png" alt="" title="Esc" />
+                </div>
+            </div>
+            <div class="short-description-panel-content">
+                <p class="abzac">
+                    Всем доброго времени суток.
+                </p>
+            </div>
+        </div>
+    </div>
+    <header class="header-index allign-center">
+        <section class="header-general">
+            <a href="../../Index-essential.html">
+                <h4 class="h-subject">HTML5 И CSS3 ESSENTIAL</h4>
+            </a>
+            <table>
+                <tr>
+                    <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" /></a></td>
+                    <td><img src="../../img/css-3-icon-64x64.png" /></td>
+                    <td><img src="../../img/javascript-icon-64x64.png" /></td>
+                </tr>
+            </table>
+        </section>
+        <section class="header-content-lesson background-transparent-50">
+            <div class="padding-8-8">
+                <h1 class="padding-16-16">Lesson 9</h1>
+                <h2 class="padding-16-16">Трансформация и переходы.</h2>
+            </div>
+        </section>
+    </header>
+    <nav class="nav-index-lesson">
+        <h3 class="h-panel">Панель навигациии</h3>
+        <form method="post" action="index05.html" id="listTasks" name="listTasks">
+            <p>
+                <input type="radio" id="addtask" name="tasks"
+                       value="Дополнительное задание:" />
+                <label for="addtask">Additional task</label>
+            </p>
+            <p>
+                <input type="radio" id="task2" name="tasks"
+                       value="Task 2" />
+                <label for="task2">Task 2</label>
+            </p>
+            <p>
+                <input type="radio" id="task3" name="tasks"
+                       value="Task 3" />
+                <label for="task3">Task 3</label>
+            </p>
+            <p>
+                <input type="radio" id="task4" name="tasks"
+                       value="Task 4" />
+                <label for="task4">Task 4</label>
+            </p>
+        </form>
+    </nav>
+    <main>
+        <section class="section-index-lesson">
+            <div class="block-setter-98 p-t-0x5prc">
+                <div class="tabs block-setter">
+                    <input id="tabHome" type="radio" name="tabs" checked>
+                    <label for="tabHome">Цели и задачи</label>
+                    <input id="tabResume" type="radio" name="tabs">
+                    <label for="tabResume">Теория</label>
+                    <section id="content-tabHome" class="block-setter-98">
+                        <p class="summarytask-caption" id="summarytaskcaption">
+                            Обзор, цель и назначение урока
+                        </p>
+                        <!--«»-->
+                        <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                            <p class="margin0">Свойство Transition. Создание переходов.</p>
+                            <p class="margin0">Трансформации - translate, rotate, scale, skew.</p>
+                            <p class="margin0">3D трансформации.</p>
+                            <p class="margin0">Анимация.</p>
+                            <p class="margin0">Фильтры.</p>
+                            <hr />
+                            <h4>Анимация</h4>
+                            <a href="http://www.css3files.com/" class="radius50prc padding-2-8">CSS3 FILES: animation</a>
+                            <h4>Переходы</h4>
+                            <a href="http://www.css3files.com/transition/" class="radius50prc padding-2-8">CSS3 FILES: transition</a>
+                            <br />
+                            <a href="https://www.w3.org/TR/css-transitions-1/" class="radius50prc padding-2-8">CSS Transitions</a>
+                            <h4>Трансформации</h4>
+                            <a href="http://www.css3files.com/transform-rotate/" class="radius50prc padding-2-8">CSS3 FILES: transform</a>
+                        </div>
+                        <p class="look_task">
+                            <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                        </p>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                            Добавьте несколько изображений на страницу. разместите рядом с каждым изображением спрятанный блок с
+                            текстом описывающим изображение. Создайте стиль, который запустит анимацию и плавно отобразит описание при
+                            наведении курсора на изображение.
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription02">
+                            Создайте страницу, на которой разместите несколько изображений повернутых под разным углом.
+                            Разработате анимацию, которая будет поворачивать изображение по часовой или против часовой
+                            стрелки при наведении курсора, так, чтобы для пользователя изображение становилось вертикально.
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription03">
+                            Создайте горизонтальное меню и разработайте анимированные выпадающие подменю.
+                        </div>
+                        <div class="task-description line-height-1x5 fstyle-italic" id="taskDescription04">
+                            Создайте на странице несколько ссылок. Разработайте анимацию, которая будет запускаться при наведении на
+                            ссылку. Анимация должна плавно менять фон ссылки и немного увеличивать размер.
+                        </div>
+                    </section>
+                    <section id="content-tabResume">
+                        <ul class="margin0 padding-1-0 w-break resume">
+                            <li>
+                                С помощью CSS3 свойства <span class="footer-important">transition</span> Вы можете создавать эффект перехода из
+                                одного состояния в другое. Для создания переходов необходимо указать для какого CSS свойства будет
+                                применяться эффект перехода и скорость измнения этих переходов в секундах. Для того, чтобы добавить эффект
+                                перехода к нескольким свойствам просто перечислите их названия через запятую.
+                            </li>
+                            <li>
+                                Плавность выполнения переходов контролируется с помощью функций смягчения. В CSS3 существуют несколько видов
+                                таких функций:
+                                <br />
+                                (см.: <a href="https://www.w3.org/TR/css-transitions-1/#transition-timing-function_tag" class="padding-0-8 radius50prc">W3C transition-time-function</a>)
+                                <div class="imgs-transition-timing">
+                                    <div class="holder-img">
+                                        <img src="img/transition-timing-line.jpg" alt="" />
+                                        <div class="caption-img">
+                                            linear
+                                        </div>
+                                    </div>
+                                    <div class="holder-img">
+                                        <img src="img/transition-timing-ease.jpg" alt="" />
+                                        <div class="caption-img">
+                                            ease
+                                        </div>
+                                    </div>
+                                    <div class="holder-img">
+                                        <img src="img/transition-timing-ease-in-out.jpg" alt="" />
+                                        <div class="caption-img">
+                                            ease-in-out
+                                        </div>
+                                    </div>
+                                    <div class="holder-img">
+                                        <img src="img/transition-timing-ease-in.jpg" alt="" />
+                                        <div class="caption-img">
+                                            ease-in
+                                        </div>
+                                    </div>
+                                    <div class="holder-img">
+                                        <img src="img/transition-timing-ease-out.jpg" alt="" />
+                                        <div class="caption-img">
+                                            ease-out
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="margin0 padding-0-16">
+                                    <li>
+                                        <span class="footer-important">linear</span> - линейные изменения без ускорения и замедления
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">ease</span> - быстрое начало и замедление в конце
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">ease-in-out</span> - ускорение в начале и замедление в конце
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">ease-in</span> - ускорение в начале но без замедления в конце
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">ease-out</span> - тоже самое что и ease но с более медленной анимацией в начале
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">cubic-bezier</span> - ручное определение значения переходов.
+                                        <br />
+                                        См.: <a href="https://cubic-bezier.com/#.17,.67,.83,.67" class="padding-0-8 radius50prc">cubic-bezier generator</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Для создания анимации в CSS3 используется свойство <span class="footer-accent">@keyframes</span>
+                            </li>
+                            <li>
+                                Для задания анимации элемента используется CSS3 свойство <span class="footer-accent">animation</span>.
+                                Это свойство - сокращенная запись различных свойств анимации:
+                                <ul class="margin0 padding-0-16">
+                                    <li><span class="footer-important">animation-name</span> - задает имя анимации</li>
+                                    <li><span class="footer-important">animation-duration</span> - задает время проигрывания анимации</li>
+                                    <li><span class="footer-important">animation-timing-function</span> - описывает метод расчета промежуточных значений свойств для анимации</li>
+                                    <li><span class="footer-important">animation-delay</span> - задает задержку анимации</li>
+                                    <li><span class="footer-important">animation-iteration-count</span> - задает количество циклов анимации</li>
+                                    <li><span class="footer-important">animation-direction</span> - задает направление анимации</li>
+                                    <li><span class="footer-important">animation-play-state</span> - определяет, проигрывается ли анимация или стоит на паузе.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Выбрать наиболее подходящий вариант кривой для интерполяции можно с помощью свойства
+                                <span class="footer-accent">animation-timing-function</span>.
+                            </li>
+                            <li>
+                                Мы можем использовать четыре свойства перехода:
+                                <ul class="margin0 padding-0-16">
+                                    <li>
+                                        <span class="footer-important">transition-property</span> - определяет имя (имена) свойств CSS, к
+                                        которым должны быть применены переходы.
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">transition-duration</span> - определяет время, за которое должен произоти переход.
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">transition-timing-function</span> - определяет, как вычислены примежуточные значения
+                                        перехода.
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">transition-delay</span> - определяет, когда переход запускается.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Каждый ключевой кадр описывает, как анимированный элемент должен вести себя в данной временной точке анимации.
+                                Ключевые кадры принимают процентные значения, чтобы определить время: 0% - запуск анимации, в то время как 100% -
+                                окончание. Вы можете дополнительно добавить промежуточные кадры для анимации.
+                            </li>
+                            <li>
+                                Чтобы переместить объект, можно использовать <span class="footer-accent">transform: translate(x,y)</span>.
+                                Параметр transform всего лишь переместит объект из одной точки в другую, но не создаст анимацию данного
+                                перемещения. Чтобы исправить это, нужно добавить параметр перемещения в классе.
+                            </li>
+                            <li>
+                                Чтобы переместить объект по диагонали, мы совместим параметры <b>x</b> и <b>y</b>. В зависимости от направления,
+                                значение <b>x</b> и <b>y</b> может быть как положительным, так и отрицательным.
+                            </li>
+                            <li>
+                                Вращение в CSS3 регулируется градусными координатами (от 0° до 360°). Чтобы повернуть объект, примените следующие
+                                параметры: <span class="footer-accent">transform: rotate(ndeg)</span>; где <b>ndeg</b> - градусы.
+                            </li>
+                            <li>
+                                Для того чтобы повернуть объект по часовой стрелке, применим положительное значение для
+                                <span class="footer-accent">rotate(ndeg)</span>.
+                            </li>
+                            <li>
+                                Используя параметр <span class="footer-accent">scale(n)</span> или параметр <span class="footer-accent">scale(x,y)</span>,
+                                мы можем либо увеличивать, либо уменьшать объект непосредственно в рамках HTML. Объект будет менять размер в зависимости
+                                от значения n/x,y, где ось Х - ширина, а Y - а высота.
+                            </li>
+                            <li>
+                                Для применения нескольких команд необходимо перечислить их через пробел.
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: blur(add, direction, strength)</span> - смазывает изображение:
+                                <ul class="margin0 padding-0-16">
+                                    <li>
+                                        <span class="footer-important">add</span> - объект (0 - результат работы фильтра, 1 - фильтр будет
+                                        наложен на исходный образец);
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">direction</span> - направление смазывания объекта в градусах
+                                        (0 - вверх и далее по часовой стрелке с шагом 45 градусов);
+                                    </li>
+                                    <li>
+                                        <span class="footer-important">strength</span> - степень размытия.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: chroma(color)</span> - делает заданный цвет прозрачным.
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: glow(strength, color)</span> - добавляет свечение вдоль внешних границ
+                                объекта, создавая эффект "возгорания" границ объекта.
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: gray()</span> - удаляет цветовую гамму объекта и отображает его в серых тонах.
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: invert()</span> - меняет оттенок, насыщение и яркость объекта на противоположные.
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: wave(add, freg, ligthStrength, phase, strength)</span> - производит "синусоидальное"
+                                искажение объекта вдоль вертикальной оси.
+                            </li>
+                            <li>
+                                <span class="footer-accent">filter: xray()</span> - отображает объект в черно-белом варианте, как на рентгеновском снимке.
+                            </li>
+                            <li>
+                                Спецификация Filter Effection 1.0:
+                                <ul class="margin0 padding-0-16">
+                                    <li>Оттенок: hue-rotate;</li>
+                                    <li>Сепия: sepia;</li>
+                                    <li>Яркость: brightness;</li>
+                                    <li>Фильтры можно комбинировать: -webkit-filter: brightness(60%) sepia(100%);</li>
+                                    <li>Контраст: contrast;</li>
+                                    <li>Насыщенность: saturate.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <aside class="aside-index">
+            <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+            <p> <a href="https://www.w3.org/">Официальный сайт W3C</a> </p>
+            <p> <a href="https://www.w3.org/Style/CSS/Overview.ru.html">W3C CSS Home page</a> </p>
+            <p> <a href="http://htmlbook.ru/html">Справочник по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/css">Справочник по CSS</a> </p>
+            <p> <a href="http://htmlbook.ru/samhtml">Самоучитель по HTML</a> </p>
+            <p> <a href="http://htmlbook.ru/samcss">Самоучитель по CSS</a> </p>
+            <p> <a href="https://html5test.com/">How well does your browser support HTML5?</a> </p>
+            <p> <a href="https://caniuse.com/">Can I use?</a> </p>
+            <p> <a href="https://modernizr.com/">Modernizr tells you what HTML, CSS and JavaScript features the user’s browser has to offer</a> </p>
+            <p> <a href="https://www.html5rocks.com/en/">HTML5 ROCKS</a> </p>
+            <p> <a href="https://html.com/">Learn HTML Code, Tags & CSS</a> </p>
+            <p> <a href="https://validator.w3.org/">Markup Validation Service</a> </p>
+            <p> <a href="https://html5book.ru/">HTML5 BOOK</a> </p>
+            <p> <a href="http://kangax.github.io/compat-table/es6/">ES6 compatibility table</a> </p>
+            <p> <a href="http://es6-features.org/#Constants">ES6 features</a> </p>
+            <p> <a href="http://w3c.github.io/html/dom.html#dom-dataset">Semantics, structure, and APIs of HTML documents</a> </p>
+            <p> <a href="https://developer.mozilla.org/ru/docs/Web">Mozila: MDN web docs</a> </p>
+        </aside>
+    </main>
+    <footer class="footer-index overflow-auto">
+        <div>
+            <div class="logo-box m-auto" id="logoBox">
+                <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+            </div>
+            <div class="p-t-16">
+                <a title="Telegram" href="tg://resolve?domain=PgkSoft">
+                    <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                </a>
+                <a title="Mobile Viber" href="viber://add?number=380636068484">
+                    <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                </a>
+                <a title="Messenger" href="https://m.me/pgksoft">
+                    <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                </a>
+                <a title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                    <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                </a>
+                <a title="Cellphone" href="tel:+380636068484">
+                    <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                </a>
+            </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../../js/indexLesson.dist.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+</body>
+</html>

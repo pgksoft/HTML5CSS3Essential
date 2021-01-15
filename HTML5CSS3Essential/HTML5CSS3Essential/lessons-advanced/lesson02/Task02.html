@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced-L02: Task 2</title>
+    <link href="../../css-external/w3.css" rel="stylesheet" />
+    <link href="../../css/styleGooglefont.css" rel="stylesheet" />
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="../../css/styleAddConditions.css" rel="stylesheet" />
+    <link href="../../css/styleInputs.css" rel="stylesheet" />
+    <link href="css/mwsMdeling.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 02: Canvas. Задание 2.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <h2 class="padding-8-16">Lesson 02:  Canvas.</h2>
+                <h3 class="padding-8-16">Задание 2.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Моделирование многооконной системы
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <nav class="parms">
+                        <div class="set">
+                            <div id="is-use-off-screen-canvas" data-use="no" title=""></div>
+                            <div class="settings" id="settings">
+                                <span>Параметры</span>
+                            </div>
+                            <div class="settings" id="window-manager">
+                                <span>Окна</span>
+                            </div>
+                            <div class="settings" id="redraw">
+                                <span>Обновить</span>
+                            </div>
+                            <div class="settings" id="overfill">
+                                <span>Перезалить</span>
+                            </div>
+                            <div class="settings" id="launch" data-simulation="isStop">
+                                <span>Старт</span>
+                            </div>
+                        </div>
+                        <div class="show" id="parms-show">
+                        </div>
+                    </nav>
+                    <section class="multi-window-system-modeling-container" id="mwsm-container">
+                        <canvas id="mwsm-area" data-cursor="default"></canvas>
+                    </section>
+                    <section class="mwsm-control">
+                        <div class="mwsm-start" id="mwsm-start">
+                            <img src="../../img/mws-start.png" />
+                        </div>
+                        <div class="mwsm-task-bar" id="mwsm-task-bar"></div>
+                    </section>
+
+                    <!-- PARAMS -->
+                    <div id="parms-modal" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w75prc overflow-auto">
+                            <header class="w3-container w3-lime padding-4-16">
+                                <h3 class="block-left">
+                                    <img src="../../img/cog-outline.png" alt="" />
+                                </h3>
+                                <h3 class="padding-2-8">Параметры моделирования многооконной системы.</h3>
+                                <span class="w3-button w3-display-topright" id="parmsOK">&times;</span>
+                            </header>
+                            <div class="w3-container padding-4-8">
+                                <div class="parameters">
+                                    <div class="set">
+                                        <!-- SCALE-AREA -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0">Масштабность:</p>
+                                        <div class="add-conditions" id="parms-scale-area-panel"> </div>
+                                        <!-- FILL TYPE -->
+                                        <div class="edit-block-separator">&nbsp;</div>
+                                        <p class="margin0 margin-top-4">Тип заливки элемента (фигуры):</p>
+                                        <div class="add-conditions" id="parms-fill-type-panel"></div>
+                                    </div>
+                                    <div class="set">
+                                        <!-- SELECTED ITEM -->
+                                        <p class="margin0 margin-top-4"><b>Текущее окно:</b> <span id="selected-item-info"></span></p>
+                                        <div class="subset">
+                                            <div class="sub-one">
+                                                <!-- WIDTH ITEM -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-selected-item-width">
+                                                        Ширина&nbsp;(<span id="show-selected-item-width-range"></span>):
+                                                        <span id="show-selected-item-width-value" contenteditable="true" data-name="width" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-selected-item-width" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-two">
+                                                <!-- HEIGHT ITEM -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-selected-item-height">
+                                                        Высота&nbsp;(<span id="show-selected-item-height-range"></span>):
+                                                        <span id="show-selected-item-height-value" contenteditable="true" data-name="height" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-selected-item-height" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- WAVE -->
+                                        <p class="margin0 margin-bottom-4">Колебания:</p>
+                                        <div class="subset">
+                                            <div class="sub-one">
+                                                <!-- LENGTH WAVE -->
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-selected-item-lengthwave">
+                                                        Длина&nbsp;(<span id="show-selected-item-lengthwave-range"></span>):
+                                                        <span id="show-selected-item-lengthwave-value" contenteditable="true" data-name="lengthwave" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-selected-item-lengthwave" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-two">
+                                                <!-- AMPLITUDE WAVE -->
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-selected-item-amplitudewave">
+                                                        Амплитуда&nbsp;(<span id="show-selected-item-amplitudewave-range"></span>):
+                                                        <span id="show-selected-item-amplitudewave-value" contenteditable="true" data-name="amplitudewave" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-selected-item-amplitudewave" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subset">
+                                            <div class="sub-one">
+                                                <!-- PERIOD WAVE -->
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-selected-item-periodwave">
+                                                        Период&nbsp;(<span id="show-selected-item-periodwave-range"></span>):
+                                                        <span id="show-selected-item-periodwave-value" contenteditable="true" data-name="periodwave" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-selected-item-periodwave" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="sub-two">
+                                                <!-- SHADING WAVE -->
+                                                <div class="edit-block-separator">&nbsp;</div>
+                                                <div class="edit-block-label range">
+                                                    <label class="label-in-edit-block margin-top-4" for="parms-selected-item-shadingwave">
+                                                        Затенение&nbsp;(<span id="show-selected-item-shadingwave-range"></span>):
+                                                        <span id="show-selected-item-shading-value" contenteditable="true" data-name="shading" data-validate="true">0</span>
+                                                    </label>
+                                                    <div class="edit-block-separator">&nbsp;</div>
+                                                </div>
+                                                <div class="edit-block padding-2-0">
+                                                    <div class="edit-block-input">
+                                                        <div class="edit-block-input-setter">
+                                                            <input type="range" id="parms-selected-item-shading" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="add-conditions">
+                                    <input type="checkbox" id="is-off-screen-canvas" />
+                                    <label for="is-off-screen-canvas" title=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> прорисовка в асинхронном потоке</label>
+                                    <input type="checkbox" id="is-track-proportions-area-motion" />
+                                    <label for="is-track-proportions-area-motion">отслеживать пропорции области</label>
+                                    <input type="checkbox" id="is-translucent-modal" />
+                                    <label for="is-translucent-modal">полупрозрачная форма</label>
+                                    <input type="button" id="set-default-parms" />
+                                    <label for="set-default-parms">параметры по умолчанию</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu-select" data-display="false" data-type="empty"></div>
+
+                    <div id="menu-start" data-display="false" data-type="empty">
+                        <div class="menu-task" name="mwsm-task" data-kind="rectangle">
+                            <div class="icon">
+                                <img src="../../img-mwsm/box-24.png" />
+                            </div>
+                            <p>rectangle</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Belarus">
+                            <div class="icon">
+                                <img src="../../img-mwsm/belarus.png" />
+                            </div>
+                            <p>Belarus</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Germany">
+                            <div class="icon">
+                                <img src="../../img-mwsm/germany.png" />
+                            </div>
+                            <p>Germany</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Hungary">
+                            <div class="icon">
+                                <img src="../../img-mwsm/hungary.png" />
+                            </div>
+                            <p>Hungary</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Kazakhstan">
+                            <div class="icon">
+                                <img src="../../img-mwsm/kazakhstan.png" />
+                            </div>
+                            <p>Kazakhstan</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Poland">
+                            <div class="icon">
+                                <img src="../../img-mwsm/poland.png" />
+                            </div>
+                            <p>Poland</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Russia">
+                            <div class="icon">
+                                <img src="../../img-mwsm/russia.png" />
+                            </div>
+                            <p>Russia</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="Ukraine">
+                            <div class="icon">
+                                <img src="../../img-mwsm/ukraine.png" />
+                            </div>
+                            <p>Ukraine</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="United Kingdom">
+                            <div class="icon">
+                                <img src="../../img-mwsm/united-kingdom.png" />
+                            </div>
+                            <p>United-Kingdom</p>
+                        </div>
+                        <div class="menu-task" name="mwsm-task" data-kind="flag" data-country="USA">
+                            <div class="icon">
+                                <img src="../../img-mwsm/usa.png" />
+                            </div>
+                            <p>USA</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script type="module" src="ts/mwsModeling.js"></script>
+
+</body>
+</html>

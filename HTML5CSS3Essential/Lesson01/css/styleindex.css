@@ -1,0 +1,276 @@
+﻿@import url('styleGooglefont.css');
+
+body {
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.padding-8-16 {
+    padding: 8px 16px;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+.radius7 {
+    border-radius: 7px;
+}
+
+.radius8 {
+    border-radius: 8px;
+}
+
+.radius9 {
+    border-radius: 9px;
+}
+
+.radius10 {
+    border-radius: 10px;
+}
+
+.body-index {
+    margin: 0 auto;
+    max-width: 80%;
+    height: 100%;
+    border: 4px solid white;
+    font-family: Arial, sans-serif;
+    background-color: #cccccc;
+    overflow-y: scroll;
+    /*position: relative;*/
+}
+
+.header-index {
+    display: block;
+    background-color: orange;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    text-align: center;
+}
+
+.header-general {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+    .header-general > table {
+        margin: auto;
+        width: 90%;
+    }
+
+        .header-general > table td img {
+            width: 100%;
+            height: auto;
+        }
+
+.header-content {
+    color: white;
+    text-align: center;
+    font-family: 'Noto Serif';
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 3px blue;
+    float: left;
+    width: 80%;
+}
+
+.h-subject {
+    margin: 16px auto;
+    width: 80%;
+    word-break: break-word;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    color: orangered;
+    background-color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    letter-spacing: normal;
+    text-shadow: none;
+    padding: 1px 1px;
+    border: 1px solid blue;
+    border-radius: 7px;
+}
+
+.header-lesson {
+    padding: 8px 0;
+}
+
+.header-theme {
+    padding: 8px 0;
+}
+
+.h-panel {
+    color: orange;
+    text-align: center;
+    font-family: 'Noto Serif';
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px darkblue;
+    word-break: break-word;
+}
+
+.nav-index {
+    display: block;
+    width: 20%;
+    float: left;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+input[type="radio"] {
+    margin: 0;
+    margin-left: 8px;
+    padding: 0;
+}
+
+    input[type="radio"]:checked + label {
+        font-weight: 700;
+        color: blue;
+    }
+
+        input[type="radio"]:checked + label:hover {
+            font-weight: 700;
+            color: blue;
+        }
+
+    input[type="radio"] + label {
+        display: inline-block;
+        padding: 3px 8px;
+        border: 1px solid transparent;
+        border-radius: 7px;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+
+        input[type="radio"] + label:hover {
+            background-color: orange;
+            color: white;
+            font-weight: 500;
+        }
+
+.section-index {
+    display: block;
+    width: 55%;
+    float: left;
+}
+
+    .section-index > p > a {
+        padding: 3px 8px;
+        border: 1px solid transparent;
+        border-radius: 7px;
+    }
+
+        .section-index > p > a:hover {
+            background-color: orange;
+        }
+
+.summarytask-caption {
+    /*color: darkseagreen;*/
+    width: 100%;
+    margin-top: 16px;
+    padding: 3px 0;
+    background-color: darkseagreen;
+    font-weight: 700;
+    word-break: break-word;
+    display: none;
+}
+
+.summary-task {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-right: 8px;
+    visibility: hidden;
+}
+
+    .summary-task.task-page {
+        visibility: visible;
+        text-shadow: none;
+        letter-spacing: normal;
+        margin: 8px 16px 16px 16px;
+        width: 90%;
+        color: black;
+        font-weight: 700;
+    }
+
+.task-description-img {
+    display: none;
+    margin: 8px;
+    border: 3px solid orange;
+    border-radius: 7px;
+    width: 25%;
+    transition: 0.5s linear;
+}
+
+    .task-description-img:hover {
+        width: 75%;
+    }
+
+    .task-description-img:hover {
+        box-shadow: 2px -2px 5px 0 rgba(0, 0, 255, 0.20), -2px -2px 5px 0 rgba(0,0,255, 0.20), 2px 2px 5px 0 rgba(0,0,255, 0.20), -2px 2px 5px 0 rgba(0,0,255, 0.20);
+    }
+
+#linktaskpage {
+    visibility: hidden;
+    margin-right: 8px;
+}
+
+.aside-index {
+    display: block;
+    width: 25%;
+    float: left;
+}
+
+    .aside-index > p {
+        text-align: center;
+        word-break: break-word;
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .aside-index > p > a {
+            padding: 3px 8px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+        }
+
+            .aside-index > p > a:hover {
+                background-color: orange;
+            }
+
+.footer-index {
+    clear: both;
+    background-color: orange;
+    font-family: 'PT Serif';
+    padding: 8px;
+}
+
+    .footer-index > .digest {
+        background-color: rgba(255, 255, 255, 0.55);
+        margin: 16px auto;
+        width: 96%;
+        word-break: break-word;
+        letter-spacing: normal;
+        text-shadow: none;
+        border: 1px solid blue;
+        border-radius: 7px;
+    }
+
+.digest div {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.footer-accent {
+    color: blue;
+    font-weight: 600;
+}
+
+.footer-important {
+    color: red;
+    font-weight: 600;
+}
+

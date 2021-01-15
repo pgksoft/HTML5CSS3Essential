@@ -1,0 +1,68 @@
+﻿/*LESSON 6. Task 2*/
+@import url('../../../css/styleGooglefont.css');
+@import url('styleRangeRound.css');
+
+body {
+}
+
+.boxColors {
+    display: flex;
+    width: 100%;
+    height: 450px;
+}
+
+.boxColors-area {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 80%;
+    height: 100%;
+}
+
+    .boxColors-area.show {
+        flex-basis: 90%;
+        height: 90%;
+        align-self: center;
+        border: solid 1px black;
+    }
+
+.boxColors-manage {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    height: 100%;
+}
+
+    .boxColors-manage.rs {
+        flex-basis: 30%
+    }
+
+        .boxColors-manage.rs.red {
+            background-color: rgb(255, 229, 229);
+        }
+
+        .boxColors-manage.rs.green {
+            background-color: rgb(229, 255, 229);
+        }
+
+        .boxColors-manage.rs.blue {
+            background-color: rgb(229, 229, 255);
+        }
+
+        .boxColors-manage.rs > div {
+            display: flex;
+            justify-content: center;
+        }
+
+        .boxColors-manage.rs input[type=checkbox] {
+            width: 16px;
+            height: 16px;
+        }
+
+            .boxColors-manage.rs input[type=checkbox] + label:hover {
+                font-weight: bold;
+            }
+
+
+    .boxColors-manage button {
+        align-self: center;
+    }

@@ -1,0 +1,33 @@
+﻿@import url('styleGooglefont.css');
+
+.footer-index {
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: orange;
+    font-family: 'PT Serif';
+    padding: 8px;
+    min-height: 50px;
+}
+
+    .footer-index a {
+        text-decoration: none;
+    }
+
+    .footer-index p {
+        font-family: Roboto;
+    }
+
+    .footer-index .source {
+        text-decoration: none;
+        border-radius: 9999px;
+        box-sizing: border-box;
+        padding: 3px 8px;
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        transition: 0.3s;
+    }
+
+        .footer-index .source:hover {
+            border-color: blue;
+        }

@@ -1,0 +1,47 @@
+﻿.box-clip {
+    background-color: hsl(240,30%,30%);
+    position: relative;
+    width: 100%;
+    height: 110px; /* 25% - 450px,  100% - 110px, 500% - 25px */
+    padding-bottom: 0.5vh;
+    --imgOne: url('../img-advanced/AlexApel05.jpg');
+    --imgTwo: url('../img-advanced/AlexApel18.jpg');
+}
+
+.set-clip {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    word-break: break-word;
+}
+
+.clip-one {
+    background-image: var(--imgOne);
+    transition: .5s linear;
+    clip-path: polygon(51% 0, 100% 0, 100% 100%, 51% 100%);
+}
+
+.clip-two {
+    background-image: var(--imgTwo);
+    transition: .5s linear;
+    clip-path: polygon(0 0, 49% 0, 49% 100%, 0% 100%);
+}
+
+.set-clip.clip-one, .set-clip.clip-two {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.clip-two:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
+}
+
+.clip-one:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) !important;
+}
+
+    .clip-one:hover ~ .clip-two {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%) !important;
+    }

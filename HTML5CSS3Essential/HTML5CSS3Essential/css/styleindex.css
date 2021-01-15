@@ -1,0 +1,117 @@
+﻿@import url('styleGooglefont.css');
+
+body {
+    font-size: 100%;
+}
+
+.body-index {
+    margin: 0 auto;
+    max-width: 80%;
+    height: 100%;
+    border: 4px solid white;
+    font-family: Arial, sans-serif;
+    /*background-color: #cccccc;*/
+    background-color: #dcdcdc;
+    overflow-y: scroll;
+    /*position: relative;*/
+}
+
+.section-index {
+    display: block;
+    width: 75%;
+    float: left;
+}
+
+.nav-index-lesson {
+    display: block;
+    width: 20%;
+    float: left;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+.section-index-lesson {
+    display: block;
+    width: 55%;
+    float: left;
+}
+
+    .section-index-lesson .look_task {
+        display: flex;
+    }
+
+    .section-index-lesson a {
+        text-decoration: none;
+    }
+
+        .section-index-lesson a:hover {
+            background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+        }
+
+        .section-index-lesson a:active {
+            background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+        }
+
+.aside-index {
+    display: block;
+    width: 25%;
+    float: left;
+}
+
+    .aside-index > p {
+        text-align: center;
+        word-break: break-word;
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .aside-index > p > a {
+            padding: 3px 8px;
+            border: none;
+            border-radius: 9999px;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+            .aside-index > p > a:hover {
+                background: linear-gradient(to top, rgba(255, 165, 0, 0.70), white);
+            }
+
+            .aside-index > p > a:active {
+                background: linear-gradient(to bottom, rgba(255, 165, 0, 0.70), white);
+            }
+
+.footer-accent {
+    color: blue;
+    font-weight: 600;
+}
+
+.footer-important {
+    color: red;
+    font-weight: 600;
+}
+
+@media screen and (max-width:960px ) {
+    .section-index {
+        width: 100%;
+        clear: both;
+        font-size: 0.7rem;
+    }
+
+    .nav-index-lesson {
+        font-size: 0.7rem;
+        width: 20%;
+    }
+
+    .section-index-lesson {
+        font-size: 0.7rem;
+        width: 75%;
+    }
+
+    .aside-index {
+        width: 100%;
+        clear: both;
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,72 @@
+﻿/*LESSON 8*/
+
+.edit-block-label {
+    width: 25%;
+}
+
+input {
+    transition: 0.3s linear;
+}
+
+    input:not(:placeholder-shown):invalid {
+        background-color: hsl(0, 100%, 89%);
+    }
+
+    input:not(:placeholder-shown):valid {
+        background-color: hsl(110, 100%, 89%);
+    }
+
+    input:required:placeholder-shown {
+        border: 1px solid red;
+    }
+
+        input:required:placeholder-shown:hover {
+            border: 1px solid rgb(255,100,100);
+            box-shadow: 1px -1px 2px 0 rgb(255,120,120), -1px -1px 2px 0 rgb(255,120,120), 1px 1px 2px 0 rgb(255,120,120), -1px 1px 2px 0 rgb(255,120,120);
+        }
+
+        input:required:placeholder-shown:focus {
+            border: 1px solid orangered;
+            box-shadow: 1px -1px 2px 0 orangered, -1px -1px 2px 0 orangered, 1px 1px 2px 0 orangered, -1px 1px 2px 0 orangered;
+        }
+
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=date],
+    input[type=text]:required:not(:placeholder-shown),
+    input[type=password]:required:not(:placeholder-shown),
+    input[type=email]:required:not(:placeholder-shown),
+    input[type=date]:required:not(:placeholder-shown) {
+        outline: 0;
+        outline-offset: 0;
+        box-sizing: border-box;
+        border: 1px solid lightgray;
+        padding: 0.5% 1%;
+        border-radius: 3px;
+        font-size: 1.2rem;
+    }
+
+        input[type=text]:not(:required):hover,
+        input[type=password]:not(:required):hover,
+        input[type=email]:not(:required):hover,
+        input[type=date]:not(:required):hover,
+        input[type=text]:required:not(:placeholder-shown):hover,
+        input[type=password]:required:not(:placeholder-shown):hover,
+        input[type=email]:required:not(:placeholder-shown):hover,
+        input[type=date]:required:not(:placeholder-shown):hover {
+            border: 1px solid gray;
+            box-shadow: 1px -1px 2px 0 lightgray, -1px -1px 2px 0 lightgray, 1px 1px 2px 0 lightgray, -1px 1px 2px 0 lightgray;
+        }
+
+        input[type=text]:not(:required):focus,
+        input[type=password]:not(:required):focus,
+        input[type=email]:not(:required):focus,
+        input[type=date]:not(:required):focus,
+        input[type=text]:required:not(:placeholder-shown):focus,
+        input[type=password]:required:not(:placeholder-shown):focus,
+        input[type=email]:required:not(:placeholder-shown):focus,
+        input[type=date]:required:not(:placeholder-shown):focus {
+            border: 1px solid blue;
+            box-shadow: 1px -1px 1px 0 blue, -1px -1px 1px 0 blue, 1px 1px 1px 0 blue, -1px 1px 1px 0 blue;
+        }

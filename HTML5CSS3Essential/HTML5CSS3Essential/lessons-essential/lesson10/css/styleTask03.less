@@ -1,0 +1,100 @@
+﻿/* LESSON 10 */
+@import url('../../../css/styleGooglefont.css');
+
+.tutorial {
+    display: block;
+    width: 98%;
+    margin: 0 auto;
+    padding: 3% 0;
+    border-radius: 3px;
+    background: linear-gradient(to top, hsl(0,0%,35%),hsl(0,0%,45%));
+    color: lightgray;
+    font-family: 'Nanum Gothic';
+}
+
+.tutorial-page {
+    display: block;
+    width: 94%;
+    margin: 0 auto;
+    padding: 3% 0;
+    border-radius: 3px;
+    background-color: hsl(0,0%,10%);
+}
+
+.tutorial-page-set {
+    display: block;
+    width: 94%;
+    margin: 0 auto;
+}
+
+.tutorial-page-group {
+    display: block;
+    padding: 3% 0;
+}
+
+.tutorial-page-group-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 600px;
+    flex-wrap: wrap;
+    padding: 1% 0;
+    overflow: auto;
+}
+
+.tutorial-card {
+    display: flex;
+    width: 33%;
+    padding: 0.5% 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+
+    &:hover {
+        border-color: hsl(0,0%,50%);
+    }
+}
+
+.tutorial-card-content {
+    display: block;
+    width: 98%;
+    margin: 0 auto;
+    padding: 1% 0;
+    color: hsl(60,100%,85%);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    height: 200px;
+    word-wrap: break-word;
+    text-align: justify;
+    overflow: auto;
+}
+
+.tutorial-card-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+    width: 98%;
+    margin: 0 auto;
+    padding: 1% 0;
+    word-wrap: break-word;
+    color: lightgray;
+    overflow: auto;
+}
+
+.tutorial-card-content, .tutorial-card-title {
+    p {
+        margin: 0;
+        padding: 0 8px;
+    }
+}
+
+@media screen and (max-width:960px) {
+
+    .tutorial-page-group-content {
+        flex-direction: row;
+    }
+
+    .tutorial-card {
+        width: 100%;
+    }
+}

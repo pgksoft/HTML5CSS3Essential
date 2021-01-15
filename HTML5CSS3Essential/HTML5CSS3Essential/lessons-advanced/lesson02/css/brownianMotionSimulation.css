@@ -1,0 +1,435 @@
+﻿:root {
+    --isLog: none;
+    --isLogFlex: none;
+}
+
+.parms {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0;
+    background-color: hsl(39, 85%, 95%);
+    border-radius: 7px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 0.5%;
+}
+
+    .parms .set {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0.5% 0.5% 0.5%;
+    }
+
+        .parms .set .settings {
+            display: flex;
+            margin: 0;
+            margin-right: 16px;
+            padding: 0.6% 5%;
+            border-radius: 999px;
+            transition: .15s;
+            box-sizing: border-box;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            background-color: rgba(255, 255, 255, 0.50);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 5%;
+            background-size: auto 90%;
+            color: hsl(0,0%,30%);
+            white-space: nowrap;
+            margin-top: 1%;
+        }
+
+            .parms .set .settings[name="log-flex"] {
+                display: var(--isLogFlex);
+            }
+
+            .parms .set .settings[id=settings] {
+                background-image: url('../../../img/cog-outline.png');
+            }
+
+            .parms .set .settings[id=redraw] {
+                background-image: url('../../../img/restore-24.png');
+            }
+
+            .parms .set .settings[id=step-by-step] {
+                background-image: url('../../../img/debug-step-over.png');
+            }
+
+            .parms .set .settings[id=launch][data-simulation=isStop] {
+                background-image: url('../../../img/rocket-outline.png');
+            }
+
+            .parms .set .settings[id=launch][data-simulation=isMotion] {
+                background-image: url('../../../img/rocket-launch-outline.png');
+            }
+
+            .parms .set .settings:hover {
+                background-color: hsl(39,100%,90%);
+            }
+
+            .parms .set .settings:active {
+                box-shadow: inset 1px 1px 2px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                color: hsl(0,0%,0%);
+            }
+
+            .parms .set .settings[id=settings]:active {
+                background-image: url('../../../img/cog-outline-push.png');
+            }
+
+            .parms .set .settings[id=redraw]:active {
+                background-image: url('../../../img/restore-24-push.png');
+            }
+
+            .parms .set .settings[id=step-by-step]:active {
+                background-image: url('../../../img/debug-step-over-push.png');
+            }
+
+            .parms .set .settings[id=launch][data-simulation=isStop]:active {
+                background-image: url('../../../img/rocket-outline-push.png');
+            }
+
+            .parms .set .settings[id=launch][data-simulation=isMotion]:active {
+                background-image: url('../../../img/rocket-launch-outline-push.png');
+            }
+
+    .parms .show {
+        display: flex;
+        box-sizing: border-box;
+        border-top: 1px solid white;
+        margin-top: 1%;
+        padding: 0.5%;
+        flex-wrap: wrap;
+        font-family: 'Roboto Condensed';
+    }
+
+        .parms .show p {
+            margin: 0;
+            line-height: 2;
+        }
+
+            .parms .show p span[contenteditable] {
+                box-sizing: border-box;
+                border-radius: 3px;
+                border: 1px outset hsl(0,0%,80%);
+                outline: none;
+                max-width: 100px;
+            }
+
+                .parms .show p span[contenteditable]:hover {
+                    border-style: inset;
+                }
+
+                .parms .show p span[contenteditable]:focus {
+                    border-style: inset;
+                }
+
+                .parms .show p span[contenteditable][data-validate=true]:focus {
+                    background-color: hsl(90,100%,87%);
+                }
+
+                .parms .show p span[contenteditable][data-validate=false]:focus {
+                    background-color: hsl(60,100%,50%);
+                    border-color: hsl(0,100%,50%);
+                }
+
+            .parms .show p span[data-menu] {
+                font-family: Roboto;
+                color: blueviolet;
+                font-weight: bold;
+            }
+
+            .parms .show p span[data-range] {
+                font-family: Roboto;
+                color: darkblue;
+                font-weight: normal;
+            }
+
+            .parms .show p span[data-menu], .parms .show p span[data-range] {
+                cursor: pointer;
+                white-space: nowrap;
+                border-radius: 9999px;
+                transition: .15s;
+                padding: 4px 8px;
+            }
+
+            .parms .show p span[data-menu], .parms .show p span[data-range] {
+                background: linear-gradient(to top, hsla(39, 85%, 95%,0.2), hsla(39, 85%, 95%,0.8));
+                box-shadow: 2px 2px 3px rgba(154, 147, 140, 0.5), 1px 1px 3px rgba(255, 255, 255, 1);
+            }
+
+                .parms .show p span[data-menu]:hover, .parms .show p span[data-range]:hover {
+                    background: linear-gradient(to top, hsl(30,100%,80%), white);
+                    box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                }
+
+                .parms .show p span[data-menu]:active, .parms .show p span[data-range]:active {
+                    background: linear-gradient(to top, hsl(30,100%,80%), white);
+                    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                }
+
+#menu-select {
+    position: fixed;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 40%;
+    max-height: 50%;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid darkgray;
+    padding: 8px;
+    transition: .03s;
+    background-color: hsla(0,100%,100%,0.73);
+}
+
+    #menu-select[data-display=false] {
+        display: none;
+    }
+
+    #menu-select[data-display=true] {
+        display: flex;
+    }
+
+.pop-up-range {
+    overflow: hidden;
+}
+
+.range-wrapper {
+    width: 20px;
+    height: 150px;
+    padding: 0;
+}
+
+    .range-wrapper input {
+        width: 150px;
+        height: 20px;
+        margin: 0;
+        transform-origin: 75px 75px;
+        transform: rotate(-90deg);
+    }
+
+.brownian-motion-container {
+    display: flex;
+    width: 99%;
+    margin: 0 auto;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    background-color: white;
+    margin-bottom: 16px;
+}
+
+#brownian-motion-area {
+    width: 99%;
+    height: 99%;
+}
+
+.log {
+    width: 99%;
+    margin: 0 auto;
+    height: 300px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+    .log[data-display=true] {
+        padding: 0 0.5%;
+        border-radius: 7px;
+        border: 1px solid hsl(0,0%,73%);
+    }
+
+#log {
+    margin: 0;
+    padding: 0;
+}
+
+[name=log] {
+    display: var(--isLog)
+}
+
+@media screen and (max-width: 960px) {
+    .parms .set .settings span {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .parms .set .settings {
+        padding-right: 6%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 10%;
+        }
+}
+
+@media screen and (max-width: 600px) {
+    .parms .set .settings {
+        padding-right: 12%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 17%;
+        }
+}
+
+@media screen and (max-width: 550px) {
+    .parms .set .settings {
+        padding-right: 15%;
+    }
+}
+
+.w3-modal {
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.w3-modal-content {
+    max-height: 85%;
+    margin: 5% auto;
+}
+
+.w3-container .parameters {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Roboto Condensed';
+}
+
+    .w3-container .parameters .set {
+        flex-basis: 49.5%;
+    }
+
+        .w3-container .parameters .set .path {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+            .w3-container .parameters .set .path .from, .w3-container .parameters .set .path .to {
+                flex-basis: 49.5%;
+            }
+
+@media screen and (max-width: 700px) {
+    .w3-container .parameters {
+        flex-wrap: wrap;
+    }
+
+        .w3-container .parameters .set {
+            flex-basis: 100%;
+        }
+}
+
+#is-use-off-screen-canvas {
+    cursor: default;
+    width: 40px;
+    margin: 0;
+    margin-top: 1%;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 90%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid hsl(0,0%,80%);
+}
+
+    #is-use-off-screen-canvas[data-use='switch-on'] {
+        background-image: url('../../../img/async-active.png');
+        border-color: magenta;
+        box-shadow: 2px 2px 5px hsla(300, 100%, 63%, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    }
+
+    #is-use-off-screen-canvas[data-use=yes] {
+        background-image: url('../../../img/async.png');
+        box-shadow: 2px 2px 5px hsla(0, 0%, 70%, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    }
+
+    #is-use-off-screen-canvas[data-use=no] {
+        background-image: url('../../../img/async-off.png');
+    }
+
+#is-off-screen-canvas + label span {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 98%;
+}
+
+#is-off-screen-canvas:not([disabled]) + label span {
+    background-image: url('../../../img/async.png');
+}
+
+#is-off-screen-canvas:checked + label span {
+    background-image: url('../../../img/async-active.png');
+}
+
+#is-off-screen-canvas[disabled] + label span {
+    background-image: url('../../../img/async-off.png');
+}
+
+.add-conditions label {
+    margin-bottom: 4px;
+}
+
+.add-conditions input[type=checkbox] + label, input[type=radio] + label, input[type=button] + label {
+    padding: 4px 12px;
+    margin-right: 4px;
+}
+
+.add-conditions input[type=checkbox]:checked + label, input[type=radio]:checked + label, input[type=button]:active + label {
+    font-weight: normal;
+    color: magenta;
+    text-shadow: 1px 1px 2px lightblue;
+}
+
+.edit-block-label {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    text-align: left;
+}
+
+    .edit-block-label.range {
+        width: 94%;
+    }
+
+        .edit-block-label.range .label-in-edit-block {
+            width: 100%;
+        }
+
+            .edit-block-label.range .label-in-edit-block span {
+                padding: 0 4px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                border: 1px outset hsl(0,0%,80%);
+                outline: none;
+                max-width: 100px;
+            }
+
+                .edit-block-label.range .label-in-edit-block span:hover {
+                    border-style: inset;
+                }
+
+                .edit-block-label.range .label-in-edit-block span:focus {
+                    border-style: inset;
+                }
+
+                .edit-block-label.range .label-in-edit-block span[data-validate=true]:focus {
+                    background-color: hsl(90,100%,87%);
+                }
+
+                .edit-block-label.range .label-in-edit-block span[data-validate=false]:focus {
+                    background-color: hsl(60,100%,50%);
+                    border-color: hsl(0,100%,50%);
+                }
+
+.edit-block-input {
+    width: 96%;
+}
+
+.edit-block-input-setter input {
+    width: 100%;
+    margin: 0 auto;
+}
