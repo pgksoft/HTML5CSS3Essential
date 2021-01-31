@@ -270,7 +270,9 @@ module.exports =
         // ./lessons-advanced/lesson02/ts ===================================================
         {
             entry: {
-                bmSimulation: "./lessons-advanced/lesson02/ts/bmSimulation.ts"
+                bmSimulation: "./lessons-advanced/lesson02/ts/bmSimulation.ts",
+                rgControl: "./lessons-advanced/lesson02/ts/rgControl.ts",
+                mwsModeling: "./lessons-advanced/lesson02/ts/mwsModeling.ts"
             },
             module: {
                 rules: [

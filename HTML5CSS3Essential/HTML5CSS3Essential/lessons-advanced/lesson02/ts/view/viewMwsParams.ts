@@ -4,10 +4,14 @@
 import {
     FillType,
     ScaleArea,
-    Params
-} from '../model/mwsParams.js';
-import { MwsConstraints } from '../model/modelMWS.js';
-import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils.js'
+    Params,    CustomEventPermissionsIsSelected,
+} from '../model/mwsParams';
+import {
+    MwsConstraints,
+    NameKindFigureFlag,
+    NameKindFigureRectangle
+} from '../model/modelMWS';
+import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils'
 
 export class ViewParams {
     private constructor(
@@ -83,9 +87,6 @@ export class ViewParams {
         //
         this.CreateItemsOfFillTypePanel(this._modalParmsFillTypePanel);
         this.CreateItemsOfScaleAreaPanel(this._modalParmsScaleAreaPanel);
-        //if (this._params.wPropStored.serialNumber != 0) {
-        //    this.InitSelectedItemInfo();
-        //}
         this.InitSelectedItemInfo();
         //
         this.DefineEvents();
@@ -234,13 +235,11 @@ export class ViewParams {
         for (let fill of document.getElementsByName('fill')) {
             fill.addEventListener('click', () => {
                 this._params.fill = Array.from(FillType.entries()).find((pair) => pair[1] === Number(fill.dataset.fill));
-                this.Show();
             }, false);
         }
         for (let scale of document.getElementsByName('scale')) {
             scale.addEventListener('click', () => {
                 this._params.scale = Array.from(ScaleArea.entries()).find((pair) => pair[1] === Number(scale.dataset.scale));
-                this.Show();
             }, false);
         }
         this._modalParmsIsOffscreenCanvas.addEventListener('click', () => { this._params.isOffScreenCanvas = this._modalParmsIsOffscreenCanvas.checked; }, false);
@@ -251,29 +250,42 @@ export class ViewParams {
         document.addEventListener(Params.instance.nameEventCanvasCoordinates, (e: CustomEvent) => { this.OnChangeCanvasCoordinates(e); }, false);
         document.addEventListener(Params.instance.nameEventSerialNumberTracking, (e: CustomEvent) => { this.OnSerialNumberTracking(e); }, false);
         document.addEventListener(Params.instance.nameEventWPropStored, (e: CustomEvent) => { this.OnChangeWPropStored(e); }, false);
+        document.addEventListener(CustomEventPermissionsIsSelected, (e: CustomEvent) => { this.PermissionsIsSelected(e); }, false);
         //
         window.addEventListener('resize', () => { this.OnWindowChange(); }, false);
         window.addEventListener('scroll', () => { this.OnWindowChange(); }, false);
     }
 
     private Show(): void {
+        let isContentEditable: boolean = false;
+        let isSelectFlag: boolean = false;
+        if (this._params.wPropStored.serialNumber > 0) {
+            isContentEditable = true;
+            isSelectFlag = this._params.wPropStored.kind[0] == NameKindFigureFlag;
+        }
         this._showParms.innerHTML = '';
         let p = document.createElement('p');
-        p.innerHTML = `Тип&nbspзаливки:&nbsp<span data-menu="fill">${this._params.wPropStored.fillType[0]}</span>`
+        p.innerHTML = `Тип&nbspзаливки:&nbsp<span ` + `${!isSelectFlag ? 'data-menu="fill"' : ''}` + `>${this._params.wPropStored.fillType[0]}</span>`
             + `&nbsp; Масштабность:&nbsp;<span data-menu="scale">${this._params.scale[0]}</span>`
             + `&nbsp; SN-tracking:&nbsp${this._params.serialNumberTracking}`
             + `&nbsp; <b>${this._params.wPropStored.kind[0].charAt(0).toUpperCase()}${this._params.wPropStored.kind[0].slice(1)}-${this._params.wPropStored.serialNumber}</b>`
             + `&nbsp; X:&nbsp${this._params.wPropStored.x}`
             + `&nbsp; Y:&nbsp${this._params.wPropStored.y}`
-            + `&nbsp; <span data-range="width">Width:</span>&nbsp<span contenteditable="true" data-name="width" data-validate="true">${this._params.wPropStored.width}</span>`
-            + `&nbsp; <span data-range="height">Height:</span>&nbsp<span contenteditable="true" data-name="height" data-validate="true">${this._params.wPropStored.height}</span>`
+            + `&nbsp; <span data-range="width">Width:</span>&nbsp<span contenteditable="${isContentEditable}" data-name="width" data-validate="true">${this._params.wPropStored.width}</span>`
+            + `&nbsp; <span ` + `${!isSelectFlag ? 'data-range="height"' : ''}` + `>Height:</span>&nbsp<span contenteditable="${isContentEditable && !isSelectFlag}" data-name="height" data-validate="true">${this._params.wPropStored.height}</span>`
             + `&nbsp; <b>Колебания</b>`
-            + `&nbsp; <span data-range="lengthwave">Длина:</span>&nbsp<span contenteditable="true" data-name="lengthwave" data-validate="true">${this._params.wPropStored.waveLength}</span>`
-            + `&nbsp; <span data-range="amplitudewave">Амплитуда:</span>&nbsp<span contenteditable="true" data-name="amplitudewave" data-validate="true">${this._params.wPropStored.waveAmplitude}</span>`
-            + `&nbsp; <span data-range="periodwave">Период:</span>&nbsp<span contenteditable="true" data-name="periodwave" data-validate="true">${this._params.wPropStored.wavePeriod}</span>`
-            + `&nbsp; <span data-range="shading">Затенение:</span>&nbsp<span contenteditable="true" data-name="shading" data-validate="true">${this._params.wPropStored.waveShading}</span>`
+            + `&nbsp; <span data-range="lengthwave">Длина:</span>&nbsp<span contenteditable="${isContentEditable}" data-name="lengthwave" data-validate="true">${this._params.wPropStored.waveLength}</span>`
+            + `&nbsp; <span data-range="amplitudewave">Амплитуда:</span>&nbsp<span contenteditable="${isContentEditable}" data-name="amplitudewave" data-validate="true">${this._params.wPropStored.waveAmplitude}</span>`
+            + `&nbsp; <span data-range="periodwave">Период:</span>&nbsp<span contenteditable="${isContentEditable}" data-name="periodwave" data-validate="true">${this._params.wPropStored.wavePeriod}</span>`
+            + `&nbsp; <span data-range="shading">Затенение:</span>&nbsp<span contenteditable="${isContentEditable}" data-name="shading" data-validate="true">${this._params.wPropStored.waveShading}</span>`
             + `&nbsp; Координаты:&nbsp${this._params.canvasCoordinates}`
             ;
+        this._modalParmsShowSelectedItemWidthValue.contentEditable = `${isContentEditable}`;
+        this._modalParmsShowSelectedItemHeightValue.contentEditable = `${isContentEditable && !isSelectFlag}`;
+        this._modalParmsShowSelectedItemLengthwaveValue.contentEditable = `${isContentEditable}`;
+        this._modalParmsShowSelectedItemAmplitudewaveValue.contentEditable = `${isContentEditable}`;
+        this._modalParmsShowSelectedItemPeriodwaveValue.contentEditable = `${isContentEditable}`;
+        this._modalParmsShowSelectedItemShadingwaveValue.contentEditable = `${isContentEditable}`;
         this._showParms.appendChild(p);
         this.DefineEventsContenteditable();
         this.DefineEventsParamSelect();
@@ -282,7 +294,7 @@ export class ViewParams {
     }
 
     private DefineEventsContenteditable(): void {
-        for (let span of document.querySelectorAll('[contenteditable]')) {
+        for (let span of document.querySelectorAll('[contenteditable=true]')) {
             (<HTMLElement>span).oninput = (e) => { this.RangeContenteditableValidate(e); };
             (<HTMLElement>span).onblur = (e) => { this.SetRangeContenteditable(e); };
             (<HTMLElement>span).onkeydown = (e) => { this.RangeEnter(e); };
@@ -491,9 +503,10 @@ export class ViewParams {
     }
 
     private InitSelectedItemInfo() {
-        //this.SetSelectedItemInfo();
+        this.SetSelectedItemInfo();
         // Item Width, Height
-        //this.SetSizeConstraintsForSelectedItem();
+        this.SetSizeConstraintsForSelectedItem();
+        //
         this._modalParmsSelectedItemWidth.addEventListener('change', () => {
             this._params.wPropStored.width = Number(this._modalParmsSelectedItemWidth.value);
             this.Show();
@@ -512,11 +525,10 @@ export class ViewParams {
             this._modalParmsShowSelectedItemHeightValue.innerText = this._modalParmsSelectedItemHeight.value;
             document.dispatchEvent(new CustomEvent(this._params.nameEventWPropStoredHeightChanged, { bubbles: true, detail: { value: Number(this._modalParmsSelectedItemHeight.value) } }));
         }, false);
-        //this.SetSelectedItemSize();
+        //
+        this.SetSelectedItemSize();
+        //
         // Length Wave
-        this._modalParmsSelectedItemLengthwave.min = MwsConstraints.waveLenghthMin.toString();
-        this._modalParmsSelectedItemLengthwave.max = MwsConstraints.waveLenghthMax.toString();
-        this._modalParmsSelectedItemLengthwaveRange.innerHTML = `${this._modalParmsSelectedItemLengthwave.min}-${this._modalParmsSelectedItemLengthwave.max}`;
         this._modalParmsSelectedItemLengthwave.addEventListener('change', () => {
             this._params.wPropStored.waveLength = Number(this._modalParmsSelectedItemLengthwave.value);
             this.Show();
@@ -526,11 +538,10 @@ export class ViewParams {
             this._modalParmsShowSelectedItemLengthwaveValue.innerText = this._modalParmsSelectedItemLengthwave.value;
             document.dispatchEvent(new CustomEvent(this._params.nameEventWPropStoredLengthWaveChanged, { bubbles: true, detail: { value: Number(this._modalParmsSelectedItemLengthwave.value) } }));
         }, false);
-        //this.SetSelectedItemLengthWave();
-        // Amplitude Wave 
-        this._modalParmsSelectedItemAmplitudewave.min = MwsConstraints.waveAmplitudeMin.toString();
-        this._modalParmsSelectedItemAmplitudewave.max = MwsConstraints.waveAmplitudeMax.toString();
-        this._modalParmsSelectedItemAmplitudewaveRange.innerHTML = `${this._modalParmsSelectedItemAmplitudewave.min}-${this._modalParmsSelectedItemAmplitudewave.max}`;
+        //
+        this.SetSelectedItemLengthWave();
+        //
+        // Amplitude Wave
         this._modalParmsSelectedItemAmplitudewave.addEventListener('change', () => {
             this._params.wPropStored.waveAmplitude = Number(this._modalParmsSelectedItemAmplitudewave.value);
             this.Show();
@@ -540,11 +551,10 @@ export class ViewParams {
             this._modalParmsShowSelectedItemAmplitudewaveValue.innerText = this._modalParmsSelectedItemAmplitudewave.value;
             document.dispatchEvent(new CustomEvent(this._params.nameEventWPropStoredAmplitudeWaveChanged, { bubbles: true, detail: { value: Number(this._modalParmsSelectedItemAmplitudewave.value) } }));
         }, false);
-        //this.SetSelectedItemAmplitudeWave();
+        //
+        this.SetSelectedItemAmplitudeWave();
+        //
         // Period Wave
-        this._modalParmsSelectedItemPeriodwave.min = MwsConstraints.wavePeriodMin.toString();
-        this._modalParmsSelectedItemPeriodwave.max = MwsConstraints.wavePeriodMax.toString();
-        this._modalParmsSelectedItemPeriodwaveRange.innerHTML = `${this._modalParmsSelectedItemPeriodwave.min}-${this._modalParmsSelectedItemPeriodwave.max}`;
         this._modalParmsSelectedItemPeriodwave.addEventListener('change', () => {
             this._params.wPropStored.wavePeriod = Number(this._modalParmsSelectedItemPeriodwave.value);
             this.Show();
@@ -554,11 +564,10 @@ export class ViewParams {
             this._modalParmsShowSelectedItemPeriodwaveValue.innerText = this._modalParmsSelectedItemPeriodwave.value;
             document.dispatchEvent(new CustomEvent(this._params.nameEventWPropStoredPeriodWaveChanged, { bubbles: true, detail: { value: Number(this._modalParmsSelectedItemPeriodwave.value) } }));
         }, false);
-        //this.SetSelectedItemPeriodWave();
+        //
+        this.SetSelectedItemPeriodWave();
+        //
         // Shading Wave
-        this._modalParmsSelectedItemShadingwave.min = MwsConstraints.waveShadingMin.toString();
-        this._modalParmsSelectedItemShadingwave.max = MwsConstraints.waveShadingMax.toString();
-        this._modalParmsSelectedItemShadingwaveRange.innerHTML = `${this._modalParmsSelectedItemShadingwave.min}-${this._modalParmsSelectedItemShadingwave.max}`;
         this._modalParmsSelectedItemShadingwave.addEventListener('change', () => {
             this._params.wPropStored.waveShading = Number(this._modalParmsSelectedItemShadingwave.value);
             this.Show();
@@ -568,49 +577,106 @@ export class ViewParams {
             this._modalParmsShowSelectedItemShadingwaveValue.innerText = this._modalParmsSelectedItemShadingwave.value;
             document.dispatchEvent(new CustomEvent(this._params.nameEventWPropStoredShadingWaveChanged, { bubbles: true, detail: { value: Number(this._modalParmsSelectedItemShadingwave.value) } }));
         }, false);
-        //this.SetSelectedItemShadingWave();
+        //
+        this.SetSelectedItemShadingWave();
+        this.SetSelectedItemShadingWave();
     }
 
     private SetSizeConstraintsForSelectedItem(): void {
-        let canvasWidth = this._params.scale[1];
-        let canvasHeight = Math.round(canvasWidth / 2);
-        this._modalParmsSelectedItemWidth.min = Math.max(MwsConstraints.figureWidthMin, Math.floor(this._params.wPropStored.measureCaptionHead.width) + Math.floor(this._params.wPropStored.measureCaptionMinimize.width) + 10 + Math.floor(this._params.wPropStored.measureCaptionMaximize.width) + 10 + Math.floor(this._params.wPropStored.measureCaptionClose.width) + 20).toString();
-        this._modalParmsSelectedItemWidth.max = (canvasWidth - this._params.wPropStored.x - 1).toString();
-        this._modalParmsSelectedItemHeight.min = (this._params.wPropStored.headerHeight + this._params.wPropStored.borderWidth * 2 + 5).toString();
-        this._modalParmsSelectedItemHeight.max = (canvasHeight - this._params.wPropStored.y - 1).toString();
-        this._modalParmsSelectedItemWidthRange.innerHTML = `${this._modalParmsSelectedItemWidth.min}-${this._modalParmsSelectedItemWidth.max}`;
-        this._modalParmsSelectedItemHeightRange.innerHTML = `${this._modalParmsSelectedItemHeight.min}-${this._modalParmsSelectedItemHeight.max}`;
+        if (this._params.wPropStored.serialNumber > 0) {
+            let canvasWidth = this._params.scale[1];
+            let canvasHeight = Math.round(canvasWidth / 2);
+            this._modalParmsSelectedItemWidth.min = Math.max(
+                MwsConstraints.figureWidthMin,
+                Math.floor(
+                    this._params.wPropStored.measureCaptionHead.width +
+                    Params.instance.sizeResizingZone * 2 +
+                    this._params.wPropStored.measureCaptionMinimize.width +
+                    Params.instance.sizeResizingZone * 2 +
+                    this._params.wPropStored.measureCaptionMaximize.width +
+                    Params.instance.sizeResizingZone * 2 +
+                    this._params.wPropStored.measureCaptionClose.width +
+                    Params.instance.sizeResizingZone
+                )
+            ).toString();
+            this._modalParmsSelectedItemWidth.max = (canvasWidth - this._params.wPropStored.x - 1).toString();
+            this._modalParmsSelectedItemHeight.min = (this._params.wPropStored.headerHeight + this._params.wPropStored.borderWidth * 2 + 5).toString();
+            this._modalParmsSelectedItemHeight.max = (canvasHeight - this._params.wPropStored.y - 1).toString();
+        } else {
+            this._modalParmsSelectedItemWidth.min = '0';
+            this._modalParmsSelectedItemWidth.max = '0';
+            this._modalParmsSelectedItemHeight.min = '0';
+            this._modalParmsSelectedItemHeight.max = '0';
+        }
+        this._modalParmsSelectedItemWidthRange.innerHTML = `${this._modalParmsSelectedItemWidth.min}/${this._modalParmsSelectedItemWidth.max}`;
+        this._modalParmsSelectedItemHeightRange.innerHTML = `${this._modalParmsSelectedItemHeight.min}/${this._modalParmsSelectedItemHeight.max}`;
     }
 
     private SetSelectedItemInfo(): void {
-        this._modalParmsSelectedItemInfo.innerHTML = `${this._params.wPropStored.kind[0].charAt(0).toUpperCase()}${this._params.wPropStored.kind[0].slice(1)}-${this._params.wPropStored.serialNumber}, X:&nbsp${this._params.wPropStored.x}, Y:&nbsp${this._params.wPropStored.y}`;
+        if (this._params.wPropStored.serialNumber > 0) {
+            this._modalParmsSelectedItemInfo.innerHTML = `${this._params.wPropStored.kind[0].charAt(0).toUpperCase()}${this._params.wPropStored.kind[0].slice(1)}-${this._params.wPropStored.serialNumber}, X:&nbsp${this._params.wPropStored.x}, Y:&nbsp${this._params.wPropStored.y}`;
+        } else {
+            this._modalParmsSelectedItemInfo.innerHTML = '';
+        }
     }
 
     private SetSelectedItemSize(): void {
         this._modalParmsSelectedItemWidth.value = this._params.wPropStored.width.toString();
-        this._modalParmsShowSelectedItemWidthValue.innerText = this._modalParmsSelectedItemWidth.value;
         this._modalParmsSelectedItemHeight.value = this._params.wPropStored.height.toString();
+        this._modalParmsShowSelectedItemWidthValue.innerText = this._modalParmsSelectedItemWidth.value;
         this._modalParmsShowSelectedItemHeightValue.innerText = this._modalParmsSelectedItemHeight.value;
     }
 
     private SetSelectedItemLengthWave() {
+        if (this._params.wPropStored.serialNumber > 0) {
+            this._modalParmsSelectedItemLengthwave.min = MwsConstraints.waveLenghthMin.toString();
+            this._modalParmsSelectedItemLengthwave.max = MwsConstraints.waveLenghthMax.toString();
+        } else {
+            this._modalParmsSelectedItemLengthwave.min = '0';
+            this._modalParmsSelectedItemLengthwave.max = '0';
+        }
         this._modalParmsSelectedItemLengthwave.value = this._params.wPropStored.waveLength.toString();
         this._modalParmsShowSelectedItemLengthwaveValue.innerText = this._modalParmsSelectedItemLengthwave.value;
+        this._modalParmsSelectedItemLengthwaveRange.innerHTML = `${this._modalParmsSelectedItemLengthwave.min}/${this._modalParmsSelectedItemLengthwave.max}`;
     }
 
     private SetSelectedItemAmplitudeWave() {
+        if (this._params.wPropStored.serialNumber > 0) {
+            this._modalParmsSelectedItemAmplitudewave.min = MwsConstraints.waveAmplitudeMin.toString();
+            this._modalParmsSelectedItemAmplitudewave.max = MwsConstraints.waveAmplitudeMax.toString();
+        } else {
+            this._modalParmsSelectedItemAmplitudewave.min = '0';
+            this._modalParmsSelectedItemAmplitudewave.max = '0';
+        }
         this._modalParmsSelectedItemAmplitudewave.value = this._params.wPropStored.waveAmplitude.toString();
         this._modalParmsShowSelectedItemAmplitudewaveValue.innerText = this._modalParmsSelectedItemAmplitudewave.value;
+        this._modalParmsSelectedItemAmplitudewaveRange.innerHTML = `${this._modalParmsSelectedItemAmplitudewave.min}/${this._modalParmsSelectedItemAmplitudewave.max}`;
     }
 
     private SetSelectedItemPeriodWave() {
+        if (this._params.wPropStored.serialNumber > 0) {
+            this._modalParmsSelectedItemPeriodwave.min = MwsConstraints.wavePeriodMin.toString();
+            this._modalParmsSelectedItemPeriodwave.max = MwsConstraints.wavePeriodMax.toString();
+        } else {
+            this._modalParmsSelectedItemPeriodwave.min = '0';
+            this._modalParmsSelectedItemPeriodwave.max = '0';
+        }
         this._modalParmsSelectedItemPeriodwave.value = this._params.wPropStored.wavePeriod.toString();
         this._modalParmsShowSelectedItemPeriodwaveValue.innerText = this._modalParmsSelectedItemPeriodwave.value;
+        this._modalParmsSelectedItemPeriodwaveRange.innerHTML = `${this._modalParmsSelectedItemPeriodwave.min}/${this._modalParmsSelectedItemPeriodwave.max}`;
     }
 
     private SetSelectedItemShadingWave() {
+        if (this._params.wPropStored.serialNumber > 0) {
+            this._modalParmsSelectedItemShadingwave.min = MwsConstraints.waveShadingMin.toString();
+            this._modalParmsSelectedItemShadingwave.max = MwsConstraints.waveShadingMax.toString();
+        } else {
+            this._modalParmsSelectedItemShadingwave.min = '0';
+            this._modalParmsSelectedItemShadingwave.max = '0';
+        }
         this._modalParmsSelectedItemShadingwave.value = this._params.wPropStored.waveShading.toString();
         this._modalParmsShowSelectedItemShadingwaveValue.innerText = this._modalParmsSelectedItemShadingwave.value;
+        this._modalParmsSelectedItemShadingwaveRange.innerHTML = `${this._modalParmsSelectedItemShadingwave.min}/${this._modalParmsSelectedItemShadingwave.max}`;
     }
 
     private OnParamMenuClick(e: MouseEvent): void {
@@ -808,6 +874,22 @@ export class ViewParams {
         this.SetSelectedItemAmplitudeWave();
         this.SetSelectedItemPeriodWave();
         this.SetSelectedItemShadingWave();
+    }
+
+    private PermissionsIsSelected(e: CustomEvent): void {
+        if (e.detail.kind[0] == NameKindFigureRectangle) {
+            this.SetPermissionIsSelected(false);
+        } else if (e.detail.kind[0] == NameKindFigureFlag) {
+            this.SetPermissionIsSelected(true);
+        }
+    }
+
+    private SetPermissionIsSelected(isSelectedFlag: boolean) {
+        this.Show();
+        this._modalParmsSelectedItemHeight.disabled = isSelectedFlag;
+        for (let fill of document.getElementsByName('fill')) {
+            (<HTMLInputElement>fill).disabled = isSelectedFlag;
+        }
     }
 
 }

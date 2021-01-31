@@ -1,13 +1,14 @@
 ﻿// Multi-System Window Modeling 
 // Control
-import { isDisplayBlock } from '../../../js-advanced/_pgkUtils.js'
-import { CheckOffscreenCanvas } from '../../../js-advanced/pgkToTSUtils.js'
+import { isDisplayBlock } from '../../../js-advanced/_pgkUtils'
 import {
     CustomEventOverFill,
+    CustomEventChangeStatusWaveMotion,
+    CustomEventPermissionsIsSelected,
     Params
-} from './model/mwsParams.js';
-import { ViewParams } from './view/viewMwsParams.js';
-import { ViewMWS } from '../ts/view/viewMWS.js'
+} from './model/mwsParams';
+import { ViewParams } from './view/viewMwsParams';
+import { ViewMWS } from '../ts/view/viewMWS'
 
 const IsUndefinedOffScreenCanvas: string = 'OffScreenCanvas is undefined';
 const IsDefinedOffScreenCanvas: string = 'OffScreenCanvas is defined';
@@ -283,12 +284,6 @@ class Modeling {
 
     // Helpers
     private DependencyResolutions(): void {
-        this._viewMWS = ViewMWS.Create(
-            this._mwsmArea,
-            this._mwsmStart,
-            this._menuStart,
-            this._mwsmTaskBar
-        );
         this._viewParams = ViewParams.Create(
             this._parms,
             //
@@ -325,6 +320,13 @@ class Modeling {
             //
             this._menuSelect
         );
+        //
+        this._viewMWS = ViewMWS.Create(
+            this._mwsmArea,
+            this._mwsmStart,
+            this._menuStart,
+            this._mwsmTaskBar
+        );
     }
 
     private SetEvents(): void {
@@ -335,9 +337,11 @@ class Modeling {
         //
         this._settings.addEventListener('click', () => { this.DefineSettings(); }, false);
         this._redraw.addEventListener('click', () => { this._viewMWS.Redraw(); }, false);
+        this._launch.addEventListener('click', () => { this.SwitchStatusLaunch(); }, false);
         //
         // Custom Events
         this._overfill.addEventListener('click', () => { document.dispatchEvent(new CustomEvent(CustomEventOverFill, { bubbles: true })); }, false);
+        document.addEventListener(CustomEventPermissionsIsSelected, (e: CustomEvent) => { this.PermissionsIsSelected(e); }, false);
     }
 
     private OnWindowResize(): void {
@@ -366,6 +370,12 @@ class Modeling {
         this._viewParams.Open();
     }
 
+    private SwitchStatusLaunch(): void {
+        this._isMotion = !this._isMotion;
+        this.SetStateLaunch(this._isMotion);
+        document.dispatchEvent(new CustomEvent(CustomEventChangeStatusWaveMotion, { bubbles: true, detail: { value: this._isMotion } }));
+    }
+
     private DisableMenuSelect(): void {
         this._menuSelect.dataset.type = 'empty';
         this._menuSelect.style.display = 'none';
@@ -374,6 +384,21 @@ class Modeling {
     private DisableMenuStart(): void {
         this._menuStart.dataset.type = 'empty';
         this._menuStart.dataset.display = 'false';
+    }
+
+    private PermissionsIsSelected(e: CustomEvent): void {
+        this.SetStateLaunch(e.detail.isAnimate);
+        this._isMotion = e.detail.isAnimate;
+    }
+
+    private SetStateLaunch(isMotion: boolean): void {
+        if (isMotion) {
+            this._launch.innerHTML = `<span>${this._launchStop}</span>`;
+            this._launch.dataset.simulation = 'isMotion';
+        } else {
+            this._launch.innerHTML = `<span>${this._launchStart}</span>`;
+            this._launch.dataset.simulation = 'isStop';
+        }
     }
 }
 

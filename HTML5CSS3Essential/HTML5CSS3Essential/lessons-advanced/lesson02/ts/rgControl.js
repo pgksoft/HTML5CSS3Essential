@@ -1,8 +1,8 @@
-import { isDisplayBlock } from '../../../js-advanced/_pgkUtils.js';
-import { Params, CustomEventOverFill, FillingDirectionRandom, FillingDirectionManual } from './model/rgParams.js';
-import { RgDomItems } from './model/rgItems.js';
-import { ViewRGParmsDefinition } from './view/viewRgParams.js';
-import { Colors } from '../../../js-advanced/colorManagement.js';
+import { isDisplayBlock } from '../../../js-advanced/_pgkUtils';
+import { Params, CustomEventOverFill, FillingDirectionRandom, FillingDirectionManual } from './model/rgParams';
+import { RgDomItems } from './model/rgItems';
+import { ViewRGParmsDefinition } from './view/viewRgParams';
+import { Colors } from '../../../js-advanced/colorManagement';
 class RGLearning {
     constructor(domItems) {
         this._aspectRatio = 1.5;

@@ -4,10 +4,10 @@
     CustomEventOverFill,
     RGFillingDirection,
     FillingDirectionManual
-} from '../model/rgParams.js'
-import { RgDomItems } from '../model/rgItems.js'
-import { Colors, GradientColorScheme } from '../../../../js-advanced/colorManagement.js';
-import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils.js'
+} from '../model/rgParams'
+import { RgDomItems } from '../model/rgItems'
+import { Colors, GradientColorScheme } from '../../../../js-advanced/colorManagement';
+import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils'
 
 export class ViewRGParmsDefinition {
     private constructor(

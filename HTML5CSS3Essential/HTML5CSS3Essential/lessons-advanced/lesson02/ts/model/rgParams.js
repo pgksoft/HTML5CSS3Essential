@@ -1,4 +1,4 @@
-import { RadialDirection, Colors } from '../../../../js-advanced/colorManagement.js';
+import { RadialDirection, Colors } from '../../../../js-advanced/colorManagement';
 export const CustomEventOverFill = 'rg-OverFill';
 export const ScaleArea = new Map([
     ['300 x 150', 300],

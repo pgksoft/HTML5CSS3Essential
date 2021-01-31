@@ -1,5 +1,8 @@
+import { GradientDirection, RadialDirection } from '../../../../js-advanced/colorManagement';
 export const CustomEventOverFill = 'CustomEventOverFill';
 export const CustomEventIsSelected = 'CustomEventIsSelected';
+export const CustomEventPermissionsIsSelected = 'CustomEventPermissionsIsSelected';
+export const CustomEventChangeStatusWaveMotion = 'mwsm-change-status-wave-motion';
 export const ScaleArea = new Map([
     ['300 x 150', 300],
     ['600 x 300', 600],
@@ -23,8 +26,13 @@ class LSKeyParams {
     }
 }
 class LSValueParams {
+}
+export class RecoveryParameters {
     constructor() {
-        this.wPropStored = new WPropStored();
+        this.x = 0;
+        this.y = 0;
+        this.width = 0;
+        this.height = 0;
     }
 }
 export class WPropStored {
@@ -44,7 +52,7 @@ export class WPropStored {
         this.heightOriginal = 0;
         this.borderWidth = 0;
         this.aspectRatio = 0;
-        this.country = ['', -1];
+        this.country = ['', ''];
         this.insideX = 0;
         this.insideY = 0;
         this.insideWidth = 0;
@@ -54,6 +62,15 @@ export class WPropStored {
         this.fillType = FillType.entries().next().value;
         this.colorFill = '';
         this.colorStroke = '';
+        this.borderLinearDirection = GradientDirection.LeftToRight;
+        this.insideLinearDirection = GradientDirection.LeftToRight;
+        this.borderRadialDirection = RadialDirection.Centre;
+        this.insideRadialDirection = RadialDirection.Centre;
+        this.borderColorScheme = [];
+        this.insideColorScheme = [];
+        this.fontsize = 10;
+        this.isMaximize = false;
+        this.isMinimize = false;
     }
 }
 class Default {
@@ -84,6 +101,7 @@ export class Params {
         this._canvasCoordinates = [0, 0];
         this._serialNumberTracking = 0;
         this._switchSerialNumber = 0;
+        this._sizeResizingZone = 0;
         this._nameEventFillChange = 'mwsFillChange';
         this._nameEventScaleChange = 'mwsScaleChange';
         this._nameEventIsOffScreenCanvas = 'mwsClick-IsOffScreenCanvas';
@@ -175,12 +193,12 @@ export class Params {
     }
     get switchSerialNumber() { return this._switchSerialNumber; }
     set switchSerialNumber(value) { this._switchSerialNumber = value; }
+    get sizeResizingZone() { return this._sizeResizingZone; }
+    set sizeResizingZone(value) { this._sizeResizingZone = value; }
     get wPropStored() { return this._wPropStored; }
     set wPropStored(value) {
         this._wPropStored = value;
-        this._localParms.wPropStored = this.wPropStored;
         document.dispatchEvent(new CustomEvent(this.nameEventWPropStored, { bubbles: true, detail: { value: value, event: this.nameEventWPropStored } }));
-        this.Save();
     }
     DefineEvents() {
         document.addEventListener(this.nameEventWPropStoredWidthChanged, (e) => { this.Save(); }, false);

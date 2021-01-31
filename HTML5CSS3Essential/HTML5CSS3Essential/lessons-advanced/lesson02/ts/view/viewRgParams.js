@@ -1,6 +1,6 @@
-import { ScaleArea, CustomEventOverFill, RGFillingDirection, FillingDirectionManual } from '../model/rgParams.js';
-import { Colors, GradientColorScheme } from '../../../../js-advanced/colorManagement.js';
-import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils.js';
+import { ScaleArea, CustomEventOverFill, RGFillingDirection, FillingDirectionManual } from '../model/rgParams';
+import { Colors, GradientColorScheme } from '../../../../js-advanced/colorManagement';
+import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils';
 export class ViewRGParmsDefinition {
     constructor(params, domItems) {
         this._params = params;

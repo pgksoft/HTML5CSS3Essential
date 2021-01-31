@@ -28,6 +28,15 @@ export let isDisplayBlock = (element: HTMLElement) =>
     element.style.display === "flex" ||
     window.getComputedStyle(element, null)["display"] === "flex"
     ;
+export let requestFrame = (callback) => {
+    var f = window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        function (callback) {
+            window.setTimeout(callback, 300);
+        };
+    f(callback);
+}
+
 
 export class Confirm {
 

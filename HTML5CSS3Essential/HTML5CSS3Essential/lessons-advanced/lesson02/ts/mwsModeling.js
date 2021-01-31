@@ -1,7 +1,7 @@
-import { isDisplayBlock } from '../../../js-advanced/_pgkUtils.js';
-import { CustomEventOverFill, Params } from './model/mwsParams.js';
-import { ViewParams } from './view/viewMwsParams.js';
-import { ViewMWS } from '../ts/view/viewMWS.js';
+import { isDisplayBlock } from '../../../js-advanced/_pgkUtils';
+import { CustomEventOverFill, CustomEventChangeStatusWaveMotion, CustomEventPermissionsIsSelected, Params } from './model/mwsParams';
+import { ViewParams } from './view/viewMwsParams';
+import { ViewMWS } from '../ts/view/viewMWS';
 const IsUndefinedOffScreenCanvas = 'OffScreenCanvas is undefined';
 const IsDefinedOffScreenCanvas = 'OffScreenCanvas is defined';
 class Modeling {
@@ -68,8 +68,8 @@ class Modeling {
         return Modeling.instance;
     }
     DependencyResolutions() {
-        this._viewMWS = ViewMWS.Create(this._mwsmArea, this._mwsmStart, this._menuStart, this._mwsmTaskBar);
         this._viewParams = ViewParams.Create(this._parms, this._showParms, this._modalParms, this._modalParmsOK, this._modalParmsScaleAreaPanel, this._modalParmsFillTypePanel, this._modalParmsSelectedItemInfo, this._modalParmsShowSelectedItemWidthValue, this._modalParmsSelectedItemWidth, this._modalParmsSelectedItemWidthRange, this._modalParmsShowSelectedItemHeightValue, this._modalParmsSelectedItemHeight, this._modalParmsSelectedItemHeightRange, this._modalParmsShowSelectedItemLengthwaveValue, this._modalParmsSelectedItemLengthwave, this._modalParmsSelectedItemLengthwaveRange, this._modalParmsShowSelectedItemAmplitudewaveValue, this._modalParmsSelectedItemAmplitudewave, this._modalParmsSelectedItemAmplitudewaveRange, this._modalParmsShowSelectedItemPeriodwaveValue, this._modalParmsSelectedItemPeriodwave, this._modalParmsSelectedItemPeriodwaveRange, this._modalParmsShowSelectedItemShadingwaveValue, this._modalParmsSelectedItemShadingwave, this._modalParmsSelectedItemShadingwaveRange, this._modalParmsIsOffscreenCanvas, this._modalParmsIsTrackProportionsAreaMotion, this._modalParmsIsTranslucentModal, this._modalParmsSetDefault, this._menuSelect);
+        this._viewMWS = ViewMWS.Create(this._mwsmArea, this._mwsmStart, this._menuStart, this._mwsmTaskBar);
     }
     SetEvents() {
         window.addEventListener('resize', () => { this.OnWindowResize(); }, false);
@@ -80,7 +80,9 @@ class Modeling {
             this.DisableMenuStart(); }, false);
         this._settings.addEventListener('click', () => { this.DefineSettings(); }, false);
         this._redraw.addEventListener('click', () => { this._viewMWS.Redraw(); }, false);
+        this._launch.addEventListener('click', () => { this.SwitchStatusLaunch(); }, false);
         this._overfill.addEventListener('click', () => { document.dispatchEvent(new CustomEvent(CustomEventOverFill, { bubbles: true })); }, false);
+        document.addEventListener(CustomEventPermissionsIsSelected, (e) => { this.PermissionsIsSelected(e); }, false);
     }
     OnWindowResize() {
         if (this._parms.isTrackProportionsAreaMotion) {
@@ -109,6 +111,11 @@ class Modeling {
     DefineSettings() {
         this._viewParams.Open();
     }
+    SwitchStatusLaunch() {
+        this._isMotion = !this._isMotion;
+        this.SetStateLaunch(this._isMotion);
+        document.dispatchEvent(new CustomEvent(CustomEventChangeStatusWaveMotion, { bubbles: true, detail: { value: this._isMotion } }));
+    }
     DisableMenuSelect() {
         this._menuSelect.dataset.type = 'empty';
         this._menuSelect.style.display = 'none';
@@ -116,6 +123,20 @@ class Modeling {
     DisableMenuStart() {
         this._menuStart.dataset.type = 'empty';
         this._menuStart.dataset.display = 'false';
+    }
+    PermissionsIsSelected(e) {
+        this.SetStateLaunch(e.detail.isAnimate);
+        this._isMotion = e.detail.isAnimate;
+    }
+    SetStateLaunch(isMotion) {
+        if (isMotion) {
+            this._launch.innerHTML = `<span>${this._launchStop}</span>`;
+            this._launch.dataset.simulation = 'isMotion';
+        }
+        else {
+            this._launch.innerHTML = `<span>${this._launchStart}</span>`;
+            this._launch.dataset.simulation = 'isStop';
+        }
     }
 }
 Modeling._instance = undefined;

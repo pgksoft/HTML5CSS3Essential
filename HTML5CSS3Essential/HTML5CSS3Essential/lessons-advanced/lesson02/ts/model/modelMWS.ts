@@ -30,13 +30,41 @@ export const FigureKind: Map<string, number> = new Map([
     [NameKindFigureFlag, 4]
 ]);
 
+export const NameCountryBelarus = 'Belarus';
+export const NameCountryGermany = 'Germany';
+export const NameCountryHungary = 'Hungary';
+export const NameCountryKazakhstan = 'Kazakhstan';
+export const NameCountryPoland = 'Poland';
+export const NameCountryRussia = 'Russia';
+export const NameCountryUkraine = 'Ukraine';
+export const NameCountryUnitedKingdom = 'United Kingdom';
 export const NameCountryUSA = 'USA';
 
-export class RecoveryParameters {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
+export class Country {
+    constructor(
+        public name: string,
+        public url: string,
+        public aspectRatio: number
+    ) { }
+}
+
+export const Countries: Country[] = [
+    new Country(NameCountryBelarus, '../../img-mwsm/belarus.png', 2),
+    new Country(NameCountryGermany, '../../img-mwsm/germany.png', 1.67),
+    new Country(NameCountryHungary, '../../img-mwsm/hungary.png', 1.5),
+    new Country(NameCountryKazakhstan, '../../img-mwsm/kazakhstan.png', 2),
+    new Country(NameCountryPoland, '../../img-mwsm/poland.png', 1.6),
+    new Country(NameCountryRussia, '../../img-mwsm/russia.png', 2),
+    new Country(NameCountryUkraine, '../../img-mwsm/ukraine.png', 2),
+    new Country(NameCountryUnitedKingdom, '../../img-mwsm/united-kingdom.png', 2),
+    new Country(NameCountryUSA, '../../img-mwsm/usa.png', 1.9)
+];
+
+export class RectWave {
+    x: number = 0;
+    y: number = 0;
+    width: number = 0;
+    height: number = 0;
 }
 
 export class Point {
@@ -249,20 +277,17 @@ export class FlagImg extends Flag {
         super(x, y, width, country);
         this._url = url;
         this.aspectRatio = aspectRatio;
-        this.calcStandardProportions();
+        this.img.addEventListener('load', () => { this._isLoad = true; }, false);
+        this.img.src = this.url;
     }
     // Fields
     private _url: string = '';
+    private _isLoad: boolean = false;
+    private _img: HTMLImageElement = new Image();
     // Properties
     get url(): string { return this._url; }
-    // Methods
-    calcStandardProportions() {
-        this.height = Math.floor(this.width / this.aspectRatio);
-        this.insideX = this.x + this.borderWidth;
-        this.insideY = this.y + this.borderWidth;
-        this.insideWidth = Math.ceil(this.width - this.borderWidth * 2);
-        this.insideHeight = Math.ceil(this.height - this.borderWidth * 2);
-    }
+    get isLoad(): boolean { return this._isLoad; }
+    get img(): HTMLImageElement { return this._img; }
 }
 
 

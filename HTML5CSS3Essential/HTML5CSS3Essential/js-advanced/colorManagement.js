@@ -16,6 +16,9 @@ export var RadialDirection;
     RadialDirection[RadialDirection["BottomTop"] = 5] = "BottomTop";
 })(RadialDirection || (RadialDirection = {}));
 export class GradientProperties {
+    constructor() {
+        this.colorScheme = new GradientColorScheme();
+    }
     GetGradientProperties() {
         this.direction = Colors.instance.RandomInt(1, 4);
         this.colorScheme = new GradientColorScheme();

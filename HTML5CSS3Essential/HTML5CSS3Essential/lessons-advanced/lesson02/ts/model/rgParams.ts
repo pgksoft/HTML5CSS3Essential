@@ -3,7 +3,7 @@
     GradientColorScheme,
     Colors,
     RadialParams
-} from '../../../../js-advanced/colorManagement.js'
+} from '../../../../js-advanced/colorManagement'
 
 export const CustomEventOverFill: string = 'rg-OverFill';
 

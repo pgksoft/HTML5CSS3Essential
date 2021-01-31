@@ -5,31 +5,44 @@ import {
     Colors,
     GradientProperties,
     RadialDirection
-} from '../../../../js-advanced/colorManagement.js'
+} from '../../../../js-advanced/colorManagement'
 import {
     CustomEventOverFill,
     CustomEventIsSelected,
+    CustomEventPermissionsIsSelected,
+    CustomEventChangeStatusWaveMotion,
     WPropStored,
     Params,
     FillType,
     FillTypeAny,
     FillTypeColor,
     FillTypeLinearGradient,
-    FillTypeRadialGradient
-} from '../model/mwsParams.js'
+    FillTypeRadialGradient,
+    RecoveryParameters
+} from '../model/mwsParams'
 import {
     MwsConstraints,
     NameKindFigureRectangle,
     NameKindFigureFlag,
+    Country,
+    Countries,
+    NameCountryBelarus,
+    NameCountryGermany,
+    NameCountryHungary,
+    NameCountryKazakhstan,
+    NameCountryPoland,
+    NameCountryRussia,
+    NameCountryUkraine,
+    NameCountryUnitedKingdom,
     NameCountryUSA,
     Point,
     Rect,
     FlagUSA,
     FlagImg,
     FigureKind,
-    RecoveryParameters
-} from '../model/modelMWS.js'
-import { isDisplayBlock } from '../../../../js-advanced/_pgkUtils.js'
+    RectWave
+} from '../model/modelMWS'
+import { isDisplayBlock, requestFrame } from '../../../../js-advanced/_pgkUtils'
 
 
 class LSKeyList {
@@ -143,7 +156,7 @@ class ViewRect {
     constructor(
         rect: Rect,
         colorFill: string = 'yellow',
-        colorStroke: string = 'darkred'
+        colorStroke: string = 'Lightgray'
     ) {
         this._rect = rect;
         this._colorFill = colorFill;
@@ -152,34 +165,35 @@ class ViewRect {
         this.DefineEvents();
     }
     // Fields
-    private _statesKeeper: StatesKeeper = StatesKeeper.instance;
-    private _recoveryParameters: RecoveryParameters = new RecoveryParameters();
-    private _rect: Rect;
-    private _headerHeight: number = 0;
-    private _fillType: [string, number] = FillType.entries().next().value;
-    private _colorStroke: string;
-    private _colorFill: string;
-    private _gradientInside: CanvasGradient;
-    private _gradientBorder: CanvasGradient;
-    private _propertiesGradientInside: GradientProperties = new GradientProperties();
-    private _propertiesGradientBorder: GradientProperties = new GradientProperties();
-    private _measureCaptionHead: TextMetrics;
-    private _measureCaptionMinimize: TextMetrics;
-    private _measureCaptionRestoreDown: TextMetrics;
-    private _measureCaptionMaximize: TextMetrics;
-    private _measureCaptionClose: TextMetrics;
-    private _fontSize: number = 10;
-    private _contextData: Uint8ClampedArray;
-    private _isMouseDown: boolean = false;
-    private _isResize: boolean = false;
-    private _isResizeEW: boolean = false;
-    private _isResizeNS: boolean = false;
-    private _isResizeNESW: boolean = false;
-    private _isResizeNWSE: boolean = false;
-    private _startMove: Point = new Point(0, 0);
-    private _newMove: Point = new Point(0, 0);
-    private _isMaximize: boolean = false;
-    private _isMinimize: boolean = false;
+    protected _statesKeeper: StatesKeeper = StatesKeeper.instance;
+    protected _recoveryParameters: RecoveryParameters = new RecoveryParameters();
+    protected _rect: Rect;
+    protected _headerHeight: number = 0;
+    protected _fillType: [string, number] = FillType.entries().next().value;
+    protected _colorStroke: string;
+    protected _colorFill: string;
+    protected _gradientInside: CanvasGradient;
+    protected _gradientBorder: CanvasGradient;
+    protected _propertiesGradientInside: GradientProperties = new GradientProperties();
+    protected _propertiesGradientBorder: GradientProperties = new GradientProperties();
+    protected _measureCaptionHead: TextMetrics;
+    protected _measureCaptionMinimize: TextMetrics;
+    protected _measureCaptionRestoreDown: TextMetrics;
+    protected _measureCaptionMaximize: TextMetrics;
+    protected _measureCaptionClose: TextMetrics;
+    protected _fontSize: number = 10;
+    protected _contextData: Uint8ClampedArray;
+    protected _isMouseDown: boolean = false;
+    protected _isResize: boolean = false;
+    protected _isResizeEW: boolean = false;
+    protected _isResizeNS: boolean = false;
+    protected _isResizeNESW: boolean = false;
+    protected _isResizeNWSE: boolean = false;
+    protected _startMove: Point = new Point(0, 0);
+    protected _newMove: Point = new Point(0, 0);
+    protected _isMaximize: boolean = false;
+    protected _isMinimize: boolean = false;
+    protected _rectWave: RectWave = new RectWave();
     // Properties
     get statesKeeper(): StatesKeeper { return this._statesKeeper; }
     get rect(): Rect { return this._rect; }
@@ -232,7 +246,7 @@ class ViewRect {
 
     // Methods
     draw(context: CanvasRenderingContext2D) {
-        this.drawHeader(context);
+        this.drawHeader(context, this.rect.kind[0]);
         //
         context.globalAlpha = 1;
         context.beginPath();
@@ -302,7 +316,37 @@ class ViewRect {
         }
         context.fill();
         // After drawing, be sure to keep the original state of the flag.
-        this._contextData = context.getImageData(this.rect.x, this.rect.y, this.rect.width, this.rect.height).data;
+        this.SetRectWave();
+        this._contextData = context.getImageData(
+            this._rectWave.x,
+            this._rectWave.y,
+            this._rectWave.width,
+            this._rectWave.height
+        ).data;
+    }
+
+    wave(context: CanvasRenderingContext2D) {
+        if (this.rect.isAnimate) {
+            let imgData: ImageData = context.getImageData(this._rectWave.x, this._rectWave.y, this._rectWave.width, this._rectWave.height);
+            let data: Uint8ClampedArray = imgData.data;
+            let now: number = Date.now() / this.rect.waveParams.period;
+            for (let y = 0; y < this._rectWave.height; ++y) {
+                let lastO = 0, shade = 0;
+                for (let x = 0; x < this._rectWave.width; ++x) {
+                    let px = (y * this._rectWave.width + x) * 4;
+                    let o = Math.sin(x / this.rect.waveParams.length - now) * this.rect.waveParams.amplitude * x / this._rectWave.width;
+                    let opx = ((y + o << 0) * this._rectWave.width + x) * 4;
+                    shade = (o - lastO) * this.rect.waveParams.shading;
+                    data[px] = this._contextData[opx] + shade;
+                    data[px + 1] = this._contextData[opx + 1] + shade;
+                    data[px + 2] = this._contextData[opx + 2] + shade;
+                    data[px + 3] = this._contextData[opx + 3];
+                    lastO = o;
+                }
+            }
+            context.putImageData(imgData, this._rectWave.x, this._rectWave.y);
+            requestFrame(() => this.wave(context));
+        }
     }
 
     // Event Handling Methods
@@ -569,15 +613,30 @@ class ViewRect {
         }
     }
 
+    // 
+    SetRecoveryParameters(): void {
+        this.recoveryParameters.x = this.rect.x;
+        this.recoveryParameters.y = this.rect.y;
+        this.recoveryParameters.width = this.rect.width;
+        this.recoveryParameters.height = this.rect.height;
+    }
+
     // Helpers
-    private DefineEvents(): void {
+    protected DefineEvents(): void {
         document.addEventListener(CustomEventIsResize, () => { if (this.rect.isSelected) { this.SetRecoveryParameters(); } }, false);
         document.addEventListener(CustomEventIsMove, () => { if (this.rect.isSelected) { this.SetRecoveryParameters(); } }, false);
         document.addEventListener(Params.instance.nameEventWPropStoredWidthChanged, () => { if (this.rect.isSelected) { this.SetRecoveryParameters(); } }, false);
         document.addEventListener(Params.instance.nameEventWPropStoredHeightChanged, () => { if (this.rect.isSelected) { this.SetRecoveryParameters(); } }, false);
     }
 
-    private drawHeader(context: CanvasRenderingContext2D) {
+    protected SetRectWave(): void {
+        this._rectWave.x = this.rect.x;
+        this._rectWave.y = this.rect.y + this.headerHeight;
+        this._rectWave.width = this.rect.width;
+        this._rectWave.height = this.rect.height - this.headerHeight;
+    }
+
+    protected drawHeader(context: CanvasRenderingContext2D, name: string) {
         let fontSize: number = this.GetFontSize(context);
         this.headerHeight = fontSize + 2;
         context.clearRect(this.rect.x, this.rect.y, this.rect.width, this.headerHeight);
@@ -598,7 +657,7 @@ class ViewRect {
         }
         context.textAlign = 'left';
         context.textBaseline = "top";
-        let captionHead: string = `${this.rect.serialNumber}-${this.rect.kind[0]}`;
+        let captionHead: string = `${this.rect.serialNumber}-${name}`;
         context.fillText(captionHead, this.rect.x + 1, this.rect.y + 1);
         //
         this.DrawHeaderClose(context, fontSize);
@@ -610,32 +669,32 @@ class ViewRect {
         this.DrawHeaderMinimize(context, fontSize);
     }
 
-    private DrawHeaderMinimize(context: CanvasRenderingContext2D, fontSize: number): void {
+    protected DrawHeaderMinimize(context: CanvasRenderingContext2D, fontSize: number): void {
         context.font = `${fontSize}px ${nameFontSymbolMinimize}`;
         context.textAlign = 'right';
         context.fillText(symbolMinimize, this.rect.x + this.rect.width - StatesKeeper.instance.sizeResizingZone - this.measureCaptionClose.width -
             StatesKeeper.instance.sizeResizingZone * 2 - this.measureCaptionMaximize.width - StatesKeeper.instance.sizeResizingZone * 2, this.rect.y + 1);
     }
 
-    private DrawHeaderMaximize(context: CanvasRenderingContext2D, fontSize: number): void {
+    protected DrawHeaderMaximize(context: CanvasRenderingContext2D, fontSize: number): void {
         context.font = `${fontSize}px ${nameFontSymbolMaximize}`;
         context.textAlign = 'right';
         context.fillText(symbolMaximize, this.rect.x + this.rect.width - StatesKeeper.instance.sizeResizingZone - this.measureCaptionClose.width - StatesKeeper.instance.sizeResizingZone * 2, this.rect.y + 1);
     }
 
-    private DrawHeaderRestoreDown(context: CanvasRenderingContext2D, fontSize: number): void {
+    protected DrawHeaderRestoreDown(context: CanvasRenderingContext2D, fontSize: number): void {
         context.font = `${fontSize}px ${nameFontSymbolRestoreDown}`;
         context.textAlign = 'right';
         context.fillText(symbolRestoreDown, this.rect.x + this.rect.width - StatesKeeper.instance.sizeResizingZone - this.measureCaptionClose.width - StatesKeeper.instance.sizeResizingZone * 2, this.rect.y + 1);
     }
 
-    private DrawHeaderClose(context: CanvasRenderingContext2D, fontSize: number): void {
+    protected DrawHeaderClose(context: CanvasRenderingContext2D, fontSize: number): void {
         context.font = `${fontSize}px ${nameFontSymbolClose}`;
         context.textAlign = 'right';
         context.fillText(symbolClose, this.rect.x + this.rect.width - StatesKeeper.instance.sizeResizingZone, this.rect.y + 1);
     }
 
-    private DrawHeaderHoverClose(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
+    protected DrawHeaderHoverClose(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
         let widthHover: number = StatesKeeper.instance.sizeResizingZone * 2 + this.measureCaptionClose.width;
         context.beginPath();
         context.rect(
@@ -662,7 +721,7 @@ class ViewRect {
         context.fillText(symbolClose, this.rect.x + this.rect.width - StatesKeeper.instance.sizeResizingZone, this.rect.y + 1);
     }
 
-    private DrawHeaderHoverMinimize(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
+    protected DrawHeaderHoverMinimize(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
         let widthHover: number = StatesKeeper.instance.sizeResizingZone * 2 + this.measureCaptionMinimize.width;
         let maximizeButtonWidth: number = this.isMaximize ? this.measureCaptionRestoreDown.width : this.measureCaptionMaximize.width;
         let withBetween: number = StatesKeeper.instance.sizeResizingZone * 2;
@@ -691,7 +750,7 @@ class ViewRect {
         context.fillText(symbolMinimize, this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - withBetween - maximizeButtonWidth - StatesKeeper.instance.sizeResizingZone, this.rect.y + 1);
     }
 
-    private DrawHeaderHoverMaximize(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
+    protected DrawHeaderHoverMaximize(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
         let widthHover: number = StatesKeeper.instance.sizeResizingZone * 2 + this.measureCaptionMaximize.width;
         let withBetween: number = StatesKeeper.instance.sizeResizingZone * 2;
         context.beginPath();
@@ -719,7 +778,7 @@ class ViewRect {
         context.fillText(symbolMaximize, this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - StatesKeeper.instance.sizeResizingZone, this.rect.y + 1);
     }
 
-    private DrawHeaderHoverRestoreDown(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
+    protected DrawHeaderHoverRestoreDown(context: CanvasRenderingContext2D, fontSize: number, isHover: boolean = true): void {
         let widthHover: number = StatesKeeper.instance.sizeResizingZone * 2 + this.measureCaptionRestoreDown.width;
         let withBetween: number = StatesKeeper.instance.sizeResizingZone * 2;
         context.beginPath();
@@ -747,7 +806,7 @@ class ViewRect {
         context.fillText(symbolRestoreDown, this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - StatesKeeper.instance.sizeResizingZone, this.rect.y + 1);
     }
 
-    private ResetMoveMouse(canvas: HTMLCanvasElement) {
+    protected ResetMoveMouse(canvas: HTMLCanvasElement) {
         if (this.statesKeeper.serialNumberResizeEW === this.rect.serialNumber) {
             this.statesKeeper.serialNumberResizeEW = 0;
             canvas.dataset.cursor = cursorDefault;
@@ -779,14 +838,16 @@ class ViewRect {
         }
     }
 
-    private GetMaxLayer(x: number, y: number, sizeResizingZone: number, windows: ViewRect[]): number {
+    protected GetMaxLayer(x: number, y: number, sizeResizingZone: number, windows: ViewRect[]): number {
         let maxLayer: number = 0;
         let serialNumber: number = 0;
         let layers: [number, number][] = new Array(); // first - index, second - serialNumber
         for (let i = 0; i < windows.length; i++) {
             let w: ViewRect = windows[i];
-            if (x >= w.rect.x - sizeResizingZone && x <= w.rect.x + w.rect.width + sizeResizingZone && y >= w.rect.y - sizeResizingZone && y <= w.rect.y + w.rect.height + sizeResizingZone) {
-                layers.push([i, w.rect.serialNumber]);
+            if (!w.isMinimize) {
+                if (x >= w.rect.x - sizeResizingZone && x <= w.rect.x + w.rect.width + sizeResizingZone && y >= w.rect.y - sizeResizingZone && y <= w.rect.y + w.rect.height + sizeResizingZone) {
+                    layers.push([i, w.rect.serialNumber]);
+                }
             }
         }
         if (layers.length > 1) {
@@ -798,7 +859,7 @@ class ViewRect {
         return serialNumber;
     }
 
-    private ResizeOff(): void {
+    protected ResizeOff(): void {
         this.isResize = false;
         this.isResizeEW = false;
         this.isResizeNS = false;
@@ -806,7 +867,7 @@ class ViewRect {
         this.isResizeNWSE = false;
     }
 
-    private isInside(x: number, y: number, maxLayer: number, sizeResizingZone: number): boolean {
+    protected isInside(x: number, y: number, maxLayer: number, sizeResizingZone: number): boolean {
         if (this.rect.serialNumber === maxLayer) {
             return x >= this.rect.x - sizeResizingZone && x <= this.rect.x + this.rect.width + sizeResizingZone &&
                 y >= this.rect.y - sizeResizingZone && y <= this.rect.y + this.rect.height + sizeResizingZone;
@@ -815,51 +876,51 @@ class ViewRect {
         }
     }
 
-    private isLeftResizeEW(x: number, sizeResizingZone: number): boolean {
+    protected isLeftResizeEW(x: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x - sizeResizingZone && x <= this.rect.x;
     }
 
-    private isRightResizeEW(x: number, sizeResizingZone: number): boolean {
+    protected isRightResizeEW(x: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x + this.rect.width && x <= this.rect.x + this.rect.width + sizeResizingZone;
     }
 
-    private isYResizeEW(y: number, sizeResizingZone: number): boolean {
+    protected isYResizeEW(y: number, sizeResizingZone: number): boolean {
         return y >= this.rect.y + sizeResizingZone && y <= this.rect.y + this.rect.height - sizeResizingZone;
     }
 
-    private isTopResizeNS(y: number, sizeResizingZone: number): boolean {
+    protected isTopResizeNS(y: number, sizeResizingZone: number): boolean {
         return y >= this.rect.y - sizeResizingZone && y <= this.rect.y;
     }
 
-    private isDownResizeNS(y: number, sizeResizingZone: number): boolean {
+    protected isDownResizeNS(y: number, sizeResizingZone: number): boolean {
         return y >= this.rect.y + this.rect.height && y <= this.rect.y + this.rect.height + sizeResizingZone;
     }
 
-    private isXResizeNS(x: number, sizeResizingZone: number): boolean {
+    protected isXResizeNS(x: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x + sizeResizingZone && x <= this.rect.x + this.rect.width - sizeResizingZone;
     }
 
-    private isResizeNESWTopRight(x: number, y: number, sizeResizingZone: number): boolean {
+    protected isResizeNESWTopRight(x: number, y: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x + this.rect.width && x <= this.rect.x + this.rect.width + sizeResizingZone
             && y >= this.rect.y - sizeResizingZone && y <= this.rect.y;
     }
 
-    private isResizeNESWBottomLeft(x: number, y: number, sizeResizingZone: number): boolean {
+    protected isResizeNESWBottomLeft(x: number, y: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x - sizeResizingZone && x <= this.rect.x
             && y >= this.rect.y + this.rect.height && y <= this.rect.y + this.rect.height + sizeResizingZone;
     }
 
-    private isResizeNWSELeftTop(x: number, y: number, sizeResizingZone: number): boolean {
+    protected isResizeNWSELeftTop(x: number, y: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x - sizeResizingZone && x <= this.rect.x
             && y >= this.rect.y - sizeResizingZone && y <= this.rect.y;
     }
 
-    private isResizeNWSERightBottom(x: number, y: number, sizeResizingZone: number): boolean {
+    protected isResizeNWSERightBottom(x: number, y: number, sizeResizingZone: number): boolean {
         return x >= this.rect.x + this.rect.width && x <= this.rect.x + this.rect.width + sizeResizingZone
             && y >= this.rect.y + this.rect.height && y <= this.rect.y + this.rect.height + sizeResizingZone;
     }
 
-    private isMinimizeButton(x: number, y: number): boolean {
+    protected isMinimizeButton(x: number, y: number): boolean {
         let maximizeButtonWidth: number = this.isMaximize ? this.measureCaptionRestoreDown.width : this.measureCaptionMaximize.width;
         let withBetween: number = StatesKeeper.instance.sizeResizingZone * 2;
         return x > this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - withBetween - maximizeButtonWidth - withBetween - this.measureCaptionMinimize.width + 1
@@ -867,27 +928,27 @@ class ViewRect {
             && y > this.rect.y + 1 && y < this.rect.y + this.headerHeight - 1;
     }
 
-    private isMaximizeButton(x: number, y: number): boolean {
+    protected isMaximizeButton(x: number, y: number): boolean {
         let withBetween: number = StatesKeeper.instance.sizeResizingZone * 2;
         return x > this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - withBetween - this.measureCaptionMaximize.width + 1
             && x < this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - 1
             && y > this.rect.y + 1 && y < this.rect.y + this.headerHeight - 1;
     }
 
-    private isRestoreDownButton(x: number, y: number): boolean {
+    protected isRestoreDownButton(x: number, y: number): boolean {
         let withBetween: number = StatesKeeper.instance.sizeResizingZone * 2;
         return x > this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - withBetween - this.measureCaptionRestoreDown.width + 1
             && x < this.rect.x + this.rect.width - withBetween - this.measureCaptionClose.width - 1
             && y > this.rect.y + 1 && y < this.rect.y + this.headerHeight - 1;
     }
 
-    private isCloseButton(x: number, y: number): boolean {
+    protected isCloseButton(x: number, y: number): boolean {
         return x > this.rect.x + this.rect.width - StatesKeeper.instance.sizeResizingZone * 2 - this.measureCaptionClose.width + 1
             && x < this.rect.x + this.rect.width - 1
             && y > this.rect.y + 1 && y < this.rect.y + this.headerHeight - 1;
     }
 
-    private GetMinCaptionWidth(): number {
+    protected GetMinCaptionWidth(): number {
         return Math.floor(
             1 + this.measureCaptionHead.width +
             StatesKeeper.instance.sizeResizingZone * 2 +
@@ -900,16 +961,89 @@ class ViewRect {
         );
     }
 
-    private GetFontSize(context: CanvasRenderingContext2D): number {
+    protected GetFontSize(context: CanvasRenderingContext2D): number {
         let temp: number = Math.floor(context.canvas.height / 30);
         return temp < 10 ? 10 : temp;
     }
 
-    private SetRecoveryParameters(): void {
-        this.recoveryParameters.x = this.rect.x;
-        this.recoveryParameters.y = this.rect.y;
-        this.recoveryParameters.width = this.rect.width;
-        this.recoveryParameters.height = this.rect.height;
+}
+
+class ViewFlagImg extends ViewRect {
+    constructor(
+        rect: Rect,
+        country: [string, string],
+        aspectRatio: number
+    ) {
+        super(rect);
+        this._rect = new FlagImg(
+            rect.x,
+            rect.y,
+            rect.width,
+            country[0],
+            country[1],
+            aspectRatio
+        );
+        this.fillType = Array.from(FillType.entries()).find(item => item[0] == FillTypeColor);
+        this.calcStandardProportions();
+    }
+
+    // Fields
+    protected _rect: FlagImg;
+
+    // Properties
+    get rect(): FlagImg { return this._rect }
+
+    // Methods
+    draw(context: CanvasRenderingContext2D) {
+        this.drawHeader(context, this.rect.country);
+        this.calcStandardProportions();
+        //
+        context.globalAlpha = 1;
+        context.beginPath();
+        context.rect(
+            this.rect.x,
+            this.rect.y + this.headerHeight,
+            this.rect.width,
+            this.rect.height - this.headerHeight
+        );
+        context.fillStyle = this.colorStroke;
+        context.fill();
+        //
+        if (this.rect.isLoad) {
+            this.SetRectWave();
+            // Img
+            context.drawImage(
+                this.rect.img, 0, 0, this.rect.img.width, this.rect.img.height,
+                this._rectWave.x,
+                this._rectWave.y,
+                this._rectWave.width,
+                this._rectWave.height
+            );
+            // After drawing, be sure to keep the original state of the flag.
+            this._contextData = context.getImageData(
+                this._rectWave.x,
+                this._rectWave.y,
+                this._rectWave.width,
+                this._rectWave.height
+            ).data;
+        }
+        if (!this.rect.isLoad) requestFrame(() => this.draw(context));
+    }
+
+    // Helpers
+    protected SetRectWave(): void {
+        this._rectWave.x = this.rect.insideX;
+        this._rectWave.y = this.rect.insideY;
+        this._rectWave.width = this.rect.insideWidth;
+        this._rectWave.height = this.rect.insideHeight;
+    }
+
+    private calcStandardProportions(): void {
+        this.rect.height = Math.floor(this.rect.width / this.rect.aspectRatio);
+        this.rect.insideX = this.rect.x + this.rect.borderWidth;
+        this.rect.insideY = this.rect.y + this.headerHeight + this.rect.borderWidth;
+        this.rect.insideWidth = Math.ceil(this.rect.width - this.rect.borderWidth * 2);
+        this.rect.insideHeight = Math.ceil(this.rect.height - this.headerHeight - this.rect.borderWidth * 2);
     }
 
 }
@@ -930,6 +1064,9 @@ export class ViewMWS {
         this.DefineEvents();
         this.InitScaleArea();
         //
+        this.LoadWindows();
+        this.Draw(true);
+        this.CreateTaskBar();
     }
 
     // Fields - self management
@@ -942,10 +1079,12 @@ export class ViewMWS {
     private _bufferContext: CanvasRenderingContext2D = this._bufferCanvas.getContext('2d');
     private _windows: ViewRect[] = [];
     private _canvasEventHandlers: EventHandlers = new EventHandlers();
-    private _sizeResizingZone: number;
     private _mwsmStart: HTMLElement;
     private _menuStart: HTMLElement;
     private _mwsmTaskBar: HTMLElement;
+    //
+    private _localKeyList: LSKeyList = new LSKeyList();
+    private _localValueList: LSValueList = new LSValueList();
 
     // Properties
     static get instance(): ViewMWS {
@@ -1046,14 +1185,33 @@ export class ViewMWS {
 
     // HELPERS
 
-    private Draw() {
-        this._bufferContext.clearRect(0, 0, this._bufferCanvas.width, this._bufferCanvas.height);
-        for (let w of this.windows.filter(item => !item.isMinimize)) {
-            w.draw(this._bufferContext);
-        }
-        this.context.clearRect(0, 0, this.mwsArea.width, this.mwsArea.height);
+    private Draw(isNew: boolean = false) {
         this.context.globalAlpha = 1;
-        this.context.drawImage(this._bufferCanvas, 0, 0);
+        if (!isNew) {
+            this._bufferContext.clearRect(0, 0, this._bufferCanvas.width, this._bufferCanvas.height);
+            this.ShowWindows(this._bufferContext);
+            this.context.clearRect(0, 0, this.mwsArea.width, this.mwsArea.height);
+            this.context.drawImage(this._bufferCanvas, 0, 0);
+        } else {
+            let wFlags: ViewFlagImg[] = <ViewFlagImg[]>this.windows.filter(w => w.rect.kind[0] == NameKindFigureFlag);
+            if (wFlags.length > 0) {
+                if (wFlags.every(w => w.rect.isLoad)) {
+                    this.context.clearRect(0, 0, this.mwsArea.width, this.mwsArea.height);
+                    this.ShowWindows(this.context);
+                } else {
+                    requestFrame(() => this.Draw(true));
+                }
+            } else {
+                this.context.clearRect(0, 0, this.mwsArea.width, this.mwsArea.height);
+                this.ShowWindows(this.context);
+            }
+        }
+    }
+
+    private ShowWindows(context: CanvasRenderingContext2D) {
+        for (let w of this.windows.filter(item => !item.isMinimize)) {
+            w.draw(context);
+        }
     }
 
     private DefineEvents(): void {
@@ -1084,6 +1242,7 @@ export class ViewMWS {
         document.addEventListener(CustomEventMinimizeClick, (e: CustomEvent) => { this.OnMinimizeClick(e); }, false);
         document.addEventListener(CustomEventMaximizeClick, (e: CustomEvent) => { this.OnMaximizeClick(e); }, false);
         document.addEventListener(CustomEventRestoreDownClick, (e: CustomEvent) => { this.OnRestoreDownClick(e); }, false);
+        document.addEventListener(CustomEventChangeStatusWaveMotion, () => { this.OnChangeStatusWaveMotion(); }, false);
         //
         window.addEventListener('resize', () => { this.OnWindowChange(); }, false);
         window.addEventListener('scroll', () => { this.OnWindowChange(); }, false);
@@ -1096,24 +1255,25 @@ export class ViewMWS {
             this._bufferCanvas.width = this._mwsArea.width;
             this._bufferCanvas.height = this._mwsArea.height;
             switch (this._mwsArea.width) {
-                case 300: this._sizeResizingZone = 6; break;
-                case 600: this._sizeResizingZone = 7; break;
-                case 900: this._sizeResizingZone = 8; break;
-                case 1200: this._sizeResizingZone = 9; break;
-                case 1600: this._sizeResizingZone = 10; break;
-                case 1900: this._sizeResizingZone = 11; break;
-                case 2560: this._sizeResizingZone = 14; break;
-                case 3200: this._sizeResizingZone = 16; break;
-                case 4800: this._sizeResizingZone = 18; break;
-                case 5600: this._sizeResizingZone = 20; break;
+                case 300: Params.instance.sizeResizingZone = 6; break;
+                case 600: Params.instance.sizeResizingZone = 7; break;
+                case 900: Params.instance.sizeResizingZone = 8; break;
+                case 1200: Params.instance.sizeResizingZone = 9; break;
+                case 1600: Params.instance.sizeResizingZone = 10; break;
+                case 1900: Params.instance.sizeResizingZone = 11; break;
+                case 2560: Params.instance.sizeResizingZone = 14; break;
+                case 3200: Params.instance.sizeResizingZone = 16; break;
+                case 4800: Params.instance.sizeResizingZone = 18; break;
+                case 5600: Params.instance.sizeResizingZone = 20; break;
             }
-            StatesKeeper.instance.sizeResizingZone = this._sizeResizingZone;
+            StatesKeeper.instance.sizeResizingZone = Params.instance.sizeResizingZone;
         }
     }
 
-    AddToList(kind: [string, number], country: string = '') {
+    private AddToList(kind: [string, number], country: [string, string] = ['', ''], aspectRatio: number = 2) {
         let serialNumber: number = this.windows.reduce((prev: number, current: ViewRect) => current.rect.serialNumber > prev ? current.rect.serialNumber : prev, 0) + 1;
         let fontSize: number = this.GetFontSize();
+        let figure: ViewRect;
         switch (kind[0]) {
             case NameKindFigureRectangle: {
                 // Estimating the size of the window title text
@@ -1134,13 +1294,13 @@ export class ViewMWS {
                         MwsConstraints.figureWidthMin,
                         Math.floor(
                             measureCaptionHead.width +
-                            this._sizeResizingZone * 2 +
+                            Params.instance.sizeResizingZone * 2 +
                             measureCaptionMinimize.width +
-                            this._sizeResizingZone * 2 +
+                            Params.instance.sizeResizingZone * 2 +
                             measureCaptionMaximize.width +
-                            this._sizeResizingZone * 2 +
+                            Params.instance.sizeResizingZone * 2 +
                             measureCaptionClose.width +
-                            this._sizeResizingZone
+                            Params.instance.sizeResizingZone
                         )
                     ),
                     Math.min(Math.floor(this.mwsArea.width / 2), MwsConstraints.figureWidthMax)
@@ -1149,7 +1309,7 @@ export class ViewMWS {
                     MwsConstraints.figureHeightMin + fontSize + 2,
                     Math.min(Math.floor(this.mwsArea.height / 4), MwsConstraints.figureHeightMax)
                 );
-                let figure: ViewRect = new ViewRect(
+                figure = new ViewRect(
                     new Rect(
                         Colors.instance.RandomInt(1, Math.floor(this.mwsArea.width) - rectWidth),
                         Colors.instance.RandomInt(1, Math.floor(this.mwsArea.height) - rectHeight - (fontSize - 2)),
@@ -1168,6 +1328,68 @@ export class ViewMWS {
                 figure.measureCaptionRestoreDown = measureCaptionRestoreDown;
                 figure.fontSize = fontSize;
                 this.NewFill(figure);
+                figure.SetRecoveryParameters();
+                this.windows.push(figure);
+                this._canvasEventHandlers.mouseDown.set(serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseDownHandler(x, y, canvas, sizeResizingZone, windows); });
+                this._canvasEventHandlers.mouseMove.set(serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseMoveHandler(x, y, canvas, sizeResizingZone, windows); });
+                this._canvasEventHandlers.mouseUp.set(serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseUpHandler(x, y, canvas, sizeResizingZone, windows); });
+                this._canvasEventHandlers.mouseClick.set(serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseClickHandler(x, y, canvas, sizeResizingZone, windows); });
+                break;
+            }
+            case NameKindFigureFlag: {
+                // Estimating the size of the window title text
+                this._context.font = `${fontSize}px Roboto Condensed`;
+                let captionHead: string = `${serialNumber}-${country[0]}`;
+                let measureCaptionHead: TextMetrics = this.context.measureText(captionHead);
+                this._context.font = `${fontSize}px ${nameFontSymbolClose}`;
+                let measureCaptionClose: TextMetrics = this.context.measureText(symbolClose);
+                this._context.font = `${fontSize}px ${nameFontSymbolMinimize}`;
+                let measureCaptionMinimize: TextMetrics = this.context.measureText(symbolMinimize);
+                this._context.font = `${fontSize}px ${nameFontSymbolMaximize}`;
+                let measureCaptionMaximize: TextMetrics = this.context.measureText(symbolMaximize);
+                this._context.font = `${fontSize}px ${nameFontSymbolRestoreDown}`;
+                let measureCaptionRestoreDown: TextMetrics = this.context.measureText(symbolRestoreDown);
+                //
+                let rectWidth: number = Colors.instance.RandomInt(
+                    Math.max(
+                        MwsConstraints.figureWidthMin,
+                        Math.floor(
+                            measureCaptionHead.width +
+                            Params.instance.sizeResizingZone * 2 +
+                            measureCaptionMinimize.width +
+                            Params.instance.sizeResizingZone * 2 +
+                            measureCaptionMaximize.width +
+                            Params.instance.sizeResizingZone * 2 +
+                            measureCaptionClose.width +
+                            Params.instance.sizeResizingZone
+                        )
+                    ),
+                    Math.min(Math.floor(this.mwsArea.width / 2), MwsConstraints.figureWidthMax)
+                );
+                let rectHeight: number = Colors.instance.RandomInt(
+                    MwsConstraints.figureHeightMin + fontSize + 2,
+                    Math.min(Math.floor(this.mwsArea.height / 4), MwsConstraints.figureHeightMax)
+                );
+                figure = new ViewFlagImg(
+                    new Rect(
+                        Colors.instance.RandomInt(1, Math.floor(this.mwsArea.width) - rectWidth),
+                        Colors.instance.RandomInt(1, Math.floor(this.mwsArea.height) - rectHeight - (fontSize - 2)),
+                        rectWidth,
+                        rectHeight,
+                        3
+                    ),
+                    country,
+                    aspectRatio
+                )
+                figure.rect.serialNumber = serialNumber;
+                figure.measureCaptionHead = measureCaptionHead;
+                figure.measureCaptionClose = measureCaptionClose;
+                figure.measureCaptionMinimize = measureCaptionMinimize;
+                figure.measureCaptionMaximize = measureCaptionMaximize;
+                figure.measureCaptionRestoreDown = measureCaptionRestoreDown;
+                figure.fontSize = fontSize;
+                figure.fillType = Array.from(FillType.entries()).find(item => item[0] == FillTypeColor);
+                figure.SetRecoveryParameters();
                 this.windows.push(figure);
                 this._canvasEventHandlers.mouseDown.set(serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseDownHandler(x, y, canvas, sizeResizingZone, windows); });
                 this._canvasEventHandlers.mouseMove.set(serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseMoveHandler(x, y, canvas, sizeResizingZone, windows); });
@@ -1202,15 +1424,23 @@ export class ViewMWS {
         let kind: string = mwsmTask.dataset.kind;
         if (kind == NameKindFigureRectangle) {
             this.AddToList(Array.from(FigureKind.entries()).find((pair) => pair[0] === NameKindFigureRectangle));
-            Params.instance.switchSerialNumber = this.windows[this.windows.length - 1].rect.serialNumber;
-            this.DefinePropStored(this.windows[this.windows.length - 1]);
-            this.SetNewTask();
+            this.DefinitionTask();
         } else if (kind == NameKindFigureFlag) {
-            if (mwsmTask.dataset.country) {
-                console.log(mwsmTask.dataset.country);
-            }
+            let country: Country = Countries.find(item => item.name == mwsmTask.dataset.country);
+            this.AddToList(
+                Array.from(FigureKind.entries()).find((pair) => pair[0] === NameKindFigureFlag),
+                [country.name, country.url],
+                Number(mwsmTask.dataset.aspectRatio)
+            );
+            this.DefinitionTask();
         }
         this.DisableMenuStart();
+    }
+
+    private DefinitionTask(): void {
+        Params.instance.switchSerialNumber = this.windows[this.windows.length - 1].rect.serialNumber;
+        this.DefinePropStored(this.windows[this.windows.length - 1]);
+        this.SetNewTask();
     }
 
     private OnFillChange(): void {
@@ -1285,9 +1515,14 @@ export class ViewMWS {
                     w.measureCaptionMaximize = measureCaptionMaximize;
                     w.measureCaptionRestoreDown = measureCaptionRestoreDown;
                     w.fontSize = fontSize;
-                    if (w.rect.isSelected) this.DefinePropStored(w);
+                }
+                if (w.rect.isSelected) {
+                    this.DefinePropStored(w);
+                } else {
+                    this.UpdateValueList(w.rect.serialNumber);
                 }
             }
+            this.SaveWindows();
             this.Draw();
         } else {
         }
@@ -1314,7 +1549,7 @@ export class ViewMWS {
         let layers: [number, number][] = new Array(); // first - index, second - serialNumber
         Params.instance.canvasCoordinates = [coordinates.x, coordinates.y];
         for (let fn of this._canvasEventHandlers.mouseDown.values()) {
-            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, this._sizeResizingZone, this.windows);
+            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, Params.instance.sizeResizingZone, this.windows);
             if (serialNumber > 0) {
                 layers.push([this.windows.findIndex(item => item.rect.serialNumber === serialNumber), serialNumber]);
                 isRect = true;
@@ -1335,7 +1570,7 @@ export class ViewMWS {
         let isRect: boolean = false;
         Params.instance.canvasCoordinates = [coordinates.x, coordinates.y];
         for (let fn of this._canvasEventHandlers.mouseMove.values()) {
-            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, this._sizeResizingZone, this.windows);
+            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, Params.instance.sizeResizingZone, this.windows);
             if (serialNumber > 0) {
                 isRect = true;
             }
@@ -1352,7 +1587,7 @@ export class ViewMWS {
         let layers: [number, number][] = new Array();
         Params.instance.canvasCoordinates = [coordinates.x, coordinates.y];
         for (let fn of this._canvasEventHandlers.mouseUp.values()) {
-            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, this._sizeResizingZone, this.windows);
+            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, Params.instance.sizeResizingZone, this.windows);
             if (serialNumber > 0) {
                 layers.push([this.windows.findIndex(item => item.rect.serialNumber === serialNumber), serialNumber]);
                 isRect = true;
@@ -1373,7 +1608,7 @@ export class ViewMWS {
         let isRect: boolean = false;
         Params.instance.canvasCoordinates = [coordinates.x, coordinates.y];
         for (let fn of this._canvasEventHandlers.mouseClick.values()) {
-            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, this._sizeResizingZone, this.windows);
+            serialNumber = fn(coordinates.x, coordinates.y, this.mwsArea, Params.instance.sizeResizingZone, this.windows);
             if (serialNumber > 0) {
                 isRect = true;
             }
@@ -1410,13 +1645,14 @@ export class ViewMWS {
         if (this.windows.length > 1) {
             let oldW: ViewRect = this.windows.find((item) => item.rect.isSelected);
             oldW.rect.isSelected = false;
+            this.SaveUpdateValueList(oldW.rect.serialNumber);
             let temp: ViewRect[] = this.windows.filter(item => item.rect.serialNumber !== Params.instance.switchSerialNumber);
             temp.push(newW);
             this._windows = temp;
         };
         newW.rect.isSelected = true;
         this.DefinePropStored(newW);
-        this.Draw();
+        this.Draw(true);
         this.UpdateTaskBar();
     }
 
@@ -1426,6 +1662,7 @@ export class ViewMWS {
             if (this.windows.length > 1) {
                 let oldW: ViewRect = this.windows.find((item) => item.rect.isSelected);
                 oldW.rect.isSelected = false;
+                this.SaveUpdateValueList(oldW.rect.serialNumber);
                 let temp: ViewRect[] = this.windows.filter(item => item.rect.serialNumber !== Params.instance.switchSerialNumber);
                 temp.push(newW);
                 this._windows = temp;
@@ -1433,6 +1670,7 @@ export class ViewMWS {
             newW.rect.isSelected = true;
             this.DefinePropStored(newW);
             this.Draw();
+            document.dispatchEvent(new CustomEvent(CustomEventPermissionsIsSelected, { bubbles: true, detail: { kind: newW.rect.kind, isAnimate: newW.rect.isAnimate } }));
         }
         this.UpdateTaskBar(commandWindowSelectedTaskBar);
     }
@@ -1449,28 +1687,34 @@ export class ViewMWS {
 
     private OnChangeSelectedWidth(e: CustomEvent) {
         this.windows[this.windows.length - 1].rect.width = e.detail.value;
+        this.SaveUpdateValueList(this.windows[this.windows.length - 1].rect.serialNumber);
         this.Draw();
     }
 
     private OnChangeSelectedHeight(e: CustomEvent) {
         this.windows[this.windows.length - 1].rect.height = e.detail.value;
+        this.SaveUpdateValueList(this.windows[this.windows.length - 1].rect.serialNumber);
         this.Draw();
     }
 
     private OnChangeSelectedLengthWave(e: CustomEvent) {
         this.windows[this.windows.length - 1].rect.waveParams.length = e.detail.value;
+        this.SaveUpdateValueList(this.windows[this.windows.length - 1].rect.serialNumber);
     }
 
     private OnChangeSelectedAmplitudeWave(e: CustomEvent) {
         this.windows[this.windows.length - 1].rect.waveParams.amplitude = e.detail.value;
+        this.SaveUpdateValueList(this.windows[this.windows.length - 1].rect.serialNumber);
     }
 
     private OnChangeSelectedPeriodWave(e: CustomEvent) {
         this.windows[this.windows.length - 1].rect.waveParams.period = e.detail.value;
+        this.SaveUpdateValueList(this.windows[this.windows.length - 1].rect.serialNumber);
     }
 
     private OnChangeSelectedShadingWave(e: CustomEvent) {
         this.windows[this.windows.length - 1].rect.waveParams.shading = e.detail.value;
+        this.SaveUpdateValueList(this.windows[this.windows.length - 1].rect.serialNumber);
     }
 
     private OnCloseClick(e: CustomEvent) {
@@ -1479,14 +1723,20 @@ export class ViewMWS {
         this._canvasEventHandlers.mouseMove.delete(serialNumber);
         this._canvasEventHandlers.mouseUp.delete(serialNumber);
         this._canvasEventHandlers.mouseClick.delete(serialNumber);
+        let w: ViewRect = this.windows.find(item => item.rect.serialNumber == serialNumber);
+        w.rect.isAnimate = false;
         let temp: ViewRect[] = this.windows.filter(item => item.rect.serialNumber != serialNumber);
         this._windows = temp;
         if (this.windows.length > 0 && !this.windows.some(item => item.rect.isSelected)) {
             this.windows[this.windows.length - 1].rect.isSelected = true;
             this.DefinePropStored(this.windows[this.windows.length - 1]);
+        } else {
+            this.DefinePropStored();
         }
         this.Draw();
         this.UpdateTaskBar();
+        this._localValueList.list = this._localValueList.list.filter(item => item.serialNumber != serialNumber);
+        this.SaveWindows();
     }
 
     private OnMinimizeClick(e: CustomEvent) {
@@ -1498,16 +1748,55 @@ export class ViewMWS {
     }
 
     private OnMaximizeClick(e: CustomEvent) {
-        console.log(`Maximize-Click-SN: ${e.detail.serialNumber}`);
+        let serialNumber: number = e.detail.serialNumber;
+        let w: ViewRect = this.windows.find(item => item.rect.serialNumber == serialNumber);
+        w.isMaximize = true;
+        this.DefinePropStored(w);
+        if (w instanceof ViewRect) {
+            w.rect.x = 0;
+            w.rect.y = 0;
+            w.rect.width = this.mwsArea.width;
+            w.rect.height = this.mwsArea.height;
+        }
+        w.statesKeeper.serialNumberHoverMaximize = 0;
+        this.Draw();
     }
 
     private OnRestoreDownClick(e: CustomEvent) {
-        console.log(`RestoreDown-Click-SN: ${e.detail.serialNumber}`);
+        let serialNumber: number = e.detail.serialNumber;
+        let w: ViewRect = this.windows.find(item => item.rect.serialNumber == serialNumber);
+        w.isMaximize = false;
+        if (w instanceof ViewRect) {
+            w.rect.x = w.recoveryParameters.x;
+            w.rect.y = w.recoveryParameters.y;
+            w.rect.width = w.recoveryParameters.width;
+            w.rect.height = w.recoveryParameters.height;
+        }
+        w.statesKeeper.serialNumberHoverRestoreDown = 0;
+        this.DefinePropStored(w);
+        this.Draw();
     }
 
-    private DefinePropStored(w: ViewRect) {
+    private OnChangeStatusWaveMotion(): void {
+        if (this.windows.length > 0) {
+            let w: ViewRect = this.windows.find(item => item.rect.isSelected);
+            w.rect.isAnimate = !w.rect.isAnimate;
+            if (w.rect.isAnimate) w.wave(this.context);
+        }
+    }
+
+    private DefinePropStored(w: ViewRect = null): void {
         let prop: WPropStored = new WPropStored();
+        if (w) {
+            prop = this.CreatePropStored(w);
+        }
         //
+        Params.instance.wPropStored = prop;
+        if (w) this.SaveSelected();
+    }
+
+    private CreatePropStored(w: ViewRect): WPropStored {
+        let prop: WPropStored = new WPropStored();
         prop.x = w.rect.x;
         prop.y = w.rect.y;
         prop.kind = w.rect.kind;
@@ -1526,14 +1815,6 @@ export class ViewMWS {
         prop.heightOriginal = w.rect.heightOriginal;
         prop.borderWidth = w.rect.borderWidth;
         prop.aspectRatio = w.rect.aspectRatio;
-        // from Flag
-        //prop.country = 
-        //prop.insideX= 
-        //prop.insideY= 
-        //prop.insideWidth= 
-        //prop.insideHeight= 
-        // from FlagImg
-        //prop.url= 
         // from ViewRect
         prop.headerHeight = w.headerHeight;
         prop.measureCaptionHead = w.measureCaptionHead;
@@ -1541,11 +1822,38 @@ export class ViewMWS {
         prop.measureCaptionMinimize = w.measureCaptionMinimize;
         prop.measureCaptionMaximize = w.measureCaptionMaximize;
         prop.measureCaptionRestoreDown = w.measureCaptionRestoreDown;
-        prop.fillType = w.fillType;
-        prop.colorFill = w.colorFill;
-        prop.colorStroke = w.colorStroke;
-        //
-        Params.instance.wPropStored = prop;
+        prop.fontsize = w.fontSize;
+        prop.isMaximize = w.isMaximize;
+        prop.isMinimize = w.isMinimize;
+        prop.recoveryParameters = JSON.parse(JSON.stringify(w.recoveryParameters));
+        if (w instanceof ViewRect) {
+            prop.fillType = w.fillType;
+            prop.colorFill = w.colorFill;
+            prop.colorStroke = w.colorStroke;
+            if (w.fillType[0] == FillTypeLinearGradient) {
+                prop.borderLinearDirection = w.propertiesGradientBorder.direction;
+                prop.insideLinearDirection = w.propertiesGradientInside.direction;
+                prop.borderColorScheme = w.propertiesGradientBorder.colorScheme.list.filter(() => true);
+                prop.insideColorScheme = w.propertiesGradientInside.colorScheme.list.filter(() => true);
+            } else if (w.fillType[0] == FillTypeRadialGradient) {
+                prop.borderRadialDirection = w.propertiesGradientBorder.radialDirection;
+                prop.insideRadialDirection = w.propertiesGradientInside.radialDirection;
+                prop.borderColorScheme = w.propertiesGradientBorder.colorScheme.list.filter(() => true);
+                prop.insideColorScheme = w.propertiesGradientInside.colorScheme.list.filter(() => true);
+            }
+        }
+        if (w instanceof ViewFlagImg) {
+            let wFlag = <ViewFlagImg>w;
+            // from Flag
+            prop.country = [wFlag.rect.country, wFlag.rect.url];
+            //prop.insideX= 
+            //prop.insideY= 
+            //prop.insideWidth= 
+            //prop.insideHeight= 
+            // from FlagImg
+            //prop.url= 
+        }
+        return prop;
     }
 
     private OnWindowChange(): void {
@@ -1619,12 +1927,17 @@ export class ViewMWS {
     }
 
     private FillTaskBar(canvas: HTMLCanvasElement, w: ViewRect) {
-        if (w.fillType[0] == FillTypeColor) {
-            Colors.instance.FillSchemeColor(canvas.getContext('2d'), w.colorFill);
-        } else if (w.fillType[0] == FillTypeLinearGradient) {
-            Colors.instance.FillSchemeLineGradient(canvas.getContext('2d'), w.propertiesGradientInside);
-        } else if (w.fillType[0] == FillTypeRadialGradient) {
-            Colors.instance.FillSchemeRadialGradient(canvas.getContext('2d'), w.propertiesGradientInside);
+        if (w.rect.kind[0] == NameKindFigureRectangle) {
+            if (w.fillType[0] == FillTypeColor) {
+                Colors.instance.FillSchemeColor(canvas.getContext('2d'), w.colorFill);
+            } else if (w.fillType[0] == FillTypeLinearGradient) {
+                Colors.instance.FillSchemeLineGradient(canvas.getContext('2d'), w.propertiesGradientInside);
+            } else if (w.fillType[0] == FillTypeRadialGradient) {
+                Colors.instance.FillSchemeRadialGradient(canvas.getContext('2d'), w.propertiesGradientInside);
+            }
+        } else if (w.rect.kind[0] == NameKindFigureFlag) {
+            let wFlag = <ViewFlagImg>w;
+            canvas.getContext('2d').drawImage(wFlag.rect.img, 0, 0, wFlag.rect.img.width, wFlag.rect.img.height, 0, 0, canvas.width, canvas.height);
         }
     }
 
@@ -1648,6 +1961,203 @@ export class ViewMWS {
     private GetFontSize(): number {
         let temp: number = Math.floor(this.mwsArea.height / 30);
         return temp < 10 ? 10 : temp;
+    }
+
+    private SaveSelected(): void {
+        if (this._localValueList.list.some(item => item.serialNumber == Params.instance.wPropStored.serialNumber)) {
+            let index: number = this._localValueList.list.findIndex(item => item.serialNumber == Params.instance.wPropStored.serialNumber);
+            this._localValueList.list[index] = JSON.parse(JSON.stringify(Params.instance.wPropStored));
+        } else {
+            this._localValueList.list.push(JSON.parse(JSON.stringify(Params.instance.wPropStored)));
+        }
+        this.SaveWindows();
+    }
+
+    private UpdateValueList(serialNumber: number) {
+        let index: number = this._localValueList.list.findIndex(item => item.serialNumber == serialNumber);
+        this._localValueList.list[index] = JSON.parse(JSON.stringify(this.CreatePropStored(this.windows.find(item => item.rect.serialNumber == serialNumber))));
+    }
+
+    private SaveWindows(): void {
+        localStorage.setItem(JSON.stringify(this._localKeyList), JSON.stringify(this._localValueList));
+    }
+
+    private LoadWindows(): void {
+        if (localStorage.getItem(JSON.stringify(this._localKeyList))) {
+            this._localValueList = JSON.parse(localStorage.getItem(JSON.stringify(this._localKeyList)));
+            let fontSize: number = this.GetFontSize();
+            for (let item of this._localValueList.list) {
+                switch (item.kind[0]) {
+                    case NameKindFigureRectangle: {
+                        // Estimating the size of the window title text
+                        this._context.font = `${fontSize}px Roboto Condensed`;
+                        let captionHead: string = `${item.serialNumber}-${NameKindFigureRectangle}`;
+                        let measureCaptionHead: TextMetrics = this.context.measureText(captionHead);
+                        this._context.font = `${fontSize}px ${nameFontSymbolClose}`;
+                        let measureCaptionClose: TextMetrics = this.context.measureText(symbolClose);
+                        this._context.font = `${fontSize}px ${nameFontSymbolMinimize}`;
+                        let measureCaptionMinimize: TextMetrics = this.context.measureText(symbolMinimize);
+                        this._context.font = `${fontSize}px ${nameFontSymbolMaximize}`;
+                        let measureCaptionMaximize: TextMetrics = this.context.measureText(symbolMaximize);
+                        this._context.font = `${fontSize}px ${nameFontSymbolRestoreDown}`;
+                        let measureCaptionRestoreDown: TextMetrics = this.context.measureText(symbolRestoreDown);
+                        let figure: ViewRect = new ViewRect(
+                            new Rect(
+                                item.x,
+                                item.y,
+                                item.width,
+                                item.height,
+                                item.borderWidth
+                            ),
+                            Colors.instance.randomColor,
+                            Colors.instance.randomColor
+                        )
+                        figure.rect.serialNumber = item.serialNumber;
+                        figure.rect.isSelected = item.isSelected;
+                        figure.isMaximize = item.isMaximize;
+                        figure.isMinimize = item.isMinimize;
+                        figure.measureCaptionHead = measureCaptionHead;
+                        figure.measureCaptionClose = measureCaptionClose;
+                        figure.measureCaptionMinimize = measureCaptionMinimize;
+                        figure.measureCaptionMaximize = measureCaptionMaximize;
+                        figure.measureCaptionRestoreDown = measureCaptionRestoreDown;
+                        figure.fontSize = fontSize;
+                        figure.SetRecoveryParameters();
+                        //
+                        figure.rect.waveParams.length = item.waveLength;
+                        figure.rect.waveParams.amplitude = item.waveAmplitude;
+                        figure.rect.waveParams.period = item.wavePeriod;
+                        figure.rect.waveParams.shading = item.waveShading;
+                        //
+                        figure.fillType = item.fillType;
+                        if (item.fillType[0] === FillTypeColor) {
+                            figure.colorStroke = item.colorStroke;
+                            figure.colorFill = item.colorFill;
+                        } else if (item.fillType[0] === FillTypeLinearGradient) {
+                            figure.propertiesGradientBorder.direction = item.borderLinearDirection;
+                            figure.propertiesGradientInside.direction = item.insideLinearDirection;
+                            item.borderColorScheme.forEach(scheme => figure.propertiesGradientBorder.colorScheme.Add(scheme));
+                            item.insideColorScheme.forEach(scheme => figure.propertiesGradientInside.colorScheme.Add(scheme));
+                        } else if (item.fillType[0] === FillTypeRadialGradient) {
+                            figure.propertiesGradientBorder.radialDirection = item.borderRadialDirection;
+                            figure.propertiesGradientInside.radialDirection = item.insideRadialDirection;
+                            item.borderColorScheme.forEach(scheme => figure.propertiesGradientBorder.colorScheme.Add(scheme));
+                            item.insideColorScheme.forEach(scheme => figure.propertiesGradientInside.colorScheme.Add(scheme));
+                        } else {
+                            figure.fillType = Array.from(FillType.entries()).find(item => item[0] === FillTypeColor);
+                            figure.colorStroke = Colors.instance.randomColor;
+                            figure.colorFill = Colors.instance.randomColor;
+                        }
+                        //
+                        this.windows.push(figure);
+                        this._canvasEventHandlers.mouseDown.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseDownHandler(x, y, canvas, sizeResizingZone, windows); });
+                        this._canvasEventHandlers.mouseMove.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseMoveHandler(x, y, canvas, sizeResizingZone, windows); });
+                        this._canvasEventHandlers.mouseUp.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseUpHandler(x, y, canvas, sizeResizingZone, windows); });
+                        this._canvasEventHandlers.mouseClick.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseClickHandler(x, y, canvas, sizeResizingZone, windows); });
+                        if (figure.rect.isSelected) {
+                            Params.instance.switchSerialNumber = figure.rect.serialNumber;
+                        }
+                        if (figure.isMaximize) {
+                            figure.rect.x = 0;
+                            figure.rect.y = 0;
+                            figure.rect.width = this.mwsArea.width;
+                            figure.rect.height = this.mwsArea.height;
+                        }
+                        break;
+                    }
+                    case NameKindFigureFlag: {
+                        // Estimating the size of the window title text
+                        this._context.font = `${fontSize}px Roboto Condensed`;
+                        let captionHead: string = `${item.serialNumber}-${item.country[0]}`;
+                        let measureCaptionHead: TextMetrics = this.context.measureText(captionHead);
+                        this._context.font = `${fontSize}px ${nameFontSymbolClose}`;
+                        let measureCaptionClose: TextMetrics = this.context.measureText(symbolClose);
+                        this._context.font = `${fontSize}px ${nameFontSymbolMinimize}`;
+                        let measureCaptionMinimize: TextMetrics = this.context.measureText(symbolMinimize);
+                        this._context.font = `${fontSize}px ${nameFontSymbolMaximize}`;
+                        let measureCaptionMaximize: TextMetrics = this.context.measureText(symbolMaximize);
+                        this._context.font = `${fontSize}px ${nameFontSymbolRestoreDown}`;
+                        let measureCaptionRestoreDown: TextMetrics = this.context.measureText(symbolRestoreDown);
+                        let figure: ViewFlagImg = new ViewFlagImg(
+                            new Rect(
+                                item.x,
+                                item.y,
+                                item.width,
+                                item.height,
+                                3
+                            ),
+                            item.country,
+                            item.aspectRatio
+                        )
+                        figure.rect.serialNumber = item.serialNumber;
+                        figure.rect.isSelected = item.isSelected;
+                        figure.isMaximize = item.isMaximize;
+                        figure.isMinimize = item.isMinimize;
+                        figure.measureCaptionHead = measureCaptionHead;
+                        figure.measureCaptionClose = measureCaptionClose;
+                        figure.measureCaptionMinimize = measureCaptionMinimize;
+                        figure.measureCaptionMaximize = measureCaptionMaximize;
+                        figure.measureCaptionRestoreDown = measureCaptionRestoreDown;
+                        figure.fontSize = fontSize;
+                        figure.SetRecoveryParameters();
+                        //
+                        figure.rect.waveParams.length = item.waveLength;
+                        figure.rect.waveParams.amplitude = item.waveAmplitude;
+                        figure.rect.waveParams.period = item.wavePeriod;
+                        figure.rect.waveParams.shading = item.waveShading;
+                        //
+                        this.windows.push(figure);
+                        this._canvasEventHandlers.mouseDown.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseDownHandler(x, y, canvas, sizeResizingZone, windows); });
+                        this._canvasEventHandlers.mouseMove.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseMoveHandler(x, y, canvas, sizeResizingZone, windows); });
+                        this._canvasEventHandlers.mouseUp.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseUpHandler(x, y, canvas, sizeResizingZone, windows); });
+                        this._canvasEventHandlers.mouseClick.set(item.serialNumber, (x: number, y: number, canvas: HTMLCanvasElement, sizeResizingZone: number, windows: ViewRect[]) => { return figure.mouseClickHandler(x, y, canvas, sizeResizingZone, windows); });
+                        if (figure.rect.isSelected) {
+                            Params.instance.switchSerialNumber = figure.rect.serialNumber;
+                        }
+                        if (figure.isMaximize) {
+                            figure.rect.x = 0;
+                            figure.rect.y = 0;
+                            figure.rect.width = this.mwsArea.width;
+                            figure.rect.height = this.mwsArea.height;
+                        }
+                        break;
+                    }
+                    default: {
+                        throw new Error('Load rrror: Undefined kind of window');
+                    }
+                }
+            }
+            // Bring the selected window to the front
+            if (Params.instance.switchSerialNumber > 0) {
+                let newW: ViewRect = this.windows.find((item) => item.rect.serialNumber === Params.instance.switchSerialNumber);
+                let temp: ViewRect[] = this.windows.filter(item => item.rect.serialNumber !== Params.instance.switchSerialNumber);
+                temp.push(newW);
+                this._windows = temp;
+                this.DefinePropStored(newW);
+                document.dispatchEvent(new CustomEvent(CustomEventPermissionsIsSelected, { bubbles: true, detail: { kind: newW.rect.kind, isAnimate: newW.rect.isAnimate } }));
+            }
+        } else {
+            // Create three random of elements
+            for (let i = 0; i < 3; i++) {
+                let kind: number = Colors.instance.RandomInt(0, 1);
+                if (kind == 0) { //Rectangle
+                    this.AddToList(Array.from(FigureKind.entries()).find((pair) => pair[0] === NameKindFigureRectangle));
+                } else if (kind == 1) { // Flag
+                    let country: Country = Countries[Colors.instance.RandomInt(0, Countries.length - 1)];
+                    this.AddToList(
+                        Array.from(FigureKind.entries()).find((pair) => pair[0] === NameKindFigureFlag),
+                        [country.name, country.url],
+                        country.aspectRatio
+                    );
+                }
+                this.DefinitionTask();
+            }
+        }
+    }
+
+    private SaveUpdateValueList(serialNumber: number) {
+        this.UpdateValueList(serialNumber);
+        this.SaveWindows();
     }
 
 }

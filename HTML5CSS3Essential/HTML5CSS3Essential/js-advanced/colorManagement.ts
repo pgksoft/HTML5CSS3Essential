@@ -7,7 +7,7 @@ export enum RadialDirection { Centre = 1, LeftRight = 2, RightLeft = 3, TopBotto
 export class GradientProperties {
     public direction: GradientDirection;
     public radialDirection: RadialDirection;
-    public colorScheme: GradientColorScheme;
+    public colorScheme: GradientColorScheme = new GradientColorScheme();
     GetGradientProperties(): GradientProperties {
         this.direction = Colors.instance.RandomInt(1, 4);
         this.colorScheme = new GradientColorScheme();

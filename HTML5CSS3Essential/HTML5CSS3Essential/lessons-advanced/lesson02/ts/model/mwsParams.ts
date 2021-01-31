@@ -1,9 +1,16 @@
 ﻿// Multi-System Window Modeling 
 // Model of Parameters
+import {
+    GradientDirection,
+    RadialDirection
+} from '../../../../js-advanced/colorManagement'
 
 // CustomEvents
 export const CustomEventOverFill: string = 'CustomEventOverFill';
 export const CustomEventIsSelected: string = 'CustomEventIsSelected';
+export const CustomEventPermissionsIsSelected: string = 'CustomEventPermissionsIsSelected';
+export const CustomEventChangeStatusWaveMotion: string = 'mwsm-change-status-wave-motion';
+
 
 export const ScaleArea: Map<string, number> = new Map([
     ['300 x 150', 300],
@@ -34,7 +41,13 @@ class LSValueParams {
     isOffScreenCanvas: boolean;
     isTrackProportionsAreaMotion: boolean;
     isTranslucentModal: boolean;
-    wPropStored: WPropStored = new WPropStored();
+}
+
+export class RecoveryParameters {
+    x: number = 0;
+    y: number = 0;
+    width: number = 0;
+    height: number = 0;
 }
 
 export class WPropStored {
@@ -58,7 +71,7 @@ export class WPropStored {
     borderWidth: number = 0;
     aspectRatio: number = 0;
     // from Flag
-    country: [string, number] = ['', -1];
+    country: [string, string] = ['', ''];
     insideX: number = 0;
     insideY: number = 0;
     insideWidth: number = 0;
@@ -66,6 +79,7 @@ export class WPropStored {
     // from FlagImg
     url: string = '';
     // from ViewRect
+    recoveryParameters: RecoveryParameters;
     headerHeight: number = 0;
     measureCaptionHead: TextMetrics;
     measureCaptionClose: TextMetrics;
@@ -75,6 +89,15 @@ export class WPropStored {
     fillType: [string, number] = FillType.entries().next().value;
     colorFill: string = '';
     colorStroke: string = '';
+    borderLinearDirection: GradientDirection = GradientDirection.LeftToRight;
+    insideLinearDirection: GradientDirection = GradientDirection.LeftToRight;
+    borderRadialDirection: RadialDirection = RadialDirection.Centre;
+    insideRadialDirection: RadialDirection = RadialDirection.Centre;
+    borderColorScheme: [number, string][] = [];
+    insideColorScheme: [number, string][] = [];
+    fontsize: number = 10;
+    isMaximize: boolean = false;
+    isMinimize: boolean = false;
 }
 
 class Default {
@@ -117,6 +140,7 @@ export class Params {
     private _canvasCoordinates: [number, number] = [0, 0];
     private _serialNumberTracking: number = 0;
     private _switchSerialNumber: number = 0;
+    private _sizeResizingZone: number = 0;
     // Fields - name user events
     private _nameEventFillChange: string = 'mwsFillChange';
     private _nameEventScaleChange: string = 'mwsScaleChange';
@@ -206,13 +230,13 @@ export class Params {
     }
     get switchSerialNumber(): number { return this._switchSerialNumber; }
     set switchSerialNumber(value: number) { this._switchSerialNumber = value; }
+    get sizeResizingZone(): number { return this._sizeResizingZone; }
+    set sizeResizingZone(value: number) { this._sizeResizingZone = value; }
     // Properties Model
     get wPropStored(): WPropStored { return this._wPropStored; }
     set wPropStored(value: WPropStored) {
         this._wPropStored = value;
-        this._localParms.wPropStored = this.wPropStored;
         document.dispatchEvent(new CustomEvent(this.nameEventWPropStored, { bubbles: true, detail: { value: value, event: this.nameEventWPropStored } }));
-        this.Save();
     }
 
     // Helpers

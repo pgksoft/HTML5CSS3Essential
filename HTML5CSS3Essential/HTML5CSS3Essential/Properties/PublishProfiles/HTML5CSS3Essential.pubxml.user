@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2020 01:20:32</publishTime>
     </File>
     <File Include="bin/HTML5CSS3Essential.dll">
-      <publishTime>10/27/2020 14:26:20</publishTime>
+      <publishTime>01/31/2021 15:40:27</publishTime>
     </File>
     <File Include="bin/HTML5CSS3Essential.pdb">
-      <publishTime>10/27/2020 14:26:20</publishTime>
+      <publishTime>01/31/2021 15:40:27</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -192,6 +192,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="css/styleCheckBox.css">
       <publishTime>09/04/2019 21:32:27</publishTime>
     </File>
+    <File Include="css/styleColorScheme.css">
+      <publishTime>12/21/2020 22:36:56</publishTime>
+    </File>
     <File Include="css/styleFooterIndex.css">
       <publishTime>03/23/2020 12:44:34</publishTime>
     </File>
@@ -296,6 +299,36 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="img-media-gallery/volume-mute.png">
       <publishTime>05/25/2020 22:39:42</publishTime>
+    </File>
+    <File Include="img-mwsm/belarus.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/box-24.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/germany.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/hungary.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/kazakhstan.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/poland.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/russia.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/ukraine.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/united-kingdom.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
+    </File>
+    <File Include="img-mwsm/usa.png">
+      <publishTime>01/02/2021 21:48:43</publishTime>
     </File>
     <File Include="img/alpha-c-circle-outline.png">
       <publishTime>09/04/2019 21:21:50</publishTime>
@@ -420,8 +453,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="img/menu-right-white.png">
       <publishTime>03/22/2020 12:49:39</publishTime>
     </File>
+    <File Include="img/mws-manager-push.png">
+      <publishTime>11/04/2020 12:34:06</publishTime>
+    </File>
+    <File Include="img/mws-manager.png">
+      <publishTime>11/04/2020 12:30:01</publishTime>
+    </File>
+    <File Include="img/mws-start.png">
+      <publishTime>01/02/2021 14:43:33</publishTime>
+    </File>
     <File Include="img/online-24.png">
       <publishTime>05/27/2019 14:21:06</publishTime>
+    </File>
+    <File Include="img/overfill-push.png">
+      <publishTime>11/24/2020 14:07:06</publishTime>
+    </File>
+    <File Include="img/overfill.png">
+      <publishTime>11/24/2020 14:06:41</publishTime>
     </File>
     <File Include="img/phone-icon.png">
       <publishTime>10/24/2019 00:08:34</publishTime>
@@ -496,37 +544,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2019 22:41:17</publishTime>
     </File>
     <File Include="Index-advanced.html">
-      <publishTime>10/26/2020 16:11:55</publishTime>
+      <publishTime>01/31/2021 22:31:17</publishTime>
     </File>
     <File Include="Index-essential.html">
-      <publishTime>10/26/2020 16:10:02</publishTime>
+      <publishTime>01/31/2021 22:30:09</publishTime>
     </File>
     <File Include="index-ts.html">
-      <publishTime>10/26/2020 16:10:39</publishTime>
+      <publishTime>01/31/2021 22:32:14</publishTime>
     </File>
     <File Include="Index.html">
-      <publishTime>10/26/2020 16:08:29</publishTime>
+      <publishTime>01/31/2021 22:29:03</publishTime>
     </File>
     <File Include="js-advanced/clipPath.dist.js">
-      <publishTime>10/26/2020 00:00:45</publishTime>
+      <publishTime>01/31/2021 15:56:46</publishTime>
     </File>
     <File Include="js-advanced/clipPath.js">
       <publishTime>01/24/2020 17:41:19</publishTime>
     </File>
     <File Include="js-advanced/colorManagement.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="js-advanced/colorManagement.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="js-advanced/IamWorking.dist.js">
-      <publishTime>10/26/2020 00:00:45</publishTime>
+      <publishTime>01/31/2021 15:56:45</publishTime>
     </File>
     <File Include="js-advanced/IamWorking.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="js-advanced/IamWorking.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="js-advanced/media.dist.js">
       <publishTime>06/12/2020 23:31:51</publishTime>
@@ -538,19 +586,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/21/2020 14:52:09</publishTime>
     </File>
     <File Include="js-advanced/_pgkUtils.dist.js">
-      <publishTime>10/26/2020 00:00:45</publishTime>
+      <publishTime>01/31/2021 15:56:45</publishTime>
     </File>
     <File Include="js-advanced/_pgkUtils.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="js-advanced/_pgkUtils.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="js/detailsForEdge.js">
       <publishTime>06/18/2019 16:36:13</publishTime>
     </File>
     <File Include="js/device.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="js/device.js">
       <publishTime>01/15/2016 04:04:10</publishTime>
@@ -559,13 +607,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2019 23:42:09</publishTime>
     </File>
     <File Include="js/index.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="js/index.js">
       <publishTime>01/26/2020 23:41:12</publishTime>
     </File>
     <File Include="js/indexLesson.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="js/indexLesson.js">
       <publishTime>05/20/2020 23:17:10</publishTime>
@@ -574,7 +622,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/20/2019 02:08:22</publishTime>
     </File>
     <File Include="js/shortDescription.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="js/shortDescription.js">
       <publishTime>05/20/2020 22:32:15</publishTime>
@@ -778,67 +826,136 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2020 22:45:28</publishTime>
     </File>
     <File Include="lessons-advanced/lesson01/ts/travelAgency.dist.js">
-      <publishTime>10/26/2020 00:00:46</publishTime>
+      <publishTime>01/31/2021 15:56:49</publishTime>
     </File>
     <File Include="lessons-advanced/lesson01/ts/travelAgency.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-advanced/lesson01/ts/travelAgency.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/css/brownianMotionSimulation.css">
-      <publishTime>10/16/2020 16:28:04</publishTime>
+      <publishTime>12/25/2020 18:17:15</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/css/mwsModeling.css">
+      <publishTime>01/17/2021 22:42:11</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/css/radialGradient.css">
+      <publishTime>12/25/2020 13:54:40</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/index02.html">
-      <publishTime>10/26/2020 21:32:21</publishTime>
+      <publishTime>01/31/2021 21:47:44</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/Task01.html">
-      <publishTime>10/26/2020 21:32:41</publishTime>
+      <publishTime>01/31/2021 22:34:55</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/Task02.html">
-      <publishTime>10/26/2020 21:32:55</publishTime>
+      <publishTime>01/31/2021 21:51:18</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/Task03.html">
+      <publishTime>01/31/2021 15:40:13</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/bmParams.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/bmParams.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/bmSimulation.dist.js">
-      <publishTime>10/26/2020 00:00:47</publishTime>
+      <publishTime>01/31/2021 15:56:50</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/bmSimulation.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/bmSimulation.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/model/brownianMotion.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/model/brownianMotion.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/modelMWS.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/modelMWS.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/mwsParams.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/mwsParams.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/rgItems.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/rgItems.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/rgParams.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/model/rgParams.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/mwsModeling.dist.js">
+      <publishTime>01/31/2021 15:56:50</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/mwsModeling.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/mwsModeling.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/rgControl.dist.js">
+      <publishTime>01/31/2021 15:56:50</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/rgControl.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/rgControl.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/view/bmAsyncCanvas.dist.js">
-      <publishTime>10/26/2020 00:00:39</publishTime>
+      <publishTime>01/31/2021 15:56:38</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/view/bmAsyncCanvas.js">
-      <publishTime>10/25/2020 23:12:19</publishTime>
+      <publishTime>12/26/2020 15:26:57</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/view/viewBrownianMotion.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/view/viewBrownianMotion.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-advanced/lesson02/ts/view/viewBrownianMotionClone.js">
       <publishTime>10/19/2020 19:50:35</publishTime>
     </File>
+    <File Include="lessons-advanced/lesson02/ts/view/viewMWS.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/view/viewMWS.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/view/viewMwsParams.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/view/viewMwsParams.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/view/viewRgParams.js">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
+    <File Include="lessons-advanced/lesson02/ts/view/viewRgParams.js.map">
+      <publishTime>01/31/2021 15:40:26</publishTime>
+    </File>
     <File Include="lessons-advanced/ts/indexAdvancedLesson.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-advanced/ts/indexAdvancedLesson.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-essential/lesson01/AdditionalTask.html">
       <publishTime>05/21/2020 00:04:36</publishTime>
@@ -943,13 +1060,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2020 00:22:46</publishTime>
     </File>
     <File Include="lessons-essential/lesson03/js/dragdrop.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="lessons-essential/lesson03/js/dragdrop.js">
       <publishTime>04/14/2019 18:31:54</publishTime>
     </File>
     <File Include="lessons-essential/lesson03/js/geolocation.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="lessons-essential/lesson03/js/geolocation.js">
       <publishTime>04/08/2019 10:02:22</publishTime>
@@ -1969,22 +2086,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2020 15:13:45</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/js/AddTask.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/js/AddTask.js">
       <publishTime>09/27/2020 21:07:45</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/js/RoundRange.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/js/RoundRange.js">
       <publishTime>05/10/2019 16:41:48</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/js/Task02.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/js/Task02.js">
-      <publishTime>05/21/2020 13:39:47</publishTime>
+      <publishTime>11/23/2020 14:38:31</publishTime>
     </File>
     <File Include="lessons-essential/lesson04/RoundRange.html">
       <publishTime>05/21/2020 11:24:11</publishTime>
@@ -2050,37 +2167,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2020 15:14:19</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/addTask.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/addTask.js">
       <publishTime>05/20/2019 16:32:15</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/calculator.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/calculator.js">
       <publishTime>05/21/2020 15:33:36</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/offline.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/offline.js">
       <publishTime>06/07/2020 21:50:00</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/online.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/online.js">
       <publishTime>06/07/2020 21:49:43</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/task02.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/task02.js">
       <publishTime>05/21/2020 15:06:26</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/workerArray.dist.js">
-      <publishTime>10/26/2020 00:00:42</publishTime>
+      <publishTime>01/31/2021 15:56:41</publishTime>
     </File>
     <File Include="lessons-essential/lesson05/js/workerArray.js">
       <publishTime>05/22/2019 09:57:47</publishTime>
@@ -2143,7 +2260,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2020 16:22:05</publishTime>
     </File>
     <File Include="lessons-essential/lesson06/js/colorsAnimation.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="lessons-essential/lesson06/js/colorsAnimation.js">
       <publishTime>05/21/2020 16:28:48</publishTime>
@@ -2299,13 +2416,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2020 16:50:49</publishTime>
     </File>
     <File Include="lessons-essential/lesson09/js/addTask.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="lessons-essential/lesson09/js/addTask.js">
       <publishTime>07/20/2019 15:25:11</publishTime>
     </File>
     <File Include="lessons-essential/lesson09/js/playingCards.dist.js">
-      <publishTime>10/26/2020 00:00:36</publishTime>
+      <publishTime>01/31/2021 15:56:33</publishTime>
     </File>
     <File Include="lessons-essential/lesson09/js/playingCards.js">
       <publishTime>07/30/2019 18:23:18</publishTime>
@@ -2527,7 +2644,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2020 17:08:28</publishTime>
     </File>
     <File Include="lessons-most-interesting/advanced.html">
-      <publishTime>10/27/2020 14:26:11</publishTime>
+      <publishTime>01/15/2021 21:52:57</publishTime>
     </File>
     <File Include="lessons-most-interesting/css/media-api-controls.css">
       <publishTime>06/14/2020 22:15:12</publishTime>
@@ -2539,13 +2656,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/02/2020 10:23:57</publishTime>
     </File>
     <File Include="lessons-most-interesting/essential.html">
-      <publishTime>09/02/2020 22:17:24</publishTime>
+      <publishTime>01/15/2021 18:42:49</publishTime>
     </File>
     <File Include="lessons-most-interesting/testSliderWidget.html">
       <publishTime>06/14/2020 22:09:13</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts-fundamentals.html">
-      <publishTime>09/02/2020 22:17:04</publishTime>
+      <publishTime>01/15/2021 18:45:26</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts/testMediaSlider.js">
       <publishTime>06/13/2020 23:28:37</publishTime>
@@ -2557,19 +2674,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/12/2020 23:31:52</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts/ts-essential-gallery.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts/ts-essential-gallery.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts/ts-fundamentals-gallery.dist.js">
       <publishTime>06/12/2020 23:31:52</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts/ts-fundamentals-gallery.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-most-interesting/ts/ts-fundamentals-gallery.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
+    </File>
+    <File Include="lessons-most-interesting/video/advanced/adv-lesson1-AddTask-compressed.mp4">
+      <publishTime>01/15/2021 21:50:27</publishTime>
     </File>
     <File Include="lessons-most-interesting/video/advanced/adv-lesson1-AddTask.jpg">
       <publishTime>08/06/2020 01:03:26</publishTime>
@@ -2583,6 +2703,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="lessons-most-interesting/video/advanced/adv-lesson1-Task2.mp4">
       <publishTime>09/02/2020 12:26:02</publishTime>
     </File>
+    <File Include="lessons-most-interesting/video/advanced/adv-lesson2-task01-compressed.mp4">
+      <publishTime>01/15/2021 18:07:48</publishTime>
+    </File>
     <File Include="lessons-most-interesting/video/advanced/adv-lesson2-task01.jpg">
       <publishTime>10/26/2020 16:25:51</publishTime>
     </File>
@@ -2595,11 +2718,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="lessons-most-interesting/video/essential/est-lesson3-Task3.mp4">
       <publishTime>06/04/2020 22:09:21</publishTime>
     </File>
+    <File Include="lessons-most-interesting/video/essential/est-lesson4-AddTask-compressed.mp4">
+      <publishTime>01/15/2021 18:21:06</publishTime>
+    </File>
     <File Include="lessons-most-interesting/video/essential/est-lesson4-AddTask.jpg">
       <publishTime>06/05/2020 13:28:50</publishTime>
     </File>
     <File Include="lessons-most-interesting/video/essential/est-lesson4-AddTask.mp4">
       <publishTime>06/05/2020 13:03:33</publishTime>
+    </File>
+    <File Include="lessons-most-interesting/video/essential/est-lesson4-Task2-compressed.mp4">
+      <publishTime>01/15/2021 18:24:04</publishTime>
     </File>
     <File Include="lessons-most-interesting/video/essential/est-lesson4-Task2.jpg">
       <publishTime>06/05/2020 21:17:54</publishTime>
@@ -2661,6 +2790,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="lessons-most-interesting/video/ts-fundamentals/ts-lesson3-Task2.mp4">
       <publishTime>06/03/2020 14:23:07</publishTime>
     </File>
+    <File Include="lessons-most-interesting/video/ts-fundamentals/ts-ps-compressed.mp4">
+      <publishTime>01/15/2021 18:28:17</publishTime>
+    </File>
     <File Include="lessons-most-interesting/video/ts-fundamentals/ts-ps.jpg">
       <publishTime>06/04/2020 17:19:05</publishTime>
     </File>
@@ -2698,13 +2830,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/23/2020 23:04:29</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson01/ts/independentTask.dist.js">
-      <publishTime>10/26/2020 00:00:45</publishTime>
+      <publishTime>01/31/2021 15:56:45</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson01/ts/independentTask.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson01/ts/independentTask.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/AdditionalTask.html">
       <publishTime>05/23/2020 23:05:26</publishTime>
@@ -3415,22 +3547,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/26/2020 16:15:09</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/addTask.dist.js">
-      <publishTime>10/26/2020 00:00:46</publishTime>
+      <publishTime>01/31/2021 15:56:49</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/addTask.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/addTask.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/cars.dist.js">
-      <publishTime>10/26/2020 00:00:46</publishTime>
+      <publishTime>01/31/2021 15:56:49</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/cars.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/cars.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson02/ts/task2.js">
       <publishTime>03/11/2020 14:58:00</publishTime>
@@ -3454,40 +3586,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/26/2020 16:16:27</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/addTask.dist.js">
-      <publishTime>10/26/2020 00:00:46</publishTime>
+      <publishTime>01/31/2021 15:56:49</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/addTask.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/addTask.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/dictionary.dist.js">
-      <publishTime>10/26/2020 00:00:46</publishTime>
+      <publishTime>01/31/2021 15:56:49</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/dictionary.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/dictionary.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/_dicDefinitionEditMoodalForm.dist.js">
       <publishTime>05/18/2020 22:32:18</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/_dicDefinitionEditMoodalForm.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/_dicDefinitionEditMoodalForm.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/_firstWebDB.dist.js">
       <publishTime>05/18/2020 22:32:18</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/_firstwebdb.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson03/ts/_firstwebdb.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:26</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/lesson04/css/styleIndex04.css">
       <publishTime>05/24/2020 12:15:56</publishTime>
@@ -3496,37 +3628,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2020 18:10:53</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/ts/indexTSLesson.dist.js">
-      <publishTime>10/26/2020 00:00:45</publishTime>
+      <publishTime>01/31/2021 15:56:45</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/ts/indexTSLesson.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="lessons-ts-fundamentals/ts/indexTSLesson.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="MySlider/css/mySlider.css">
       <publishTime>08/30/2020 12:21:38</publishTime>
     </File>
     <File Include="MySlider/mySlider.js">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="MySlider/mySlider.js.map">
-      <publishTime>10/26/2020 00:00:28</publishTime>
+      <publishTime>01/31/2021 15:40:25</publishTime>
     </File>
     <File Include="package.json">
       <publishTime>08/15/2020 22:38:52</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/27/2020 14:39:56</publishTime>
+      <publishTime>01/31/2021 22:35:21</publishTime>
     </File>
     <File Include="tsconfig.json">
       <publishTime>10/15/2020 01:09:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/26/2020 00:13:57</publishTime>
+      <publishTime>01/31/2021 15:54:47</publishTime>
     </File>
     <File Include="webpack.config.js">
-      <publishTime>10/25/2020 23:49:19</publishTime>
+      <publishTime>01/31/2021 15:19:14</publishTime>
     </File>
   </ItemGroup>
 </Project>

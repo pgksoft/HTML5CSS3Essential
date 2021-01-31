@@ -299,13 +299,15 @@
     <Content Include="lessons-advanced\lesson01\Task2.aspx" />
     <Content Include="lessons-advanced\lesson01\ts\travelAgency.dist.js" />
     <Content Include="lessons-advanced\lesson02\css\brownianMotionSimulation.css" />
-    <Content Include="lessons-advanced\lesson02\css\mwsMdeling.css" />
+    <Content Include="lessons-advanced\lesson02\css\mwsModeling.css" />
     <Content Include="lessons-advanced\lesson02\css\radialGradient.css" />
     <Content Include="lessons-advanced\lesson02\index02.html" />
     <Content Include="lessons-advanced\lesson02\Task01.html" />
     <Content Include="lessons-advanced\lesson02\Task02.html" />
     <Content Include="lessons-advanced\lesson02\Task03.html" />
     <Content Include="lessons-advanced\lesson02\ts\bmSimulation.dist.js" />
+    <Content Include="lessons-advanced\lesson02\ts\mwsModeling.dist.js" />
+    <Content Include="lessons-advanced\lesson02\ts\rgControl.dist.js" />
     <Content Include="lessons-advanced\lesson02\ts\view\bmAsyncCanvas.dist.js" />
     <Content Include="lessons-advanced\lesson02\ts\view\bmAsyncCanvas.js" />
     <Content Include="lessons-advanced\ts\indexAdvancedLesson.js" />

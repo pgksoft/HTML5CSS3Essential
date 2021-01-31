@@ -1,13 +1,13 @@
-﻿import { isDisplayBlock, Confirm } from '../../../js-advanced/_pgkUtils.js'
+﻿import { isDisplayBlock, Confirm } from '../../../js-advanced/_pgkUtils'
 import {
     Params,
     CustomEventOverFill,
     FillingDirectionRandom,
     FillingDirectionManual
-} from './model/rgParams.js'
-import { RgDomItems } from './model/rgItems.js'
-import { ViewRGParmsDefinition } from './view/viewRgParams.js'
-import { Colors, GradientColorScheme, RadialParams, RadialDirection } from '../../../js-advanced/colorManagement.js';
+} from './model/rgParams'
+import { RgDomItems } from './model/rgItems'
+import { ViewRGParmsDefinition } from './view/viewRgParams'
+import { Colors, GradientColorScheme } from '../../../js-advanced/colorManagement';
 
 class RGLearning {
     private constructor(

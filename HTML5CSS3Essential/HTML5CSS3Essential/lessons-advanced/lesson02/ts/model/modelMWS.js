@@ -24,8 +24,40 @@ export const FigureKind = new Map([
     [NameKindFigureCircle, 3],
     [NameKindFigureFlag, 4]
 ]);
+export const NameCountryBelarus = 'Belarus';
+export const NameCountryGermany = 'Germany';
+export const NameCountryHungary = 'Hungary';
+export const NameCountryKazakhstan = 'Kazakhstan';
+export const NameCountryPoland = 'Poland';
+export const NameCountryRussia = 'Russia';
+export const NameCountryUkraine = 'Ukraine';
+export const NameCountryUnitedKingdom = 'United Kingdom';
 export const NameCountryUSA = 'USA';
-export class RecoveryParameters {
+export class Country {
+    constructor(name, url, aspectRatio) {
+        this.name = name;
+        this.url = url;
+        this.aspectRatio = aspectRatio;
+    }
+}
+export const Countries = [
+    new Country(NameCountryBelarus, '../../img-mwsm/belarus.png', 2),
+    new Country(NameCountryGermany, '../../img-mwsm/germany.png', 1.67),
+    new Country(NameCountryHungary, '../../img-mwsm/hungary.png', 1.5),
+    new Country(NameCountryKazakhstan, '../../img-mwsm/kazakhstan.png', 2),
+    new Country(NameCountryPoland, '../../img-mwsm/poland.png', 1.6),
+    new Country(NameCountryRussia, '../../img-mwsm/russia.png', 2),
+    new Country(NameCountryUkraine, '../../img-mwsm/ukraine.png', 2),
+    new Country(NameCountryUnitedKingdom, '../../img-mwsm/united-kingdom.png', 2),
+    new Country(NameCountryUSA, '../../img-mwsm/usa.png', 1.9)
+];
+export class RectWave {
+    constructor() {
+        this.x = 0;
+        this.y = 0;
+        this.width = 0;
+        this.height = 0;
+    }
 }
 export class Point {
     constructor(x, y) {
@@ -200,17 +232,15 @@ export class FlagImg extends Flag {
     constructor(x, y, width, country, url, aspectRatio = 2) {
         super(x, y, width, country);
         this._url = '';
+        this._isLoad = false;
+        this._img = new Image();
         this._url = url;
         this.aspectRatio = aspectRatio;
-        this.calcStandardProportions();
+        this.img.addEventListener('load', () => { this._isLoad = true; }, false);
+        this.img.src = this.url;
     }
     get url() { return this._url; }
-    calcStandardProportions() {
-        this.height = Math.floor(this.width / this.aspectRatio);
-        this.insideX = this.x + this.borderWidth;
-        this.insideY = this.y + this.borderWidth;
-        this.insideWidth = Math.ceil(this.width - this.borderWidth * 2);
-        this.insideHeight = Math.ceil(this.height - this.borderWidth * 2);
-    }
+    get isLoad() { return this._isLoad; }
+    get img() { return this._img; }
 }
 //# sourceMappingURL=modelMWS.js.map
