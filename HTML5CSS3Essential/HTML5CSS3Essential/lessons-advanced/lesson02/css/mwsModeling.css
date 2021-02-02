@@ -1,0 +1,591 @@
+﻿/* Multi-Window System Modeling */
+
+.parms {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0;
+    background-color: hsl(39, 85%, 95%);
+    border-radius: 7px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 0.5%;
+}
+
+    .parms .set {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0.5% 0.5% 0.5%;
+    }
+
+        .parms .set #is-use-off-screen-canvas {
+            cursor: default;
+            width: 40px;
+            margin: 0;
+            margin-top: 1%;
+            margin-right: 8px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 90%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid hsl(0,0%,80%);
+        }
+
+            .parms .set #is-use-off-screen-canvas[data-use='switch-on'] {
+                background-image: url('../../../img/async-active.png');
+                border-color: magenta;
+                box-shadow: 2px 2px 5px hsla(300, 100%, 63%, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            }
+
+            .parms .set #is-use-off-screen-canvas[data-use=yes] {
+                background-image: url('../../../img/async.png');
+                box-shadow: 2px 2px 5px hsla(0, 0%, 70%, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            }
+
+            .parms .set #is-use-off-screen-canvas[data-use=no] {
+                background-image: url('../../../img/async-off.png');
+            }
+
+        .parms .set .settings {
+            display: flex;
+            margin: 0;
+            margin-right: 16px;
+            padding: 0.6% 1% 0.6% 3.5%;
+            border-radius: 999px;
+            transition: .15s;
+            box-sizing: border-box;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            background-color: rgba(255, 255, 255, 0.50);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 5%;
+            background-size: auto 90%;
+            color: hsl(0,0%,30%);
+            white-space: nowrap;
+            margin-top: 1%;
+        }
+
+            .parms .set .settings:hover {
+                background-color: hsl(39,100%,90%);
+            }
+
+            .parms .set .settings:active {
+                box-shadow: inset 1px 1px 2px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                color: hsl(0,0%,0%);
+            }
+
+            .parms .set .settings[id=settings] {
+                background-image: url('../../../img/cog-outline.png');
+            }
+
+                .parms .set .settings[id=settings]:active {
+                    background-image: url('../../../img/cog-outline-push.png');
+                }
+
+            .parms .set .settings[id=redraw] {
+                background-image: url('../../../img/restore-24.png');
+            }
+
+                .parms .set .settings[id=redraw]:active {
+                    background-image: url('../../../img/restore-24-push.png');
+                }
+
+            .parms .set .settings[id=overfill] {
+                background-image: url('../../../img/overfill.png');
+            }
+
+                .parms .set .settings[id=overfill]:active {
+                    background-image: url('../../../img/overfill-push.png');
+                }
+
+            .parms .set .settings[id="window-manager"] {
+                background-image: url('../../../img/mws-manager.png');
+            }
+
+                .parms .set .settings[id="window-manager"]:active {
+                    background-image: url('../../../img/mws-manager-push.png');
+                }
+
+            .parms .set .settings[id=launch][data-simulation=isStop] {
+                background-image: url('../../../img/rocket-outline.png');
+            }
+
+                .parms .set .settings[id=launch][data-simulation=isStop]:active {
+                    background-image: url('../../../img/rocket-outline-push.png');
+                }
+
+            .parms .set .settings[id=launch][data-simulation=isMotion] {
+                background-image: url('../../../img/rocket-launch-outline.png');
+            }
+
+                .parms .set .settings[id=launch][data-simulation=isMotion]:active {
+                    background-image: url('../../../img/rocket-launch-outline-push.png');
+                }
+
+    .parms .show {
+        display: flex;
+        box-sizing: border-box;
+        border-top: 1px solid white;
+        margin-top: 1%;
+        padding: 0.5%;
+        flex-wrap: wrap;
+        font-family: 'Roboto Condensed';
+    }
+
+        .parms .show p {
+            margin: 0;
+            line-height: 2;
+        }
+
+            .parms .show p span[data-menu] {
+                font-family: Roboto;
+                color: blueviolet;
+                font-weight: bold;
+            }
+
+            .parms .show p span[data-range] {
+                font-family: Roboto;
+                color: darkblue;
+                font-weight: normal;
+            }
+
+            .parms .show p span[data-menu], .parms .show p span[data-range] {
+                background: linear-gradient(to top, hsla(39, 85%, 95%,0.2), hsla(39, 85%, 95%,0.8));
+                box-shadow: 2px 2px 3px rgba(154, 147, 140, 0.5), 1px 1px 3px rgba(255, 255, 255, 1);
+            }
+
+            .parms .show p span[contenteditable=true] {
+                box-sizing: border-box;
+                border-radius: 3px;
+                border: 1px outset hsl(0,0%,80%);
+                outline: none;
+                max-width: 100px;
+            }
+
+                .parms .show p span[contenteditable=true]:hover {
+                    border-style: inset;
+                }
+
+                .parms .show p span[contenteditable=true]:focus {
+                    border-style: inset;
+                }
+
+                .parms .show p span[contenteditable=ture][data-validate=true]:focus {
+                    background-color: hsl(90,100%,87%);
+                }
+
+                .parms .show p span[contenteditable=true][data-validate=false]:focus {
+                    background-color: hsl(60,100%,50%);
+                    border-color: hsl(0,100%,50%);
+                }
+
+            .parms .show p span[data-menu], .parms .show p span[data-range] {
+                cursor: pointer;
+                white-space: nowrap;
+                border-radius: 9999px;
+                transition: .15s;
+                padding: 4px 8px;
+            }
+
+                .parms .show p span[data-menu]:hover, .parms .show p span[data-range]:hover {
+                    background: linear-gradient(to top, hsl(30,100%,80%), white);
+                    box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                }
+
+                .parms .show p span[data-menu]:active, .parms .show p span[data-range]:active {
+                    background: linear-gradient(to top, hsl(30,100%,80%), white);
+                    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                }
+
+#menu-select {
+    position: fixed;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 40%;
+    max-height: 50%;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid darkgray;
+    padding: 8px;
+    transition: .03s;
+    background-color: hsla(0,100%,100%,0.73);
+}
+
+    #menu-select[data-display=false] {
+        display: none;
+    }
+
+    #menu-select[data-display=true] {
+        display: flex;
+    }
+
+.pop-up-range {
+    overflow: hidden;
+}
+
+.range-wrapper {
+    width: 20px;
+    height: 150px;
+    padding: 0;
+}
+
+    .range-wrapper input {
+        width: 150px;
+        height: 20px;
+        margin: 0;
+        transform-origin: 75px 75px;
+        transform: rotate(-90deg);
+    }
+
+.multi-window-system-modeling-container {
+    width: 99%;
+    margin: 0 auto;
+    height: 600px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+#mwsm-area {
+    width: 100%;
+    height: 100%;
+}
+
+    #mwsm-area[data-cursor=default] {
+        cursor: default;
+    }
+
+    #mwsm-area[data-cursor=pointer] {
+        cursor: pointer;
+    }
+
+    #mwsm-area[data-cursor=ew-resize] {
+        cursor: ew-resize; /* East-West Восток-Запад */
+    }
+
+    #mwsm-area[data-cursor=ns-resize] {
+        cursor: ns-resize; /* North-South Север-Юг */
+    }
+
+    #mwsm-area[data-cursor=nesw-resize] {
+        cursor: nesw-resize; /* North-East/South-West Север-Восток/Юг-Запад */
+    }
+
+    #mwsm-area[data-cursor=nwse-resize] {
+        cursor: nwse-resize; /* North-West/South-East Север-Запад/Юг-Восток */
+    }
+
+.mwsm-control {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 99%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    transition: .3s;
+}
+
+    .mwsm-control .mwsm-start {
+        padding: .1%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+    }
+
+        .mwsm-control .mwsm-start:hover {
+            background-color: hsl(0,0%,90%);
+            border: 1px outset hsl(0,0%,80%);
+        }
+
+        .mwsm-control .mwsm-start:active {
+            background-color: lightgray;
+            border-style: inset;
+        }
+
+    .mwsm-control .mwsm-task-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: 0.3s;
+        overflow: hidden;
+    }
+
+        .mwsm-control .mwsm-task-bar .mwsm-task {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            transition: 0.3s;
+            color: darkgray;
+            box-sizing: border-box;
+            border: 2px solid transparent;
+            border-bottom-color: lightgray;
+            padding: 1px;
+            margin-right: 1px;
+            user-select: none;
+        }
+
+            .mwsm-control .mwsm-task-bar .mwsm-task:hover {
+                background-color: hsla(30,100%,80%,1);
+                border-bottom-color: hsla(30,100%,50%,1);
+            }
+
+            .mwsm-control .mwsm-task-bar .mwsm-task[data-selected=true] {
+                color: black;
+                border-bottom-color: black;
+            }
+
+            .mwsm-control .mwsm-task-bar .mwsm-task .likeness {
+                width: 40px;
+                height: 22px;
+                box-sizing: border-box;
+            }
+
+                .mwsm-control .mwsm-task-bar .mwsm-task .likeness canvas {
+                    width: 100%;
+                    height: 100%;
+                }
+
+#menu-start {
+    position: fixed;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: auto;
+    max-width: 70%;
+    max-height: 70%;
+    padding: 0.5%;
+    box-sizing: border-box;
+    border: 1px solid darkgray;
+    transition: .03s;
+    background-color: hsla(210,80%,60%,1);
+}
+
+    #menu-start[data-display=false] {
+        display: none;
+    }
+
+    #menu-start[data-display=true] {
+        display: flex;
+    }
+
+    #menu-start .menu-task {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: hsla(210,80%,70%,1);
+        color: white;
+        margin: 1% 0;
+        padding: 1%;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        transition: .03s;
+        user-select: none;
+    }
+
+        #menu-start .menu-task:hover {
+            border-color: hsla(210,100%,90%,1);
+        }
+
+        #menu-start .menu-task:active {
+            border-color: transparent;
+            background: #437EFD;
+            background: -webkit-radial-gradient(center, #437EFD, #4A668D);
+            background: -moz-radial-gradient(center, #437EFD, #4A668D);
+            background: radial-gradient(ellipse at center, #437EFD, #4A668D);
+        }
+
+        #menu-start .menu-task .icon {
+            display: flex;
+            padding-left: 3%;
+            padding-right: 5%;
+        }
+
+            #menu-start .menu-task .icon img {
+                height: 24px;
+            }
+
+@media screen and (max-width: 1200px) {
+    .parms .set .settings {
+        padding-right: 2%;
+        padding-left: 4%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .parms .set .settings {
+        font-size: 0.9rem;
+        padding-right: 2%;
+        padding-left: 4%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 5%;
+        }
+}
+
+@media screen and (max-width: 800px) {
+    .parms .set .settings {
+        font-size: 0.9rem;
+        padding-right: 3%;
+        padding-left: 5%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 10%;
+        }
+}
+
+@media screen and (max-width: 600px) {
+    .parms .set .settings {
+        padding-right: 12%;
+        padding-left: 6%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 17%;
+        }
+}
+
+@media screen and (max-width: 550px) {
+    .parms .set .settings {
+        padding-right: 15%;
+        padding-left: 6.5%;
+    }
+}
+
+.w3-modal {
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.w3-modal-content {
+    max-height: 85%;
+    margin: 5% auto;
+}
+
+.w3-container .parameters {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Roboto Condensed';
+}
+
+    .w3-container .parameters .set {
+        flex-basis: 49.5%;
+    }
+
+        .w3-container .parameters .set .subset {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+            .w3-container .parameters .set .subset .sub-one, .w3-container .parameters .set .subset .sub-two {
+                flex-basis: 49.5%;
+            }
+
+@media screen and (max-width: 700px) {
+    .w3-container .parameters {
+        flex-wrap: wrap;
+    }
+
+        .w3-container .parameters .set {
+            flex-basis: 100%;
+        }
+}
+
+.add-conditions label {
+    margin-bottom: 4px;
+}
+
+.add-conditions input[type=checkbox] + label, input[type=radio] + label, input[type=button] + label {
+    padding: 4px 12px;
+    margin-right: 4px;
+}
+
+.add-conditions input[type=checkbox]:checked + label, input[type=radio]:checked + label, input[type=button]:active + label {
+    font-weight: normal;
+    color: magenta;
+    text-shadow: 1px 1px 2px lightblue;
+}
+
+.edit-block-label {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    text-align: left;
+}
+
+    .edit-block-label.range {
+        width: 94%;
+    }
+
+        .edit-block-label.range .label-in-edit-block {
+            width: 100%;
+        }
+
+            .edit-block-label.range .label-in-edit-block span[contenteditable=true] {
+                padding: 0 4px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                border: 1px outset hsl(0,0%,80%);
+                outline: none;
+                max-width: 100px;
+            }
+
+                .edit-block-label.range .label-in-edit-block span[contenteditable=true]:hover {
+                    border-style: inset;
+                }
+
+                .edit-block-label.range .label-in-edit-block span[contenteditable=true]:focus {
+                    border-style: inset;
+                }
+
+                .edit-block-label.range .label-in-edit-block span[contenteditable=true][data-validate=true]:focus {
+                    background-color: hsl(90,100%,87%);
+                }
+
+                .edit-block-label.range .label-in-edit-block span[contenteditable=true][data-validate=false]:focus {
+                    background-color: hsl(60,100%,50%);
+                    border-color: hsl(0,100%,50%);
+                }
+
+.edit-block-input {
+    width: 96%;
+}
+
+    .edit-block-input.definition-code {
+        width: 35%;
+    }
+
+.edit-block-input-setter input {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.edit-block-input-setter textarea {
+    margin-top: 16px;
+    width: 100%;
+    margin: 0 auto;
+    resize: none;
+    height: 160px;
+}
+
+#is-off-screen-canvas + label span {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 98%;
+}
+
+#is-off-screen-canvas:not([disabled]) + label span {
+    background-image: url('../../../img/async.png');
+}
+
+#is-off-screen-canvas:checked + label span {
+    background-image: url('../../../img/async-active.png');
+}
+
+#is-off-screen-canvas[disabled] + label span {
+    background-image: url('../../../img/async-off.png');
+}
