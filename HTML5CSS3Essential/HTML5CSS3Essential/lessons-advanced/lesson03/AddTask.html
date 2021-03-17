@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced-L03: AddTask</title>
+    <link href="../../css-external/w3.css" rel="stylesheet" />
+    <link href="../../css/styleGooglefont.css" rel="stylesheet" />
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/generalStyleTask.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+    <link href="../../css/styleAddConditions.css" rel="stylesheet" />
+    <link href="css/videoGallery.css?ver=01-03-2021 23:50" rel="stylesheet" />
+    <link href="css/vgaView.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 03: WebStorage. WebWorker. Audio. Video. Дополнительное задание.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS3 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-task-content  background-transparent-50">
+                <h2 class="padding-8-16">Lesson 03:  WebStorage. WebWorker. Audio. Video.</h2>
+                <h3 class="padding-8-16">Дополнительное задание.</h3>
+                <div class="summary-task task-page">
+                    <div class="block-setter padding-8-0">
+                        Добавьте на страницу окно для просмотра видео и кнопки:
+                        <ul class="margin0">
+                            <li>остановить</li>
+                            <li>продолжить просмотр</li>
+                            <li>вперед на 10 с</li>
+                            <li>назад на 10 с</li>
+                            <li>увеличить громкость</li>
+                            <li>уменьшить громкость</li>
+                        </ul>
+                        Также добавьте на страницу 3 кнопки с ссылками на видеофайлы. При нажатии на выбранный ролик, в
+                        окне начинается просмотр выбранного пользователем. После перезагрузки страницы, видео должно
+                        загрузиться, и пользователь может продолжить просмотр (который был до перезагрузки). Используйте
+                        сохранение информации в хранилище.
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="block-setter f-family-Roboto">
+            <section class="section-subtask box-shadow-orange radius7">
+                <div class="subtask-box radius7 overflow-auto">
+                    <nav class="parms">
+                        <div class="set">
+                            <input type="file" multiple id="files" accept="video/*" />
+                            <div class="settings" id="select-files">
+                                <span>Select some files</span>
+                            </div>
+                            <div class="settings" id="open-view">
+                                <span>View</span>
+                            </div>
+                            <div id="main-show-loader" class="loader" data-enabled="false">
+                                <img src="../../img/loader.gif" />
+                            </div>
+                        </div>
+                        <div class="show" id="parms-show"></div>
+                    </nav>
+                    <nav class="posters" id="posters">
+                    </nav>
+                    <section id="video-container" class="video-container">
+                        <video controls src="" preload="metadata" id="video" data-name="" data-index="-1"></video>
+                    </section>
+                    <section class="add-conditions w98prc m-auto" id="custom-controls">
+                        <input type="button" id="poster-screenshot" />
+                        <label for="poster-screenshot" title="video screenshot to poster">&nbsp;</label>
+                        <input type="button" id="rate-slow" />
+                        <label for="rate-slow" title="playback rate -0.05">&nbsp;</label>
+                        <input type="button" id="rate-medium" />
+                        <label for="rate-medium" title="playback rate 1.0">&nbsp;</label>
+                        <input type="button" id="rate-faster" />
+                        <label for="rate-faster" title="playback rate +0.05">&nbsp;</label>
+                        <span id="playback-rate" title="playback rate"></span>
+                        <span id="current-time" title="current time"></span>
+                    </section>
+
+                    <!-- VIEW CONTENTS -->
+                    <div id="work-view" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w95prc overflow-auto">
+                            <header class="w3-container w3-lime padding-4-16">
+                                <h3 class="block-left">
+                                    <img src="../../img/Table-icon.png" alt="" />
+                                </h3>
+                                <h3 class="padding-2-8">View content information</h3>
+                                <span class="w3-button w3-display-topright" id="close-view">&times;</span>
+                            </header>
+                            <div class="w3-container padding-4-8">
+                                <section class="search-parms" id="show-find-parms"></section>
+                                <section class="toolbar">
+                                    <div class="set">
+                                        <input type="file" multiple id="dic-files" accept="video/*" />
+                                        <div class="dic-tb-button" id="dic-select-files" title="select some files" data-command="select-files" data-enabled="true"></div>
+                                        <div class="dic-tb-button" id="dic-to-watch" title="to watch" data-command="watch" data-enabled="false"></div>
+                                        <div class="dic-tb-button" id="dic-to-state" title="play" data-command="state" data-enabled="false" data-state="to-play"></div>
+                                        <div class="dic-tb-button" id="dic-remove" title="remove" data-command="del" data-enabled="false"></div>
+                                        <div class="dic-tb-button" id="dic-search" title="search" data-command="find" data-enabled="true"></div>
+                                        <div class="dic-tb-button" id="dic-clear-search" title="clear search" data-command="clear-find" data-enabled="false"></div>
+                                        <div id="show-loader" class="loader" data-enabled="false">
+                                            <img src="../../img/loader.gif" />
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="dictionary">
+                                    <div class="set">
+                                        <div class="for-table">
+                                            <div class="table border-separate border-spacing4" id="dic-t-heder">
+                                                <div class="row" id="dic-row-header">
+                                                    <div class="cell w3prc cell-vertical-center cell-horizontal-center">
+                                                        <input type="checkbox" id="markAllRows" />
+                                                        <label for="markAllRows" class="w98prc m-auto">
+                                                            <img src="../../img/checkbox-blank-outline-black.png" id="imgMarkAllRows" class="w98prc" />
+                                                        </label>
+                                                    </div>
+                                                    <div class="cell w4prc cell-vertical-center cell-horizontal-center">
+                                                        <span>Poster</span>
+                                                    </div>
+                                                    <div class="cell w40prc cell-vertical-center cell-horizontal-center" data-sort="2">
+                                                        <div class="is-sorting">
+                                                            <img src="../../img/sort-ascending.png" id="img-ascending-2" />
+                                                            <img src="../../img/sort-descending.png" id="img-descending-2" />
+                                                            <span>Name</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell w7prc cell-vertical-center cell-horizontal-center" data-sort="1">
+                                                        <div class="is-sorting">
+                                                            <img src="../../img/sort-ascending.png" id="img-ascending-1" />
+                                                            <img src="../../img/sort-descending.png" id="img-descending-1" />
+                                                            <span>Location</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell w10prc cell-vertical-center cell-horizontal-center" data-sort="3">
+                                                        <div class="is-sorting">
+                                                            <img src="../../img/sort-ascending.png" id="img-ascending-3" />
+                                                            <img src="../../img/sort-descending.png" id="img-descending-3" />
+                                                            <span>Duration</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cell w10prc cell-vertical-center cell-horizontal-center">
+                                                        <span>Poster time</span>
+                                                    </div>
+                                                    <div class="cell w5prc cell-vertical-center cell-horizontal-center">
+                                                        <span>Volume</span>
+                                                    </div>
+                                                    <div class="cell w5prc cell-vertical-center cell-horizontal-center">
+                                                        <span>Muted</span>
+                                                    </div>
+                                                    <div class="cell w7prc cell-vertical-center cell-horizontal-center">
+                                                        <span>Playback rate</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="for-table">
+                                            <div class="table border-separate border-spacing4 cell-vertical-top" id="dic-t-body">
+                                                <!--Inner Html will be created from code-->
+                                            </div>
+                                        </div>
+                                        <nav class="context-menu" id="dicContextMenu">
+                                            <div class="block-setter">
+                                                <ul class="cm-items" data-cm-items-group="main">
+                                                    <li class="cm-item" id="cm-select-files" data-command="select-files" data-enabled="true">
+                                                        <img src="../../img/movie-open.png" class="block-left" />
+                                                        <p>Select some files</p>
+                                                    </li>
+                                                    <li class="cm-item" id="cm-to-watch" data-command="watch" data-enabled="false">
+                                                        <img src="../../img/movie-roll.png" class="block-left" />
+                                                        <p>To watch</p>
+                                                    </li>
+                                                    <li class="cm-item" id="cm-to-state" data-command="state" data-enabled="false" data-state="to-play">
+                                                        <img src="../../img-media-gallery/to-play.png" data-state="to-play" />
+                                                        <img src="../../img-media-gallery/to-pause.png" data-state="to-pause" />
+                                                        <p data-state="to-play">Play</p>
+                                                        <p data-state="to-pause">Pause</p>
+                                                    </li>
+                                                    <li class="cm-item" id="cm-del" data-command="del" data-enabled="false">
+                                                        <img src="../../img/trash-can-outline.png" class="block-left" />
+                                                        <p>Remove</p>
+                                                    </li>
+                                                    <li class="cm-item" id="cm-find" data-command="find" data-enabled="true">
+                                                        <img src="../../img/seek.png" class="block-left" />
+                                                        <p>Search</p>
+                                                    </li>
+                                                    <li class="cm-item" id="cm-clear-find" data-command="clear-find" data-enabled="false">
+                                                        <img src="../../img/seek-clear.png" class="block-left" />
+                                                        <p>Clear search</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONFIRM -->
+                    <div id="confirm-modal" class="w3-modal">
+                        <div class="w3-modal-content w3-animate-opacity w3-card-4 w3-border w30prc">
+                            <header class="w3-container w3-orange">
+                                <h3 class="padding-2-8" id="confirm-modal-Header">Подтвердите удаление</h3>
+                            </header>
+                            <div class="w3-container">
+                                <p id="confirmAbout"></p>
+                            </div>
+                            <footer class="w3-container w3-orange w3-center padding-8-0">
+                                <button class="button-ok" id="confirmYes">Confirm</button>
+                                <button class="button-no" id="confirmNo">Refuse</button>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+                <p> <a href="https://developer.mozilla.org/ru/docs/Web/API/File/Using_files_from_web_applications">Использование файлов в веб приложениях</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+    <script type="module" src="ts/control/vgaControl.js"></script>
+
+</body>
+</html>

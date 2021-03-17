@@ -9,7 +9,7 @@ export class GradientProperties {
     public radialDirection: RadialDirection;
     public colorScheme: GradientColorScheme = new GradientColorScheme();
     GetGradientProperties(): GradientProperties {
-        this.direction = Colors.instance.RandomInt(1, 4);
+        this.direction = Colors.instance.gradientDirection;
         this.colorScheme = new GradientColorScheme();
         let lines = Colors.instance.RandomInt(minLayersGradient, maxLayersGradient);
         let position: number;
@@ -271,6 +271,7 @@ export class Colors {
     set maxLayersGradient(value: number) {
         this._maxLayersGradient = value;
     }
+    get gradientDirection(): GradientDirection { return this.RandomInt(1, 4); }
 
     // Methods
     CreateColorScheme(scheme: [number, string][] = []): GradientColorScheme {
@@ -426,7 +427,7 @@ export class Colors {
         gradientProperties: GradientProperties
     ): CanvasGradient {
         let gradient: CanvasGradient;
-        gradientProperties.direction = this.RandomInt(1, 4);
+        gradientProperties.direction = this.gradientDirection;
         gradient = this.GetLinerGradient(gradientProperties.direction, context, x, y, size, size);
         gradientProperties.colorScheme = this.GetLinerGradientColorScheme(gradient);
         return gradient;
@@ -438,7 +439,7 @@ export class Colors {
         gradientProperties: GradientProperties
     ): CanvasGradient {
         let gradient: CanvasGradient;
-        gradientProperties.direction = this.RandomInt(1, 4);
+        gradientProperties.direction = this.gradientDirection;
         gradient = this.GetLinerGradient(gradientProperties.direction, context, x, y, width, height);
         gradientProperties.colorScheme = this.GetLinerGradientColorScheme(gradient);
         return gradient;
@@ -482,10 +483,10 @@ export class Colors {
         y: number,
         width: number,
         height: number): CanvasGradient {
-        return direction === GradientDirection.LeftToRight ? context.createLinearGradient(x, y, x, y + height) :
-            direction === GradientDirection.TopToBottom ? context.createLinearGradient(x, y, x + width, y) :
+        return direction === GradientDirection.LeftToRight ? context.createLinearGradient(x, y, x + width, y) :
+            direction === GradientDirection.TopToBottom ? context.createLinearGradient(x, y, x, y + height) :
                 direction === GradientDirection.LeftTopToBottomRight ? context.createLinearGradient(x, y, x + height, y + width) :
-                    direction === GradientDirection.RightTopToLeftBottom ? context.createLinearGradient(x, y + width, x + height, 0) :
+                    direction === GradientDirection.RightTopToLeftBottom ? context.createLinearGradient(x, y + width, x + height, y) :
                         context.createLinearGradient(x, y, x, y + height);
     }
 
@@ -506,5 +507,6 @@ export class Colors {
         gradient.addColorStop(position, color);
         return colorScheme;
     }
+
 
 }

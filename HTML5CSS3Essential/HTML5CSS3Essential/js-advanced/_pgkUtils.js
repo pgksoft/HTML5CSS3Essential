@@ -23,6 +23,9 @@ export var TypeAction;
     TypeAction[TypeAction["Remove"] = 4] = "Remove";
     TypeAction[TypeAction["Find"] = 5] = "Find";
     TypeAction[TypeAction["ClearFind"] = 6] = "ClearFind";
+    TypeAction[TypeAction["SelectLocalFiles"] = 7] = "SelectLocalFiles";
+    TypeAction[TypeAction["IsSelected"] = 8] = "IsSelected";
+    TypeAction[TypeAction["ToState"] = 9] = "ToState";
 })(TypeAction || (TypeAction = {}));
 ;
 export var CommandState;
@@ -45,6 +48,8 @@ export let requestFrame = (callback) => {
         };
     f(callback);
 };
+export const CustomEventChangeMarkAllRows = 'changeMarkAllRows';
+export const CustomEventchangeMarkRow = 'changeMarkRow';
 export class Confirm {
     constructor(modal, header, content, yes, no) {
         this._modal = modal;
@@ -90,8 +95,8 @@ export class Confirm {
         this._content.innerText = content;
         this.SetButtonDefault();
         if (resolve) {
-            this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteConfirm, { bubbles: true, detail: { resolve: resolve } })); };
-            this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteRefuse, { bubbles: true, detail: { resolve: resolve } })); };
+            this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteConfirm, { bubbles: true, detail: { resolve: resolve('yes') } })); };
+            this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteRefuse, { bubbles: true, detail: { resolve: resolve('no') } })); };
         }
         else {
             this._yes.onclick = () => { document.dispatchEvent(this.eventDeleteConfirm); };
@@ -103,8 +108,8 @@ export class Confirm {
         this._header.innerText = 'Are you sure?';
         this._content.innerText = 'Please confirm the action';
         this.SetButtonDefault();
-        this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureConfirm, { bubbles: true, detail: { resolve: resolve } })); };
-        this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureRefuse, { bubbles: true, detail: { resolve: resolve } })); };
+        this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureConfirm, { bubbles: true, detail: { resolve: resolve('yes') } })); };
+        this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureRefuse, { bubbles: true, detail: { resolve: resolve('no') } })); };
         this._modal.style.display = 'block';
     }
     OpenCaution(content) {
@@ -252,7 +257,7 @@ export class SortableUniqueCollection {
 }
 export class MarkRow {
     constructor(checkBox, img) {
-        this._eventChangeMarkRow = new CustomEvent('changeMarkRow', { bubbles: true, detail: { content: this } });
+        this._eventChangeMarkRow = new CustomEvent(CustomEventchangeMarkRow, { bubbles: true, detail: { content: this } });
         this._checkBox = checkBox;
         this._img = img;
         this._img.src = MarkRow.imgCheckBlankOutlineBlack;
@@ -297,7 +302,7 @@ export class MarkAllRows extends MarkRow {
     constructor(checkBox, img) {
         super(checkBox, img);
         this.isDisable = true;
-        this._eventChangeMarkRow = new CustomEvent('changeMarkAllRows', { bubbles: true, detail: { content: this } });
+        this._eventChangeMarkRow = new CustomEvent(CustomEventChangeMarkAllRows, { bubbles: true, detail: { content: this } });
     }
 }
 export class ContextMenu {

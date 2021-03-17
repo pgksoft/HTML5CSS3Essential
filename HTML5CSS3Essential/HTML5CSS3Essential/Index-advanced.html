@@ -468,7 +468,7 @@
             <!-- LESSON03 <====================================================================================================== -->
             <section class="section-details-lesson">
                 <div class="block-setter padding-3-8 margin8">
-                    <a href="" data-iamworking="advanced" class="button-with-hover-orange radius50prc padding-8-16">Lesson03</a>
+                    <a href="lessons-advanced/lesson03/index03.html" class="button-with-hover-orange radius50prc padding-8-16">Lesson03</a>
                 </div>
                 <details class="details-lesson" name="lesson" data-lesson="3" data-topic="Урок 03. Хранение данных на стороне клиента. Audio, Video.">
                     <summary class="details-lesson-summary allign-justify radius10 padding-3-8">
@@ -482,9 +482,15 @@
                                 </summary>
                                 <div class="details-lesson-article-summary-task margin8auto">
                                     <ul class="margin0 allign-justify">
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
+                                        <li>Использование методов <b>querySelector</b> и <b>querySelectorAll</b>.</li>
+                                        <li>Ознакомление с хранилищем данных.</li>
+                                        <li>Области применения хранилищ и сравнение с cookie.</li>
+                                        <li>Использование многопоточности на странице.</li>
+                                        <li>Использование <b>XMLHttpRequest</b> в связке с <b>WebWorker</b>.</li>
+                                        <li>Встраиваемое аудио.</li>
+                                        <li>Свойства и методы работы с аудио.</li>
+                                        <li>Встраиваемое видео.</li>
+                                        <li>Способы отображения интерфейса и проигрывания, встроенного видео. Атрибут <b>Controls</b>.</li>
                                     </ul>
                                 </div>
                             </details>
@@ -496,12 +502,134 @@
                                 <div class="details-lesson-article-summary-task allign-justify margin8auto">
                                     <ul class="margin0 padding-right-8">
                                         <li>
+                                            <span class="accent">querySelector()</span> – позволяет получить первый найденный элемент на странице, соответствующий
+                                            одному из селекторов.
                                         </li>
                                         <li>
+                                            <span class="accent">querySelectorAll()</span> – набор всех указанных селекторов. Возвращает массив.
                                         </li>
                                         <li>
+                                            <span class="accent">sessionStorage</span> и <span class="accent">localStorage</span> – хранилища (контейнеры) для сохранения информации в
+                                            браузере (до 5Мб).
                                         </li>
+                                        <li>
+                                            <span class="accent">localStorage</span> обеспечивает хранилище постоянных данных типа ключ-значение, которое можно
+                                            использовать для отслеживания пользовательских данных между посещениями приложения.
+                                        </li>
+                                        <li>
+                                            Свойство <span class="accent">sessionStorage</span> позволяет получить доступ к объекту хранилища текущей сессии и
+                                            очищаются в момент окончания сессии текущий страницы. Открытие той же страницы в новом
+                                            окне браузера или новой вкладке приводит к созданию новой сессии страницы.
+                                        </li>
+                                        <li>
+                                            Данные <span class="accent">localStorage</span> не имеют определенного времени жизни, до тех пор, пока пользователь
+                                            самостоятельно не удалит их из хранилища.
+                                        </li>
+                                        <li>
+                                            <span class="accent">WebWorkers</span> – технология, позволяющая устанавливать специальную среду кода, где можно
+                                            выполнять задания в отдельном потоке данных, не зависимом от основного кода. В отдельные
+                                            файлы выносятся функции, обеспечивающие функционирование <span class="accent">AJAX</span>, либо функции
+                                            обрабатывающие большие массивы информации, которые во время работы уменьшают
+                                            скорость построения страницы. При выполнении скрипта на стороне браузера создается
+                                            специальный объект <span class="accent">Worker</span>, который и отвечает за вызов необходимых функций.
+                                        </li>
+                                        <li>
+                                            Существующий <span class="accent">Worker</span> может отсылать сообщения в <span class="accent">JavaScript</span> код, который его создал,
+                                            отправляя сообщения в обработчик событий, указанный этим кодом (и наоборот).
+                                        </li>
+                                        <li>
+                                            <span class="accent">Worker</span> - это объект, созданный при помощи конструктора, который запускает <span class="accent">JavaScript</span> файл —
+                                            содержащий код, который будет выполнен в потоке <span class="accent">Worker</span>; объекты <span class="accent">Workers</span> запускаются в
+                                            другом глобальном контексте, который отличается от текущего <span class="accent">window</span>. Таким образом,
+                                            использование переменной <span class="accent">window</span> для получения текущего глобального контекста (вместо <span class="accent">self</span>)
+                                            внутри <span class="accent">Worker</span> вернет ошибку.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Worker</span> элементов может быть сколько угодно и все они могут работать одновременно, при
+                                            этом формирование страницы не будет остановлено, в ожидании пока отработает, какая-либо
+                                            функция.
+                                        </li>
+                                        <li>
+                                            Чтобы завершить работу <span class="accent">worker</span> и освободить ресурсы компьютера Вы можете использовать
+                                            метод <span class="accent">termitane()</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">&lt;audio&gt;</span> – встраивание аудио на веб-страницу. Атрибуты:
+                                            <ul>
+                                                <li>
+                                                    <span class="accent">Autoplay</span> - звук начинает играть сразу после загрузки страницы.
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Controls</span> - Добавляет панель управления к аудиофайлу.
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Loop</span> - Повторяет воспроизведение звука с начала после его завершения.
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Preload</span> - Используется для загрузки файла вместе с загрузкой веб-страницы.
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Src</span> - Указывает путь к воспроизводимому файлу.
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Muted</span> -Логический атрибут, который указывает, будет ли изначально заглушено
+                                                    воспроизведение. По умолчанию <span class="accent">false</span>.
+                                                </li>
+                                                <li>
+                                                    <span class="accent">Volume</span> - Громкость воспроизведения, в диапазоне от 0.0 (самая тихая) до 1.0 (самая громкая).
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="accent">Play()</span> – метод <span class="accent">js</span> для запуска аудио дорожки.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Pause()</span> - метод <span class="accent">js</span> для остановки аудио дорожки.
+                                        </li>
+                                        <li>
+                                            <span class="accent">CurrentTime</span> – текущее время аудио.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Duration</span> – длительность аудио в секундах
+                                        </li>
+                                        <li>
+                                            <span class="accent">&lt;video&gt;</span> – встраивание видео на веб-страницу.
+                                        </li>
+                                        <li>
+                                            В мультимедийном контейнере определен только способ хранения содержимого, а не тип этого
+                                            содержимого.
+                                        </li>
+                                        <li>
+                                            Популярные форматы видеоконтейнеров: <span class="accent">MPEG-4</span>, <span class="accent">Flash Video</span>, <span class="accent">WebM</span>, <span class="accent">Ogg</span>.
+                                        </li>
+                                        <li>
+                                            Видеокодек – это алгоритм кодировки видеопотока. Популярные форматы: <span class="accent">H.264</span>, <span class="accent">Theora</span> и <span class="accent">VP8</span>.
+                                        </li>
+                                        <li>
+                                            Один тег <span class="accent">&lt;video&gt;</span>
+                                            может ссылаться на несколько видеофайлов; из них браузер выберет самый
+                                            первый, который сумеет воспроизвести.
 
+                                        </li>
+                                        <li>
+                                            <span class="accent">Controls</span> – способ отображения интерфейса проигрывателя.
+                                        </li>
+                                        <li>
+                                            Атрибут <span class="accent">autoplay</span> говорит браузеру, что надо не только начать скачивать видео сразу по
+                                            окончании загрузки страницы, но и начать его воспроизводить как можно раньше.
+                                        </li>
+                                        <li>
+                                            Атрибут <span class="accent">preload</span> говорит браузеру, что скачивание видео надо начать сразу по окончании
+                                            загрузки страницы.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Poster</span> - URL-адрес, указывающий на постер, который будет использован, пока загружается
+                                            видео или пока пользователь не нажмет на кнопку воспроизведения. Если этот атрибут не
+                                            указан, ничего не отображается до тех пор, пока не будет доступен первый кадр.
+                                        </li>
+                                        <li>
+                                            <span class="accent">PlaybackRate</span> - свойство, указывающее уровень скорости воспроизведения.
+                                        </li>
                                     </ul>
                                 </div>
                             </details>
@@ -512,8 +640,19 @@
                                 <div class="margin8auto padding-right-8">
                                     <ol class="allign-justify">
                                         <li>
-                                        </li>
-                                        <li>
+                                            Добавьте на страницу окно для просмотра видео и кнопки:
+                                            <ul class="margin0">
+                                                <li>остановить</li>
+                                                <li>продолжить просмотр</li>
+                                                <li>вперед на 10 с</li>
+                                                <li>назад на 10 с</li>
+                                                <li>увеличить громкость</li>
+                                                <li>уменьшить громкость</li>
+                                            </ul>
+                                            Также добавьте на страницу 3 кнопки с ссылками на видеофайлы. При нажатии на выбранный ролик, в
+                                            окне начинается просмотр выбранного пользователем. После перезагрузки страницы, видео должно
+                                            загрузиться, и пользователь может продолжить просмотр (который был до перезагрузки). Используйте
+                                            сохранение информации в хранилище.
                                         </li>
                                     </ol>
                                 </div>
@@ -765,6 +904,7 @@
                 <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
                 <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
                 <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+                <p> <a href="https://developer.mozilla.org/ru/docs/Web/API/File/Using_files_from_web_applications">Использование файлов в веб приложениях</a> </p>
             </div>
         </section>
 

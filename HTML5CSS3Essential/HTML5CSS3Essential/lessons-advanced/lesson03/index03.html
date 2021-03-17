@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/favicon.png" type="image/png">
+    <title>Advanced: Lesson 03</title>
+    <link href="../../css/general.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleindex.css" rel="stylesheet" />
+    <link href="../../css/styleHeaderIndex.css" rel="stylesheet" />
+    <link href="../../css/styleShortDescriptionPanel.css" rel="stylesheet" />
+    <link href="../../css/styleLesson.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleLessonRenew.css" rel="stylesheet" />
+    <link href="../../css/styleFooterIndex.css" rel="stylesheet" />
+    <link href="../../css/styleLogo.css" rel="stylesheet" />
+    <link href="../../css-advanced/styleClipPath.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="short-description-panel radius7" id="shortDescriptionPanel">
+        <div class="short-description-panel-header">
+            <p class="margin0">HTML5&CSS3 Advanced: Lesson 03: WebStorage. WebWorker. Audio. Video.</p>
+            <div class="short-description-panel-header-close">
+                <p class="short-description-panel-header-caption">short description</p>
+                <img id="shortDescriptionPanelClose" class="block-left" src="../../img/window-close.png" alt="" title="Esc" />
+            </div>
+        </div>
+        <div class="short-description-panel-content">
+            <p class="abzac">Всем доброго времени суток.</p>
+            <br />
+        </div>
+    </div>
+
+    <aside class="body-aside">  </aside>
+
+    <main class="body-main">
+        <header class="header-index">
+            <section class="header-general">
+                <a href="../../Index-advanced.html">
+                    <h4 class="h-subject">HTML5&CSS5 ADVANCED</h4>
+                </a>
+                <table>
+                    <tr>
+                        <td><a href="../../AboutHTML.html"><img src="../../img/html-5-icon-64x64.png" alt="HTML5" /></a></td>
+                        <td><img src="../../img/css-3-icon-64x64.png" alt="CSS3" /></td>
+                        <td><img src="../../img/javascript-icon-64x64.png" alt="JS" /></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="header-content-lesson background-transparent-50">
+                <div class="padding-8-8">
+                    <h1 class="padding-16-16">Lesson 03</h1>
+                    <h2 class="padding-16-16">WebStorage. WebWorker. Audio. Video.</h2>
+                </div>
+            </section>
+        </header>
+
+        <section class="card-lesson">
+
+            <nav class="card-lesson-nav">
+                <h3 class="h-panel">Панель навигациии</h3>
+                <form method="post" action="index02.html" id="listTasks" name="listTasks">
+                    <p>
+                        <input type="radio" id="addtask" name="tasks"
+                               value="Дополнительное задание:" />
+                        <label for="addtask">Additional task</label>
+                    </p>
+                </form>
+            </nav>
+
+            <article class="card-lesson-content">
+                <div class="block-setter-98 p-t-0x5prc">
+                    <div class="tabs block-setter">
+                        <input id="tabHome" type="radio" name="tabs" checked>
+                        <label for="tabHome">Цели и задачи</label>
+                        <input id="tabResume" type="radio" name="tabs">
+                        <label for="tabResume">Теория</label>
+                        <section id="content-tabHome" class="block-setter-98">
+                            <p class="summarytask-caption" id="summarytaskcaption">
+                                Обзор, цель и назначение урока
+                            </p>
+                            <!--«»-->
+                            <div id="summaryTask" class="summary-task margin-top-8 margin-bottom-8">
+                                <p class="margin0">Использование методов <b>querySelector</b> и <b>querySelectorAll</b>.</p>
+                                <p class="margin0">Ознакомление с хранилищем данных.</p>
+                                <p class="margin0">Области применения хранилищ и сравнение с cookie.</p>
+                                <p class="margin0">Использование многопоточности на странице.</p>
+                                <p class="margin0">Использование <b>XMLHttpRequest</b> в связке с <b>WebWorker</b>.</p>
+                                <p class="margin0">Встраиваемое аудио.</p>
+                                <p class="margin0">Свойства и методы работы с аудио.</p>
+                                <p class="margin0">Встраиваемое видео.</p>
+                                <p class="margin0">Способы отображения интерфейса и проигрывания, встроенного видео. Атрибут <b>Controls</b>.</p>
+                            </div>
+                            <p class="look-task">
+                                <!--data-iamworking="TS"-->
+                                <a href="#" id="linktaskpage" class="button-with-hover-orange radius50prc padding-8-16">Посмотреть решение задачи</a>
+                            </p>
+                            <div class="task-description line-height-1x5 fstyle-italic" id="taskDescriptionAdd">
+                                Добавьте на страницу окно для просмотра видео и кнопки:
+                                <ul class="margin0">
+                                    <li>остановить</li>
+                                    <li>продолжить просмотр</li>
+                                    <li>вперед на 10 с</li>
+                                    <li>назад на 10 с</li>
+                                    <li>увеличить громкость</li>
+                                    <li>уменьшить громкость</li>
+                                </ul>
+                                Также добавьте на страницу 3 кнопки с ссылками на видеофайлы. При нажатии на выбранный ролик, в
+                                окне начинается просмотр выбранного пользователем. После перезагрузки страницы, видео должно
+                                загрузиться, и пользователь может продолжить просмотр (который был до перезагрузки). Используйте
+                                сохранение информации в хранилище.
+                            </div>
+                        </section>
+                        <section id="content-tabResume">
+                            <ul class="margin0 padding-1-0 w-break resume">
+                                <!--<span class="accent"></span>-->
+                                <li>
+                                    <span class="accent">querySelector()</span> – позволяет получить первый найденный элемент на странице, соответствующий
+                                    одному из селекторов.
+                                </li>
+                                <li>
+                                    <span class="accent">querySelectorAll()</span> – набор всех указанных селекторов. Возвращает массив.
+                                </li>
+                                <li>
+                                    <span class="accent">sessionStorage</span> и <span class="accent">localStorage</span> – хранилища (контейнеры) для сохранения информации в
+                                    браузере (до 5Мб).
+                                </li>
+                                <li>
+                                    <span class="accent">localStorage</span> обеспечивает хранилище постоянных данных типа ключ-значение, которое можно
+                                    использовать для отслеживания пользовательских данных между посещениями приложения.
+                                </li>
+                                <li>
+                                    Свойство <span class="accent">sessionStorage</span> позволяет получить доступ к объекту хранилища текущей сессии и
+                                    очищаются в момент окончания сессии текущий страницы. Открытие той же страницы в новом
+                                    окне браузера или новой вкладке приводит к созданию новой сессии страницы.
+                                </li>
+                                <li>
+                                    Данные <span class="accent">localStorage</span> не имеют определенного времени жизни, до тех пор, пока пользователь
+                                    самостоятельно не удалит их из хранилища.
+                                </li>
+                                <li>
+                                    <span class="accent">WebWorkers</span> – технология, позволяющая устанавливать специальную среду кода, где можно
+                                    выполнять задания в отдельном потоке данных, не зависимом от основного кода. В отдельные
+                                    файлы выносятся функции, обеспечивающие функционирование <span class="accent">AJAX</span>, либо функции
+                                    обрабатывающие большие массивы информации, которые во время работы уменьшают
+                                    скорость построения страницы. При выполнении скрипта на стороне браузера создается
+                                    специальный объект <span class="accent">Worker</span>, который и отвечает за вызов необходимых функций.
+                                </li>
+                                <li>
+                                    Существующий <span class="accent">Worker</span> может отсылать сообщения в <span class="accent">JavaScript</span> код, который его создал,
+                                    отправляя сообщения в обработчик событий, указанный этим кодом (и наоборот).
+                                </li>
+                                <li>
+                                    <span class="accent">Worker</span> - это объект, созданный при помощи конструктора, который запускает <span class="accent">JavaScript</span> файл —
+                                    содержащий код, который будет выполнен в потоке <span class="accent">Worker</span>; объекты <span class="accent">Workers</span> запускаются в
+                                    другом глобальном контексте, который отличается от текущего <span class="accent">window</span>. Таким образом,
+                                    использование переменной <span class="accent">window</span> для получения текущего глобального контекста (вместо <span class="accent">self</span>)
+                                    внутри <span class="accent">Worker</span> вернет ошибку.
+                                </li>
+                                <li>
+                                    <span class="accent">Worker</span> элементов может быть сколько угодно и все они могут работать одновременно, при
+                                    этом формирование страницы не будет остановлено, в ожидании пока отработает, какая-либо
+                                    функция.
+                                </li>
+                                <li>
+                                    Чтобы завершить работу <span class="accent">worker</span> и освободить ресурсы компьютера Вы можете использовать
+                                    метод <span class="accent">termitane()</span>.
+                                </li>
+                                <li>
+                                    <span class="accent">&lt;audio&gt;</span> – встраивание аудио на веб-страницу. Атрибуты:
+                                    <ul>
+                                        <li>
+                                            <span class="accent">Autoplay</span> - звук начинает играть сразу после загрузки страницы.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Controls</span> - Добавляет панель управления к аудиофайлу.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Loop</span> - Повторяет воспроизведение звука с начала после его завершения.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Preload</span> - Используется для загрузки файла вместе с загрузкой веб-страницы.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Src</span> - Указывает путь к воспроизводимому файлу.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Muted</span> -Логический атрибут, который указывает, будет ли изначально заглушено
+                                            воспроизведение. По умолчанию <span class="accent">false</span>.
+                                        </li>
+                                        <li>
+                                            <span class="accent">Volume</span> - Громкость воспроизведения, в диапазоне от 0.0 (самая тихая) до 1.0 (самая громкая).
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="accent">Play()</span> – метод <span class="accent">js</span> для запуска аудио дорожки.
+                                </li>
+                                <li>
+                                    <span class="accent">Pause()</span> - метод <span class="accent">js</span> для остановки аудио дорожки.
+                                </li>
+                                <li>
+                                    <span class="accent">CurrentTime</span> – текущее время аудио.
+                                </li>
+                                <li>
+                                    <span class="accent">Duration</span> – длительность аудио в секундах
+                                </li>
+                                <li>
+                                    <span class="accent">&lt;video&gt;</span> – встраивание видео на веб-страницу.
+                                </li>
+                                <li>
+                                    В мультимедийном контейнере определен только способ хранения содержимого, а не тип этого
+                                    содержимого.
+                                </li>
+                                <li>
+                                    Популярные форматы видеоконтейнеров: <span class="accent">MPEG-4</span>, <span class="accent">Flash Video</span>, <span class="accent">WebM</span>, <span class="accent">Ogg</span>.
+                                </li>
+                                <li>
+                                    Видеокодек – это алгоритм кодировки видеопотока. Популярные форматы: <span class="accent">H.264</span>, <span class="accent">Theora</span> и <span class="accent">VP8</span>.
+                                </li>
+                                <li>
+                                    Один тег <span class="accent">&lt;video&gt;</span>
+                                    может ссылаться на несколько видеофайлов; из них браузер выберет самый
+                                    первый, который сумеет воспроизвести.
+
+                                </li>
+                                <li>
+                                    <span class="accent">Controls</span> – способ отображения интерфейса проигрывателя.
+                                </li>
+                                <li>
+                                    Атрибут <span class="accent">autoplay</span> говорит браузеру, что надо не только начать скачивать видео сразу по
+                                    окончании загрузки страницы, но и начать его воспроизводить как можно раньше.
+                                </li>
+                                <li>
+                                    Атрибут <span class="accent">preload</span> говорит браузеру, что скачивание видео надо начать сразу по окончании
+                                    загрузки страницы.
+                                </li>
+                                <li>
+                                    <span class="accent">Poster</span> - URL-адрес, указывающий на постер, который будет использован, пока загружается
+                                    видео или пока пользователь не нажмет на кнопку воспроизведения. Если этот атрибут не
+                                    указан, ничего не отображается до тех пор, пока не будет доступен первый кадр.
+                                </li>
+                                <li>
+                                    <span class="accent">PlaybackRate</span> - свойство, указывающее уровень скорости воспроизведения.
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+        </section> <!--card-lesson-->
+
+        <section class="block-setter p-b-16">
+            <hr />
+            <div class="recommended-links">
+                <h3 class="h-panel">Рекомендуемые ресурсы</h3>
+                <p> <a href="http://htmlbook.ru/">HTML Book</a> </p>
+                <p> <a href="https://html.com/">HTML</a> </p>
+                <p> <a href="https://developers.google.com/web">Google Web Developers</a> </p>
+                <p> <a href="https://developers.google.com/maps/documentation/geolocation/intro?hl=ru">Geolocation documentation</a> </p>
+                <p> <a href="https://schema.org/">Словари микроданных</a> </p>
+                <p> <a href="https://developer.mozilla.org/ru/docs/Web/API/File/Using_files_from_web_applications">Использование файлов в веб приложениях</a> </p>
+            </div>
+        </section>
+
+        <footer class="footer-index overflow-auto">
+            <div>
+                <div class="logo-box m-auto" id="logoBox">
+                    <img id="logoImg" class="logo-img" src="../../img/smile.png" alt="" />
+                    <p id="logoName" class="logo-name">&copy; PgkSoft</p>
+                </div>
+                <div class="p-t-16">
+                    <a class="outline-none" title="Telegram" href="tg://resolve?domain=PgkSoft">
+                        <img class="logo-socials" src="../../img/telegram-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Mobile Viber" href="viber://add?number=380636068484">
+                        <img class="logo-socials" src="../../img/web-viber-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Messenger" href="https://m.me/pgksoft">
+                        <img class="logo-socials" src="../../img/facebook-messenger-32.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="EMail" href="mailto:pgksoft@ukr.net?subject=HTML5CSS3Essential">
+                        <img class="logo-socials" src="../../img/email-icon.png" alt="" />
+                    </a>
+                    <a class="outline-none" title="Cellphone" href="tel:+380636068484">
+                        <img class="logo-socials" src="../../img/phone-icon.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <aside class="body-aside">  </aside>
+
+    <script src="../ts/indexAdvancedLesson.js"></script>
+    <script src="../../js/shortDescription.dist.js"></script>
+    <script src="../../js-advanced/clipPath.dist.js"></script>
+
+</body>
+</html>

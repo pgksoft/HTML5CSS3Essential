@@ -1,0 +1,340 @@
+﻿.w3-modal {
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.w3-modal-content {
+    max-height: 90%;
+    margin: 1% auto;
+}
+
+.search-parms {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px 0;
+    padding-left: 3px;
+    background-color: hsl(39, 85%, 95%);
+    border-radius: 7px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 0.5%;
+    padding-left: 1%;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px 0;
+    padding-left: 3px;
+    background-color: hsl(39, 85%, 95%);
+    border-radius: 7px;
+    width: 99%;
+    margin: 0 auto;
+    margin-bottom: 0.3%;
+}
+
+    .toolbar .set {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0.5% 0.5% 0.5%;
+        width: 100%;
+    }
+
+        .toolbar .set .dic-tb-button {
+            display: flex;
+            width: 2.5rem;
+            height: 2rem;
+            margin: 0;
+            margin-right: 5px;
+            padding: 0.6% 1% 0.6% 3.5%;
+            border-radius: 999px;
+            transition: .15s;
+            box-sizing: border-box;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            background-color: rgba(255, 255, 255, 0.50);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 73%;
+            white-space: nowrap;
+            margin-top: 1%;
+            outline: none;
+        }
+
+            .toolbar .set .dic-tb-button[data-enabled=true]:hover {
+                background-color: hsl(39,100%,90%);
+            }
+
+            .toolbar .set .dic-tb-button[data-enabled=true]:active {
+                box-shadow: inset 1px 1px 2px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            }
+
+            .toolbar .set .dic-tb-button[data-enabled=false] {
+                opacity: 0.4;
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-select-files] {
+                background-image: url('../../../img/movie-open.png');
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-to-watch] {
+                background-image: url('../../../img/movie-roll.png');
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-remove] {
+                background-image: url('../../../img/trash-can-outline.png');
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-search] {
+                background-image: url('../../../img/seek.png');
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-clear-search] {
+                background-image: url('../../../img/seek-clear.png');
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-to-state][data-state=to-play] {
+                background-image: url('../../../img-media-gallery/to-play.png');
+            }
+
+            .toolbar .set .dic-tb-button[id=dic-to-state][data-state=to-pause] {
+                background-image: url('../../../img-media-gallery/to-pause.png');
+            }
+
+        .toolbar .set .loader {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 2rem;
+            margin: 0;
+            margin-right: 5px;
+            padding: 0.6% 1%;
+            border-radius: 999px;
+            box-sizing: border-box;
+            border: 1px outset hsl(0,0%,80%);
+            margin-top: 1%;
+        }
+
+            .toolbar .set .loader[data-enabled=true] {
+                display: flex;
+            }
+
+.dictionary {
+    display: block;
+    width: 99%;
+    margin: 0 auto;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 8px 0;
+    border: 1px solid hsl(30,0%,70%);
+    --t-width: 150%;
+}
+
+    .dictionary .set {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: no-display;
+        overflow-y: auto;
+    }
+
+    .dictionary .set {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: no-display;
+        overflow-y: auto;
+    }
+
+        .dictionary .set .for-table {
+            width: var(--t-width);
+        }
+
+            .dictionary .set .for-table:first-child {
+                border-bottom: 1px solid hsl(30,0%,70%);
+            }
+
+            .dictionary .set .for-table:nth-child(2) {
+                min-height: 150px;
+                max-height: 500px;
+                overflow-x: auto;
+                overflow-y: no-display;
+                width: var(--t-width);
+            }
+
+            .dictionary .set .for-table .table {
+                width: 100%;
+            }
+
+                .dictionary .set .for-table .table .row .cell {
+                    background-color: white;
+                    border-radius: 7px;
+                    word-break: break-all;
+                    user-select: none;
+                }
+
+            .dictionary .set .for-table:first-child .table .row .cell {
+                background-color: hsl(60,100%,90%);
+                max-width: 0;
+                overflow: hidden;
+                text-overflow: clip;
+                white-space: nowrap;
+                box-sizing: border-box;
+                border: 1px solid blue;
+            }
+
+                .dictionary .set .for-table:first-child .table .row .cell:not(:first-child) .is-sorting {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .dictionary .set .for-table:first-child .table .row .cell:not(:first-child) .is-sorting img {
+                        display: none;
+                    }
+
+            .dictionary .set .for-table .table .row .cell:first-child input[type=checkbox] {
+                display: none;
+            }
+
+                .dictionary .set .for-table .table .row .cell:first-child input[type=checkbox] + label {
+                    cursor: pointer;
+                    margin: 0 auto;
+                    transition: 0.3s;
+                }
+
+                    .dictionary .set .for-table .table .row .cell:first-child input[type=checkbox] + label img {
+                        height: 100%;
+                        width: auto;
+                    }
+
+                .dictionary .set .for-table .table .row .cell:first-child input[type=checkbox]:disabled + label {
+                    opacity: 0.2;
+                    cursor: default;
+                }
+
+            .dictionary .set .for-table .table .row:hover {
+                cursor: pointer;
+                transition: 0.2s linear;
+            }
+
+                .dictionary .set .for-table .table .row:hover .cell {
+                    background-color: hsl(200,100%,80%);
+                    transition: 0.2s linear;
+                }
+
+            .dictionary .set .for-table .table .row[data-selected=true] .cell {
+                background-color: hsl(230,100%,60%);
+                color: white;
+            }
+
+            .dictionary .set .for-table .table .row[data-selected=true]:hover .cell {
+                color: yellow;
+                font-weight: bold;
+            }
+
+            .dictionary .set .for-table:nth-child(2) .table .row .cell {
+                box-sizing: border-box;
+                border-bottom: 1px solid hsl(0,0%,70%);
+            }
+
+                .dictionary .set .for-table:nth-child(2) .table .row .cell.clip {
+                    max-width: 0;
+                    overflow: hidden;
+                    text-overflow: clip;
+                    white-space: nowrap;
+                }
+
+                .dictionary .set .for-table:nth-child(2) .table .row .cell[data-name-field=Poster] {
+                    padding: 0.2% 0.2% 0 0.2%;
+                }
+
+                    .dictionary .set .for-table:nth-child(2) .table .row .cell[data-name-field=Poster] img {
+                        box-sizing: border-box;
+                        border-radius: 6px;
+                        border: 1px solid orange;
+                        width: 100%;
+                    }
+
+@media screen and (max-width: 960px) {
+    .dictionary .set .for-table .table .row .cell:first-child {
+        width: 4%;
+    }
+}
+
+.dictionary .set .context-menu {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding: 0.5% 0;
+    background-color: white;
+    /*border-radius: 7px;*/
+    min-width: 25%;
+    max-width: 50%;
+    opacity: 0;
+    transition: 0.3s linear;
+    box-sizing: border-box;
+    border: 1px solid blue;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+    overflow: auto;
+    max-height: 50%;
+}
+
+    .dictionary .set .context-menu .cm-items {
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+        .dictionary .set .context-menu .cm-items .cm-item {
+            display: flex;
+            word-break: break-word;
+            transition: 0.2s;
+            padding: 1px 2%;
+        }
+
+            .dictionary .set .context-menu .cm-items .cm-item img {
+                margin-right: 2%;
+            }
+
+            .dictionary .set .context-menu .cm-items .cm-item p {
+                font-family: 'Roboto Condensed';
+                margin: 0;
+            }
+
+            .dictionary .set .context-menu .cm-items .cm-item[data-enabled=false] {
+                color: lightgray;
+            }
+
+                .dictionary .set .context-menu .cm-items .cm-item[data-enabled=false] img {
+                    opacity: 0.3;
+                }
+
+            .dictionary .set .context-menu .cm-items .cm-item[data-enabled=true]:hover {
+                background-color: darkgray;
+                color: white;
+                cursor: pointer;
+            }
+
+            .dictionary .set .context-menu .cm-items .cm-item[data-state=to-play] img[data-state=to-play], .dictionary .set .context-menu .cm-items .cm-item[data-state=to-play] p[data-state=to-play] {
+                display: block;
+            }
+
+            .dictionary .set .context-menu .cm-items .cm-item[data-state=to-play] img[data-state=to-pause], .dictionary .set .context-menu .cm-items .cm-item[data-state=to-play] p[data-state=to-pause] {
+                display: none;
+            }
+
+            .dictionary .set .context-menu .cm-items .cm-item[data-state=to-pause] img[data-state=to-pause], .dictionary .set .context-menu .cm-items .cm-item[data-state=to-pause] p[data-state=to-pausey] {
+                display: block;
+            }
+
+            .dictionary .set .context-menu .cm-items .cm-item[data-state=to-pause] img[data-state=to-play], .dictionary .set .context-menu .cm-items .cm-item[data-state=to-pause] p[data-state=to-play] {
+                display: none;
+            }
+
+#confirm-modal > div {
+    margin-top: 10%;
+}

@@ -2,12 +2,15 @@
     enum Concerns { Fiat, Daimler, 'General Motors', Mazda, 'Volkswagen Auto Group', 'Tesla Motors' };
     enum Brands { 'Alfa Romeo', 'Aston Martin', Chevrolet, Ferrari, Mazda, Porsche, Tesla };
     enum RuleSelectBrand { One, Several };
+
     interface IShowMenuModels {
         (currentBrand: Brands): void;
     }
+
     interface IShowModelDescription {
         (model: Car): void;
     }
+
     interface ICar {
         concern: Concerns;
         brand: Brands;
@@ -15,9 +18,11 @@
         imgSrcs: string[];
         configurations: ModelConfiguration[];
     }
+
     class ListFS {
         constructor(public input: HTMLInputElement, public label: HTMLLabelElement) { }
     }
+
     class Brand {
         private _brand: Brands;
         private _headNote: string;
@@ -32,6 +37,7 @@
             return this._headNote;
         }
     }
+
     let $ = (id: string) => document.getElementById(id);
 
     abstract class Menu {
@@ -269,38 +275,6 @@
     }
 
     class ControlCars {
-        static cssMenuModel: string = 'car-model';
-        static cssFullScreeListRadio: string = 'radio';
-        static cssFullScreeListItem: string = 'item';
-        private _ruleSelectBrands: NodeListOf<HTMLElement>;
-        private _menuBrands: MenuBrand[];
-        private _menuModels: MenuModel[] = new Array;
-        private _brands: Brand[];
-        private _cars: Car[];
-        private _navModels: HTMLElement;
-        private _imgWidth: number;
-        private _imgHeight: number;
-        private _imagesOff: HTMLElement;
-        private _showLeftOff: HTMLElement;
-        private _showRightOff: HTMLElement;
-        private _showCollapsOff: HTMLElement;
-        private _headnote: HTMLElement;
-        private _navConfigurations: HTMLElement;
-        private _features: HTMLElement;
-        private _imageRate: number = 1.8225;
-        private _selectedModel: Car;
-        private _clipTimeOut: number;
-        private _interval: number = 2100;
-        private _indexImg: number = 1;
-        private _image: HTMLImageElement = new Image();
-        private _fullScreen: HTMLElement;
-        private _fullScreenImage: HTMLElement;
-        private _fullScreenClose: HTMLElement;
-        private _fullScreenImageLeft: HTMLElement;
-        private _fullScreenImageRight: HTMLElement;
-        private _fullScreenList: HTMLElement;
-        private _isFullScreen: boolean = false;
-        private _listFSImages: ListFS[] = new Array();
         constructor(
             ruleSelectBrands: NodeListOf<HTMLElement>,
             brands: Brand[],
@@ -349,6 +323,42 @@
             this.SetOnClickFullScreen();
             this.SetEnableShowLeftRight(this._showLeftOff, this._showRightOff);
         }
+
+        // Fields
+        static cssMenuModel: string = 'car-model';
+        static cssFullScreeListRadio: string = 'radio';
+        static cssFullScreeListItem: string = 'item';
+        private _ruleSelectBrands: NodeListOf<HTMLElement>;
+        private _menuBrands: MenuBrand[];
+        private _menuModels: MenuModel[] = new Array;
+        private _brands: Brand[];
+        private _cars: Car[];
+        private _navModels: HTMLElement;
+        private _imgWidth: number;
+        private _imgHeight: number;
+        private _imagesOff: HTMLElement;
+        private _showLeftOff: HTMLElement;
+        private _showRightOff: HTMLElement;
+        private _showCollapsOff: HTMLElement;
+        private _headnote: HTMLElement;
+        private _navConfigurations: HTMLElement;
+        private _features: HTMLElement;
+        private _imageRate: number = 1.8225;
+        private _selectedModel: Car;
+        private _clipTimeOut: number;
+        private _interval: number = 2100;
+        private _indexImg: number = 1;
+        private _image: HTMLImageElement = new Image();
+        private _fullScreen: HTMLElement;
+        private _fullScreenImage: HTMLElement;
+        private _fullScreenClose: HTMLElement;
+        private _fullScreenImageLeft: HTMLElement;
+        private _fullScreenImageRight: HTMLElement;
+        private _fullScreenList: HTMLElement;
+        private _isFullScreen: boolean = false;
+        private _listFSImages: ListFS[] = new Array();
+
+        // Methids
         Start(): void {
             this._menuBrands[0].OnClick();
         }

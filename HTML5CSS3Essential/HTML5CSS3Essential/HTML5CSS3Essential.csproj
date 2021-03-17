@@ -128,6 +128,8 @@
     <Content Include="img-media-gallery\fullscreen.png" />
     <Content Include="img-media-gallery\playback_pause.png" />
     <Content Include="img-media-gallery\playback_play.png" />
+    <Content Include="img-media-gallery\to-pause.png" />
+    <Content Include="img-media-gallery\to-play.png" />
     <Content Include="img-media-gallery\volume-high.png" />
     <Content Include="img-media-gallery\volume-mute.png" />
     <Content Include="img-mwsm\belarus.png" />
@@ -181,6 +183,11 @@
     <Content Include="img\map-marker-24.png" />
     <Content Include="img\menu-left-white.png" />
     <Content Include="img\menu-right-white.png" />
+    <Content Include="img\movie-open-plus-push.png" />
+    <Content Include="img\movie-open-plus.png" />
+    <Content Include="img\movie-open-push.png" />
+    <Content Include="img\movie-open.png" />
+    <Content Include="img\movie-roll.png" />
     <Content Include="img\mws-manager-push.png" />
     <Content Include="img\mws-manager.png" />
     <Content Include="img\mws-start.png" />
@@ -191,6 +198,7 @@
     <Content Include="img\playlist-plus-24.png" />
     <Content Include="img\playlist-remove-24.png" />
     <Content Include="img\plus.png" />
+    <Content Include="img\poster-screenshot.png" />
     <Content Include="img\React.png" />
     <Content Include="img\restore-24-push.png" />
     <Content Include="img\restore-24.png" />
@@ -203,6 +211,11 @@
     <Content Include="img\smile.png" />
     <Content Include="img\sort-ascending.png" />
     <Content Include="img\sort-descending.png" />
+    <Content Include="img\speedometer-faster.png" />
+    <Content Include="img\speedometer-medium.png" />
+    <Content Include="img\speedometer-slower.png" />
+    <Content Include="img\Table-icon-push.png" />
+    <Content Include="img\Table-icon.png" />
     <Content Include="img\telegram-32.png" />
     <Content Include="img\transfer-down.png" />
     <Content Include="img\transfer-up.png" />
@@ -310,6 +323,16 @@
     <Content Include="lessons-advanced\lesson02\ts\rgControl.dist.js" />
     <Content Include="lessons-advanced\lesson02\ts\view\bmAsyncCanvas.dist.js" />
     <Content Include="lessons-advanced\lesson02\ts\view\bmAsyncCanvas.js" />
+    <Content Include="lessons-advanced\lesson03\AddTask.html" />
+    <Content Include="lessons-advanced\lesson03\css\vgaView.css" />
+    <Content Include="lessons-advanced\lesson03\css\videoGallery.css" />
+    <Content Include="lessons-advanced\lesson03\index03.html" />
+    <Content Include="lessons-advanced\lesson03\movies\DieterBohlen-MyBedIsTooBig.mp4" />
+    <Content Include="lessons-advanced\lesson03\movies\HavanaFeatYaar-ILostYouRemix.mp4" />
+    <Content Include="lessons-advanced\lesson03\movies\IdaCorr-vsFeddeLeGrand-LetMeThinkAboutIt.mp4" />
+    <Content Include="lessons-advanced\lesson03\movies\JanelleMonae-MakeMeFeel%28DubaiRemix%29.mp4" />
+    <Content Include="lessons-advanced\lesson03\movies\NoizBasses-IamTheSexyGirl.mp4" />
+    <Content Include="lessons-advanced\lesson03\movies\Starkillers-DiscotekaReeceLow.mp4" />
     <Content Include="lessons-advanced\ts\indexAdvancedLesson.js" />
     <Content Include="lessons-essential\lesson01\AdditionalTask.html" />
     <Content Include="lessons-essential\lesson01\css\styleAdditionalTask.css" />
@@ -878,6 +901,10 @@
     <Content Include="lessons-most-interesting\video\advanced\adv-lesson1-Task2.mp4" />
     <Content Include="lessons-most-interesting\video\advanced\adv-lesson2-task01-compressed.mp4" />
     <Content Include="lessons-most-interesting\video\advanced\adv-lesson2-task01.jpg" />
+    <Content Include="lessons-most-interesting\video\advanced\adv-lesson2-task02-compressed.mp4" />
+    <Content Include="lessons-most-interesting\video\advanced\adv-lesson2-task02.jpg" />
+    <Content Include="lessons-most-interesting\video\advanced\adv-lesson2-task03-compressed.mp4" />
+    <Content Include="lessons-most-interesting\video\advanced\adv-lesson2-task03.jpg" />
     <Content Include="lessons-most-interesting\video\essential\est-lesson3-Task3.jpg" />
     <Content Include="lessons-most-interesting\video\essential\est-lesson3-Task3.mp4" />
     <Content Include="lessons-most-interesting\video\essential\est-lesson4-AddTask-compressed.mp4" />
@@ -1193,6 +1220,16 @@
     <TypeScriptCompile Include="lessons-advanced\lesson02\ts\view\viewMWS.ts" />
     <TypeScriptCompile Include="lessons-advanced\lesson02\ts\view\viewMwsParams.ts" />
     <TypeScriptCompile Include="lessons-advanced\lesson02\ts\view\viewRgParams.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\control\vgaControl.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\model\modelView.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\model\modelViewItems.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\model\vgaContent.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\model\vgaItems.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\model\vgaParams.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\model\vgaPosterMenu.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\view\viewContents.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\view\viewParms.ts" />
+    <TypeScriptCompile Include="lessons-advanced\lesson03\ts\view\viewVideoGallery.ts" />
     <TypeScriptCompile Include="lessons-advanced\ts\indexAdvancedLesson.ts" />
     <TypeScriptCompile Include="lessons-most-interesting\ts\ts-essential-gallery.ts" />
     <TypeScriptCompile Include="lessons-most-interesting\ts\ts-fundamentals-gallery.ts" />
@@ -1204,6 +1241,8 @@
     <TypeScriptCompile Include="lessons-ts-fundamentals\lesson03\ts\dictionary.ts" />
     <TypeScriptCompile Include="lessons-ts-fundamentals\lesson03\ts\_firstWebDB.ts" />
     <TypeScriptCompile Include="lessons-ts-fundamentals\ts\indexTSLesson.ts" />
+    <TypeScriptCompile Include="model\abstractMenu.ts" />
+    <TypeScriptCompile Include="model\confirmItems.ts" />
     <TypeScriptCompile Include="MySlider\mySlider.ts" />
   </ItemGroup>
   <ItemGroup>

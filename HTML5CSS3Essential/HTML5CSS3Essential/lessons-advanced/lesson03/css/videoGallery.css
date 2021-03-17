@@ -1,0 +1,330 @@
+﻿.subtask-box {
+    background-color: hsl(240,30%,30%);
+}
+
+.parms {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0;
+    background-color: hsl(39, 85%, 95%);
+    border-radius: 7px;
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 0.5%;
+}
+
+    .parms .set {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0.5% 0.5% 0.5%;
+    }
+
+        .parms .set .settings {
+            display: none;
+            margin: 0;
+            margin-right: 16px;
+            padding: 0.6% 1% 0.6% 3.5%;
+            border-radius: 999px;
+            transition: .15s;
+            box-sizing: border-box;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            background-color: rgba(255, 255, 255, 0.50);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: 5%;
+            background-size: auto 70%;
+            color: hsl(0,0%,30%);
+            white-space: nowrap;
+            margin-top: 1%;
+            outline: none;
+        }
+
+            .parms .set .settings:not([data-visible]) {
+                display: flex;
+            }
+
+            .parms .set .settings:hover {
+                background-color: hsl(39,100%,90%);
+            }
+
+            .parms .set .settings:active {
+                box-shadow: inset 1px 1px 2px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+                color: hsl(0,0%,0%);
+            }
+
+            .parms .set .settings[id=select-files] {
+                background-image: url('../../../img/movie-open.png');
+            }
+
+                .parms .set .settings[id=select-files]:active {
+                    background-image: url('../../../img/movie-open-push.png');
+                }
+
+            .parms .set .settings[id=open-view] {
+                background-image: url('../../../img/Table-icon.png');
+            }
+
+                .parms .set .settings[id=open-view]:active {
+                    background-image: url('../../../img/Table-icon-push.png');
+                }
+
+        .parms .set .loader {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 2rem;
+            margin: 0;
+            margin-right: 5px;
+            padding: 0.6% 1%;
+            border-radius: 999px;
+            box-sizing: border-box;
+            border: 1px outset hsl(0,0%,80%);
+            margin-top: 1%;
+        }
+
+            .parms .set .loader[data-enabled=true] {
+                display: flex;
+            }
+
+    .parms .show {
+        display: flex;
+        box-sizing: border-box;
+        border-top: 1px solid white;
+        padding: 0.5%;
+        flex-wrap: wrap;
+        align-items: center;
+        font-style: italic;
+        color: dimgray;
+    }
+
+        .parms .show p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+            .parms .show p span {
+                font-family: 'Roboto Condensed';
+                font-style: normal;
+                font-weight: normal;
+                color: black;
+                font-weight: bold;
+            }
+
+.posters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    background-color: hsl(39, 85%, 95%);
+    border-radius: 7px;
+    width: 98%;
+    margin: 0 auto;
+    padding: 3px 0;
+    margin-bottom: 0.5%;
+}
+
+    .posters .set-poster {
+        display: flex;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.50);
+        cursor: pointer;
+        border-radius: 7px;
+        margin-top: 0.5%;
+        margin-right: 0.8%;
+        margin-bottom: 1%;
+        min-width: 150px;
+        max-width: 150px;
+        height: 120px;
+        transition: 0.3s;
+    }
+
+        .posters .set-poster:first-child {
+            margin-left: 1%;
+        }
+
+        .posters .set-poster:last-child {
+            margin-right: 1%;
+        }
+
+        .posters .set-poster.default {
+            color: white;
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 2px 2px 2px blue;
+            box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.7), 1px 1px 5px rgba(255, 255, 255, 1);
+        }
+
+            .posters .set-poster.default:hover {
+                box-shadow: 2px 2px 5px hsla(30, 100%, 50%, 0.7), 1px 1px 5px rgba(255, 255, 255, 1);
+            }
+
+        .posters .set-poster.active {
+            font-weight: bold;
+            color: hsl(60,100%,50%);
+            text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray, 1px 1px 0 gray, 2px 2px 2px blue;
+            box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 1), 1px 1px 5px rgba(255, 255, 255, 1);
+        }
+
+            .posters .set-poster.active:hover {
+                box-shadow: inset 2px 2px 5px hsla(30, 100%, 50%, 0.7), 1px 1px 5px rgba(255, 255, 255, 1);
+            }
+
+        .posters .set-poster .item-poster {
+            display: flex;
+            width: 90%;
+            height: 90%;
+            border-radius: 6px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-origin: content-box;
+            word-break: break-word;
+            word-wrap: break-word;
+            align-items: flex-end;
+            text-align: right;
+            justify-content: flex-end;
+            font-size: smaller;
+            letter-spacing: 1px;
+        }
+
+            .posters .set-poster .item-poster p {
+                padding: 0 8px;
+            }
+
+
+@media screen and (max-width: 1500px) {
+    .parms .set .settings span {
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .parms .set .settings {
+        padding-right: 2%;
+        padding-left: 4%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 3%;
+        }
+}
+
+@media screen and (max-width: 960px) {
+    .parms .set .settings {
+        font-size: 0.9rem;
+        padding-right: 2%;
+        padding-left: 4%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 5%;
+        }
+}
+
+@media screen and (max-width: 800px) {
+    .parms .set .settings {
+        font-size: 0.9rem;
+        padding-right: 3%;
+        padding-left: 5%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 10%;
+        }
+
+    .posters .set-poster {
+        margin-right: 1.1%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .parms .set .settings {
+        padding-right: 12%;
+        padding-left: 6%;
+    }
+
+        .parms .set .settings span {
+            margin-left: 17%;
+        }
+
+    .posters .set-poster {
+        margin-right: 1.5%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .parms .set .settings {
+        padding-right: 15%;
+        padding-left: 6.5%;
+    }
+}
+
+.video-container {
+    display: block;
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 7px;
+}
+
+    .video-container video {
+        width: 100%;
+        outline: none;
+    }
+
+.add-conditions {
+    align-items: center;
+}
+
+#custom-controls {
+    align-items: center;
+}
+
+    #custom-controls label {
+        background-color: rgba(255, 255, 255, 0.50);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: auto 73%;
+        user-select: none;
+    }
+
+        #custom-controls label:hover {
+            background-color: hsl(39,100%,90%);
+            user-select: none;
+        }
+
+        #custom-controls label[for=poster-screenshot] {
+            background-image: url('../../../img/poster-screenshot.png');
+        }
+
+        #custom-controls label[for=rate-slow] {
+            background-image: url('../../../img/speedometer-slower.png');
+        }
+
+        #custom-controls label[for=rate-medium] {
+            background-image: url('../../../img/speedometer-medium.png');
+        }
+
+        #custom-controls label[for=rate-faster] {
+            background-image: url('../../../img/speedometer-faster.png');
+        }
+
+    #custom-controls span {
+        box-sizing: border-box;
+        padding: 0.1rem 1%;
+        margin-left: 1%;
+        margin-top: 0.63%;
+        color: black;
+        font-weight: normal;
+        border-radius: 7px;
+        border: 1px outset hsl(0,0%,80%);
+        outline: none;
+        align-self: center;
+        user-select: none;
+    }
+
+#current-time {
+    font-family: 'JetBrains Mono';
+}
+

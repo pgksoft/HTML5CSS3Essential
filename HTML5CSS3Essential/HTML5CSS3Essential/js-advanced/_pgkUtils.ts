@@ -17,7 +17,18 @@ if (!String.prototype.padStart) {
     };
 }
 
-export enum TypeAction { Add, Edit, Reproduce, Info, Remove, Find, ClearFind };
+export enum TypeAction {
+    Add,
+    Edit,
+    Reproduce,
+    Info,
+    Remove,
+    Find,
+    ClearFind,
+    SelectLocalFiles,
+    IsSelected,
+    ToState
+};
 export enum CommandState { Disable, Enable };
 
 export let dateToString = (dt: Date) => `${dt.toLocaleDateString()} ${dt.toLocaleTimeString()}.${dt.getMilliseconds()}`;
@@ -37,6 +48,8 @@ export let requestFrame = (callback) => {
     f(callback);
 }
 
+export const CustomEventChangeMarkAllRows: string = 'changeMarkAllRows';
+export const CustomEventchangeMarkRow: string = 'changeMarkRow';
 
 export class Confirm {
 
@@ -59,6 +72,7 @@ export class Confirm {
         this._content = content;
         this._yes = yes;
         this._no = no;
+
     }
 
     static get instance(): Confirm {
@@ -117,8 +131,8 @@ export class Confirm {
         this._content.innerText = content;
         this.SetButtonDefault();
         if (resolve) {
-            this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteConfirm, { bubbles: true, detail: { resolve: resolve } })) };
-            this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteRefuse, { bubbles: true, detail: { resolve: resolve } })) };
+            this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteConfirm, { bubbles: true, detail: { resolve: resolve('yes') } })) };
+            this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventDeleteRefuse, { bubbles: true, detail: { resolve: resolve('no') } })) };
         } else {
             this._yes.onclick = () => { document.dispatchEvent(this.eventDeleteConfirm) };
             this._no.onclick = () => { document.dispatchEvent(this.eventDeleteRefuse) };
@@ -130,8 +144,8 @@ export class Confirm {
         this._header.innerText = 'Are you sure?';
         this._content.innerText = 'Please confirm the action';
         this.SetButtonDefault();
-        this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureConfirm, { bubbles: true, detail: { resolve: resolve } })) };
-        this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureRefuse, { bubbles: true, detail: { resolve: resolve } })) };
+        this._yes.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureConfirm, { bubbles: true, detail: { resolve: resolve('yes') } })) };
+        this._no.onclick = () => { document.dispatchEvent(new CustomEvent(this.nameEventSureRefuse, { bubbles: true, detail: { resolve: resolve('no') } })) };
         this._modal.style.display = 'block';
     }
 
@@ -314,7 +328,7 @@ export class MarkRow<T extends CountableEqualityComparer<T>> {
     protected _img: HTMLImageElement;
     private _valueRow: T;
     private _row: HTMLElement;
-    protected _eventChangeMarkRow: Event = new CustomEvent('changeMarkRow', { bubbles: true, detail: { content: this } });
+    protected _eventChangeMarkRow: Event = new CustomEvent(CustomEventchangeMarkRow, { bubbles: true, detail: { content: this } });
     constructor(
         checkBox: HTMLInputElement,
         img: HTMLImageElement
@@ -365,7 +379,7 @@ export class MarkAllRows<T extends CountableEqualityComparer<T>> extends MarkRow
     ) {
         super(checkBox, img);
         this.isDisable = true;
-        this._eventChangeMarkRow = new CustomEvent('changeMarkAllRows', { bubbles: true, detail: { content: this } })
+        this._eventChangeMarkRow = new CustomEvent(CustomEventChangeMarkAllRows, { bubbles: true, detail: { content: this } })
     }
 }
 

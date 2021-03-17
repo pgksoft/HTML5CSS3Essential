@@ -82,6 +82,29 @@ class AdvancedLesson02 extends AdvancedLesson {
     }
 }
 
+class AdvancedLesson03 extends AdvancedLesson {
+    private descriptionAdd: HTMLElement;
+    constructor(linkTaskPage: HTMLAnchorElement, descriptionAdd: HTMLElement) {
+        super(linkTaskPage);
+        this.descriptionAdd = descriptionAdd;
+    }
+    showDescription(item: HTMLElement) {
+        this.descriptionAdd.style.display = "none";
+        switch (item.id) {
+            case "addtask": {
+                if (!this.linkTaskPage.dataset.iamworking) {
+                    this.linkTaskPage.href = "AddTask.html";
+                }
+                this.descriptionAdd.style.display = "block";
+                break;
+            }
+            default: {
+                this.linkTaskPage.href = "#";
+            }
+        }
+    }
+}
+
 class AdvancedLessonManagement {
     private _namePage: string;
     private _linkTaskPage: HTMLAnchorElement;
@@ -142,7 +165,7 @@ class AdvancedLessonManagement {
                 document.getElementById('taskDescription03')
             );
         } else if (this._namePage === "index03") {
-            //this._lesson = new TSLesson03(<HTMLAnchorElement>this._linkTaskPage, document.getElementById('taskDescriptionAdd'), document.getElementById('taskDescription02'));
+            this._lesson = new AdvancedLesson03(<HTMLAnchorElement>this._linkTaskPage, document.getElementById('taskDescriptionAdd'));
         } else if (this._namePage === "index04") {
             this._lesson = undefined;
         } else { console.log("Error definition lesson"); }

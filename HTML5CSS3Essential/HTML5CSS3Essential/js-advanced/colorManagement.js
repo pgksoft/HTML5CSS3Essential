@@ -20,7 +20,7 @@ export class GradientProperties {
         this.colorScheme = new GradientColorScheme();
     }
     GetGradientProperties() {
-        this.direction = Colors.instance.RandomInt(1, 4);
+        this.direction = Colors.instance.gradientDirection;
         this.colorScheme = new GradientColorScheme();
         let lines = Colors.instance.RandomInt(minLayersGradient, maxLayersGradient);
         let position;
@@ -261,6 +261,7 @@ export class Colors {
     set maxLayersGradient(value) {
         this._maxLayersGradient = value;
     }
+    get gradientDirection() { return this.RandomInt(1, 4); }
     CreateColorScheme(scheme = []) {
         let colorScheme = new GradientColorScheme();
         if (scheme.length == 0) {
@@ -368,14 +369,14 @@ export class Colors {
     }
     GetFillBoxLineGradient(context, x, y, size, gradientProperties) {
         let gradient;
-        gradientProperties.direction = this.RandomInt(1, 4);
+        gradientProperties.direction = this.gradientDirection;
         gradient = this.GetLinerGradient(gradientProperties.direction, context, x, y, size, size);
         gradientProperties.colorScheme = this.GetLinerGradientColorScheme(gradient);
         return gradient;
     }
     GetFillRectLineGradient(context, x, y, width, height, gradientProperties) {
         let gradient;
-        gradientProperties.direction = this.RandomInt(1, 4);
+        gradientProperties.direction = this.gradientDirection;
         gradient = this.GetLinerGradient(gradientProperties.direction, context, x, y, width, height);
         gradientProperties.colorScheme = this.GetLinerGradientColorScheme(gradient);
         return gradient;
@@ -400,10 +401,10 @@ export class Colors {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     GetLinerGradient(direction, context, x, y, width, height) {
-        return direction === GradientDirection.LeftToRight ? context.createLinearGradient(x, y, x, y + height) :
-            direction === GradientDirection.TopToBottom ? context.createLinearGradient(x, y, x + width, y) :
+        return direction === GradientDirection.LeftToRight ? context.createLinearGradient(x, y, x + width, y) :
+            direction === GradientDirection.TopToBottom ? context.createLinearGradient(x, y, x, y + height) :
                 direction === GradientDirection.LeftTopToBottomRight ? context.createLinearGradient(x, y, x + height, y + width) :
-                    direction === GradientDirection.RightTopToLeftBottom ? context.createLinearGradient(x, y + width, x + height, 0) :
+                    direction === GradientDirection.RightTopToLeftBottom ? context.createLinearGradient(x, y + width, x + height, y) :
                         context.createLinearGradient(x, y, x, y + height);
     }
     GetLinerGradientColorScheme(gradient) {
