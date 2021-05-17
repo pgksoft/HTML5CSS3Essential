@@ -36,6 +36,11 @@ export const CustomEventToWatch: string = 'vga-view-to watch';
 const classCell: string = `cell clip cell-vertical-center cell-horizontal-center`;
 enum KindLoad { All, AddedRecord, UpdatedRecord };
 
+type Test = {
+    valueTest: string,
+    idTest: string
+}
+
 export class ViewContents {
     private constructor(
         domItems: VGaDomItems,
@@ -53,6 +58,13 @@ export class ViewContents {
         this.DependencyResolutions();
         //
         this.ShowGets();
+        //
+        this._tests = [
+            { idTest: '1', valueTest: '111-111' },
+            { idTest: '2', valueTest: '222-222' },
+            { idTest: '3', valueTest: '333-333' }
+        ];
+        console.log(this._tests);
     }
 
     // Fields
@@ -73,6 +85,7 @@ export class ViewContents {
     private _cm: ContextMenu;
     //
     private _selected: HTMLElement = undefined;
+    private _tests: Test[];
 
     // Properties
     static get instance(): ViewContents {

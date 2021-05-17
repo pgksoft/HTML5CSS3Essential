@@ -27,6 +27,12 @@ export class ViewContents {
         this.DefineEvents();
         this.DependencyResolutions();
         this.ShowGets();
+        this._tests = [
+            { idTest: '1', valueTest: '111-111' },
+            { idTest: '2', valueTest: '222-222' },
+            { idTest: '3', valueTest: '333-333' }
+        ];
+        console.log(this._tests);
     }
     static get instance() {
         if (!this._instance) {
